@@ -10,13 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var animateView: UIView!
     @IBOutlet weak var button1: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        
     }
 
     override func didReceiveMemoryWarning() {

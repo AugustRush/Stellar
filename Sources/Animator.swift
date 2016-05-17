@@ -9,9 +9,18 @@
 import UIKit
 
 class Animator {
-   static let shared = Animator()
+    static let shared = Animator()
+    private var dynamicAnimator = UIDynamicAnimator()
+
+    func addAnimation(a: Animatable, identifier: String, forObject: AnyObject) {
+        
+    }
     
-    init() {
+    func removeAnimation(identifier: String, onObject: AnyObject) {
+        
+    }
     
+    func removeAllAnimations() {
+        
     }
 }
