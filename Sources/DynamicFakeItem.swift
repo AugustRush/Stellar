@@ -30,6 +30,7 @@ class DynamicFakeItem<T:Physical>: NSObject, UIDynamicItem {
     //MARK: UIDynamicItem protocol
     var center: CGPoint {
         didSet {
+            print(center)
             let hasChanged = fabs(center.y - fromP.y)
             if hasChanged >= change {
                 complete = true

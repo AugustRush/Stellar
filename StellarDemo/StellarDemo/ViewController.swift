@@ -48,7 +48,7 @@ class ViewController: UIViewController {
 //        animateView.fallTo(point)
         let size = CGSizeMake(x, y)
         
-        animateView.bounds.size.snapTo(size) { (s) in
+        animateView.bounds.size.pushedTo(size) { (s) in
             self.animateView.bounds.size = s
         }
         

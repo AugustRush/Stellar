@@ -48,7 +48,7 @@ class Animator: NSObject, UIDynamicAnimatorDelegate {
             behavior = attachment
         case .Push:
             let push = UIPushBehavior(items: [item], mode: .Instantaneous)
-            push.pushDirection = CGVectorMake(0, 1)
+            push.pushDirection = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
             push.magnitude = 1.0
             behavior = push
         case .collision: 
