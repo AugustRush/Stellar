@@ -10,31 +10,38 @@ import UIKit
 
 class DynamicFakeItem<T:Physical>: NSObject, UIDynamicItem {
     var from: T
-    var to: CGPoint
+    var to: T
     var render: (T) -> Void
     var complete = false
+    internal var fromP: CGPoint
+    internal var toP: CGPoint
+    private var change: CGFloat
     
-    init(from: T, to: (CGFloat,CGFloat), render: (T) -> Void) {
+    init(from: T, to: T, render: (T) -> Void) {
         self.from = from
-        self.to = CGPointMake(to.0, to.1)
+        self.to = to
+        self.fromP = from.reverse()
+        self.toP = to.reverse()
         self.render = render
+        self.center = self.fromP
+        self.change = fabs(self.toP.y - self.fromP.y)
     }
     
     //MARK: UIDynamicItem protocol
-    var center: CGPoint = CGPointZero {
+    var center: CGPoint {
         didSet {
-            var current = center
-            if current.y >= to.y {
-                current = to
+            let hasChanged = fabs(center.y - fromP.y)
+            if hasChanged >= change {
                 complete = true
             }
-            self.render(from.convert(current))
+            let value = to.convert(center)
+            self.render(value)
         }
     }
     var transform: CGAffineTransform = CGAffineTransformIdentity
     var bounds: CGRect {
         get {
-            return CGRectMake(0, 0, 100, 100)
+            return CGRectMake(center.x, center.y, 100, 100)
         }
     }
 

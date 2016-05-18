@@ -32,13 +32,16 @@ class Animator: NSObject, UIDynamicAnimatorDelegate {
         switch type {
         case .Gravity:
             let gravity = UIGravityBehavior()
+            gravity.gravityDirection = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
+            gravity.magnitude = 10
             gravity.addItem(item)
             behavior = gravity
         case .Snap:
-            let snap = UISnapBehavior(item: item,snapToPoint: item.to)
+            let snap = UISnapBehavior(item: item,snapToPoint: item.toP)
+            snap.damping = 0.5
             behavior = snap
         case .Attachment:
-            let attachment = UIAttachmentBehavior(item: item,attachedToAnchor: item.to)
+            let attachment = UIAttachmentBehavior(item: item,attachedToAnchor: item.toP)
             attachment.length = 0.0
             attachment.damping = 2
             attachment.frequency = 2

@@ -35,12 +35,23 @@ class ViewController: UIViewController {
 //            self.animateView.center.x = CGFloat($0)
 //        })
         
-        let number1: Float = 100
-        number1.attachmentTo(400,render: {
-            let value = CGFloat($0)
-            self.animateView.bounds.size = CGSizeMake(value, value)
-        })
+//        let number1: Float = 100
+//        number1.attachmentTo(400,render: {
+//            let value = CGFloat($0)
+//            self.animateView.bounds.size = CGSizeMake(value, value)
+//        })
+        
 
+        let x = CGFloat(arc4random()%300)
+        let y = CGFloat(arc4random()%500)
+//        let point = CGPointMake(x, y)
+//        animateView.fallTo(point)
+        let size = CGSizeMake(x, y)
+        
+        animateView.bounds.size.snapTo(size) { (s) in
+            self.animateView.bounds.size = s
+        }
+        
         
 //        let x = CGFloat(arc4random()%300)
 //        let y = CGFloat(arc4random()%500)
