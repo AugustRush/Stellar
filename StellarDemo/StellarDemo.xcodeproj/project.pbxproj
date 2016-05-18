@@ -14,13 +14,10 @@
 		97BE88CC1CDDDAD000240523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97BE88CA1CDDDAD000240523 /* LaunchScreen.storyboard */; };
 		97BE88D71CDDDAD000240523 /* StellarDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88D61CDDDAD000240523 /* StellarDemoTests.swift */; };
 		97BE88E21CDDDAD000240523 /* StellarDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88E11CDDDAD000240523 /* StellarDemoUITests.swift */; };
-		97BE89051CDE1E1E00240523 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE89041CDE1E1E00240523 /* Animator.swift */; };
-		97C786861CE9DCF9006CB6D4 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C786851CE9DCF9006CB6D4 /* Spring.swift */; };
-		97C786881CE9DD61006CB6D4 /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C786871CE9DD61006CB6D4 /* Animatable.swift */; };
-		97C7868A1CE9E2FC006CB6D4 /* MediaTiming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C786891CE9E2FC006CB6D4 /* MediaTiming.swift */; };
-		97C7868E1CE9F3A3006CB6D4 /* SnapAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C7868D1CE9F3A3006CB6D4 /* SnapAnimation.swift */; };
-		97C786901CE9F545006CB6D4 /* SpringBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C7868F1CE9F545006CB6D4 /* SpringBehavior.swift */; };
-		97C786921CE9F6EE006CB6D4 /* DynamicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C786911CE9F6EE006CB6D4 /* DynamicItem.swift */; };
+		97E1A8D81CEB4AF200F98D86 /* Physical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8D71CEB4AF200F98D86 /* Physical.swift */; };
+		97E1A8DA1CEB4B5200F98D86 /* DynamicItem+Physical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8D91CEB4B5200F98D86 /* DynamicItem+Physical.swift */; };
+		97E1A8DC1CEB4D6700F98D86 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8DB1CEB4D6700F98D86 /* Animator.swift */; };
+		97E1A8DE1CEC0E9200F98D86 /* DynamicFakeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8DD1CEC0E9200F98D86 /* DynamicFakeItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,13 +51,10 @@
 		97BE88DD1CDDDAD000240523 /* StellarDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97BE88E11CDDDAD000240523 /* StellarDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarDemoUITests.swift; sourceTree = "<group>"; };
 		97BE88E31CDDDAD000240523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97BE89041CDE1E1E00240523 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
-		97C786851CE9DCF9006CB6D4 /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
-		97C786871CE9DD61006CB6D4 /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
-		97C786891CE9E2FC006CB6D4 /* MediaTiming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTiming.swift; sourceTree = "<group>"; };
-		97C7868D1CE9F3A3006CB6D4 /* SnapAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapAnimation.swift; sourceTree = "<group>"; };
-		97C7868F1CE9F545006CB6D4 /* SpringBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringBehavior.swift; sourceTree = "<group>"; };
-		97C786911CE9F6EE006CB6D4 /* DynamicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItem.swift; sourceTree = "<group>"; };
+		97E1A8D71CEB4AF200F98D86 /* Physical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Physical.swift; sourceTree = "<group>"; };
+		97E1A8D91CEB4B5200F98D86 /* DynamicItem+Physical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicItem+Physical.swift"; sourceTree = "<group>"; };
+		97E1A8DB1CEB4D6700F98D86 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		97E1A8DD1CEC0E9200F98D86 /* DynamicFakeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicFakeItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,13 +137,10 @@
 		97BE88EF1CDDDBCE00240523 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				97BE89041CDE1E1E00240523 /* Animator.swift */,
-				97C786871CE9DD61006CB6D4 /* Animatable.swift */,
-				97C786851CE9DCF9006CB6D4 /* Spring.swift */,
-				97C786911CE9F6EE006CB6D4 /* DynamicItem.swift */,
-				97C7868F1CE9F545006CB6D4 /* SpringBehavior.swift */,
-				97C7868D1CE9F3A3006CB6D4 /* SnapAnimation.swift */,
-				97C786891CE9E2FC006CB6D4 /* MediaTiming.swift */,
+				97E1A8D71CEB4AF200F98D86 /* Physical.swift */,
+				97E1A8D91CEB4B5200F98D86 /* DynamicItem+Physical.swift */,
+				97E1A8DD1CEC0E9200F98D86 /* DynamicFakeItem.swift */,
+				97E1A8DB1CEB4D6700F98D86 /* Animator.swift */,
 			);
 			name = Sources;
 			path = ../../Sources;
@@ -286,15 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97C7868A1CE9E2FC006CB6D4 /* MediaTiming.swift in Sources */,
-				97BE89051CDE1E1E00240523 /* Animator.swift in Sources */,
-				97C786901CE9F545006CB6D4 /* SpringBehavior.swift in Sources */,
+				97E1A8DC1CEB4D6700F98D86 /* Animator.swift in Sources */,
 				97BE88C41CDDDAD000240523 /* ViewController.swift in Sources */,
-				97C786861CE9DCF9006CB6D4 /* Spring.swift in Sources */,
-				97C7868E1CE9F3A3006CB6D4 /* SnapAnimation.swift in Sources */,
+				97E1A8DA1CEB4B5200F98D86 /* DynamicItem+Physical.swift in Sources */,
+				97E1A8DE1CEC0E9200F98D86 /* DynamicFakeItem.swift in Sources */,
+				97E1A8D81CEB4AF200F98D86 /* Physical.swift in Sources */,
 				97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */,
-				97C786921CE9F6EE006CB6D4 /* DynamicItem.swift in Sources */,
-				97C786881CE9DD61006CB6D4 /* Animatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
