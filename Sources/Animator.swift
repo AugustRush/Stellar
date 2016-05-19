@@ -20,43 +20,7 @@ class Animator: NSObject, UIDynamicAnimatorDelegate {
     static let shared = Animator()
     private var activedAnimators: [UIDynamicAnimator] = Array()
     
-    //MARK: public methods
-    func createBehavior<T: Physical>(item: DynamicItem<T>, type: BehaviorType) -> UIDynamicBehavior {
-        
-        //behavior
-        var behavior: UIDynamicBehavior!
-
-        switch type {
-        case .Gravity:
-            let gravity = UIGravityBehavior()
-            gravity.gravityDirection = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
-            gravity.magnitude = 10
-            gravity.addItem(item)
-            behavior = gravity
-        case .Snap:
-            let snap = UISnapBehavior(item: item,snapToPoint: item.toP)
-            snap.damping = 0.5
-            behavior = snap
-        case .Attachment:
-            let attachment = UIAttachmentBehavior(item: item,attachedToAnchor: item.toP)
-            attachment.length = 0.0
-            attachment.damping = 0.5
-            attachment.frequency = 1
-            behavior = attachment
-        case .Push:
-            let push = UIPushBehavior(items: [item], mode: .Instantaneous)
-            push.pushDirection = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
-            push.magnitude = 1.0
-            behavior = push
-        case .collision: 
-            let collision = UICollisionBehavior()
-            collision.addItem(item)
-            behavior = collision
-        }
-        
-        return behavior
-    }
-    
+    //MARK: public methods    
     func addBehavior(b: UIDynamicBehavior) {
         let animator = UIDynamicAnimator()
         animator.delegate = self

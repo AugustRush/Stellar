@@ -30,9 +30,9 @@ extension UIDynamicItem {
         case .Right:
             gravity.gravityDirection = CGVectorMake(1, 0)
         case .Up:
-            gravity.gravityDirection = CGVectorMake(0, 0)
-        case .Down: 
             gravity.gravityDirection = CGVectorMake(0, -1)
+        case .Down: 
+            gravity.gravityDirection = CGVectorMake(0, 1)
         }
         gravity.addItem(self)
         //commit

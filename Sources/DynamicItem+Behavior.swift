@@ -10,11 +10,10 @@ import UIKit
 
 extension UIDynamicItem {
     
-    func gravity(magnitude: CGFloat = 1.0, direction: CGVector = CGVectorMake(0, 1.0), angle: CGFloat = 90.0) -> UIGravityBehavior {
+    func gravity(magnitude: CGFloat = 1.0, direction: CGVector = CGVectorMake(0, 1.0)) -> UIGravityBehavior {
         let gravity = UIGravityBehavior()
         gravity.gravityDirection = direction
         gravity.magnitude = magnitude
-        gravity.setAngle(angle, magnitude: magnitude)
         gravity.addItem(self)
         return gravity
     }

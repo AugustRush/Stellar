@@ -33,12 +33,12 @@ class ViewController: UIViewController {
 //        let size = CGSizeMake(x, y)
 //        let point = CGPointMake(x, y)
   
-        animateView.fall()
+//        animateView.fall()
         
-//        y.fallTo(x) { (f) in
-//            y = f
-//            print(y)
-//        }
+        y.fallTo(x) { (f) in
+            y = f
+            print(y)
+        }
         
         
 //        let x = CGFloat(arc4random()%300)
