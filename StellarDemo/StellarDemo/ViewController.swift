@@ -33,10 +33,7 @@ class ViewController: UIViewController {
 //        let size = CGSizeMake(x, y)
 //        let point = CGPointMake(x, y)
   
-        x.attachmentTo(y) { (f) in
-            x = f
-            print(f)
-        }
+        animateView.fall()
         
 //        y.fallTo(x) { (f) in
 //            y = f
