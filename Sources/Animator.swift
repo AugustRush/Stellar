@@ -18,14 +18,11 @@ public enum BehaviorType {
 
 class Animator: NSObject, UIDynamicAnimatorDelegate {
     static let shared = Animator()
-    var activedAnimators: [UIDynamicAnimator] = Array()
-    
+    private var activedAnimators: [UIDynamicAnimator] = Array()
     
     //MARK: public methods
-    func addDynamicItem<T: Physical>(item: DynamicItem<T>, type: BehaviorType) -> UIDynamicBehavior {
+    func createBehavior<T: Physical>(item: DynamicItem<T>, type: BehaviorType) -> UIDynamicBehavior {
         
-        let animator = UIDynamicAnimator()
-        animator.delegate = self
         //behavior
         var behavior: UIDynamicBehavior!
 
@@ -57,9 +54,14 @@ class Animator: NSObject, UIDynamicAnimatorDelegate {
             behavior = collision
         }
         
-        animator.addBehavior(behavior)
-        activedAnimators.append(animator)
         return behavior
+    }
+    
+    func addBehavior(b: UIDynamicBehavior) {
+        let animator = UIDynamicAnimator()
+        animator.delegate = self
+        animator.addBehavior(b)
+        activedAnimators.append(animator)
     }
     
     //MARK: UIDynamicAnimatorDelegate methods

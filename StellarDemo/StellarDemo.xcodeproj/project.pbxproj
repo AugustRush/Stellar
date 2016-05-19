@@ -19,6 +19,7 @@
 		97E1A8DC1CEB4D6700F98D86 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8DB1CEB4D6700F98D86 /* Animator.swift */; };
 		97E1A8DE1CEC0E9200F98D86 /* DynamicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8DD1CEC0E9200F98D86 /* DynamicItem.swift */; };
 		97E1A90D1CED84F100F98D86 /* UIView+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A90C1CED84F100F98D86 /* UIView+Dynamic.swift */; };
+		97E1A90F1CED918400F98D86 /* UIDynamicBehavior+Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		97E1A8DB1CEB4D6700F98D86 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		97E1A8DD1CEC0E9200F98D86 /* DynamicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItem.swift; sourceTree = "<group>"; };
 		97E1A90C1CED84F100F98D86 /* UIView+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Dynamic.swift"; sourceTree = "<group>"; };
+		97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDynamicBehavior+Commit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				97E1A8D91CEB4B5200F98D86 /* DynamicItem+Physical.swift */,
 				97E1A90C1CED84F100F98D86 /* UIView+Dynamic.swift */,
 				97E1A8DD1CEC0E9200F98D86 /* DynamicItem.swift */,
+				97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */,
 				97E1A8DB1CEB4D6700F98D86 /* Animator.swift */,
 			);
 			name = Sources;
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97E1A90F1CED918400F98D86 /* UIDynamicBehavior+Commit.swift in Sources */,
 				97E1A8DC1CEB4D6700F98D86 /* Animator.swift in Sources */,
 				97E1A90D1CED84F100F98D86 /* UIView+Dynamic.swift in Sources */,
 				97BE88C41CDDDAD000240523 /* ViewController.swift in Sources */,

@@ -14,33 +14,31 @@ extension Float: Physical {
     func fallTo(to: Float,render: (Float) -> Void) {
         let item = DynamicItem<Float>(from: self, to: to,render: render)
         item.boundaryLimit = true
-        let gravity = Animator.shared.addDynamicItem(item, type: .Gravity) as! UIGravityBehavior
-        gravity.action = {
-            if item.complete {
-                gravity.removeItem(item)
-            }
-        }
+        let gravity = Animator.shared.createBehavior(item, type: .Gravity)
+        item.behavior = gravity
+        gravity.commit()
     }
     
     func snapTo(to: Float,render: (Float) -> Void) {
         let item = DynamicItem<Float>(from: self, to: to, render: render)
-        Animator.shared.addDynamicItem(item, type: .Snap) as! UISnapBehavior
+        let snap = Animator.shared.createBehavior(item, type: .Snap)
+        item.behavior = snap
+        snap.commit()
     }
     
     func attachmentTo(to: Float,render: (Float) -> Void) {
         let item = DynamicItem<Float>(from: self, to: to,render: render)
-        Animator.shared.addDynamicItem(item, type: .Attachment)
+        let attachment = Animator.shared.createBehavior(item, type: .Attachment)
+        item.behavior = attachment
+        attachment.commit()
     }
     
     func pushedTo(to: Float,render: (Float) -> Void) {
         let item = DynamicItem<Float>(from: self,to: to,render: render)
         item.boundaryLimit = true
-        let push = Animator.shared.addDynamicItem(item, type: .Push) as! UIPushBehavior
-        push.action = {
-            if item.complete {
-                push.removeItem(item)
-            }
-        }
+        let push = Animator.shared.createBehavior(item, type: .Push)
+        item.behavior = push
+        push.commit()
     }
     
     func convert(p: CGPoint) -> Float {
@@ -57,33 +55,31 @@ extension CGFloat: Physical {
     func fallTo(to: CGFloat,render: (CGFloat) -> Void) {
         let item = DynamicItem<CGFloat>(from: self, to: to,render: render)
         item.boundaryLimit = true
-        let gravity = Animator.shared.addDynamicItem(item, type: .Gravity) as! UIGravityBehavior
-        gravity.action = {
-            if item.complete {
-                gravity.removeItem(item)
-            }
-        }
+        let gravity = Animator.shared.createBehavior(item, type: .Gravity)
+        item.behavior = gravity
+        gravity.commit()
     }
     
     func snapTo(to: CGFloat,render: (CGFloat) -> Void) {
         let item = DynamicItem<CGFloat>(from: self, to: to, render: render)
-        Animator.shared.addDynamicItem(item, type: .Snap) as! UISnapBehavior
+        let snap = Animator.shared.createBehavior(item, type: .Snap) as! UISnapBehavior
+        item.behavior = snap
+        snap.commit()
     }
     
     func attachmentTo(to: CGFloat,render: (CGFloat) -> Void) {
         let item = DynamicItem<CGFloat>(from: self, to: to,render: render)
-        Animator.shared.addDynamicItem(item, type: .Attachment)
+        let attachment = Animator.shared.createBehavior(item, type: .Attachment)
+        item.behavior = attachment
+        attachment.commit()
     }
     
     func pushedTo(to: CGFloat,render: (CGFloat) -> Void) {
         let item = DynamicItem<CGFloat>(from: self,to: to,render: render)
         item.boundaryLimit = true
-        let push = Animator.shared.addDynamicItem(item, type: .Push) as! UIPushBehavior
-        push.action = {
-            if item.complete {
-                push.removeItem(item)
-            }
-        }
+        let push = Animator.shared.createBehavior(item, type: .Push)
+        item.behavior = push
+        push.commit()
     }
     
     func convert(p: CGPoint) -> CGFloat {
@@ -100,33 +96,31 @@ extension CGSize: Physical {
     func fallTo(to: CGSize,render: (CGSize) -> Void) {
         let item = DynamicItem<CGSize>(from: self, to: to,render: render)
         item.boundaryLimit = true
-        let gravity = Animator.shared.addDynamicItem(item, type: .Gravity) as! UIGravityBehavior
-        gravity.action = {
-            if item.complete {
-                gravity.removeItem(item)
-            }
-        }
+        let gravity = Animator.shared.createBehavior(item, type: .Gravity)
+        item.behavior = gravity
+        gravity.commit()
     }
     
     func snapTo(to: CGSize,render: (CGSize) -> Void) {
         let item = DynamicItem<CGSize>(from: self, to: to, render: render)
-        Animator.shared.addDynamicItem(item, type: .Snap) as! UISnapBehavior
+        let snap = Animator.shared.createBehavior(item, type: .Snap) as! UISnapBehavior
+        item.behavior = snap
+        snap.commit()
     }
     
     func attachmentTo(to: CGSize,render: (CGSize) -> Void) {
         let item = DynamicItem<CGSize>(from: self, to: to,render: render)
-        Animator.shared.addDynamicItem(item, type: .Attachment)
+        let attachment = Animator.shared.createBehavior(item, type: .Attachment)
+        item.behavior = attachment
+        attachment.commit()
     }
     
     func pushedTo(to: CGSize,render: (CGSize) -> Void) {
         let item = DynamicItem<CGSize>(from: self,to: to,render: render)
         item.boundaryLimit = true
-        let push = Animator.shared.addDynamicItem(item, type: .Push) as! UIPushBehavior
-        push.action = {
-            if item.complete {
-                push.removeItem(item)
-            }
-        }
+        let push = Animator.shared.createBehavior(item, type: .Push) as! UIPushBehavior
+        item.behavior = push
+        push.commit()
     }
     
     func convert(p: CGPoint) -> CGSize {
@@ -143,33 +137,31 @@ extension CGPoint: Physical {
     func fallTo(to: CGPoint,render: (CGPoint) -> Void) {
         let item = DynamicItem<CGPoint>(from: self, to: to,render: render)
         item.boundaryLimit = true
-        let gravity = Animator.shared.addDynamicItem(item, type: .Gravity) as! UIGravityBehavior
-        gravity.action = {
-            if item.complete {
-                gravity.removeItem(item)
-            }
-        }
+        let gravity = Animator.shared.createBehavior(item, type: .Gravity)
+        item.behavior = gravity
+        gravity.commit()
     }
     
     func snapTo(to: CGPoint,render: (CGPoint) -> Void) {
         let item = DynamicItem<CGPoint>(from: self, to: to, render: render)
-        Animator.shared.addDynamicItem(item, type: .Snap) as! UISnapBehavior
+        let snap = Animator.shared.createBehavior(item, type: .Snap) as! UISnapBehavior
+        item.behavior = snap
+        snap.commit()
     }
     
     func attachmentTo(to: CGPoint,render: (CGPoint) -> Void) {
         let item = DynamicItem<CGPoint>(from: self, to: to,render: render)
-        Animator.shared.addDynamicItem(item, type: .Attachment)
+        let attachment = Animator.shared.createBehavior(item, type: .Attachment)
+        item.behavior = attachment
+        attachment.commit()
     }
     
     func pushedTo(to: CGPoint,render: (CGPoint) -> Void) {
         let item = DynamicItem<CGPoint>(from: self,to: to,render: render)
         item.boundaryLimit = true
-        let push = Animator.shared.addDynamicItem(item, type: .Push) as! UIPushBehavior
-        push.action = {
-            if item.complete {
-                push.removeItem(item)
-            }
-        }
+        let push = Animator.shared.createBehavior(item, type: .Push) as! UIPushBehavior
+        item.behavior = push
+        push.commit()
     }
     
     func convert(p: CGPoint) -> CGPoint {

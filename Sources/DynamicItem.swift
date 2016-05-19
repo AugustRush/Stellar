@@ -14,6 +14,7 @@ class DynamicItem<T:Physical>: NSObject, UIDynamicItem {
     var render: (T) -> Void
     var boundaryLimit = false
     var complete = false
+    var behavior: UIDynamicBehavior!
     internal var fromP: CGPoint
     internal var toP: CGPoint
     private var change: CGFloat
@@ -35,7 +36,11 @@ class DynamicItem<T:Physical>: NSObject, UIDynamicItem {
             let hasChanged = fabs(current.y - fromP.y)
             if hasChanged >= change {
                 complete = true
-                current = boundaryLimit ? toP:current;
+                if boundaryLimit {
+                    current = toP
+                    //移除behavior
+                    behavior.cancel()
+                }
             }
             let value = to.convert(current)
             self.render(value)

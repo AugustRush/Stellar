@@ -42,10 +42,10 @@ class ViewController: UIViewController {
             print(f)
         }
         
-//
-//        animateView.bounds.size.snapTo(size) { (s) in
-//            self.animateView.bounds.size = s
-//        }
+        y.fallTo(x) { (f) in
+            y = f
+            print(y)
+        }
         
         
 //        let x = CGFloat(arc4random()%300)
