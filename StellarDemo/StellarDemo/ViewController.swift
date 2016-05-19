@@ -9,10 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    var snap: UISnapBehavior!
-    
-    var animator: UIDynamicAnimator!
     
     
     @IBOutlet weak var animateView: UIView!
@@ -42,10 +38,10 @@ class ViewController: UIViewController {
             print(f)
         }
         
-        y.fallTo(x) { (f) in
-            y = f
-            print(y)
-        }
+//        y.fallTo(x) { (f) in
+//            y = f
+//            print(y)
+//        }
         
         
 //        let x = CGFloat(arc4random()%300)

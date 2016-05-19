@@ -14,7 +14,7 @@ class DynamicItem<T:Physical>: NSObject, UIDynamicItem {
     var render: (T) -> Void
     var boundaryLimit = false
     var complete = false
-    var behavior: UIDynamicBehavior!
+    weak var behavior: UIDynamicBehavior!
     internal var fromP: CGPoint
     internal var toP: CGPoint
     private var change: CGFloat
@@ -27,6 +27,12 @@ class DynamicItem<T:Physical>: NSObject, UIDynamicItem {
         self.render = render
         self.center = self.fromP
         self.change = fabs(self.toP.y - self.fromP.y)
+    }
+    
+    deinit {
+        //correct target value
+        let value = to.convert(toP)
+        render(value)
     }
     
     //MARK: UIDynamicItem protocol
@@ -43,7 +49,7 @@ class DynamicItem<T:Physical>: NSObject, UIDynamicItem {
                 }
             }
             let value = to.convert(current)
-            self.render(value)
+            render(value)
         }
     }
     var transform: CGAffineTransform = CGAffineTransformIdentity
