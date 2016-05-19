@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum PhysicalBehaviorType {
+public enum BehaviorType {
     case Gravity
     case Snap
     case Attachment
@@ -22,7 +22,7 @@ class Animator: NSObject, UIDynamicAnimatorDelegate {
     
     
     //MARK: public methods
-    func addDynamicItem<T: Physical>(item: DynamicFakeItem<T>, type: PhysicalBehaviorType) -> UIDynamicBehavior {
+    func addDynamicItem<T: Physical>(item: DynamicItem<T>, type: BehaviorType) -> UIDynamicBehavior {
         
         let animator = UIDynamicAnimator()
         animator.delegate = self
@@ -43,8 +43,8 @@ class Animator: NSObject, UIDynamicAnimatorDelegate {
         case .Attachment:
             let attachment = UIAttachmentBehavior(item: item,attachedToAnchor: item.toP)
             attachment.length = 0.0
-            attachment.damping = 2
-            attachment.frequency = 2
+            attachment.damping = 0.5
+            attachment.frequency = 1
             behavior = attachment
         case .Push:
             let push = UIPushBehavior(items: [item], mode: .Instantaneous)

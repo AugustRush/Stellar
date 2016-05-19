@@ -28,29 +28,24 @@ class ViewController: UIViewController {
     }
 
 
-    @IBAction func button1Cliked(sender: AnyObject) {
-        
-//        let number: Float = 100
-//        number.pushedTo(200,render: {
-//            self.animateView.center.x = CGFloat($0)
-//        })
-        
-//        let number1: Float = 100
-//        number1.attachmentTo(400,render: {
-//            let value = CGFloat($0)
-//            self.animateView.bounds.size = CGSizeMake(value, value)
-//        })
-        
+    @IBAction func button1Cliked(sender: AnyObject) {        
 
-        let x = CGFloat(arc4random()%300)
-        let y = CGFloat(arc4random()%500)
-//        let point = CGPointMake(x, y)
-//        animateView.fallTo(point)
-        let size = CGSizeMake(x, y)
+        var x = CGFloat(arc4random()%300)
+        var y = CGFloat(arc4random()%500)
         
-        animateView.bounds.size.pushedTo(size) { (s) in
-            self.animateView.bounds.size = s
+        print(x,y)
+//        let size = CGSizeMake(x, y)
+//        let point = CGPointMake(x, y)
+  
+        x.attachmentTo(y) { (f) in
+            x = f
+            print(f)
         }
+        
+//
+//        animateView.bounds.size.snapTo(size) { (s) in
+//            self.animateView.bounds.size = s
+//        }
         
         
 //        let x = CGFloat(arc4random()%300)

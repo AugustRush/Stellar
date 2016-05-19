@@ -12,7 +12,8 @@ public typealias CGFloat2 = (CGFloat, CGFloat)
 extension Float: Physical {
     
     func fallTo(to: Float,render: (Float) -> Void) {
-        let item = DynamicFakeItem<Float>(from: self, to: to,render: render)
+        let item = DynamicItem<Float>(from: self, to: to,render: render)
+        item.boundaryLimit = true
         let gravity = Animator.shared.addDynamicItem(item, type: .Gravity) as! UIGravityBehavior
         gravity.action = {
             if item.complete {
@@ -22,17 +23,18 @@ extension Float: Physical {
     }
     
     func snapTo(to: Float,render: (Float) -> Void) {
-        let item = DynamicFakeItem<Float>(from: self, to: to, render: render)
+        let item = DynamicItem<Float>(from: self, to: to, render: render)
         Animator.shared.addDynamicItem(item, type: .Snap) as! UISnapBehavior
     }
     
     func attachmentTo(to: Float,render: (Float) -> Void) {
-        let item = DynamicFakeItem<Float>(from: self, to: to,render: render)
+        let item = DynamicItem<Float>(from: self, to: to,render: render)
         Animator.shared.addDynamicItem(item, type: .Attachment)
     }
     
     func pushedTo(to: Float,render: (Float) -> Void) {
-        let item = DynamicFakeItem<Float>(from: self,to: to,render: render)
+        let item = DynamicItem<Float>(from: self,to: to,render: render)
+        item.boundaryLimit = true
         let push = Animator.shared.addDynamicItem(item, type: .Push) as! UIPushBehavior
         push.action = {
             if item.complete {
@@ -53,7 +55,8 @@ extension Float: Physical {
 extension CGFloat: Physical {
     
     func fallTo(to: CGFloat,render: (CGFloat) -> Void) {
-        let item = DynamicFakeItem<CGFloat>(from: self, to: to,render: render)
+        let item = DynamicItem<CGFloat>(from: self, to: to,render: render)
+        item.boundaryLimit = true
         let gravity = Animator.shared.addDynamicItem(item, type: .Gravity) as! UIGravityBehavior
         gravity.action = {
             if item.complete {
@@ -63,17 +66,18 @@ extension CGFloat: Physical {
     }
     
     func snapTo(to: CGFloat,render: (CGFloat) -> Void) {
-        let item = DynamicFakeItem<CGFloat>(from: self, to: to, render: render)
+        let item = DynamicItem<CGFloat>(from: self, to: to, render: render)
         Animator.shared.addDynamicItem(item, type: .Snap) as! UISnapBehavior
     }
     
     func attachmentTo(to: CGFloat,render: (CGFloat) -> Void) {
-        let item = DynamicFakeItem<CGFloat>(from: self, to: to,render: render)
+        let item = DynamicItem<CGFloat>(from: self, to: to,render: render)
         Animator.shared.addDynamicItem(item, type: .Attachment)
     }
     
     func pushedTo(to: CGFloat,render: (CGFloat) -> Void) {
-        let item = DynamicFakeItem<CGFloat>(from: self,to: to,render: render)
+        let item = DynamicItem<CGFloat>(from: self,to: to,render: render)
+        item.boundaryLimit = true
         let push = Animator.shared.addDynamicItem(item, type: .Push) as! UIPushBehavior
         push.action = {
             if item.complete {
@@ -94,7 +98,8 @@ extension CGFloat: Physical {
 extension CGSize: Physical {
     
     func fallTo(to: CGSize,render: (CGSize) -> Void) {
-        let item = DynamicFakeItem<CGSize>(from: self, to: to,render: render)
+        let item = DynamicItem<CGSize>(from: self, to: to,render: render)
+        item.boundaryLimit = true
         let gravity = Animator.shared.addDynamicItem(item, type: .Gravity) as! UIGravityBehavior
         gravity.action = {
             if item.complete {
@@ -104,17 +109,18 @@ extension CGSize: Physical {
     }
     
     func snapTo(to: CGSize,render: (CGSize) -> Void) {
-        let item = DynamicFakeItem<CGSize>(from: self, to: to, render: render)
+        let item = DynamicItem<CGSize>(from: self, to: to, render: render)
         Animator.shared.addDynamicItem(item, type: .Snap) as! UISnapBehavior
     }
     
     func attachmentTo(to: CGSize,render: (CGSize) -> Void) {
-        let item = DynamicFakeItem<CGSize>(from: self, to: to,render: render)
+        let item = DynamicItem<CGSize>(from: self, to: to,render: render)
         Animator.shared.addDynamicItem(item, type: .Attachment)
     }
     
     func pushedTo(to: CGSize,render: (CGSize) -> Void) {
-        let item = DynamicFakeItem<CGSize>(from: self,to: to,render: render)
+        let item = DynamicItem<CGSize>(from: self,to: to,render: render)
+        item.boundaryLimit = true
         let push = Animator.shared.addDynamicItem(item, type: .Push) as! UIPushBehavior
         push.action = {
             if item.complete {
@@ -135,7 +141,8 @@ extension CGSize: Physical {
 extension CGPoint: Physical {
     
     func fallTo(to: CGPoint,render: (CGPoint) -> Void) {
-        let item = DynamicFakeItem<CGPoint>(from: self, to: to,render: render)
+        let item = DynamicItem<CGPoint>(from: self, to: to,render: render)
+        item.boundaryLimit = true
         let gravity = Animator.shared.addDynamicItem(item, type: .Gravity) as! UIGravityBehavior
         gravity.action = {
             if item.complete {
@@ -145,17 +152,18 @@ extension CGPoint: Physical {
     }
     
     func snapTo(to: CGPoint,render: (CGPoint) -> Void) {
-        let item = DynamicFakeItem<CGPoint>(from: self, to: to, render: render)
+        let item = DynamicItem<CGPoint>(from: self, to: to, render: render)
         Animator.shared.addDynamicItem(item, type: .Snap) as! UISnapBehavior
     }
     
     func attachmentTo(to: CGPoint,render: (CGPoint) -> Void) {
-        let item = DynamicFakeItem<CGPoint>(from: self, to: to,render: render)
+        let item = DynamicItem<CGPoint>(from: self, to: to,render: render)
         Animator.shared.addDynamicItem(item, type: .Attachment)
     }
     
     func pushedTo(to: CGPoint,render: (CGPoint) -> Void) {
-        let item = DynamicFakeItem<CGPoint>(from: self,to: to,render: render)
+        let item = DynamicItem<CGPoint>(from: self,to: to,render: render)
+        item.boundaryLimit = true
         let push = Animator.shared.addDynamicItem(item, type: .Push) as! UIPushBehavior
         push.action = {
             if item.complete {
@@ -170,15 +178,5 @@ extension CGPoint: Physical {
     
     func reverse() -> CGPoint {
         return self
-    }
-}
-
-extension UIView {
-    
-    func fallTo(point: CGPoint) -> Void {
-        let center = self.center
-        center.fallTo(point) { (p) in
-            self.center = p
-        }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  DynamicFakeItem.swift
+//  DynamicItem.swift
 //  StellarDemo
 //
 //  Created by AugustRush on 5/18/16.
@@ -8,10 +8,11 @@
 
 import UIKit
 
-class DynamicFakeItem<T:Physical>: NSObject, UIDynamicItem {
+class DynamicItem<T:Physical>: NSObject, UIDynamicItem {
     var from: T
     var to: T
     var render: (T) -> Void
+    var boundaryLimit = false
     var complete = false
     internal var fromP: CGPoint
     internal var toP: CGPoint
@@ -30,12 +31,13 @@ class DynamicFakeItem<T:Physical>: NSObject, UIDynamicItem {
     //MARK: UIDynamicItem protocol
     var center: CGPoint {
         didSet {
-            print(center)
-            let hasChanged = fabs(center.y - fromP.y)
+            var current = center
+            let hasChanged = fabs(current.y - fromP.y)
             if hasChanged >= change {
                 complete = true
+                current = boundaryLimit ? toP:current;
             }
-            let value = to.convert(center)
+            let value = to.convert(current)
             self.render(value)
         }
     }
