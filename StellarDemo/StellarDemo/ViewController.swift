@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    @IBOutlet weak var animateView: UIView!
+    @IBOutlet weak var view3: UIView!
+    @IBOutlet weak var view2: UIView!
+    @IBOutlet weak var view1: UIView!
     @IBOutlet weak var button1: UIButton!
     
     override func viewDidLoad() {
@@ -33,10 +35,7 @@ class ViewController: UIViewController {
 //        let size = CGSizeMake(x, y)
         let point = CGPointMake(x, y)
   
-//        animateView.fall()
-                
-        animateView.fall(.Angle(45))
-        animateView.attachmentTo(point)
+
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {

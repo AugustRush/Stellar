@@ -11,7 +11,7 @@ import UIKit
 extension UIDynamicBehavior {
     
     func commit() {
-        Animator.shared.addBehavior(self)
+        AnimatorCoordinator.shared.addBehavior(self)
     }
     
     func cancel() {

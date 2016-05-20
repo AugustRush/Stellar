@@ -16,8 +16,8 @@ public enum BehaviorType {
     case collision
 }
 
-class Animator: NSObject, UIDynamicAnimatorDelegate {
-    static let shared = Animator()
+class AnimatorCoordinator: NSObject, UIDynamicAnimatorDelegate {
+    static let shared = AnimatorCoordinator()
     private var activedAnimators: [UIDynamicAnimator] = Array()
     
     //MARK: public methods    

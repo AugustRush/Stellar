@@ -16,7 +16,7 @@
 		97BE88E21CDDDAD000240523 /* StellarDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88E11CDDDAD000240523 /* StellarDemoUITests.swift */; };
 		97E1A8D81CEB4AF200F98D86 /* Physical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8D71CEB4AF200F98D86 /* Physical.swift */; };
 		97E1A8DA1CEB4B5200F98D86 /* Value+Physical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */; };
-		97E1A8DC1CEB4D6700F98D86 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8DB1CEB4D6700F98D86 /* Animator.swift */; };
+		97E1A8DC1CEB4D6700F98D86 /* AnimatorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8DB1CEB4D6700F98D86 /* AnimatorCoordinator.swift */; };
 		97E1A8DE1CEC0E9200F98D86 /* DynamicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8DD1CEC0E9200F98D86 /* DynamicItem.swift */; };
 		97E1A90D1CED84F100F98D86 /* DynamicItem+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A90C1CED84F100F98D86 /* DynamicItem+Dynamic.swift */; };
 		97E1A90F1CED918400F98D86 /* UIDynamicBehavior+Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */; };
@@ -56,7 +56,7 @@
 		97BE88E31CDDDAD000240523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97E1A8D71CEB4AF200F98D86 /* Physical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Physical.swift; sourceTree = "<group>"; };
 		97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Value+Physical.swift"; sourceTree = "<group>"; };
-		97E1A8DB1CEB4D6700F98D86 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		97E1A8DB1CEB4D6700F98D86 /* AnimatorCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatorCoordinator.swift; sourceTree = "<group>"; };
 		97E1A8DD1CEC0E9200F98D86 /* DynamicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItem.swift; sourceTree = "<group>"; };
 		97E1A90C1CED84F100F98D86 /* DynamicItem+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicItem+Dynamic.swift"; sourceTree = "<group>"; };
 		97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDynamicBehavior+Commit.swift"; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 				97E1A90C1CED84F100F98D86 /* DynamicItem+Dynamic.swift */,
 				97E1A8DD1CEC0E9200F98D86 /* DynamicItem.swift */,
 				97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */,
-				97E1A8DB1CEB4D6700F98D86 /* Animator.swift */,
+				97E1A8DB1CEB4D6700F98D86 /* AnimatorCoordinator.swift */,
 			);
 			name = Sources;
 			path = ../../Sources;
@@ -287,7 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97E1A90F1CED918400F98D86 /* UIDynamicBehavior+Commit.swift in Sources */,
-				97E1A8DC1CEB4D6700F98D86 /* Animator.swift in Sources */,
+				97E1A8DC1CEB4D6700F98D86 /* AnimatorCoordinator.swift in Sources */,
 				97E1A90D1CED84F100F98D86 /* DynamicItem+Dynamic.swift in Sources */,
 				97BE88C41CDDDAD000240523 /* ViewController.swift in Sources */,
 				97E1A8DA1CEB4B5200F98D86 /* Value+Physical.swift in Sources */,
