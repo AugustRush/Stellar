@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum GravityDirection {
+enum PhysicalDirection {
     case Left
     case Right
     case Up
@@ -16,12 +16,10 @@ enum GravityDirection {
     case Angle(CGFloat)
 }
 
-let CGFLOATMAX: CGFloat = 1000000
-
 extension UIDynamicItem {
     
-    func fall(direction: GravityDirection = .Down) -> Void {
-        let gravity = UIGravityBehavior()
+    func fall(direction: PhysicalDirection = .Down) -> UIDynamicItem {
+        let gravity = self.createGravity()
         switch direction {
         case .Angle(let a):
             gravity.setAngle(a, magnitude: 1.0)
@@ -34,14 +32,56 @@ extension UIDynamicItem {
         case .Down: 
             gravity.gravityDirection = CGVectorMake(0, 1)
         }
-        gravity.addItem(self)
         //commit
         gravity.commit()
+        return self
     }
     
-    func fall(toPoint: CGPoint) -> Void {
-        self.center.fallTo(toPoint) { (p) in
-            self.center = p
+    func snapTo(point: CGPoint, damping: CGFloat = 0.5) -> UIDynamicItem {
+        let snap = self.createSnap(point, damping: damping)
+        snap.commit()
+        return self
+    }
+    
+
+    func attachmentTo(anchor: CGPoint, length: CGFloat = 0.0, damping: CGFloat = 0.5, frequency: CGFloat = 1) -> UIDynamicItem {
+        let attachment = self.createAttachment(anchor, length: length, damping: damping, frequency: frequency)
+        attachment.commit()
+        return self
+    }
+    
+    func pushed(direction: PhysicalDirection, mode: UIPushBehaviorMode = .Instantaneous, magnitude: CGFloat = 1.0) -> UIDynamicItem {
+        var angle: CGFloat = 0.0
+        switch direction {
+        case .Angle(let a):
+            angle = a
+        case .Left:
+            angle = 180.0
+        case .Right:
+            angle = 0.0
+        case .Up:
+            angle = -90.0
+        case .Down: 
+            angle = 90.0
         }
+        
+        let push = self.createPush(angle, mode: mode, magnitude: magnitude)
+        push.commit()
+        return self
+    }
+    
+    func collisionWith(path: UIBezierPath) -> UIDynamicItem {
+        let collision = self.createCollision(path: path)
+        collision.commit()
+        return self
+    }
+    
+    func collisionWith(items: UIDynamicItem...) -> UIDynamicItem {
+        let collision = self.createCollision()
+        for item in items {
+            collision.addItem(item)
+        }
+        collision.commit()
+        return self
     }
 }

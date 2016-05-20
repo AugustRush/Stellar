@@ -14,7 +14,7 @@ extension Float: Physical {
     func fallTo(to: Float,render: (Float) -> Void) {
         let item = DynamicItem<Float>(from: self, to: to,render: render)
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
-        let gravity = item.gravity(1, direction: direction)
+        let gravity = item.createGravity(1, direction: direction)
         item.behavior = gravity
         item.boundaryLimit = true
         gravity.commit()
@@ -22,14 +22,14 @@ extension Float: Physical {
     
     func snapTo(to: Float,render: (Float) -> Void) {
         let item = DynamicItem<Float>(from: self, to: to, render: render)
-        let snap = item.snap(item.toP, damping: 0.5)
+        let snap = item.createSnap(item.toP, damping: 0.5)
         item.behavior = snap
         snap.commit()
     }
     
     func attachmentTo(to: Float,render: (Float) -> Void) {
         let item = DynamicItem<Float>(from: self, to: to,render: render)
-        let attachment = item.attachment(item.toP, length: 0.0, damping: 0.5, frequency: 1)
+        let attachment = item.createAttachment(item.toP, length: 0.0, damping: 0.5, frequency: 1)
         item.behavior = attachment
         attachment.commit()
     }
@@ -37,7 +37,7 @@ extension Float: Physical {
     func pushedTo(to: Float,render: (Float) -> Void) {
         let item = DynamicItem<Float>(from: self,to: to,render: render)
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
-        let push = item.push(direction, mode: .Instantaneous, magnitude: 1.0)
+        let push = item.createPush(direction, mode: .Instantaneous, magnitude: 1.0)
         item.behavior = push
         item.boundaryLimit = true
         push.commit()
@@ -57,7 +57,7 @@ extension CGFloat: Physical {
     func fallTo(to: CGFloat,render: (CGFloat) -> Void) {
         let item = DynamicItem<CGFloat>(from: self, to: to,render: render)
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
-        let gravity = item.gravity(1, direction: direction)
+        let gravity = item.createGravity(1, direction: direction)
         item.behavior = gravity
         item.boundaryLimit = true
         gravity.commit()
@@ -65,14 +65,14 @@ extension CGFloat: Physical {
     
     func snapTo(to: CGFloat,render: (CGFloat) -> Void) {
         let item = DynamicItem<CGFloat>(from: self, to: to, render: render)
-        let snap = item.snap(item.toP, damping: 0.5)
+        let snap = item.createSnap(item.toP, damping: 0.5)
         item.behavior = snap
         snap.commit()
     }
     
     func attachmentTo(to: CGFloat,render: (CGFloat) -> Void) {
         let item = DynamicItem<CGFloat>(from: self, to: to,render: render)
-        let attachment = item.attachment(item.toP, length: 0.0, damping: 0.5, frequency: 1)
+        let attachment = item.createAttachment(item.toP, length: 0.0, damping: 0.5, frequency: 1)
         item.behavior = attachment
         attachment.commit()
     }
@@ -81,7 +81,7 @@ extension CGFloat: Physical {
         let item = DynamicItem<CGFloat>(from: self,to: to,render: render)
         item.boundaryLimit = true
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
-        let push = item.push(direction, mode: .Instantaneous, magnitude: 1.0)
+        let push = item.createPush(direction, mode: .Instantaneous, magnitude: 1.0)
         item.behavior = push
         push.commit()
     }
@@ -101,21 +101,21 @@ extension CGSize: Physical {
         let item = DynamicItem<CGSize>(from: self, to: to,render: render)
         item.boundaryLimit = true
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
-        let gravity = item.gravity(1, direction: direction)
+        let gravity = item.createGravity(1, direction: direction)
         item.behavior = gravity
         gravity.commit()
     }
     
     func snapTo(to: CGSize,render: (CGSize) -> Void) {
         let item = DynamicItem<CGSize>(from: self, to: to, render: render)
-        let snap = item.snap(item.toP, damping: 0.5)
+        let snap = item.createSnap(item.toP, damping: 0.5)
         item.behavior = snap
         snap.commit()
     }
     
     func attachmentTo(to: CGSize,render: (CGSize) -> Void) {
         let item = DynamicItem<CGSize>(from: self, to: to,render: render)
-        let attachment = item.attachment(item.toP, length: 0.0, damping: 0.5, frequency: 1)
+        let attachment = item.createAttachment(item.toP, length: 0.0, damping: 0.5, frequency: 1)
         item.behavior = attachment
         attachment.commit()
     }
@@ -124,7 +124,7 @@ extension CGSize: Physical {
         let item = DynamicItem<CGSize>(from: self,to: to,render: render)
         item.boundaryLimit = true
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
-        let push = item.push(direction, mode: .Instantaneous, magnitude: 1.0)
+        let push = item.createPush(direction, mode: .Instantaneous, magnitude: 1.0)
         item.behavior = push
         push.commit()
     }
@@ -144,21 +144,21 @@ extension CGPoint: Physical {
         let item = DynamicItem<CGPoint>(from: self, to: to,render: render)
         item.boundaryLimit = true
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
-        let gravity = item.gravity(1, direction: direction)
+        let gravity = item.createGravity(1, direction: direction)
         item.behavior = gravity
         gravity.commit()
     }
     
     func snapTo(to: CGPoint,render: (CGPoint) -> Void) {
         let item = DynamicItem<CGPoint>(from: self, to: to, render: render)
-        let snap = item.snap(item.toP, damping: 0.5)
+        let snap = item.createSnap(item.toP, damping: 0.5)
         item.behavior = snap
         snap.commit()
     }
     
     func attachmentTo(to: CGPoint,render: (CGPoint) -> Void) {
         let item = DynamicItem<CGPoint>(from: self, to: to,render: render)
-        let attachment = item.attachment(item.toP, length: 0.0, damping: 0.5, frequency: 1)
+        let attachment = item.createAttachment(item.toP, length: 0.0, damping: 0.5, frequency: 1)
         item.behavior = attachment
         attachment.commit()
     }
@@ -167,7 +167,7 @@ extension CGPoint: Physical {
         let item = DynamicItem<CGPoint>(from: self,to: to,render: render)
         item.boundaryLimit = true
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
-        let push = item.push(direction, mode: .Instantaneous, magnitude: 1.0)
+        let push = item.createPush(direction, mode: .Instantaneous, magnitude: 1.0)
         item.behavior = push
         push.commit()
     }

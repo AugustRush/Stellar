@@ -31,29 +31,12 @@ class ViewController: UIViewController {
         
         print(x,y)
 //        let size = CGSizeMake(x, y)
-//        let point = CGPointMake(x, y)
+        let point = CGPointMake(x, y)
   
 //        animateView.fall()
-        
-        y.fallTo(x) { (f) in
-            y = f
-            print(y)
-        }
-        
-        
-//        let x = CGFloat(arc4random()%300)
-//        let y = CGFloat(arc4random()%500)
-//        let item = DynamicItem()
-//        
-//        snap = UISnapBehavior(item: self.animateView, snapToPoint: CGPointMake(x, y))
-//        snap.action = {
-//            let ax = self.animateView.center.x
-//            self.animateView.transform = CGAffineTransformMakeScale(1 + ax/300.0, 1 + x/300.0)
-//        };
-//        
-//        animator = UIDynamicAnimator()
-//        animator.addBehavior(snap)
-        
+                
+        animateView.fall(.Angle(45))
+        animateView.attachmentTo(point)
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
