@@ -8,14 +8,6 @@
 
 import UIKit
 
-public enum BehaviorType {
-    case Gravity
-    case Snap
-    case Attachment
-    case Push
-    case collision
-}
-
 class AnimatorCoordinator: NSObject, UIDynamicAnimatorDelegate {
     static let shared = AnimatorCoordinator()
     private var activedAnimators: [UIDynamicAnimator] = Array()
