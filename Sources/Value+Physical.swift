@@ -7,7 +7,7 @@
 //
 import UIKit
 
-extension Float: Physical {
+extension Float: Physical, Vectorial {
     
     func fallTo(to: Float,render: (Float) -> Void) {
         let item = DynamicItem<Float>(from: self, to: to,render: render)
@@ -50,7 +50,7 @@ extension Float: Physical {
     }
 }
 
-extension CGFloat: Physical {
+extension CGFloat: Physical , Vectorial {
     
     func fallTo(to: CGFloat,render: (CGFloat) -> Void) {
         let item = DynamicItem<CGFloat>(from: self, to: to,render: render)
@@ -93,7 +93,7 @@ extension CGFloat: Physical {
     }
 }
 
-extension CGSize: Physical {
+extension CGSize: Physical, Vectorial {
     
     func fallTo(to: CGSize,render: (CGSize) -> Void) {
         let item = DynamicItem<CGSize>(from: self, to: to,render: render)
@@ -136,7 +136,7 @@ extension CGSize: Physical {
     }
 }
 
-extension CGPoint: Physical {
+extension CGPoint: Physical, Vectorial {
     
     func fallTo(to: CGPoint,render: (CGPoint) -> Void) {
         let item = DynamicItem<CGPoint>(from: self, to: to,render: render)

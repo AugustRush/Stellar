@@ -15,7 +15,5 @@ protocol Physical {
     func pushedTo(to: Self,render: (Self) -> Void)
 //    func collisionWith(path: UIBezierPath,render: (Self) -> Void)
     //use convert to relative type
-    func convert(p: CGPoint) -> Self
-    func reverse() -> CGPoint
 }
 

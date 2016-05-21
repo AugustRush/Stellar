@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DynamicItem<T:Physical>: NSObject, UIDynamicItem {
+class DynamicItem<T: Vectorial>: NSObject, UIDynamicItem {
     var from: T
     var to: T
     var render: (T) -> Void
