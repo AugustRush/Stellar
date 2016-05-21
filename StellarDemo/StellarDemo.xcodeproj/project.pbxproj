@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A331CF05DAB009E60EB /* Vectorial.swift */; };
+		97A61A381CF082F6009E60EB /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A371CF082F6009E60EB /* UnitBezier.swift */; };
 		97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88C11CDDDAD000240523 /* AppDelegate.swift */; };
 		97BE88C41CDDDAD000240523 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88C31CDDDAD000240523 /* ViewController.swift */; };
 		97BE88C71CDDDAD000240523 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97BE88C51CDDDAD000240523 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		97A61A331CF05DAB009E60EB /* Vectorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vectorial.swift; sourceTree = "<group>"; };
+		97A61A371CF082F6009E60EB /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
 		97BE88BE1CDDDAD000240523 /* StellarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StellarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97BE88C11CDDDAD000240523 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97BE88C31CDDDAD000240523 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				97E1A8D71CEB4AF200F98D86 /* Physical.swift */,
+				97A61A371CF082F6009E60EB /* UnitBezier.swift */,
 				97A61A331CF05DAB009E60EB /* Vectorial.swift */,
 				97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */,
 				97E1A9101CEDEF5200F98D86 /* DynamicItem+Behavior.swift */,
@@ -298,6 +301,7 @@
 				97E1A8D81CEB4AF200F98D86 /* Physical.swift in Sources */,
 				97E1A9111CEDEF5200F98D86 /* DynamicItem+Behavior.swift in Sources */,
 				97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */,
+				97A61A381CF082F6009E60EB /* UnitBezier.swift in Sources */,
 				97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
