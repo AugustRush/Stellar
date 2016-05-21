@@ -28,12 +28,12 @@ class ViewController: UIViewController {
 
     @IBAction func button1Cliked(sender: AnyObject) {        
 
-        var x = CGFloat(arc4random()%300)
-        var y = CGFloat(arc4random()%500)
-        
-        print(x,y)
+//        var x = CGFloat(arc4random()%300)
+//        var y = CGFloat(arc4random()%500)
+//        
+//        print(x,y)
 //        let size = CGSizeMake(x, y)
-        let point = CGPointMake(x, y)
+//        let point = CGPointMake(x, y)
   
 
     }
