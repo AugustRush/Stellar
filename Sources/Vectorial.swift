@@ -12,3 +12,8 @@ protocol Vectorial {
     func convert(p: CGPoint) -> Self
     func reverse() -> CGPoint
 }
+
+protocol Vectorial2 {
+    func convert(r: CGRect) -> Self
+    func reverse() -> CGRect
+}

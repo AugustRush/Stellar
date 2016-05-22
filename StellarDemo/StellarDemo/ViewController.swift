@@ -28,14 +28,25 @@ class ViewController: UIViewController {
 
     @IBAction func button1Cliked(sender: AnyObject) {        
 
-//        var x = CGFloat(arc4random()%300)
-//        var y = CGFloat(arc4random()%500)
-//        
-//        print(x,y)
+        let x = CGFloat(arc4random()%254) / 255.0
+        let y = CGFloat(arc4random()%254) / 255.0
+        let z = CGFloat(arc4random()%254) / 255.0
+//
+        print(x,y,z)
 //        let size = CGSizeMake(x, y)
 //        let point = CGPointMake(x, y)
   
-
+//        view1.frame.pushedTo(CGRectMake(0, 0, x, y)) { (r) in
+//            print("r is \(r)")
+//            self.view1.frame = r
+//        }
+        
+//        let color = UIColor(red: x,green: y,blue: z,alpha: 1)
+        let color = UIColor(hue: x, saturation: y, brightness: z, alpha: 1)
+        self.view1.backgroundColor?.pushedTo(color, render: { (c) in
+            self.view1.backgroundColor = c
+        })
+        
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {

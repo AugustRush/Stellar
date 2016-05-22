@@ -19,6 +19,7 @@ enum PhysicalDirection {
 extension UIDynamicItem {
     
     //gravity
+    
     func gravityBehavior(magnitude: CGFloat = 1.0, direction: CGVector = CGVectorMake(0, 1.0)) -> UIGravityBehavior {
         let gravity = UIGravityBehavior()
         gravity.gravityDirection = direction

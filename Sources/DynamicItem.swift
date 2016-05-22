@@ -58,5 +58,4 @@ class DynamicItem<T: Vectorial>: NSObject, UIDynamicItem {
             return CGRectMake(center.x, center.y, 100, 100)
         }
     }
-
 }
