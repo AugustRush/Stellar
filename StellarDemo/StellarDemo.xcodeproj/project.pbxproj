@@ -10,6 +10,7 @@
 		97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A331CF05DAB009E60EB /* Vectorial.swift */; };
 		97A61A381CF082F6009E60EB /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A371CF082F6009E60EB /* UnitBezier.swift */; };
 		97A61A3A1CF09B8F009E60EB /* DynamicItem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A391CF09B8F009E60EB /* DynamicItem2.swift */; };
+		97A61A431CF1E159009E60EB /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A421CF1E159009E60EB /* TimingFunction.swift */; };
 		97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88C11CDDDAD000240523 /* AppDelegate.swift */; };
 		97BE88C41CDDDAD000240523 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88C31CDDDAD000240523 /* ViewController.swift */; };
 		97BE88C71CDDDAD000240523 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97BE88C51CDDDAD000240523 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		97A61A331CF05DAB009E60EB /* Vectorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vectorial.swift; sourceTree = "<group>"; };
 		97A61A371CF082F6009E60EB /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
 		97A61A391CF09B8F009E60EB /* DynamicItem2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItem2.swift; sourceTree = "<group>"; };
+		97A61A421CF1E159009E60EB /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
 		97BE88BE1CDDDAD000240523 /* StellarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StellarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97BE88C11CDDDAD000240523 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97BE88C31CDDDAD000240523 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97A61A3B1CF1B254009E60EB /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				97A61A331CF05DAB009E60EB /* Vectorial.swift */,
+				97E1A8D71CEB4AF200F98D86 /* Physical.swift */,
+			);
+			name = protocols;
+			sourceTree = "<group>";
+		};
+		97A61A3C1CF1B26A009E60EB /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */,
+				97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */,
+				97E1A9101CEDEF5200F98D86 /* DynamicItem+Behavior.swift */,
+				97E1A90C1CED84F100F98D86 /* DynamicItem+Dynamic.swift */,
+			);
+			name = extension;
+			sourceTree = "<group>";
+		};
+		97A61A3E1CF1B28D009E60EB /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				97A61A371CF082F6009E60EB /* UnitBezier.swift */,
+				97A61A421CF1E159009E60EB /* TimingFunction.swift */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		97A61A3F1CF1B29B009E60EB /* items */ = {
+			isa = PBXGroup;
+			children = (
+				97E1A8DD1CEC0E9200F98D86 /* DynamicItem.swift */,
+				97A61A391CF09B8F009E60EB /* DynamicItem2.swift */,
+			);
+			name = items;
+			sourceTree = "<group>";
+		};
+		97A61A401CF1B2BF009E60EB /* coordnator */ = {
+			isa = PBXGroup;
+			children = (
+				97E1A8DB1CEB4D6700F98D86 /* AnimatorCoordinator.swift */,
+			);
+			name = coordnator;
+			sourceTree = "<group>";
+		};
 		97BE88B51CDDDAD000240523 = {
 			isa = PBXGroup;
 			children = (
@@ -149,16 +197,11 @@
 		97BE88EF1CDDDBCE00240523 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				97E1A8D71CEB4AF200F98D86 /* Physical.swift */,
-				97A61A371CF082F6009E60EB /* UnitBezier.swift */,
-				97A61A331CF05DAB009E60EB /* Vectorial.swift */,
-				97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */,
-				97E1A9101CEDEF5200F98D86 /* DynamicItem+Behavior.swift */,
-				97E1A90C1CED84F100F98D86 /* DynamicItem+Dynamic.swift */,
-				97E1A8DD1CEC0E9200F98D86 /* DynamicItem.swift */,
-				97A61A391CF09B8F009E60EB /* DynamicItem2.swift */,
-				97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */,
-				97E1A8DB1CEB4D6700F98D86 /* AnimatorCoordinator.swift */,
+				97A61A401CF1B2BF009E60EB /* coordnator */,
+				97A61A3F1CF1B29B009E60EB /* items */,
+				97A61A3E1CF1B28D009E60EB /* utils */,
+				97A61A3C1CF1B26A009E60EB /* extension */,
+				97A61A3B1CF1B254009E60EB /* protocols */,
 			);
 			name = Sources;
 			path = ../../Sources;
@@ -301,6 +344,7 @@
 				97BE88C41CDDDAD000240523 /* ViewController.swift in Sources */,
 				97E1A8DA1CEB4B5200F98D86 /* Value+Physical.swift in Sources */,
 				97E1A8DE1CEC0E9200F98D86 /* DynamicItem.swift in Sources */,
+				97A61A431CF1E159009E60EB /* TimingFunction.swift in Sources */,
 				97E1A8D81CEB4AF200F98D86 /* Physical.swift in Sources */,
 				97E1A9111CEDEF5200F98D86 /* DynamicItem+Behavior.swift in Sources */,
 				97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */,

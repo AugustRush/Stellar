@@ -41,8 +41,59 @@ extension Float: Physical, Vectorial {
         push.commit()
     }
     
+    func animationTo(to: Float, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (Float) -> Void) {
+        
+    }
+    
     func convert(p: CGPoint) -> Float {
         return Float(p.y)
+    }
+    
+    func reverse() -> CGPoint {
+        return CGPointMake(0, CGFloat(self))
+    }
+}
+
+extension Double: Physical, Vectorial {
+    
+    func fallTo(to: Double,render: (Double) -> Void) {
+        let item = DynamicItem<Double>(from: self, to: to,render: render)
+        let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
+        let gravity = item.gravityBehavior(1, direction: direction)
+        item.behavior = gravity
+        item.boundaryLimit = true
+        gravity.commit()
+    }
+    
+    func snapTo(to: Double,render: (Double) -> Void) {
+        let item = DynamicItem<Double>(from: self, to: to, render: render)
+        let snap = item.snapBehavior(item.toP, damping: 0.5)
+        item.behavior = snap
+        snap.commit()
+    }
+    
+    func attachmentTo(to: Double,render: (Double) -> Void) {
+        let item = DynamicItem<Double>(from: self, to: to,render: render)
+        let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: 0.5, frequency: 1)
+        item.behavior = attachment
+        attachment.commit()
+    }
+    
+    func pushedTo(to: Double,render: (Double) -> Void) {
+        let item = DynamicItem<Double>(from: self,to: to,render: render)
+        let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
+        let push = item.pushBehavior(direction, mode: .Instantaneous, magnitude: 1.0)
+        item.behavior = push
+        item.boundaryLimit = true
+        push.commit()
+    }
+    
+    func animationTo(to: Double, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (Double) -> Void) {
+        
+    }
+    
+    func convert(p: CGPoint) -> Double {
+        return Double(p.y)
     }
     
     func reverse() -> CGPoint {
@@ -82,6 +133,10 @@ extension CGFloat: Physical , Vectorial {
         let push = item.pushBehavior(direction, mode: .Instantaneous, magnitude: 1.0)
         item.behavior = push
         push.commit()
+    }
+    
+    func animationTo(to: CGFloat, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (CGFloat) -> Void) {
+        
     }
     
     func convert(p: CGPoint) -> CGFloat {
@@ -127,6 +182,10 @@ extension CGSize: Physical, Vectorial {
         push.commit()
     }
     
+    func animationTo(to: CGSize, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (CGSize) -> Void) {
+        
+    }
+    
     func convert(p: CGPoint) -> CGSize {
         return CGSizeMake(p.x, p.y)
     }
@@ -168,6 +227,10 @@ extension CGPoint: Physical, Vectorial {
         let push = item.pushBehavior(direction, mode: .Instantaneous, magnitude: 1.0)
         item.behavior = push
         push.commit()
+    }
+    
+    func animationTo(to: CGPoint, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (CGPoint) -> Void) {
+        
     }
     
     func convert(p: CGPoint) -> CGPoint {
@@ -213,6 +276,10 @@ extension CGRect: Physical, Vectorial2 {
         push.commit()
     }
     
+    func animationTo(to: CGRect, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (CGRect) -> Void) {
+        
+    }
+    
     func convert(r: CGRect) -> CGRect {
         return r
     }
@@ -256,6 +323,10 @@ extension UIColor: Physical, Vectorial2 {
         item.boundaryLimit = true
         item.behavior = push
         push.commit()
+    }
+    
+    func animationTo(to: UIColor, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (UIColor) -> Void) {
+        
     }
     
     func convert(r: CGRect) -> Self {
