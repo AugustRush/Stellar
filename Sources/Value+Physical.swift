@@ -41,12 +41,12 @@ extension Float: Physical, Vectorial, Interpolatable {
         push.commit()
     }
     
-    func animationTo(to: Float, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (Float) -> Void) {
+    func animationTo(to: Float, duration: CFTimeInterval = 0.25, type: TimingFunctionType = .Default, render: (Float) -> Void) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
         basicItem.duration = duration
-        basicItem.timingFunction = timingFunction
+        basicItem.timingFunction = type.timingFunction()
         push.commit()
     }
     
@@ -101,12 +101,12 @@ extension Double: Physical, Vectorial, Interpolatable {
         push.commit()
     }
     
-    func animationTo(to: Double, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (Double) -> Void) {
+    func animationTo(to: Double, duration: CFTimeInterval = 0.25, type: TimingFunctionType = .Default, render: (Double) -> Void) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
         basicItem.duration = duration
-        basicItem.timingFunction = timingFunction
+        basicItem.timingFunction = type.timingFunction()
         push.commit()
     }
     
@@ -162,12 +162,12 @@ extension CGFloat: Physical , Vectorial, Interpolatable {
         push.commit()
     }
     
-    func animationTo(to: CGFloat, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (CGFloat) -> Void) {
+    func animationTo(to: CGFloat, duration: CFTimeInterval = 0.25, type: TimingFunctionType = .Default, render: (CGFloat) -> Void) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
         basicItem.duration = duration
-        basicItem.timingFunction = timingFunction
+        basicItem.timingFunction = type.timingFunction()
         push.commit()
     }
     
@@ -223,12 +223,12 @@ extension CGSize: Physical, Vectorial, Interpolatable {
         push.commit()
     }
     
-    func animationTo(to: CGSize, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (CGSize) -> Void) {
+    func animationTo(to: CGSize, duration: CFTimeInterval = 0.25, type: TimingFunctionType = .Default, render: (CGSize) -> Void) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
         basicItem.duration = duration
-        basicItem.timingFunction = timingFunction
+        basicItem.timingFunction = type.timingFunction()
         push.commit()
     }
     
@@ -285,12 +285,12 @@ extension CGPoint: Physical, Vectorial, Interpolatable {
         push.commit()
     }
     
-    func animationTo(to: CGPoint, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (CGPoint) -> Void) {
+    func animationTo(to: CGPoint, duration: CFTimeInterval = 0.25, type: TimingFunctionType = .Default, render: (CGPoint) -> Void) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
         basicItem.duration = duration
-        basicItem.timingFunction = timingFunction
+        basicItem.timingFunction = type.timingFunction()
         push.commit()
     }
     
@@ -346,12 +346,12 @@ extension CGRect: Physical, Vectorial2, Interpolatable {
         push.commit()
     }
     
-    func animationTo(to: CGRect, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (CGRect) -> Void) {
+    func animationTo(to: CGRect, duration: CFTimeInterval = 0.25, type: TimingFunctionType = .Default, render: (CGRect) -> Void) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
         basicItem.duration = duration
-        basicItem.timingFunction = timingFunction
+        basicItem.timingFunction = type.timingFunction()
         push.commit()
     }
     
@@ -414,12 +414,12 @@ extension UIColor: Physical, Vectorial2, Interpolatable {
         push.commit()
     }
     
-    func animationTo(to: UIColor, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (UIColor) -> Void) {
+    func animationTo(to: UIColor, duration: CFTimeInterval = 0.25, type: TimingFunctionType = .Default, render: (UIColor) -> Void) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
         basicItem.duration = duration
-        basicItem.timingFunction = timingFunction
+        basicItem.timingFunction = type.timingFunction()
         let fromInfo = self.colorInfo()
         let toInfo = to.colorInfo()
         basicItem.externalData = (fromInfo,toInfo)

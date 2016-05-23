@@ -11,7 +11,7 @@ import UIKit
 final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem {
     
     var duration: CFTimeInterval = 0.25
-    var timingFunction = TimingFunctionDefault
+    var timingFunction = TimingFunctionType.Default.timingFunction()
     var from: T
     var to: T
     var render: (T) -> Void

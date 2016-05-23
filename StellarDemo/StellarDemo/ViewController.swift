@@ -48,13 +48,13 @@ class ViewController: UIViewController {
             self.view2.backgroundColor = c
         })
         
-        self.view3.backgroundColor?.animationTo(color, duration: 2, timingFunction: TimingFunctionMaterial, render: { (c) in
+        self.view3.backgroundColor?.animationTo(color, duration: 2, type: .SwiftOut, render: { (c) in
             self.view3.backgroundColor = c
         })
         
       
         let size = CGSizeMake(x, y)
-        view2.bounds.size.animationTo(size, duration: 2, timingFunction: TimingFunctionLinear) { (c) in
+        view2.bounds.size.animationTo(size, duration: 2, type: .SwiftOut) { (c) in
             self.view2.bounds.size = c
         }
     }
