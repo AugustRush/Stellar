@@ -30,6 +30,8 @@ public enum TimingFunctionType {
     
     /// Inspired by the default curve in Google Material Design.
     case SwiftOut
+    /// custom
+    case Custom(Double, Double, Double, Double)
     
     
     func timingFunction() -> TimingFunction {
@@ -46,6 +48,8 @@ public enum TimingFunctionType {
             return UnitBezier(p1x: 0.0, p1y: 0.0, p2x: 1.0, p2y: 1.0)
         case .SwiftOut: 
             return UnitBezier(p1x: 0.4, p1y: 0.0, p2x: 0.2, p2y: 1.0)
+        case .Custom(let p1x,let p1y,let p2x,let p2y):
+            return UnitBezier(p1x: p1x, p1y: p1y, p2x: p2x, p2y: p2y)
         }
     }
 }
