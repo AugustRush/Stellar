@@ -9,7 +9,7 @@
 import UIKit
 
 //for 4 quadrant
-class DynamicItem2<T: Vectorial2>: NSObject, UIDynamicItem {
+final class DynamicItem2<T: Vectorial2>: NSObject, UIDynamicItem {
     
     var from: T
     var to: T
@@ -42,12 +42,15 @@ class DynamicItem2<T: Vectorial2>: NSObject, UIDynamicItem {
         print(self.referenceChangeLength)
     }
     
+    deinit {
+        self.render(to)
+    }
+    
     //MARK: UIDynamicItem protocol
     var center: CGPoint = CGPointZero {
         didSet {
             let yChange = center.y
             let progress = yChange / referenceChangeLength
-            print(center,progress)
             let curX = fromR.minX + change.x * progress;
             let curY = fromR.minY + change.y * progress;
             let curZ = fromR.width + change.z * progress;

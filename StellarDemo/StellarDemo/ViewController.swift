@@ -28,13 +28,13 @@ class ViewController: UIViewController {
 
     @IBAction func button1Cliked(sender: AnyObject) {        
 
-        let x = CGFloat(arc4random()%254) / 255.0
-        let y = CGFloat(arc4random()%254) / 255.0
-        let z = CGFloat(arc4random()%254) / 255.0
+        let x = CGFloat(arc4random()%300)
+        let y = CGFloat(arc4random()%500)
+        let z = CGFloat(arc4random()%254)
 //
         print(x,y,z)
 //        let size = CGSizeMake(x, y)
-//        let point = CGPointMake(x, y)
+        let point = CGPointMake(x, y)
   
 //        view1.frame.pushedTo(CGRectMake(0, 0, x, y)) { (r) in
 //            print("r is \(r)")
@@ -42,22 +42,26 @@ class ViewController: UIViewController {
 //        }
         
 //        let color = UIColor(red: x,green: y,blue: z,alpha: 1)
-        let color = UIColor(hue: x, saturation: y, brightness: z, alpha: 1)
-        self.view1.backgroundColor?.pushedTo(color, render: { (c) in
-            self.view1.backgroundColor = c
+        let color = UIColor(hue: x / 255.0, saturation: y / 255.0, brightness: z / 255.0, alpha: 1)
+        
+        self.view2.backgroundColor?.animationTo(color, render: { (c) in
+            self.view2.backgroundColor = c
         })
         
+        self.view3.backgroundColor?.animationTo(color, duration: 2, timingFunction: TimingFunctionMaterial, render: { (c) in
+            self.view3.backgroundColor = c
+        })
+        
+      
+        let size = CGSizeMake(x, y)
+        view2.bounds.size.animationTo(size, duration: 2, timingFunction: TimingFunctionLinear) { (c) in
+            self.view2.bounds.size = c
+        }
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
         
-//        let point = touches.first?.locationInView(self.view)
-//        if #available(iOS 9.0, *) {
-//            snap.snapPoint = point!
-//        } else {
-//            // Fallback on earlier versions
-//        }
     }
 }
 

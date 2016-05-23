@@ -7,7 +7,7 @@
 //
 import UIKit
 
-extension Float: Physical, Vectorial {
+extension Float: Physical, Vectorial, Interpolatable {
     
     func fallTo(to: Float,render: (Float) -> Void) {
         let item = DynamicItem<Float>(from: self, to: to,render: render)
@@ -42,9 +42,15 @@ extension Float: Physical, Vectorial {
     }
     
     func animationTo(to: Float, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (Float) -> Void) {
-        
+        let basicItem = DynamicItemBasic(from: self, to: to, render: render)
+        let push = basicItem.pushBehavior(.Down)
+        basicItem.behavior = push
+        basicItem.duration = duration
+        basicItem.timingFunction = timingFunction
+        push.commit()
     }
     
+    //Vetorial
     func convert(p: CGPoint) -> Float {
         return Float(p.y)
     }
@@ -52,9 +58,16 @@ extension Float: Physical, Vectorial {
     func reverse() -> CGPoint {
         return CGPointMake(0, CGFloat(self))
     }
+    
+    //Interpolatable
+    
+    func interpolate(progress: Double, to: Float, externalData: Any?) -> Float {
+        let change = to - self
+        return self + change * Float(progress)
+    }
 }
 
-extension Double: Physical, Vectorial {
+extension Double: Physical, Vectorial, Interpolatable {
     
     func fallTo(to: Double,render: (Double) -> Void) {
         let item = DynamicItem<Double>(from: self, to: to,render: render)
@@ -89,9 +102,15 @@ extension Double: Physical, Vectorial {
     }
     
     func animationTo(to: Double, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (Double) -> Void) {
-        
+        let basicItem = DynamicItemBasic(from: self, to: to, render: render)
+        let push = basicItem.pushBehavior(.Down)
+        basicItem.behavior = push
+        basicItem.duration = duration
+        basicItem.timingFunction = timingFunction
+        push.commit()
     }
     
+    //
     func convert(p: CGPoint) -> Double {
         return Double(p.y)
     }
@@ -99,9 +118,17 @@ extension Double: Physical, Vectorial {
     func reverse() -> CGPoint {
         return CGPointMake(0, CGFloat(self))
     }
+    
+    //Interpolatable
+    
+    func interpolate(progress: Double, to: Double, externalData: Any?) -> Double {
+        let change = to - self
+        return self + change * progress
+    }
+
 }
 
-extension CGFloat: Physical , Vectorial {
+extension CGFloat: Physical , Vectorial, Interpolatable {
     
     func fallTo(to: CGFloat,render: (CGFloat) -> Void) {
         let item = DynamicItem<CGFloat>(from: self, to: to,render: render)
@@ -136,9 +163,15 @@ extension CGFloat: Physical , Vectorial {
     }
     
     func animationTo(to: CGFloat, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (CGFloat) -> Void) {
-        
+        let basicItem = DynamicItemBasic(from: self, to: to, render: render)
+        let push = basicItem.pushBehavior(.Down)
+        basicItem.behavior = push
+        basicItem.duration = duration
+        basicItem.timingFunction = timingFunction
+        push.commit()
     }
     
+    //
     func convert(p: CGPoint) -> CGFloat {
         return p.y
     }
@@ -146,9 +179,17 @@ extension CGFloat: Physical , Vectorial {
     func reverse() -> CGPoint {
         return CGPointMake(0, self)
     }
+    
+    //Interpolatable
+    
+    func interpolate(progress: Double, to: CGFloat, externalData: Any?) -> CGFloat {
+        let change = to - self
+        return self + change * CGFloat(progress)
+    }
+    
 }
 
-extension CGSize: Physical, Vectorial {
+extension CGSize: Physical, Vectorial, Interpolatable {
     
     func fallTo(to: CGSize,render: (CGSize) -> Void) {
         let item = DynamicItem<CGSize>(from: self, to: to,render: render)
@@ -183,9 +224,15 @@ extension CGSize: Physical, Vectorial {
     }
     
     func animationTo(to: CGSize, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (CGSize) -> Void) {
-        
+        let basicItem = DynamicItemBasic(from: self, to: to, render: render)
+        let push = basicItem.pushBehavior(.Down)
+        basicItem.behavior = push
+        basicItem.duration = duration
+        basicItem.timingFunction = timingFunction
+        push.commit()
     }
     
+    //
     func convert(p: CGPoint) -> CGSize {
         return CGSizeMake(p.x, p.y)
     }
@@ -193,9 +240,18 @@ extension CGSize: Physical, Vectorial {
     func reverse() -> CGPoint {
         return CGPointMake(self.width, self.height)
     }
+    
+    //
+    func interpolate(progress: Double, to: CGSize, externalData: Any?) -> CGSize {
+        let wChnaged = to.width - self.width;
+        let hChanged = to.height - self.height;
+        let currentW = self.width + wChnaged * CGFloat(progress);
+        let currentH = self.height + hChanged * CGFloat(progress);
+        return CGSizeMake(currentW, currentH)
+    }
 }
 
-extension CGPoint: Physical, Vectorial {
+extension CGPoint: Physical, Vectorial, Interpolatable {
     
     func fallTo(to: CGPoint,render: (CGPoint) -> Void) {
         let item = DynamicItem<CGPoint>(from: self, to: to,render: render)
@@ -230,9 +286,15 @@ extension CGPoint: Physical, Vectorial {
     }
     
     func animationTo(to: CGPoint, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (CGPoint) -> Void) {
-        
+        let basicItem = DynamicItemBasic(from: self, to: to, render: render)
+        let push = basicItem.pushBehavior(.Down)
+        basicItem.behavior = push
+        basicItem.duration = duration
+        basicItem.timingFunction = timingFunction
+        push.commit()
     }
     
+    //
     func convert(p: CGPoint) -> CGPoint {
         return p
     }
@@ -240,9 +302,17 @@ extension CGPoint: Physical, Vectorial {
     func reverse() -> CGPoint {
         return self
     }
+    
+    func interpolate(progress: Double, to: CGPoint, externalData: Any?) -> CGPoint {
+        let xChnaged = to.x - self.x;
+        let yChanged = to.y - self.y;
+        let currentX = self.x + xChnaged * CGFloat(progress);
+        let currentY = self.y + yChanged * CGFloat(progress);
+        return CGPointMake(currentX, currentY)
+    }
 }
 
-extension CGRect: Physical, Vectorial2 {
+extension CGRect: Physical, Vectorial2, Interpolatable {
     
     func fallTo(to: CGRect, render: (CGRect) -> Void) {
         let item = DynamicItem2(from: self, to: to, render: render)
@@ -277,9 +347,15 @@ extension CGRect: Physical, Vectorial2 {
     }
     
     func animationTo(to: CGRect, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (CGRect) -> Void) {
-        
+        let basicItem = DynamicItemBasic(from: self, to: to, render: render)
+        let push = basicItem.pushBehavior(.Down)
+        basicItem.behavior = push
+        basicItem.duration = duration
+        basicItem.timingFunction = timingFunction
+        push.commit()
     }
     
+    //
     func convert(r: CGRect) -> CGRect {
         return r
     }
@@ -287,9 +363,23 @@ extension CGRect: Physical, Vectorial2 {
     func reverse() -> CGRect {
         return self
     }
+    
+    //
+    func interpolate(progress: Double, to: CGRect, externalData: Any?) -> CGRect {
+        let xChanged = to.minX - self.minX
+        let yChanged = to.minY - self.minY
+        let wChnaged = to.width - self.width;
+        let hChanged = to.height - self.height;
+        let currentX = self.minX + xChanged * CGFloat(progress)
+        let currentY = self.minY + yChanged * CGFloat(progress)
+        let currentW = self.width + wChnaged * CGFloat(progress)
+        let currentH = self.height + hChanged * CGFloat(progress)
+        
+        return CGRectMake(currentX, currentY, currentW, currentH)
+    }
 }
 
-extension UIColor: Physical, Vectorial2 {
+extension UIColor: Physical, Vectorial2, Interpolatable {
     
     func fallTo(to: UIColor, render: (UIColor) -> Void) {
         let item = DynamicItem2(from: self, to: to, render: render)
@@ -302,9 +392,8 @@ extension UIColor: Physical, Vectorial2 {
     func snapTo(to: UIColor, render: (UIColor) -> Void) {
         let item = DynamicItem2(from: self, to: to, render:render)
         let point = CGPointMake(0.0, item.referenceChangeLength)
-        let snap = item.snapBehavior(point, damping: 0.99)
+        let snap = item.snapBehavior(point, damping: 0.5)
         item.behavior = snap
-        item.boundaryLimit = true
         snap.commit()
     }
     
@@ -326,11 +415,24 @@ extension UIColor: Physical, Vectorial2 {
     }
     
     func animationTo(to: UIColor, duration: CFTimeInterval = 0.25, timingFunction: TimingFunction = TimingFunctionDefault, render: (UIColor) -> Void) {
-        
+        let basicItem = DynamicItemBasic(from: self, to: to, render: render)
+        let push = basicItem.pushBehavior(.Down)
+        basicItem.behavior = push
+        basicItem.duration = duration
+        basicItem.timingFunction = timingFunction
+        let fromInfo = self.colorInfo()
+        let toInfo = to.colorInfo()
+        basicItem.externalData = (fromInfo,toInfo)
+        push.commit()
     }
     
+    //
     func convert(r: CGRect) -> Self {
-        return convertT(r)
+        let hue = r.minX / 250.0
+        let saturation = r.minY / 250.0
+        let brightness = r.width / 250.0
+        let alpha = r.height / 250.0
+        return convertT(hue,saturation: saturation,brightness: brightness,alpha: alpha)
     }
     
     func reverse() -> CGRect {
@@ -346,12 +448,38 @@ extension UIColor: Physical, Vectorial2 {
         return CGRect(x: hue, y: saturation, width: brightness, height: alpha)
     }
     
-    private func convertT<T>(r: CGRect) -> T {
-        let hue = r.minX / 250.0
-        let saturation = r.minY / 250.0
-        let brightness = r.width / 250.0
-        let alpha = r.height / 250.0
+    private func convertT<T>(hue: CGFloat,saturation: CGFloat, brightness: CGFloat, alpha: CGFloat) -> T {
         let color = UIColor(hue: hue,saturation: saturation,brightness: brightness,alpha: alpha)
-        return unsafeBitCast(color, T.self)
+        return color as! T
     }
+    
+    //
+    func interpolate(progress: Double, to: UIColor, externalData: Any?) -> Self {        
+        let infos = externalData as! (ColorInfo,ColorInfo)
+        let fromInfo = infos.0
+        let toInfo = infos.1
+        let changedHue =  toInfo.hue - fromInfo.hue
+        let changedSaturation = toInfo.saturation - fromInfo.saturation
+        let changedBrightness = toInfo.brightness - fromInfo.brightness
+        let changedAlpha = toInfo.alpha - fromInfo.alpha
+    
+        let curHue = fromInfo.hue + changedHue * CGFloat(progress)
+        let curSaturation = fromInfo.saturation + changedSaturation * CGFloat(progress)
+        let curBrightness = fromInfo.brightness + changedBrightness * CGFloat(progress)
+        let curAlpha = fromInfo.alpha + changedAlpha * CGFloat(progress)
+        
+        return convertT(curHue,saturation: curSaturation,brightness: curBrightness,alpha: curAlpha)
+    }
+    
+    //performance
+    typealias ColorInfo = (hue:CGFloat,saturation:CGFloat,brightness:CGFloat,alpha:CGFloat)
+    private func colorInfo() -> ColorInfo {
+        var hue: CGFloat = 0.0
+        var saturation: CGFloat = 0.0
+        var brightness: CGFloat = 0.0
+        var alpha: CGFloat = 0.0
+        self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        return (hue,saturation,brightness,alpha)
+    }
+    
 }
