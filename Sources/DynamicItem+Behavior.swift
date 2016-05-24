@@ -14,20 +14,12 @@ enum PhysicalDirection {
     case Up
     case Down
     case Angle(CGFloat)
+    case Vector(CGFloat,CGFloat)
 }
 
 extension UIDynamicItem {
     
     //gravity
-    
-    func gravityBehavior(magnitude: CGFloat = 1.0, direction: CGVector = CGVectorMake(0, 1.0)) -> UIGravityBehavior {
-        let gravity = UIGravityBehavior()
-        gravity.gravityDirection = direction
-        gravity.magnitude = magnitude
-        gravity.addItem(self)
-        return gravity
-    }
-   
     func gravityBehavior(magnitude: CGFloat = 1.0, direction: PhysicalDirection = .Down) -> UIGravityBehavior {
         let gravity = UIGravityBehavior()
         switch direction {
@@ -41,6 +33,8 @@ extension UIDynamicItem {
             gravity.gravityDirection = CGVectorMake(0, -1)
         case .Down:
             gravity.gravityDirection = CGVectorMake(0, 1)
+        case .Vector(let x, let y):
+            gravity.gravityDirection = CGVectorMake(x, y)
         }
         gravity.magnitude = magnitude
         gravity.addItem(self)
@@ -99,6 +93,8 @@ extension UIDynamicItem {
             push.pushDirection = CGVectorMake(0, -1)
         case .Down:
             push.pushDirection = CGVectorMake(0, 1)
+        case .Vector(let x, let y):
+            push.pushDirection = CGVectorMake(x, y)
         }
         
         push.magnitude = magnitude

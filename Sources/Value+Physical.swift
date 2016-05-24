@@ -11,8 +11,9 @@ extension Float: Physical, Vectorial, Interpolatable, Animatable {
     
     func fallTo(to: Float,render: (Float) -> Void) {
         let item = DynamicItem<Float>(from: self, to: to,render: render)
-        let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
-        let gravity = item.gravityBehavior(1, direction: direction)
+        let directionX = item.toP.x - item.fromP.x
+        let directionY = item.toP.y - item.fromP.y
+        let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         item.boundaryLimit = true
         gravity.commit()
@@ -79,8 +80,9 @@ extension Double: Physical, Vectorial, Interpolatable, Animatable {
     
     func fallTo(to: Double,render: (Double) -> Void) {
         let item = DynamicItem<Double>(from: self, to: to,render: render)
-        let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
-        let gravity = item.gravityBehavior(1, direction: direction)
+        let directionX = item.toP.x - item.fromP.x
+        let directionY = item.toP.y - item.fromP.y
+        let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         item.boundaryLimit = true
         gravity.commit()
@@ -151,8 +153,9 @@ extension CGFloat: Physical , Vectorial, Interpolatable, Animatable {
     
     func fallTo(to: CGFloat,render: (CGFloat) -> Void) {
         let item = DynamicItem<CGFloat>(from: self, to: to,render: render)
-        let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
-        let gravity = item.gravityBehavior(1, direction: direction)
+        let directionX = item.toP.x - item.fromP.x
+        let directionY = item.toP.y - item.fromP.y
+        let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         item.boundaryLimit = true
         gravity.commit()
@@ -224,8 +227,9 @@ extension CGSize: Physical, Vectorial, Interpolatable, Animatable {
     func fallTo(to: CGSize,render: (CGSize) -> Void) {
         let item = DynamicItem<CGSize>(from: self, to: to,render: render)
         item.boundaryLimit = true
-        let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
-        let gravity = item.gravityBehavior(1, direction: direction)
+        let directionX = item.toP.x - item.fromP.x
+        let directionY = item.toP.y - item.fromP.y
+        let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         gravity.commit()
     }
@@ -297,8 +301,9 @@ extension CGPoint: Physical, Vectorial, Interpolatable, Animatable {
     func fallTo(to: CGPoint,render: (CGPoint) -> Void) {
         let item = DynamicItem<CGPoint>(from: self, to: to,render: render)
         item.boundaryLimit = true
-        let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
-        let gravity = item.gravityBehavior(1, direction: direction)
+        let directionX = item.toP.x - item.fromP.x
+        let directionY = item.toP.y - item.fromP.y
+        let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         gravity.commit()
     }
