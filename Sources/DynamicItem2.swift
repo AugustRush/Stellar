@@ -46,26 +46,32 @@ final class DynamicItem2<T: Vectorial2>: NSObject, UIDynamicItem {
         self.render(to)
     }
     
+    //MARK: Update frame
+    
+    func updateFrame() {
+        let yChange = center.y
+        let progress = yChange / referenceChangeLength
+        let curX = fromR.minX + change.x * progress;
+        let curY = fromR.minY + change.y * progress;
+        let curZ = fromR.width + change.z * progress;
+        let curW = fromR.height + change.w * progress;
+        
+        let rect = CGRectMake(curX, curY, curZ, curW)
+        var curV = from.convert(rect)
+        if progress >= 1.0 {
+            complete = true
+            if boundaryLimit {
+                curV = to
+                behavior.cancel()
+            }
+        }
+        self.render(curV)
+    }
+    
     //MARK: UIDynamicItem protocol
     var center: CGPoint = CGPointZero {
         didSet {
-            let yChange = center.y
-            let progress = yChange / referenceChangeLength
-            let curX = fromR.minX + change.x * progress;
-            let curY = fromR.minY + change.y * progress;
-            let curZ = fromR.width + change.z * progress;
-            let curW = fromR.height + change.w * progress;
-            
-            let rect = CGRectMake(curX, curY, curZ, curW)
-            var curV = from.convert(rect)
-            if progress >= 1.0 {
-                complete = true
-                if boundaryLimit {
-                    curV = to
-                    behavior.cancel()
-                }
-            }
-            self.render(curV)
+            updateFrame()
         }
     }
     

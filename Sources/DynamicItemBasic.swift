@@ -8,6 +8,14 @@
 
 import UIKit
 
+private let SolveForReverse = { (f: CFTimeInterval) in
+    return 1 - f
+}
+
+private let SolveForUnReverse = { (f: CFTimeInterval) in
+    return f
+}
+
 final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem {
     
     var duration: CFTimeInterval = 0.25
@@ -15,12 +23,16 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem {
     var from: T
     var to: T
     var render: (T) -> Void
+    var autoReverse = false
+    var repeatCount = 0
     var completion: ((Bool) -> Void)?
     //External data to store (performance)
     var externalData: Any?
     
     weak var behavior: UIDynamicBehavior!
     private var complete = false
+    private var isReversing = false
+    private var solveProgress = SolveForUnReverse
     private lazy var beginTime: CFTimeInterval = {
         return CACurrentMediaTime()
     }()
@@ -28,6 +40,7 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem {
         return 1.0 / (self.duration * 1000.0)
     }()
     
+    //MARK: Life cycle methods
     init(from: T, to: T, render: (T) -> Void) {
         self.from = from
         self.to = to
@@ -35,24 +48,48 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem {
     }
     
     deinit {
-        print("some")
-        self.completion?(complete)
+        //do some thing
+    }
+    
+    //MARK: update frame
+    private func updateFrame() {
+        let startTime = beginTime
+        let currentTime = CACurrentMediaTime() - startTime
+        var progress = currentTime / duration
+        if progress >= 1.0 {
+            isReversing = autoReverse ? !isReversing : false
+            if repeatCount == 0 {
+                if isReversing {
+                    progress = 0.0
+                    beginTime = CACurrentMediaTime()
+                    solveProgress = SolveForReverse
+                } else {
+                    progress = 1.0
+                    behavior.cancel()
+                    complete = true
+                    self.completion?(complete)
+                }
+            }else {
+                if isReversing == false {
+                    repeatCount -= 1
+                    solveProgress = SolveForUnReverse
+                } else {
+                    solveProgress = SolveForReverse
+                }
+                progress = 0.0
+                beginTime = CACurrentMediaTime()
+            }
+        }
+        let solveP = solveProgress(progress)
+        let adjustProgress = timingFunction.solve(Scalar(solveP), epsilon: epsilon)
+        let value = from.interpolate(adjustProgress, to: to, externalData: externalData)
+        self.render(value)
     }
     
     //MARK: UIDynamicItem protocol
     var center: CGPoint = CGPointZero {
         didSet {
-            let startTime = beginTime
-            let currentTime = CACurrentMediaTime() - startTime
-            var progress = currentTime / duration
-            if progress >= 1.0 {
-                progress = 1.0
-                behavior.cancel()
-                complete = true
-            }
-            let adjustProgress = timingFunction.solve(Scalar(progress), epsilon: epsilon)
-            let value = from.interpolate(adjustProgress, to: to, externalData: externalData)
-            self.render(value)
+            updateFrame()
         }
     }
     

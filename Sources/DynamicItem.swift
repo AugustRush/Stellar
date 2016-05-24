@@ -35,21 +35,27 @@ final class DynamicItem<T: Vectorial>: NSObject, UIDynamicItem {
         render(value)
     }
     
+    //MARK: Update frame
+    
+    func updateFrame() {
+        var current = center
+        let hasChanged = fabs(current.y - fromP.y)
+        if hasChanged >= change {
+            complete = true
+            if boundaryLimit {
+                current = toP
+                //移除behavior
+                behavior.cancel()
+            }
+        }
+        let value = to.convert(current)
+        render(value)
+    }
+    
     //MARK: UIDynamicItem protocol
     var center: CGPoint {
         didSet {
-            var current = center
-            let hasChanged = fabs(current.y - fromP.y)
-            if hasChanged >= change {
-                complete = true
-                if boundaryLimit {
-                    current = toP
-                    //移除behavior
-                    behavior.cancel()
-                }
-            }
-            let value = to.convert(current)
-            render(value)
+            updateFrame()
         }
     }
     var transform: CGAffineTransform = CGAffineTransformIdentity
