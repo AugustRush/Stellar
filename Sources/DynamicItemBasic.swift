@@ -15,11 +15,12 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem {
     var from: T
     var to: T
     var render: (T) -> Void
-    var complete = false
-    //For external data to store (performance)
+    var completion: ((Bool) -> Void)?
+    //External data to store (performance)
     var externalData: Any?
     
-    var behavior: UIDynamicBehavior!
+    weak var behavior: UIDynamicBehavior!
+    private var complete = false
     private lazy var beginTime: CFTimeInterval = {
         return CACurrentMediaTime()
     }()
@@ -33,6 +34,11 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem {
         self.render = render
     }
     
+    deinit {
+        print("some")
+        self.completion?(complete)
+    }
+    
     //MARK: UIDynamicItem protocol
     var center: CGPoint = CGPointZero {
         didSet {
@@ -41,8 +47,8 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem {
             var progress = currentTime / duration
             if progress >= 1.0 {
                 progress = 1.0
-                complete = true
                 behavior.cancel()
+                complete = true
             }
             let adjustProgress = timingFunction.solve(Scalar(progress), epsilon: epsilon)
             let value = from.interpolate(adjustProgress, to: to, externalData: externalData)

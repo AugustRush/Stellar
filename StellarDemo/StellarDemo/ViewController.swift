@@ -31,32 +31,22 @@ class ViewController: UIViewController {
         let x = CGFloat(arc4random()%300)
         let y = CGFloat(arc4random()%500)
         let z = CGFloat(arc4random()%254)
-//
-        print(x,y,z)
-//        let size = CGSizeMake(x, y)
-        let point = CGPointMake(x, y)
-  
-//        view1.frame.pushedTo(CGRectMake(0, 0, x, y)) { (r) in
-//            print("r is \(r)")
-//            self.view1.frame = r
-//        }
-        
-//        let color = UIColor(red: x,green: y,blue: z,alpha: 1)
-        let color = UIColor(hue: x / 255.0, saturation: y / 255.0, brightness: z / 255.0, alpha: 1)
-        
-        self.view2.backgroundColor?.animationTo(color, render: { (c) in
-            self.view2.backgroundColor = c
-        })
-        
-        self.view3.backgroundColor?.animationTo(color, duration: 2, type: .SwiftOut, render: { (c) in
-            self.view3.backgroundColor = c
-        })
-        
-      
-        let size = CGSizeMake(x, y)
-        view2.bounds.size.animationTo(size, duration: 2, type: .SwiftOut) { (c) in
-            self.view2.bounds.size = c
+
+        view1.center.y.animationTo(x, duration: 1, type: .SwiftOut, render: { (f) in
+            self.view1.center.y = f
+            
+            }) { (completion) in
+                self.view2.center.y.animationTo(y, duration: 1, type: .SwiftOut, render: { (f) in
+                    self.view2.center.y = f
+                    }, completion: { (completion) in
+                        self.view3.center.y.animationTo(z, duration: 1, type: .SwiftOut, render: { (f) in
+                            self.view3.center.y = f
+                            }, completion: { (c) in
+                                print("all completion")
+                        })
+                })
         }
+    
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
