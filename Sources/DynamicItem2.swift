@@ -8,7 +8,7 @@
 
 import UIKit
 
-//for 4 quadrant
+//for 4 latitude
 final class DynamicItem2<T: Vectorial2>: NSObject, UIDynamicItem {
     
     var from: T
@@ -16,6 +16,7 @@ final class DynamicItem2<T: Vectorial2>: NSObject, UIDynamicItem {
     var render: (T) -> Void
     var complete = false
     var boundaryLimit = false
+    var completion: (() -> Void)?
     internal var fromR: CGRect
     internal var toR: CGRect
     weak var behavior: UIDynamicBehavior!
@@ -44,6 +45,8 @@ final class DynamicItem2<T: Vectorial2>: NSObject, UIDynamicItem {
     
     deinit {
         self.render(to)
+        complete = true
+        completion?()
     }
     
     //MARK: Update frame
@@ -59,10 +62,10 @@ final class DynamicItem2<T: Vectorial2>: NSObject, UIDynamicItem {
         let rect = CGRectMake(curX, curY, curZ, curW)
         var curV = from.convert(rect)
         if progress >= 1.0 {
-            complete = true
             if boundaryLimit {
                 curV = to
                 behavior.cancel()
+                complete = true
             }
         }
         self.render(curV)

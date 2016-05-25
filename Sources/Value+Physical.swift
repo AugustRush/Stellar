@@ -9,36 +9,40 @@ import UIKit
 
 extension Float: Physical, Vectorial, Interpolatable, Animatable {
     
-    func fallTo(to: Float,render: (Float) -> Void) {
+    func fallTo(to: Float, render: (Float) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Float>(from: self, to: to,render: render)
         let directionX = item.toP.x - item.fromP.x
         let directionY = item.toP.y - item.fromP.y
         let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         item.boundaryLimit = true
+        item.completion = completion
         gravity.commit()
     }
     
-    func snapTo(to: Float,render: (Float) -> Void) {
+    func snapTo(to: Float,render: (Float) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Float>(from: self, to: to, render: render)
         let snap = item.snapBehavior(item.toP, damping: 0.5)
         item.behavior = snap
+        item.completion = completion
         snap.commit()
     }
     
-    func attachmentTo(to: Float,render: (Float) -> Void) {
+    func attachmentTo(to: Float,render: (Float) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Float>(from: self, to: to,render: render)
         let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: 0.5, frequency: 1)
         item.behavior = attachment
+        item.completion = completion
         attachment.commit()
     }
     
-    func pushedTo(to: Float,render: (Float) -> Void) {
+    func pushedTo(to: Float,render: (Float) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Float>(from: self,to: to,render: render)
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
         let push = item.pushBehavior(direction, mode: .Instantaneous, magnitude: 1.0)
         item.behavior = push
         item.boundaryLimit = true
+        item.completion = completion
         push.commit()
     }
     
@@ -78,36 +82,40 @@ extension Float: Physical, Vectorial, Interpolatable, Animatable {
 
 extension Double: Physical, Vectorial, Interpolatable, Animatable {
     
-    func fallTo(to: Double,render: (Double) -> Void) {
+    func fallTo(to: Double,render: (Double) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Double>(from: self, to: to,render: render)
         let directionX = item.toP.x - item.fromP.x
         let directionY = item.toP.y - item.fromP.y
         let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         item.boundaryLimit = true
+        item.completion = completion
         gravity.commit()
     }
     
-    func snapTo(to: Double,render: (Double) -> Void) {
+    func snapTo(to: Double,render: (Double) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Double>(from: self, to: to, render: render)
         let snap = item.snapBehavior(item.toP, damping: 0.5)
         item.behavior = snap
+        item.completion = completion
         snap.commit()
     }
     
-    func attachmentTo(to: Double,render: (Double) -> Void) {
+    func attachmentTo(to: Double,render: (Double) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Double>(from: self, to: to,render: render)
         let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: 0.5, frequency: 1)
         item.behavior = attachment
+        item.completion = completion
         attachment.commit()
     }
     
-    func pushedTo(to: Double,render: (Double) -> Void) {
+    func pushedTo(to: Double,render: (Double) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Double>(from: self,to: to,render: render)
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
         let push = item.pushBehavior(direction, mode: .Instantaneous, magnitude: 1.0)
         item.behavior = push
         item.boundaryLimit = true
+        item.completion = completion
         push.commit()
     }
     
@@ -151,36 +159,40 @@ extension Double: Physical, Vectorial, Interpolatable, Animatable {
 
 extension CGFloat: Physical , Vectorial, Interpolatable, Animatable {
     
-    func fallTo(to: CGFloat,render: (CGFloat) -> Void) {
+    func fallTo(to: CGFloat,render: (CGFloat) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGFloat>(from: self, to: to,render: render)
         let directionX = item.toP.x - item.fromP.x
         let directionY = item.toP.y - item.fromP.y
         let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         item.boundaryLimit = true
+        item.completion = completion
         gravity.commit()
     }
     
-    func snapTo(to: CGFloat,render: (CGFloat) -> Void) {
+    func snapTo(to: CGFloat,render: (CGFloat) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGFloat>(from: self, to: to, render: render)
         let snap = item.snapBehavior(item.toP, damping: 0.5)
         item.behavior = snap
+        item.completion = completion
         snap.commit()
     }
     
-    func attachmentTo(to: CGFloat,render: (CGFloat) -> Void) {
+    func attachmentTo(to: CGFloat,render: (CGFloat) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGFloat>(from: self, to: to,render: render)
         let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: 0.5, frequency: 1)
         item.behavior = attachment
+        item.completion = completion
         attachment.commit()
     }
     
-    func pushedTo(to: CGFloat,render: (CGFloat) -> Void) {
+    func pushedTo(to: CGFloat,render: (CGFloat) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGFloat>(from: self,to: to,render: render)
         item.boundaryLimit = true
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
         let push = item.pushBehavior(direction, mode: .Instantaneous, magnitude: 1.0)
         item.behavior = push
+        item.completion = completion
         push.commit()
     }
     
@@ -224,36 +236,40 @@ extension CGFloat: Physical , Vectorial, Interpolatable, Animatable {
 
 extension CGSize: Physical, Vectorial, Interpolatable, Animatable {
     
-    func fallTo(to: CGSize,render: (CGSize) -> Void) {
+    func fallTo(to: CGSize, render: (CGSize) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGSize>(from: self, to: to,render: render)
-        item.boundaryLimit = true
         let directionX = item.toP.x - item.fromP.x
         let directionY = item.toP.y - item.fromP.y
         let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
         item.behavior = gravity
+        item.boundaryLimit = true
+        item.completion = completion
         gravity.commit()
     }
     
-    func snapTo(to: CGSize,render: (CGSize) -> Void) {
+    func snapTo(to: CGSize,render: (CGSize) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGSize>(from: self, to: to, render: render)
         let snap = item.snapBehavior(item.toP, damping: 0.5)
         item.behavior = snap
+        item.completion = completion
         snap.commit()
     }
     
-    func attachmentTo(to: CGSize,render: (CGSize) -> Void) {
+    func attachmentTo(to: CGSize,render: (CGSize) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGSize>(from: self, to: to,render: render)
         let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: 0.5, frequency: 1)
         item.behavior = attachment
+        item.completion = completion
         attachment.commit()
     }
     
-    func pushedTo(to: CGSize,render: (CGSize) -> Void) {
+    func pushedTo(to: CGSize,render: (CGSize) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGSize>(from: self,to: to,render: render)
         item.boundaryLimit = true
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
         let push = item.pushBehavior(direction, mode: .Instantaneous, magnitude: 1.0)
         item.behavior = push
+        item.completion = completion
         push.commit()
     }
     
@@ -298,36 +314,40 @@ extension CGSize: Physical, Vectorial, Interpolatable, Animatable {
 
 extension CGPoint: Physical, Vectorial, Interpolatable, Animatable {
     
-    func fallTo(to: CGPoint,render: (CGPoint) -> Void) {
+    func fallTo(to: CGPoint,render: (CGPoint) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGPoint>(from: self, to: to,render: render)
         item.boundaryLimit = true
         let directionX = item.toP.x - item.fromP.x
         let directionY = item.toP.y - item.fromP.y
         let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
         item.behavior = gravity
+        item.completion = completion
         gravity.commit()
     }
     
-    func snapTo(to: CGPoint,render: (CGPoint) -> Void) {
+    func snapTo(to: CGPoint,render: (CGPoint) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGPoint>(from: self, to: to, render: render)
         let snap = item.snapBehavior(item.toP, damping: 0.5)
         item.behavior = snap
+        item.completion = completion
         snap.commit()
     }
     
-    func attachmentTo(to: CGPoint,render: (CGPoint) -> Void) {
+    func attachmentTo(to: CGPoint,render: (CGPoint) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGPoint>(from: self, to: to,render: render)
         let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: 0.5, frequency: 1)
         item.behavior = attachment
+        item.completion = completion
         attachment.commit()
     }
     
-    func pushedTo(to: CGPoint,render: (CGPoint) -> Void) {
+    func pushedTo(to: CGPoint,render: (CGPoint) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGPoint>(from: self,to: to,render: render)
         item.boundaryLimit = true
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
         let push = item.pushBehavior(direction, mode: .Instantaneous, magnitude: 1.0)
         item.behavior = push
+        item.completion = completion
         push.commit()
     }
     
@@ -371,35 +391,39 @@ extension CGPoint: Physical, Vectorial, Interpolatable, Animatable {
 
 extension CGRect: Physical, Vectorial2, Interpolatable, Animatable {
     
-    func fallTo(to: CGRect, render: (CGRect) -> Void) {
+    func fallTo(to: CGRect, render: (CGRect) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render: render)
         let gravity = item.gravityBehavior(1,direction: .Down)
         item.behavior = gravity
         item.boundaryLimit = true
+        item.completion = completion
         gravity.commit()
     }
     
-    func snapTo(to: CGRect, render: (CGRect) -> Void) {
+    func snapTo(to: CGRect, render: (CGRect) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render:render)
         let snap = item.snapBehavior(CGPointMake(0.0, item.referenceChangeLength), damping: 0.5)
         item.behavior = snap
+        item.completion = completion
         snap.commit()
     }
     
-    func attachmentTo(to: CGRect, render: (CGRect) -> Void) {
+    func attachmentTo(to: CGRect, render: (CGRect) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render:render)
         let point = CGPointMake(0.0, item.referenceChangeLength)
         let attachment = item.attachmentBehavior(point, length: 0.0, damping: 0.8, frequency: 1)
         item.behavior = attachment
+        item.completion = completion
         attachment.commit()
     }
     
-    func pushedTo(to: CGRect, render: (CGRect) -> Void) {
+    func pushedTo(to: CGRect, render: (CGRect) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render:render)
         let push = item.pushBehavior(.Down)
         push.magnitude = 2.0
         item.boundaryLimit = true
         item.behavior = push
+        item.completion = completion
         push.commit()
     }
     
@@ -449,36 +473,40 @@ extension CGRect: Physical, Vectorial2, Interpolatable, Animatable {
 
 extension UIColor: Physical, Vectorial2, Interpolatable, Animatable {
     
-    func fallTo(to: UIColor, render: (UIColor) -> Void) {
+    func fallTo(to: UIColor, render: (UIColor) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render: render)
         let gravity = item.gravityBehavior(1,direction: .Down)
         item.behavior = gravity
         item.boundaryLimit = true
+        item.completion = completion
         gravity.commit()
     }
     
-    func snapTo(to: UIColor, render: (UIColor) -> Void) {
+    func snapTo(to: UIColor, render: (UIColor) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render:render)
         let point = CGPointMake(0.0, item.referenceChangeLength)
         let snap = item.snapBehavior(point, damping: 0.5)
         item.behavior = snap
+        item.completion = completion
         snap.commit()
     }
     
-    func attachmentTo(to: UIColor, render: (UIColor) -> Void) {
+    func attachmentTo(to: UIColor, render: (UIColor) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render:render)
         let point = CGPointMake(0.0, item.referenceChangeLength)
         let attachment = item.attachmentBehavior(point, length: 0.0, damping: 0.8, frequency: 1)
         item.behavior = attachment
+        item.completion = completion
         attachment.commit()
     }
     
-    func pushedTo(to: UIColor, render: (UIColor) -> Void) {
+    func pushedTo(to: UIColor, render: (UIColor) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render:render)
         let push = item.pushBehavior(.Down)
         push.magnitude = 2.0
         item.boundaryLimit = true
         item.behavior = push
+        item.completion = completion
         push.commit()
     }
     

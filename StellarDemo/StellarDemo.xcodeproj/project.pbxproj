@@ -11,6 +11,8 @@
 		970A7FB71CF2AC0000C7555C /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A7FB61CF2AC0000C7555C /* Interpolatable.swift */; };
 		970A7FBB1CF2FE5F00C7555C /* UIView+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A7FBA1CF2FE5F00C7555C /* UIView+Stellar.swift */; };
 		970A7FBD1CF4247E00C7555C /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A7FBC1CF4247E00C7555C /* Animatable.swift */; };
+		970A80021CF448CA00C7555C /* AnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A80011CF448CA00C7555C /* AnimationContext.swift */; };
+		970A80041CF44B1800C7555C /* CollisionBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A80031CF44B1800C7555C /* CollisionBehavior.swift */; };
 		97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A331CF05DAB009E60EB /* Vectorial.swift */; };
 		97A61A381CF082F6009E60EB /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A371CF082F6009E60EB /* UnitBezier.swift */; };
 		97A61A3A1CF09B8F009E60EB /* DynamicItem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A391CF09B8F009E60EB /* DynamicItem2.swift */; };
@@ -52,6 +54,8 @@
 		970A7FB61CF2AC0000C7555C /* Interpolatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interpolatable.swift; sourceTree = "<group>"; };
 		970A7FBA1CF2FE5F00C7555C /* UIView+Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Stellar.swift"; sourceTree = "<group>"; };
 		970A7FBC1CF4247E00C7555C /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
+		970A80011CF448CA00C7555C /* AnimationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationContext.swift; sourceTree = "<group>"; };
+		970A80031CF44B1800C7555C /* CollisionBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionBehavior.swift; sourceTree = "<group>"; };
 		97A61A331CF05DAB009E60EB /* Vectorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vectorial.swift; sourceTree = "<group>"; };
 		97A61A371CF082F6009E60EB /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
 		97A61A391CF09B8F009E60EB /* DynamicItem2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItem2.swift; sourceTree = "<group>"; };
@@ -102,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		970A80001CF448B900C7555C /* other */ = {
+			isa = PBXGroup;
+			children = (
+				970A80011CF448CA00C7555C /* AnimationContext.swift */,
+				970A80031CF44B1800C7555C /* CollisionBehavior.swift */,
+			);
+			name = other;
+			sourceTree = "<group>";
+		};
 		97A61A3B1CF1B254009E60EB /* protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +219,7 @@
 		97BE88EF1CDDDBCE00240523 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				970A80001CF448B900C7555C /* other */,
 				97A61A401CF1B2BF009E60EB /* coordnator */,
 				97A61A3F1CF1B29B009E60EB /* items */,
 				97A61A3E1CF1B28D009E60EB /* utils */,
@@ -347,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				970A80041CF44B1800C7555C /* CollisionBehavior.swift in Sources */,
 				97E1A90F1CED918400F98D86 /* UIDynamicBehavior+Commit.swift in Sources */,
 				970A7FB51CF2AA8F00C7555C /* DynamicItemBasic.swift in Sources */,
 				97E1A8DC1CEB4D6700F98D86 /* AnimatorCoordinator.swift in Sources */,
@@ -363,6 +378,7 @@
 				97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */,
 				97A61A3A1CF09B8F009E60EB /* DynamicItem2.swift in Sources */,
 				970A7FB71CF2AC0000C7555C /* Interpolatable.swift in Sources */,
+				970A80021CF448CA00C7555C /* AnimationContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

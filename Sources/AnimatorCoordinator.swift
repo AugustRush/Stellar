@@ -14,9 +14,15 @@ class AnimatorCoordinator: NSObject, UIDynamicAnimatorDelegate {
     
     //MARK: public methods    
     func addBehavior(b: UIDynamicBehavior) {
+        addBehaviors([b])
+    }
+    
+    func addBehaviors(behaviors: [UIDynamicBehavior]) {
         let animator = UIDynamicAnimator()
         animator.delegate = self
-        animator.addBehavior(b)
+        for b in behaviors {
+            animator.addBehavior(b)
+        }
         activedAnimators.append(animator)
     }
     

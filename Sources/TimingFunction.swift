@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CoreGraphics
 
 typealias TimingFunction = UnitBezier
 

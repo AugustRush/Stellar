@@ -14,6 +14,7 @@ final class DynamicItem<T: Vectorial>: NSObject, UIDynamicItem {
     var render: (T) -> Void
     var boundaryLimit = false
     var complete = false
+    var completion: (() -> Void)?
     weak var behavior: UIDynamicBehavior!
     internal var fromP: CGPoint
     internal var toP: CGPoint
@@ -33,6 +34,9 @@ final class DynamicItem<T: Vectorial>: NSObject, UIDynamicItem {
         //correct target value
         let value = to.convert(toP)
         render(value)
+        //completion
+        complete = true
+        completion?()
     }
     
     //MARK: Update frame
@@ -41,11 +45,12 @@ final class DynamicItem<T: Vectorial>: NSObject, UIDynamicItem {
         var current = center
         let hasChanged = fabs(current.y - fromP.y)
         if hasChanged >= change {
-            complete = true
             if boundaryLimit {
                 current = toP
-                //移除behavior
+                //remove behavior
                 behavior.cancel()
+                //completion
+                complete = true
             }
         }
         let value = to.convert(current)

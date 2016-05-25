@@ -9,10 +9,10 @@
 import UIKit
 
 protocol Physical {
-    func fallTo(to: Self,render: (Self) -> Void)
-    func snapTo(to: Self,render: (Self) -> Void)
-    func attachmentTo(to: Self,render: (Self) -> Void)
-    func pushedTo(to: Self,render: (Self) -> Void)
+    func fallTo(to: Self,render: (Self) -> Void, completion: (() -> Void)?)
+    func snapTo(to: Self,render: (Self) -> Void, completion: (() -> Void)?)
+    func attachmentTo(to: Self,render: (Self) -> Void, completion: (() -> Void)?)
+    func pushedTo(to: Self,render: (Self) -> Void, completion: (() -> Void)?)
 
 //    func collisionWith(path: UIBezierPath,render: (Self) -> Void)
 }
