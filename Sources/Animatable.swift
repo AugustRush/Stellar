@@ -9,7 +9,7 @@
 import Foundation
 
 protocol Animatable {
-    func animationTo(to: Self, duration: CFTimeInterval, type: TimingFunctionType, render: (Self) -> Void, completion: ((Bool) -> Void)?)
-    func animationTo(to: Self, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, render: (Self) -> Void, completion: ((Bool) -> Void)?)
-    func animationTo(to: Self, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, repeatCount: Int, render: (Self) -> Void, completion: ((Bool) -> Void)?)
+    func animateTo(to: Self, duration: CFTimeInterval, type: TimingFunctionType, render: (Self) -> Void, completion: ((Bool) -> Void)?)
+    func animateTo(to: Self, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, render: (Self) -> Void, completion: ((Bool) -> Void)?)
+    func animateTo(to: Self, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, repeatCount: Int, render: (Self) -> Void, completion: ((Bool) -> Void)?)
 }

@@ -13,6 +13,8 @@
 		970A7FBD1CF4247E00C7555C /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A7FBC1CF4247E00C7555C /* Animatable.swift */; };
 		970A80041CF44B1800C7555C /* CollisionBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A80031CF44B1800C7555C /* CollisionBehavior.swift */; };
 		973E59CB1CF5ACEC00F26487 /* GravityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59CA1CF5ACEC00F26487 /* GravityViewController.swift */; };
+		973E59DE1CF5D0B900F26487 /* UIDynamicItem+Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59DD1CF5D0B900F26487 /* UIDynamicItem+Sequence.swift */; };
+		973E59E01CF5D23800F26487 /* DynamicAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59DF1CF5D23800F26487 /* DynamicAnimator.swift */; };
 		97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A331CF05DAB009E60EB /* Vectorial.swift */; };
 		97A61A381CF082F6009E60EB /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A371CF082F6009E60EB /* UnitBezier.swift */; };
 		97A61A3A1CF09B8F009E60EB /* DynamicItem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A391CF09B8F009E60EB /* DynamicItem2.swift */; };
@@ -56,6 +58,8 @@
 		970A7FBC1CF4247E00C7555C /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
 		970A80031CF44B1800C7555C /* CollisionBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionBehavior.swift; sourceTree = "<group>"; };
 		973E59CA1CF5ACEC00F26487 /* GravityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityViewController.swift; sourceTree = "<group>"; };
+		973E59DD1CF5D0B900F26487 /* UIDynamicItem+Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDynamicItem+Sequence.swift"; sourceTree = "<group>"; };
+		973E59DF1CF5D23800F26487 /* DynamicAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicAnimator.swift; sourceTree = "<group>"; };
 		97A61A331CF05DAB009E60EB /* Vectorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vectorial.swift; sourceTree = "<group>"; };
 		97A61A371CF082F6009E60EB /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
 		97A61A391CF09B8F009E60EB /* DynamicItem2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItem2.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				970A80031CF44B1800C7555C /* CollisionBehavior.swift */,
+				973E59DF1CF5D23800F26487 /* DynamicAnimator.swift */,
 			);
 			name = other;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */,
 				97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */,
 				97E1A9101CEDEF5200F98D86 /* DynamicItem+Behavior.swift */,
+				973E59DD1CF5D0B900F26487 /* UIDynamicItem+Sequence.swift */,
 				970A7FBA1CF2FE5F00C7555C /* UIView+Stellar.swift */,
 			);
 			name = extension;
@@ -366,12 +372,14 @@
 				97E1A90F1CED918400F98D86 /* UIDynamicBehavior+Commit.swift in Sources */,
 				970A7FB51CF2AA8F00C7555C /* DynamicItemBasic.swift in Sources */,
 				97E1A8DC1CEB4D6700F98D86 /* AnimatorCoordinator.swift in Sources */,
+				973E59DE1CF5D0B900F26487 /* UIDynamicItem+Sequence.swift in Sources */,
 				97BE88C41CDDDAD000240523 /* SnapViewController.swift in Sources */,
 				970A7FBB1CF2FE5F00C7555C /* UIView+Stellar.swift in Sources */,
 				97E1A8DA1CEB4B5200F98D86 /* Value+Physical.swift in Sources */,
 				97E1A8DE1CEC0E9200F98D86 /* DynamicItem.swift in Sources */,
 				97A61A431CF1E159009E60EB /* TimingFunction.swift in Sources */,
 				97E1A8D81CEB4AF200F98D86 /* Physical.swift in Sources */,
+				973E59E01CF5D23800F26487 /* DynamicAnimator.swift in Sources */,
 				970A7FBD1CF4247E00C7555C /* Animatable.swift in Sources */,
 				97E1A9111CEDEF5200F98D86 /* DynamicItem+Behavior.swift in Sources */,
 				97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */,

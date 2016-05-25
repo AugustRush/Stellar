@@ -18,13 +18,33 @@ class AnimatorCoordinator: NSObject, UIDynamicAnimatorDelegate {
     }
     
     func addBehaviors(behaviors: [UIDynamicBehavior]) {
+        
+        let animator = activedAnimators.last
+        for b in behaviors {
+            
+            if let exsist = animator {
+                switch b {
+                case b as UIGravityBehavior:
+                    fallthrough
+                case b as UICollisionBehavior:
+                    createAnimator(b)
+                default:
+                    exsist.addBehavior(b)
+                }
+   
+            } else {
+                createAnimator(b)
+            }
+        }
+    }
+    
+    private func createAnimator(behavior: UIDynamicBehavior) {
         let animator = UIDynamicAnimator()
         animator.delegate = self
-        for b in behaviors {
-            animator.addBehavior(b)
-        }
+        animator.addBehavior(behavior)
         activedAnimators.append(animator)
     }
+
     
     //MARK: UIDynamicAnimatorDelegate methods
     

@@ -18,18 +18,16 @@ class CollisionBehavior: UICollisionBehavior, UICollisionBehaviorDelegate {
     //MARK: UICollisionBehaviorDelegate methods
     
     func collisionBehavior(behavior: UICollisionBehavior, endedContactForItem item1: UIDynamicItem, withItem item2: UIDynamicItem) {
-        print("aaaaa")
     }
     
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item1: UIDynamicItem, withItem item2: UIDynamicItem, atPoint p: CGPoint) {
-        print("bbbbb")
     }
     
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {
-        print("ccccc")
+
     }
     
     func collisionBehavior(behavior: UICollisionBehavior, endedContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?) {
-        print("ddddd")
+
     }
 }

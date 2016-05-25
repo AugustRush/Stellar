@@ -23,7 +23,7 @@ class SnapViewController: UIViewController {
 
 
     @IBAction func button1Cliked(sender: AnyObject) {        
-//        UIPageViewController
+
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
