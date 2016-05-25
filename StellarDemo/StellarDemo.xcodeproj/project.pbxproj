@@ -11,7 +11,6 @@
 		970A7FB71CF2AC0000C7555C /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A7FB61CF2AC0000C7555C /* Interpolatable.swift */; };
 		970A7FBB1CF2FE5F00C7555C /* UIView+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A7FBA1CF2FE5F00C7555C /* UIView+Stellar.swift */; };
 		970A7FBD1CF4247E00C7555C /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A7FBC1CF4247E00C7555C /* Animatable.swift */; };
-		970A80021CF448CA00C7555C /* AnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A80011CF448CA00C7555C /* AnimationContext.swift */; };
 		970A80041CF44B1800C7555C /* CollisionBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A80031CF44B1800C7555C /* CollisionBehavior.swift */; };
 		97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A331CF05DAB009E60EB /* Vectorial.swift */; };
 		97A61A381CF082F6009E60EB /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A371CF082F6009E60EB /* UnitBezier.swift */; };
@@ -54,7 +53,6 @@
 		970A7FB61CF2AC0000C7555C /* Interpolatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interpolatable.swift; sourceTree = "<group>"; };
 		970A7FBA1CF2FE5F00C7555C /* UIView+Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Stellar.swift"; sourceTree = "<group>"; };
 		970A7FBC1CF4247E00C7555C /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
-		970A80011CF448CA00C7555C /* AnimationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationContext.swift; sourceTree = "<group>"; };
 		970A80031CF44B1800C7555C /* CollisionBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionBehavior.swift; sourceTree = "<group>"; };
 		97A61A331CF05DAB009E60EB /* Vectorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vectorial.swift; sourceTree = "<group>"; };
 		97A61A371CF082F6009E60EB /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 		970A80001CF448B900C7555C /* other */ = {
 			isa = PBXGroup;
 			children = (
-				970A80011CF448CA00C7555C /* AnimationContext.swift */,
 				970A80031CF44B1800C7555C /* CollisionBehavior.swift */,
 			);
 			name = other;
@@ -378,7 +375,6 @@
 				97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */,
 				97A61A3A1CF09B8F009E60EB /* DynamicItem2.swift in Sources */,
 				970A7FB71CF2AC0000C7555C /* Interpolatable.swift in Sources */,
-				970A80021CF448CA00C7555C /* AnimationContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

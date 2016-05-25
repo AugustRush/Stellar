@@ -38,25 +38,28 @@ class ViewController: UIViewController {
 //            }) { (c) in
 //                print(c)
 //        }
-        
+
         let x = CGFloat(arc4random() % 300)
         let y = CGFloat(arc4random() % 500)
         
-        self.view1.bounds.size.snapTo(CGSizeMake(x, y), render: { (s) in
-            self.view1.bounds.size = s
-            }) { 
-                self.view2.center.snapTo(CGPointMake(x, y), render: {(p) in
-                    print(p)
-                    self.view2.center = p
-                    }, completion: {
-                        
-                        CGFloat(0).snapTo(4, render: { (r) in
-                            self.view3.transform = CGAffineTransformMakeRotation(r)
-                            }, completion: {
-                                print("all completion")
-                        })
-                })
-        }
+        print(x,y)
+        
+
+//        self.view1.bounds.size.snapTo(CGSizeMake(x, y), render: { (s) in
+//            self.view1.bounds.size = s
+//            }) { 
+//                self.view2.center.snapTo(CGPointMake(x, y), render: {(p) in
+//                    print(p)
+//                    self.view2.center = p
+//                    }, completion: {
+//                        
+//                        CGFloat(0).snapTo(4, render: { (r) in
+//                            self.view3.transform = CGAffineTransformMakeRotation(r)
+//                            }, completion: {
+//                                print("all completion")
+//                        })
+//                })
+//        }
         
     }
     
