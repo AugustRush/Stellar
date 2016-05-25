@@ -15,6 +15,23 @@ enum PhysicalDirection {
     case Down
     case Angle(CGFloat)
     case Vector(CGFloat,CGFloat)
+    
+    func angle() -> CGFloat {
+        switch self {
+        case .Angle(let a):
+            return a
+        case .Vector(let x, let y):
+            return atan2(y, x)
+        case .Left:
+            return atan2(0, -1)
+        case .Right:
+            return atan2(0, 1)
+        case .Up: 
+            return atan2(-1, 0)
+        case .Down: 
+            return atan2(1, 0)
+        }
+    }
 }
 
 extension UIDynamicItem {
