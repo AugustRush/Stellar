@@ -7,7 +7,7 @@
 //
 import UIKit
 
-extension Float: Physical, Vectorial, Interpolatable, Animatable {
+extension Float: Physical, Vectorial, Interpolatable {
     
     func fallTo(to: Float, render: (Float) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Float>(from: self, to: to,render: render)
@@ -73,7 +73,7 @@ extension Float: Physical, Vectorial, Interpolatable, Animatable {
     }
 }
 
-extension Double: Physical, Vectorial, Interpolatable, Animatable {
+extension Double: Physical, Vectorial, Interpolatable {
     
     func fallTo(to: Double,render: (Double) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Double>(from: self, to: to,render: render)
@@ -143,7 +143,7 @@ extension Double: Physical, Vectorial, Interpolatable, Animatable {
 
 }
 
-extension CGFloat: Physical , Vectorial, Interpolatable, Animatable {
+extension CGFloat: Physical , Vectorial, Interpolatable {
     
     func fallTo(to: CGFloat,render: (CGFloat) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGFloat>(from: self, to: to,render: render)
@@ -213,7 +213,7 @@ extension CGFloat: Physical , Vectorial, Interpolatable, Animatable {
     
 }
 
-extension CGSize: Physical, Vectorial, Interpolatable, Animatable {
+extension CGSize: Physical, Vectorial, Interpolatable {
     
     func fallTo(to: CGSize, render: (CGSize) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGSize>(from: self, to: to,render: render)
@@ -284,7 +284,7 @@ extension CGSize: Physical, Vectorial, Interpolatable, Animatable {
     }
 }
 
-extension CGPoint: Physical, Vectorial, Interpolatable, Animatable {
+extension CGPoint: Physical, Vectorial, Interpolatable {
     
     func fallTo(to: CGPoint,render: (CGPoint) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGPoint>(from: self, to: to,render: render)
@@ -353,7 +353,7 @@ extension CGPoint: Physical, Vectorial, Interpolatable, Animatable {
     }
 }
 
-extension CGRect: Physical, Vectorial2, Interpolatable, Animatable {
+extension CGRect: Physical, Vectorial2, Interpolatable {
     
     func fallTo(to: CGRect, render: (CGRect) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render: render)
@@ -428,7 +428,7 @@ extension CGRect: Physical, Vectorial2, Interpolatable, Animatable {
     }
 }
 
-extension UIColor: Physical, Vectorial2, Interpolatable, Animatable {
+extension UIColor: Physical, Vectorial2, Interpolatable {
     
     func fallTo(to: UIColor, render: (UIColor) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render: render)
