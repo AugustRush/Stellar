@@ -329,10 +329,10 @@
             </objects>
             <point key="canvasLocation" x="-429" y="-662"/>
         </scene>
-        <!--View Controller-->
+        <!--Example2 View Controller-->
         <scene sceneID="Y2h-04-lH3">
             <objects>
-                <viewController id="s8K-je-4sT" sceneMemberID="viewController">
+                <viewController id="s8K-je-4sT" customClass="Example2ViewController" customModule="StellarDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OO5-PX-2aY"/>
                         <viewControllerLayoutGuide type="bottom" id="iMT-Ga-EGM"/>
@@ -340,10 +340,27 @@
                     <view key="view" contentMode="scaleToFill" id="Et6-tf-rJx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8q-Ys-7ur">
+                                <rect key="frame" x="92" y="219" width="136" height="130"/>
+                                <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="2wn-rK-HRo"/>
+                                    <constraint firstAttribute="width" constant="136" id="Pep-3K-1JK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L8q-Ys-7ur" firstAttribute="centerX" secondItem="Et6-tf-rJx" secondAttribute="centerX" id="7Jk-xV-4DS"/>
+                            <constraint firstItem="L8q-Ys-7ur" firstAttribute="centerY" secondItem="Et6-tf-rJx" secondAttribute="centerY" id="QZt-Rg-TvV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aZ8-5U-OjU"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="interactionView" destination="L8q-Ys-7ur" id="P6U-Fk-5W9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRq-Ca-dLv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

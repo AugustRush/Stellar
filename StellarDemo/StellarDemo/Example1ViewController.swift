@@ -27,14 +27,15 @@ class Example1ViewController: UIViewController {
         for (index,ball) in balls.enumerate() {
             let center = ball.center
             let interval = 0.1 * Double(index)
-            center.animateTo(point!, duration: 0.8, delay: interval, type: .SwiftOut, autoReverse: false, repeatCount: 0, render: { (p) in
+            
+            center.animateTo(point!, duration: 0.8,delay: interval, type: .SwiftOut,autoReverse:  true, render: { (p) in
                 ball.center = p
-                }, completion: { (finished) in
-                    
-                    ball.center.animateTo(center, duration: 1, delay: interval, type: .Default, autoReverse: true, repeatCount: 2, render: { (p) in
-                        ball.center = p
-                        }, completion: nil)
-            })            
+                }, completion: { (f) in
+                 
+                    ball.backgroundColor?.animateTo(UIColor.redColor(),duration: 0.5,delay: interval, type: .EaseIn, autoReverse: true, repeatCount: 2, render: { (c) in
+                        ball.backgroundColor = c
+                    })
+            })
         }
     }
     

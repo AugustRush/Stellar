@@ -10,6 +10,8 @@ import UIKit
 
 class Example2ViewController: UIViewController {
     
+    @IBOutlet weak var interactionView: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +23,9 @@ class Example2ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-
-    @IBAction func button1Cliked(sender: AnyObject) {        
-
-    }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesMoved(touches, withEvent: event)
-        
+        super.touchesMoved(touches, withEvent: event)       
     }
 }
 
