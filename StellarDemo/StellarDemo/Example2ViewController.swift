@@ -8,13 +8,13 @@
 
 import UIKit
 
-class SnapViewController: UIViewController {
+class Example2ViewController: UIViewController {
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor(red: 0.98,green: 0.98,blue: 0.98,alpha: 1.0)
     }
 
     override func didReceiveMemoryWarning() {
