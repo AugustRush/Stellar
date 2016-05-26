@@ -8,8 +8,6 @@
 
 import Foundation
 
-protocol Animatable {
-    func animateTo(to: Self, duration: CFTimeInterval, type: TimingFunctionType, render: (Self) -> Void, completion: ((Bool) -> Void)?)
-    func animateTo(to: Self, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, render: (Self) -> Void, completion: ((Bool) -> Void)?)
-    func animateTo(to: Self, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, repeatCount: Int, render: (Self) -> Void, completion: ((Bool) -> Void)?)
+protocol Animatable {    
+    func animateTo(to: Self, duration: CFTimeInterval, delay: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, repeatCount: Int, render: (Self) -> Void, completion: ((Bool) -> Void)?)
 }

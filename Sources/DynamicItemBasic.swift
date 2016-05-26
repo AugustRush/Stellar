@@ -19,6 +19,7 @@ private let SolveForUnReverse = { (f: CFTimeInterval) in
 final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem {
     
     var duration: CFTimeInterval = 0.25
+    var delay: CFTimeInterval = 0.0
     var timingFunction = TimingFunctionType.Default.timingFunction()
     var from: T
     var to: T
@@ -54,7 +55,8 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem {
     //MARK: update frame
     private func updateFrame() {
         let startTime = beginTime
-        let currentTime = CACurrentMediaTime() - startTime
+        var currentTime = CACurrentMediaTime() - startTime - delay
+        currentTime = max(0, currentTime)
         var progress = currentTime / duration
         if progress >= 1.0 {
             isReversing = autoReverse ? !isReversing : false

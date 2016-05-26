@@ -24,14 +24,15 @@ class GravityViewController: UIViewController {
         
         let point = touches.first?.locationInView(self.view)
         
-        for ball in balls {
+        for (index,ball) in balls.enumerate() {
             let center = ball.center
-            center.attachmentTo(point!, render: { (p) in
+            center.snapTo(point!, render: { (p) in
                 ball.center = p
                 }, completion: {
-                 ball.center.animateTo(center, render: { (p) in
+                    let interval = 0.1 * Double(index)
+                ball.center.animateTo(center, duration: 1, delay: interval, type: .Default, autoReverse: false, repeatCount: 2, render: { (p) in
                     ball.center = p
-                 })
+                    }, completion: nil)
             })
         }
     }

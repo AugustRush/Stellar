@@ -8,11 +8,15 @@
 
 import UIKit
 
-class AnimatorCoordinator: NSObject, UIDynamicAnimatorDelegate {
+internal class AnimatorCoordinator: NSObject, UIDynamicAnimatorDelegate {
     static let shared = AnimatorCoordinator()
     private var activedAnimators: [UIDynamicAnimator] = Array()
+    private var basicAnimator = UIDynamicAnimator()
     
     //MARK: public methods    
+    func addBasicBehavior(b: UIDynamicBehavior) {
+        basicAnimator.addBehavior(b)
+    }
     func addBehavior(b: UIDynamicBehavior) {
         addBehaviors([b])
     }

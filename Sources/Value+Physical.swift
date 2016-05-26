@@ -45,23 +45,16 @@ extension Float: Physical, Vectorial, Interpolatable, Animatable {
         item.completion = completion
         push.commit()
     }
-    
-    func animateTo(to: Float, duration: CFTimeInterval = 0.25, type: TimingFunctionType = .Default, render: (Float) -> Void, completion: ((Bool) -> Void)? = nil) {
-        self.animateTo(to, duration: duration, type: type, autoReverse: false, render: render, completion: completion)
-    }
-    
-    func animateTo(to: Float, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, render: (Float) -> Void, completion: ((Bool) -> Void)?) {
-        self.animateTo(to, duration: duration, type: type, autoReverse: autoReverse, repeatCount: 0, render: render, completion: completion)
-    }
-    
-    func animateTo(to: Float, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, repeatCount: Int, render: (Float) -> Void, completion: ((Bool) -> Void)?) {
+        
+    func animateTo(to: Float, duration: CFTimeInterval = 0.25, delay: CFTimeInterval = 0.0, type: TimingFunctionType = .Default, autoReverse: Bool = false, repeatCount: Int = 0, render: (Float) -> Void, completion: ((Bool) -> Void)? = nil) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
         basicItem.duration = duration
         basicItem.timingFunction = type.timingFunction()
         basicItem.completion = completion
-        push.commit()
+        basicItem.delay = delay
+        push.commitToBasic()
     }
     //Vetorial
     func convert(p: CGPoint) -> Float {
@@ -119,15 +112,7 @@ extension Double: Physical, Vectorial, Interpolatable, Animatable {
         push.commit()
     }
     
-    func animateTo(to: Double, duration: CFTimeInterval = 0.25, type: TimingFunctionType = .Default, render: (Double) -> Void, completion: ((Bool) -> Void)? = nil) {
-        self.animateTo(to, duration: duration, type: type, autoReverse: false, render: render, completion: completion)
-    }
-    
-    func animateTo(to: Double, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, render: (Double) -> Void, completion: ((Bool) -> Void)?) {
-        self.animateTo(to, duration: duration, type: type, autoReverse: autoReverse, repeatCount: 0, render: render, completion: completion)
-    }
-    
-    func animateTo(to: Double, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, repeatCount: Int, render: (Double) -> Void, completion: ((Bool) -> Void)?) {
+    func animateTo(to: Double, duration: CFTimeInterval = 0.25, delay: CFTimeInterval = 0.0,type: TimingFunctionType = .Default, autoReverse: Bool = false, repeatCount: Int = 0, render: (Double) -> Void, completion: ((Bool) -> Void)? = nil) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
@@ -136,7 +121,8 @@ extension Double: Physical, Vectorial, Interpolatable, Animatable {
         basicItem.completion = completion
         basicItem.autoReverse = autoReverse
         basicItem.repeatCount = repeatCount
-        push.commit()
+        basicItem.delay = delay
+        push.commitToBasic()
     }
     
     //
@@ -196,15 +182,7 @@ extension CGFloat: Physical , Vectorial, Interpolatable, Animatable {
         push.commit()
     }
     
-    func animateTo(to: CGFloat, duration: CFTimeInterval = 0.25, type: TimingFunctionType = .Default, render: (CGFloat) -> Void, completion: ((Bool) -> Void)? = nil) {
-        self.animateTo(to, duration: duration, type: type, autoReverse: false, render: render, completion: completion)
-    }
-    
-    func animateTo(to: CGFloat, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, render: (CGFloat) -> Void, completion: ((Bool) -> Void)?) {
-        self.animateTo(to, duration: duration, type: type, autoReverse: autoReverse, repeatCount: 0, render: render, completion: completion)
-    }
-    
-    func animateTo(to: CGFloat, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, repeatCount: Int, render: (CGFloat) -> Void, completion: ((Bool) -> Void)?) {
+    func animateTo(to: CGFloat, duration: CFTimeInterval = 0.25, delay:CFTimeInterval = 0.25, type: TimingFunctionType = .Default, autoReverse: Bool = false, repeatCount: Int = 0, render: (CGFloat) -> Void, completion: ((Bool) -> Void)? = nil) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
@@ -213,7 +191,8 @@ extension CGFloat: Physical , Vectorial, Interpolatable, Animatable {
         basicItem.completion = completion
         basicItem.autoReverse = autoReverse
         basicItem.repeatCount = repeatCount
-        push.commit()
+        basicItem.delay = delay
+        push.commitToBasic()
     }
     
     //
@@ -273,15 +252,7 @@ extension CGSize: Physical, Vectorial, Interpolatable, Animatable {
         push.commit()
     }
     
-    func animateTo(to: CGSize, duration: CFTimeInterval = 0.25, type: TimingFunctionType = .Default, render: (CGSize) -> Void, completion: ((Bool) -> Void)? = nil) {
-        self.animateTo(to, duration: duration, type: type, autoReverse: false, render: render, completion: completion)
-    }
-    
-    func animateTo(to: CGSize, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, render: (CGSize) -> Void, completion: ((Bool) -> Void)?) {
-        self.animateTo(to, duration: duration, type: type, autoReverse: autoReverse, repeatCount: 0, render: render, completion: completion)
-    }
-    
-    func animateTo(to: CGSize, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, repeatCount: Int, render: (CGSize) -> Void, completion: ((Bool) -> Void)?) {
+    func animateTo(to: CGSize, duration: CFTimeInterval = 0.25, delay: CFTimeInterval = 0.0, type: TimingFunctionType = .Default, autoReverse: Bool = false, repeatCount: Int = 0, render: (CGSize) -> Void, completion: ((Bool) -> Void)? = nil) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
@@ -290,9 +261,10 @@ extension CGSize: Physical, Vectorial, Interpolatable, Animatable {
         basicItem.completion = completion
         basicItem.autoReverse = autoReverse
         basicItem.repeatCount = repeatCount
-        push.commit()
+        basicItem.delay = delay
+        push.commitToBasic()
     }
-    
+
     //
     func convert(p: CGPoint) -> CGSize {
         return CGSizeMake(p.x, p.y)
@@ -351,15 +323,7 @@ extension CGPoint: Physical, Vectorial, Interpolatable, Animatable {
         push.commit()
     }
     
-    func animateTo(to: CGPoint, duration: CFTimeInterval = 0.25, type: TimingFunctionType = .Default, render: (CGPoint) -> Void, completion: ((Bool) -> Void)? = nil) {
-        self.animateTo(to, duration: duration, type: type, autoReverse: false, render: render, completion: completion)
-    }
-    
-    func animateTo(to: CGPoint, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, render: (CGPoint) -> Void, completion: ((Bool) -> Void)?) {
-        self.animateTo(to, duration: duration, type: type, autoReverse: autoReverse, repeatCount: 0, render: render, completion: completion)
-    }
-    
-    func animateTo(to: CGPoint, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, repeatCount: Int, render: (CGPoint) -> Void, completion: ((Bool) -> Void)?) {
+    func animateTo(to: CGPoint, duration: CFTimeInterval = 0.25, delay:CFTimeInterval = 0.0, type: TimingFunctionType = .Default, autoReverse: Bool = false, repeatCount: Int = 0, render: (CGPoint) -> Void, completion: ((Bool) -> Void)? = nil) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
@@ -368,9 +332,9 @@ extension CGPoint: Physical, Vectorial, Interpolatable, Animatable {
         basicItem.completion = completion
         basicItem.autoReverse = autoReverse
         basicItem.repeatCount = repeatCount
-        push.commit()
+        basicItem.delay = delay
+        push.commitToBasic()
     }
-    
     //
     func convert(p: CGPoint) -> CGPoint {
         return p
@@ -427,15 +391,7 @@ extension CGRect: Physical, Vectorial2, Interpolatable, Animatable {
         push.commit()
     }
     
-    func animateTo(to: CGRect, duration: CFTimeInterval = 0.25, type: TimingFunctionType = .Default, render: (CGRect) -> Void, completion: ((Bool) -> Void)? = nil) {
-       self.animateTo(to, duration: duration, type: type, autoReverse: false, render: render, completion: completion)
-    }
-    
-    func animateTo(to: CGRect, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, render: (CGRect) -> Void, completion: ((Bool) -> Void)?) {
-        self.animateTo(to, duration: duration, type: type, autoReverse: autoReverse, repeatCount: 0, render: render, completion: completion)
-    }
-    
-    func animateTo(to: CGRect, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, repeatCount: Int, render: (CGRect) -> Void, completion: ((Bool) -> Void)?) {
+    func animateTo(to: CGRect, duration: CFTimeInterval = 0.25, delay:CFTimeInterval = 0.0, type: TimingFunctionType = .Default, autoReverse: Bool = false, repeatCount: Int = 0, render: (CGRect) -> Void, completion: ((Bool) -> Void)? = nil) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
@@ -444,7 +400,8 @@ extension CGRect: Physical, Vectorial2, Interpolatable, Animatable {
         basicItem.completion = completion
         basicItem.autoReverse = autoReverse
         basicItem.repeatCount = repeatCount
-        push.commit()
+        basicItem.delay = delay
+        push.commitToBasic()
     }
     
     //
@@ -510,15 +467,7 @@ extension UIColor: Physical, Vectorial2, Interpolatable, Animatable {
         push.commit()
     }
     
-    func animateTo(to: UIColor, duration: CFTimeInterval = 0.25, type: TimingFunctionType = .Default, render: (UIColor) -> Void, completion: ((Bool) -> Void)? = nil) {
-        self.animateTo(to, duration: duration, type: type, autoReverse: false, render: render, completion: completion)
-    }
-    
-    func animateTo(to: UIColor, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, render: (UIColor) -> Void, completion: ((Bool) -> Void)?) {
-        self.animateTo(to, duration: duration, type: type, autoReverse: autoReverse, repeatCount: 0, render: render, completion: completion)
-    }
-    
-    func animateTo(to: UIColor, duration: CFTimeInterval, type: TimingFunctionType, autoReverse: Bool, repeatCount: Int, render: (UIColor) -> Void, completion: ((Bool) -> Void)?) {
+    func animateTo(to: UIColor, duration: CFTimeInterval = 0.25, delay:CFTimeInterval = 0.0, type: TimingFunctionType = .Default, autoReverse: Bool = false, repeatCount: Int = 0, render: (UIColor) -> Void, completion: ((Bool) -> Void)? = nil) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
@@ -527,12 +476,13 @@ extension UIColor: Physical, Vectorial2, Interpolatable, Animatable {
         basicItem.completion = completion
         basicItem.autoReverse = autoReverse
         basicItem.repeatCount = repeatCount
+        basicItem.delay = delay
         let fromInfo = self.colorInfo()
         let toInfo = to.colorInfo()
         basicItem.externalData = (fromInfo,toInfo)
-        push.commit()
+        push.commitToBasic()
     }
-    
+
     //
     func convert(r: CGRect) -> Self {
         let hue = r.minX / 250.0

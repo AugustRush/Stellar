@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIDynamicBehavior {
+internal extension UIDynamicBehavior {
     
     func commit() {
         AnimatorCoordinator.shared.addBehavior(self)
@@ -16,5 +16,9 @@ extension UIDynamicBehavior {
         
     func cancel() {
         self.dynamicAnimator?.removeBehavior(self)
+    }
+    
+    func commitToBasic() {
+        AnimatorCoordinator.shared.addBasicBehavior(self)
     }
 }
