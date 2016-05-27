@@ -11,8 +11,10 @@
 		970A7FB71CF2AC0000C7555C /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A7FB61CF2AC0000C7555C /* Interpolatable.swift */; };
 		970A80041CF44B1800C7555C /* CollisionBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A80031CF44B1800C7555C /* CollisionBehavior.swift */; };
 		973E59CB1CF5ACEC00F26487 /* Example1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */; };
-		973E59E01CF5D23800F26487 /* DynamicAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59DF1CF5D23800F26487 /* DynamicAnimator.swift */; };
 		973E59E71CF6F2E100F26487 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59E61CF6F2E100F26487 /* Ball.swift */; };
+		973E59E91CF6FD2200F26487 /* UIView+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */; };
+		973E59EB1CF6FD5B00F26487 /* AnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59EA1CF6FD5B00F26487 /* AnimationContext.swift */; };
+		973E5A041CF70FAE00F26487 /* TimingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E5A031CF70FAE00F26487 /* TimingType.swift */; };
 		97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A331CF05DAB009E60EB /* Vectorial.swift */; };
 		97A61A381CF082F6009E60EB /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A371CF082F6009E60EB /* UnitBezier.swift */; };
 		97A61A3A1CF09B8F009E60EB /* DynamicItem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A391CF09B8F009E60EB /* DynamicItem2.swift */; };
@@ -54,8 +56,10 @@
 		970A7FB61CF2AC0000C7555C /* Interpolatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interpolatable.swift; sourceTree = "<group>"; };
 		970A80031CF44B1800C7555C /* CollisionBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionBehavior.swift; sourceTree = "<group>"; };
 		973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example1ViewController.swift; sourceTree = "<group>"; };
-		973E59DF1CF5D23800F26487 /* DynamicAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicAnimator.swift; sourceTree = "<group>"; };
 		973E59E61CF6F2E100F26487 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Stellar.swift"; sourceTree = "<group>"; };
+		973E59EA1CF6FD5B00F26487 /* AnimationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationContext.swift; sourceTree = "<group>"; };
+		973E5A031CF70FAE00F26487 /* TimingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingType.swift; sourceTree = "<group>"; };
 		97A61A331CF05DAB009E60EB /* Vectorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vectorial.swift; sourceTree = "<group>"; };
 		97A61A371CF082F6009E60EB /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
 		97A61A391CF09B8F009E60EB /* DynamicItem2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItem2.swift; sourceTree = "<group>"; };
@@ -106,13 +110,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		970A80001CF448B900C7555C /* other */ = {
+		970A80001CF448B900C7555C /* Internal */ = {
 			isa = PBXGroup;
 			children = (
 				970A80031CF44B1800C7555C /* CollisionBehavior.swift */,
-				973E59DF1CF5D23800F26487 /* DynamicAnimator.swift */,
+				973E59EA1CF6FD5B00F26487 /* AnimationContext.swift */,
 			);
-			name = other;
+			name = Internal;
 			sourceTree = "<group>";
 		};
 		97A61A3B1CF1B254009E60EB /* protocols */ = {
@@ -121,6 +125,7 @@
 				97A61A331CF05DAB009E60EB /* Vectorial.swift */,
 				97E1A8D71CEB4AF200F98D86 /* Physical.swift */,
 				970A7FB61CF2AC0000C7555C /* Interpolatable.swift */,
+				973E5A031CF70FAE00F26487 /* TimingType.swift */,
 			);
 			name = protocols;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */,
 				97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */,
 				97E1A9101CEDEF5200F98D86 /* DynamicItem+Behavior.swift */,
+				973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -219,7 +225,7 @@
 		97BE88EF1CDDDBCE00240523 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				970A80001CF448B900C7555C /* other */,
+				970A80001CF448B900C7555C /* Internal */,
 				97A61A401CF1B2BF009E60EB /* coordnator */,
 				97A61A3F1CF1B29B009E60EB /* items */,
 				97A61A3E1CF1B28D009E60EB /* utils */,
@@ -363,16 +369,18 @@
 			files = (
 				970A80041CF44B1800C7555C /* CollisionBehavior.swift in Sources */,
 				973E59CB1CF5ACEC00F26487 /* Example1ViewController.swift in Sources */,
+				973E59EB1CF6FD5B00F26487 /* AnimationContext.swift in Sources */,
 				97E1A90F1CED918400F98D86 /* UIDynamicBehavior+Commit.swift in Sources */,
 				970A7FB51CF2AA8F00C7555C /* DynamicItemBasic.swift in Sources */,
 				97E1A8DC1CEB4D6700F98D86 /* AnimatorCoordinator.swift in Sources */,
+				973E59E91CF6FD2200F26487 /* UIView+Stellar.swift in Sources */,
 				97BE88C41CDDDAD000240523 /* Example2ViewController.swift in Sources */,
 				97E1A8DA1CEB4B5200F98D86 /* Value+Physical.swift in Sources */,
 				97E1A8DE1CEC0E9200F98D86 /* DynamicItem.swift in Sources */,
 				97A61A431CF1E159009E60EB /* TimingFunction.swift in Sources */,
 				973E59E71CF6F2E100F26487 /* Ball.swift in Sources */,
+				973E5A041CF70FAE00F26487 /* TimingType.swift in Sources */,
 				97E1A8D81CEB4AF200F98D86 /* Physical.swift in Sources */,
-				973E59E01CF5D23800F26487 /* DynamicAnimator.swift in Sources */,
 				97E1A9111CEDEF5200F98D86 /* DynamicItem+Behavior.swift in Sources */,
 				97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */,
 				97A61A381CF082F6009E60EB /* UnitBezier.swift in Sources */,

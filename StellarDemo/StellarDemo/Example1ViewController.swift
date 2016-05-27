@@ -28,11 +28,25 @@ class Example1ViewController: UIViewController {
             let center = ball.center
             let interval = 0.1 * Double(index)
             
-            center.animateTo(point!, duration: 0.8,delay: interval, type: .SwiftOut,autoReverse:  true, render: { (p) in
-                ball.center = p
+            center.animateTo(point!,
+                             duration: 0.8,
+                             delay: interval,
+                             type: .SwiftOut,
+                             autoreverses:  true,
+                             render: { (p) in
+                                
+                                ball.center = p
+                                
                 }, completion: { (f) in
                  
-                    ball.backgroundColor?.animateTo(UIColor.redColor(),duration: 0.5,delay: interval, type: .EaseIn, autoReverse: true, repeatCount: 2, render: { (c) in
+                    ball.backgroundColor?.animateTo(UIColor.redColor(),
+                        duration: 0.5,
+                        delay: interval,
+                        type: .EaseIn,
+                        autoreverses: true,
+                        repeatCount: 2,
+                        render: { (c) in
+                            
                         ball.backgroundColor = c
                     })
             })

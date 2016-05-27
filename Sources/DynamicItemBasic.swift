@@ -16,7 +16,7 @@ private let SolveForUnReverse = { (f: CFTimeInterval) in
     return f
 }
 
-final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem {
+final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem, TimingType {
     
     var duration: CFTimeInterval = 0.25
     var delay: CFTimeInterval = 0.0
@@ -24,7 +24,7 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem {
     var from: T
     var to: T
     var render: (T) -> Void
-    var autoReverse = false
+    var autoreverses = false
     var repeatCount = 0
     var completion: ((Bool) -> Void)?
     //External data to store (performance)
@@ -59,7 +59,7 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem {
         currentTime = max(0, currentTime)
         var progress = currentTime / duration
         if progress >= 1.0 {
-            isReversing = autoReverse ? !isReversing : false
+            isReversing = autoreverses ? !isReversing : false
             if repeatCount == 0 {
                 if isReversing {
                     progress = 0.0

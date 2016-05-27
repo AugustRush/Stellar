@@ -21,13 +21,6 @@ class Example2ViewController: UIViewController {
         
         self.view.backgroundColor = UIColor(red: 0.98,green: 0.98,blue: 0.98,alpha: 1.0)
         
-        let center = interactionView.center
-        attachment = interactionView.attachmentBehavior(center)
-        attachment.action = {
-            let c = self.interactionView.center
-            self.interactionView.transform = CGAffineTransformMakeScale(c.x / 200, c.x / 200)
-        }
-        animator.addBehavior(attachment)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,13 +28,19 @@ class Example2ViewController: UIViewController {
     }
 
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+        
+        interactionView.moveY(-100)
+        .then().moveX(200).duration(1)
+        .then().moveX(-100).duration(0.5)
+        .then().moveY(200).completion { 
+            print("all step completion")
+        }.animate()
+    }
+    
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
-        
-        let point = touches.first?.locationInView(self.view)
-        
-            attachment.anchorPoint = point!
-       
     }
 }
 
