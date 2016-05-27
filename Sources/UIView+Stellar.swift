@@ -161,6 +161,12 @@ public extension UIView {
         return self
     }
     
+    func shadowOpacity(opacity: Float) -> UIView {
+        let type = ViewAnimationType.Basic(.ShadowOpacity(opacity))
+        context.addAnimationType(type)
+        return self
+    }
+    
     //MARK: Animation configurations
     func duration(d: CFTimeInterval) -> UIView {
         context.changeDuration(d)

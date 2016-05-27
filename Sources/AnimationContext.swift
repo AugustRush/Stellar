@@ -39,6 +39,7 @@ enum ViewAnimationSubType {
     case AnchorPointZ(CGFloat)
     case ShadowOffset(CGSize)
     case ShadowColor(UIColor)
+    case ShadowOpacity(Float)
 }
 
 internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
@@ -369,7 +370,7 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
             }
             
             behavior = basicBehavior(step, from: from, to: to, render: render)
-
+            
         case .ShadowColor(let c):
             let color = self.view.layer.shadowColor
             let from = (color != nil) ? UIColor(CGColor: color!) : UIColor.clearColor()
@@ -382,7 +383,16 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
             let fromInfo = from.colorInfo()
             let toInfo = to.colorInfo()
             behavior = basicBehavior(step, from: from, to: to, render: render,externalData: (fromInfo,toInfo))
-
+            
+        case .ShadowOpacity(let o):
+            let from = view.layer.shadowOpacity
+            let to = o
+            let render = {(f: Float) in
+                if let view = self.view {
+                    view.layer.shadowOpacity = f
+                }
+            }
+            behavior = basicBehavior(step, from: from, to: to, render: render)
         }
         
         animator.addBehavior(behavior)
