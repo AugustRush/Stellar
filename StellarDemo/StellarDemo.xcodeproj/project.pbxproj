@@ -15,6 +15,8 @@
 		973E59E91CF6FD2200F26487 /* UIView+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */; };
 		973E59EB1CF6FD5B00F26487 /* AnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59EA1CF6FD5B00F26487 /* AnimationContext.swift */; };
 		973E5A041CF70FAE00F26487 /* TimingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E5A031CF70FAE00F26487 /* TimingType.swift */; };
+		973E5A061CF8214F00F26487 /* CATransform3D+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E5A051CF8214F00F26487 /* CATransform3D+Stellar.swift */; };
+		973E5A081CF821BA00F26487 /* CGAffineTransform+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E5A071CF821BA00F26487 /* CGAffineTransform+Stellar.swift */; };
 		97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A331CF05DAB009E60EB /* Vectorial.swift */; };
 		97A61A381CF082F6009E60EB /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A371CF082F6009E60EB /* UnitBezier.swift */; };
 		97A61A3A1CF09B8F009E60EB /* DynamicItem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A391CF09B8F009E60EB /* DynamicItem2.swift */; };
@@ -60,6 +62,8 @@
 		973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Stellar.swift"; sourceTree = "<group>"; };
 		973E59EA1CF6FD5B00F26487 /* AnimationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationContext.swift; sourceTree = "<group>"; };
 		973E5A031CF70FAE00F26487 /* TimingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingType.swift; sourceTree = "<group>"; };
+		973E5A051CF8214F00F26487 /* CATransform3D+Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CATransform3D+Stellar.swift"; sourceTree = "<group>"; };
+		973E5A071CF821BA00F26487 /* CGAffineTransform+Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGAffineTransform+Stellar.swift"; sourceTree = "<group>"; };
 		97A61A331CF05DAB009E60EB /* Vectorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vectorial.swift; sourceTree = "<group>"; };
 		97A61A371CF082F6009E60EB /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
 		97A61A391CF09B8F009E60EB /* DynamicItem2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItem2.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */,
 				97E1A9101CEDEF5200F98D86 /* DynamicItem+Behavior.swift */,
 				973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */,
+				973E5A051CF8214F00F26487 /* CATransform3D+Stellar.swift */,
+				973E5A071CF821BA00F26487 /* CGAffineTransform+Stellar.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -376,6 +382,7 @@
 				973E59E91CF6FD2200F26487 /* UIView+Stellar.swift in Sources */,
 				97BE88C41CDDDAD000240523 /* Example2ViewController.swift in Sources */,
 				97E1A8DA1CEB4B5200F98D86 /* Value+Physical.swift in Sources */,
+				973E5A061CF8214F00F26487 /* CATransform3D+Stellar.swift in Sources */,
 				97E1A8DE1CEC0E9200F98D86 /* DynamicItem.swift in Sources */,
 				97A61A431CF1E159009E60EB /* TimingFunction.swift in Sources */,
 				973E59E71CF6F2E100F26487 /* Ball.swift in Sources */,
@@ -387,6 +394,7 @@
 				97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */,
 				97A61A3A1CF09B8F009E60EB /* DynamicItem2.swift in Sources */,
 				970A7FB71CF2AC0000C7555C /* Interpolatable.swift in Sources */,
+				973E5A081CF821BA00F26487 /* CGAffineTransform+Stellar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

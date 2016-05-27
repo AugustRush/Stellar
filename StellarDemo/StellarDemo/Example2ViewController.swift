@@ -31,12 +31,10 @@ class Example2ViewController: UIViewController {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
         
-        interactionView.moveY(-100)
-        .then().moveX(200).duration(1)
-        .then().moveX(-100).duration(0.5)
-        .then().moveY(200).completion { 
-            print("all step completion")
-        }.animate()
+        interactionView.scaleXY(1.5, 2).duration(1)
+        .then().rotateX(CGFloat(M_PI_4)).moveX(-100).moveY(-100).duration(2)
+        .then().makeColor(UIColor.purpleColor()).autoreverses(true).moveX(100)
+        .then().moveY(200).duration(1).easing(.SwiftOut).animate()
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {

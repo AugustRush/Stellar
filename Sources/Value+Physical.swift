@@ -530,7 +530,7 @@ extension UIColor: Physical, Vectorial2, Interpolatable {
     
     //performance
     typealias ColorInfo = (hue:CGFloat,saturation:CGFloat,brightness:CGFloat,alpha:CGFloat)
-    private func colorInfo() -> ColorInfo {
+    internal func colorInfo() -> ColorInfo {
         var hue: CGFloat = 0.0
         var saturation: CGFloat = 0.0
         var brightness: CGFloat = 0.0
