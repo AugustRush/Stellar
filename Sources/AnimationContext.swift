@@ -31,6 +31,14 @@ enum ViewAnimationSubType {
     case ScaleX(CGFloat)
     case ScaleY(CGFloat)
     case ScaleXY(CGFloat,CGFloat)
+    case CornerRadius(CGFloat)
+    case BorderWidth(CGFloat)
+    case ShadowRadius(CGFloat)
+    case ZPosition(CGFloat)
+    case AnchorPoint(CGPoint)
+    case AnchorPointZ(CGFloat)
+    case ShadowOffset(CGSize)
+    case ShadowColor(UIColor)
 }
 
 internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
@@ -50,37 +58,32 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
     
     //MARK: public methods
     func addAnimationType(type: ViewAnimationType) {
-        var step = steps.last
-        if step == nil {
-            step = Step()
-            steps.append(step!)
-        }
-        
-        step!.types.append(type)
+        let step = lastStep()
+        step.types.append(type)
     }
     
     func changeDuration(d: CFTimeInterval) {
-        let step = steps.last!
+        let step = lastStep()
         step.duration = d
     }
     
     func changeDelay(d: CFTimeInterval) {
-        let step = steps.last!
+        let step = lastStep()
         step.delay = d
     }
     
     func changeAutoreverses(a: Bool) {
-        let step = steps.last!
+        let step = lastStep()
         step.autoreverses = a
     }
     
     func changeCompletion(c: () -> Void) {
-        let step = steps.last!
+        let step = lastStep()
         step.completion = c
     }
     
     func changeEasing(e: TimingFunctionType) {
-        let step = steps.last!
+        let step = lastStep()
         step.easing = e
     }
     
@@ -93,7 +96,18 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
         excuteFirstStepIfExist()
     }
     
+    
     //MARK: private methods
+    
+    private func lastStep() -> Step {
+        var step = steps.last
+        if step == nil {
+            step = Step()
+            steps.append(step!)
+        }
+        
+        return step!
+    }
     
     private func excuteFirstStepIfExist() {
         
@@ -282,10 +296,93 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
             let transform = self.view.layer.transform
             let render = {(p: CGPoint) in
                 if let view = self.view {
-                    view.layer.transform = CATransform3DScale(transform, p.x, p.y, 1)   
+                    view.layer.transform = CATransform3DScale(transform, p.x, p.y, 1)
                 }
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
+            
+        case .CornerRadius(let r):
+            let from = view.layer.cornerRadius
+            let to = r
+            let render = {(f: CGFloat) in
+                if let view = self.view {
+                    view.layer.cornerRadius = f
+                }
+            }
+            behavior = basicBehavior(step, from: from, to: to, render: render)
+            
+        case .BorderWidth(let b):
+            let from = view.layer.borderWidth
+            let to = b
+            let render = {(f: CGFloat) in
+                if let view = self.view {
+                    view.layer.borderWidth = f
+                }
+            }
+            behavior = basicBehavior(step, from: from, to: to, render: render)
+        case .ShadowRadius(let s):
+            let from = view.layer.shadowRadius
+            let to = s
+            let render = {(f: CGFloat) in
+                if let view = self.view {
+                    view.layer.shadowRadius = f
+                }
+            }
+            behavior = basicBehavior(step, from: from, to: to, render: render)
+        case .ZPosition(let p):
+            let from = view.layer.zPosition
+            let to = p
+            let render = {(f: CGFloat) in
+                if let view = self.view {
+                    view.layer.zPosition = f
+                }
+            }
+            behavior = basicBehavior(step, from: from, to: to, render: render)
+        case .AnchorPoint(let point):
+            let from = self.view.layer.anchorPoint
+            let to = point
+            let render = {(p: CGPoint) in
+                if let view = self.view {
+                    view.layer.anchorPoint = p
+                }
+            }
+            
+            behavior = basicBehavior(step, from: from, to: to, render: render)
+            
+        case .AnchorPointZ(let z):
+            let from = view.layer.anchorPointZ
+            let to = z
+            let render = {(f: CGFloat) in
+                if let view = self.view {
+                    view.layer.anchorPointZ = f
+                }
+            }
+            behavior = basicBehavior(step, from: from, to: to, render: render)
+            
+        case .ShadowOffset(let size):
+            let from = self.view.layer.shadowOffset
+            let to = size
+            let render = {(s: CGSize) in
+                if let view = self.view {
+                    view.layer.shadowOffset = s
+                }
+            }
+            
+            behavior = basicBehavior(step, from: from, to: to, render: render)
+
+        case .ShadowColor(let c):
+            let color = self.view.layer.shadowColor
+            let from = (color != nil) ? UIColor(CGColor: color!) : UIColor.clearColor()
+            let to = c
+            let render = {(c: UIColor) in
+                if let view = self.view {
+                    view.layer.shadowColor = c.CGColor
+                }
+            }
+            let fromInfo = from.colorInfo()
+            let toInfo = to.colorInfo()
+            behavior = basicBehavior(step, from: from, to: to, render: render,externalData: (fromInfo,toInfo))
+
         }
         
         animator.addBehavior(behavior)

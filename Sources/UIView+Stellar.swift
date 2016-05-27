@@ -112,6 +112,54 @@ public extension UIView {
         context.addAnimationType(type)
         return self
     }
+        
+    func cornerRadius(radius: CGFloat) -> UIView {
+        let type = ViewAnimationType.Basic(.CornerRadius(radius))
+        context.addAnimationType(type)
+        return self
+    }
+    
+    func borderWidth(width: CGFloat) -> UIView {
+        let type = ViewAnimationType.Basic(.BorderWidth(width))
+        context.addAnimationType(type)
+        return self
+    }
+    
+    func shadowRadius(radius: CGFloat) -> UIView {
+        let type = ViewAnimationType.Basic(.ShadowRadius(radius))
+        context.addAnimationType(type)
+        return self
+    }
+    
+    func zPosition(position: CGFloat) -> UIView {
+        let type = ViewAnimationType.Basic(.ZPosition(position))
+        context.addAnimationType(type)
+        return self
+    }
+    
+    func anchorPoint(point: CGPoint) -> UIView {
+        let type = ViewAnimationType.Basic(.AnchorPoint(point))
+        context.addAnimationType(type)
+        return self
+    }
+    
+    func anchorPointZ(z: CGFloat) -> UIView {
+        let type = ViewAnimationType.Basic(.AnchorPointZ(z))
+        context.addAnimationType(type)
+        return self
+    }
+    
+    func shadowOffset(offset: CGSize) -> UIView {
+        let type = ViewAnimationType.Basic(.ShadowOffset(offset))
+        context.addAnimationType(type)
+        return self
+    }
+    
+    func shadowColor(color: UIColor) -> UIView {
+        let type = ViewAnimationType.Basic(.ShadowColor(color))
+        context.addAnimationType(type)
+        return self
+    }
     
     //MARK: Animation configurations
     func duration(d: CFTimeInterval) -> UIView {

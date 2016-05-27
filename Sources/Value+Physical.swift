@@ -507,7 +507,7 @@ extension UIColor: Physical, Vectorial2, Interpolatable {
     
     private func convertT<T>(hue: CGFloat,saturation: CGFloat, brightness: CGFloat, alpha: CGFloat) -> T {
         let color = UIColor(hue: hue,saturation: saturation,brightness: brightness,alpha: alpha)
-        return color as! T
+        return unsafeBitCast(color, T.self)
     }
     
     //

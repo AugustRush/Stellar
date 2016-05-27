@@ -21,6 +21,10 @@ class Example2ViewController: UIViewController {
         
         self.view.backgroundColor = UIColor(red: 0.98,green: 0.98,blue: 0.98,alpha: 1.0)
         
+        interactionView.layer.shadowColor = UIColor.blackColor().CGColor
+        interactionView.layer.shadowOffset = CGSizeMake(10, 10)
+        interactionView.layer.shadowRadius = 2
+        interactionView.layer.shadowOpacity = 0.8
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,8 +34,8 @@ class Example2ViewController: UIViewController {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
-        
-        interactionView.scaleXY(1.5, 2).duration(1)
+
+        interactionView.duration(1).shadowOffset(CGSizeMake(100, 100)).shadowColor(UIColor.blueColor()).shadowRadius(8)
         .then().rotateX(CGFloat(M_PI_4)).moveX(-100).moveY(-100).duration(2)
         .then().makeColor(UIColor.purpleColor()).autoreverses(true).moveX(100)
         .then().moveY(200).duration(1).easing(.SwiftOut).animate()
