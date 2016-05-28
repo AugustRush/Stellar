@@ -34,6 +34,10 @@
 		97E1A8DE1CEC0E9200F98D86 /* DynamicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8DD1CEC0E9200F98D86 /* DynamicItem.swift */; };
 		97E1A90F1CED918400F98D86 /* UIDynamicBehavior+Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */; };
 		97E1A9111CEDEF5200F98D86 /* DynamicItem+Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A9101CEDEF5200F98D86 /* DynamicItem+Behavior.swift */; };
+		97EC4BFC1CF9DF8D0059BBFA /* BasicChainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC4BFB1CF9DF8D0059BBFA /* BasicChainable.swift */; };
+		97EC4BFE1CF9E2620059BBFA /* BasicConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC4BFD1CF9E2620059BBFA /* BasicConfigurable.swift */; };
+		97EC4C001CF9E3310059BBFA /* Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC4BFF1CF9E3310059BBFA /* Chainable.swift */; };
+		97EC4C021CF9E47D0059BBFA /* SnapConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC4C011CF9E47D0059BBFA /* SnapConfigurable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,10 @@
 		97E1A8DD1CEC0E9200F98D86 /* DynamicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItem.swift; sourceTree = "<group>"; };
 		97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDynamicBehavior+Commit.swift"; sourceTree = "<group>"; };
 		97E1A9101CEDEF5200F98D86 /* DynamicItem+Behavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicItem+Behavior.swift"; sourceTree = "<group>"; };
+		97EC4BFB1CF9DF8D0059BBFA /* BasicChainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicChainable.swift; sourceTree = "<group>"; };
+		97EC4BFD1CF9E2620059BBFA /* BasicConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicConfigurable.swift; sourceTree = "<group>"; };
+		97EC4BFF1CF9E3310059BBFA /* Chainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chainable.swift; sourceTree = "<group>"; };
+		97EC4C011CF9E47D0059BBFA /* SnapConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapConfigurable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,10 @@
 				97E1A8D71CEB4AF200F98D86 /* Physical.swift */,
 				970A7FB61CF2AC0000C7555C /* Interpolatable.swift */,
 				973E5A031CF70FAE00F26487 /* TimingType.swift */,
+				97EC4BFF1CF9E3310059BBFA /* Chainable.swift */,
+				97EC4BFB1CF9DF8D0059BBFA /* BasicChainable.swift */,
+				97EC4BFD1CF9E2620059BBFA /* BasicConfigurable.swift */,
+				97EC4C011CF9E47D0059BBFA /* SnapConfigurable.swift */,
 			);
 			name = protocols;
 			sourceTree = "<group>";
@@ -390,9 +402,13 @@
 				97E1A8D81CEB4AF200F98D86 /* Physical.swift in Sources */,
 				97E1A9111CEDEF5200F98D86 /* DynamicItem+Behavior.swift in Sources */,
 				97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */,
+				97EC4C001CF9E3310059BBFA /* Chainable.swift in Sources */,
+				97EC4C021CF9E47D0059BBFA /* SnapConfigurable.swift in Sources */,
 				97A61A381CF082F6009E60EB /* UnitBezier.swift in Sources */,
 				97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */,
 				97A61A3A1CF09B8F009E60EB /* DynamicItem2.swift in Sources */,
+				97EC4BFC1CF9DF8D0059BBFA /* BasicChainable.swift in Sources */,
+				97EC4BFE1CF9E2620059BBFA /* BasicConfigurable.swift in Sources */,
 				970A7FB71CF2AC0000C7555C /* Interpolatable.swift in Sources */,
 				973E5A081CF821BA00F26487 /* CGAffineTransform+Stellar.swift in Sources */,
 			);
