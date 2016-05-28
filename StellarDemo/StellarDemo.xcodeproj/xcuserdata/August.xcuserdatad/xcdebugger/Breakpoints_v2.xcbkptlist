@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Sources/AnimatorCoordinator.swift"
-            timestampString = "485955591.528557"
+            filePath = "StellarDemo/Example2ViewController.swift"
+            timestampString = "486049005.565271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "dynamicAnimatorDidPause(_:)"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "touchesMoved(_:withEvent:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

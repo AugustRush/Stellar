@@ -8,11 +8,6 @@
 
 import UIKit
 
-enum ViewAnimationType {
-    case Basic(ViewAnimationSubType)
-    case Gravity
-}
-
 enum ViewAnimationSubType {
     case MoveX(CGFloat)
     case MoveY(CGFloat)
@@ -58,7 +53,7 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
     }
     
     //MARK: public methods
-    func addAnimationType(type: ViewAnimationType) {
+    func addAnimationType(type: AnimationType) {
         let step = lastStep()
         step.types.append(type)
     }
@@ -117,11 +112,11 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
         if let step = step {
             for type in step.types {
                 
-                switch type {
-                case .Basic(let subType):
-                    createBasicAnimationWithType(subType, step: step)
+                switch type.type {
+                case .Basic:
+                    createBasicAnimationWithType(type.subType, step: step)
                 case .Gravity:
-                    fatalError("Not support yet")
+                    createGravityAnimationWithType(type.subType, step: step)
                 }
             }
         }
@@ -136,6 +131,7 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
         }
     }
     
+    //MARK: Basic
     private func createBasicAnimationWithType(type: ViewAnimationSubType, step: Step) {
         
         var behavior: UIDynamicBehavior!
@@ -415,7 +411,65 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
         return push
     }
 
+    //MARK: Gravity
  
+    private func createGravityAnimationWithType(type: ViewAnimationSubType, step: Step) {
+//        switch type {
+//        case .MoveX:
+//            <#statement#>
+//        case .MoveY:
+//            <#statement#>
+//        case .MoveTo:
+//            <#statement#>
+//        case .Color:
+//            <#statement#>
+//        case .Alpha:
+//            <#statement#>
+//        case .RotateX:
+//            <#statement#>
+//        case .RotateY:
+//            <#statement#>
+//        case .Rotate:
+//            <#statement#>
+//        case .RotateXY:
+//            <#statement#>
+//        case .Width:
+//            <#statement#>
+//        case .Height:
+//            <#statement#>
+//        case .Size:
+//            <#statement#>
+//        case .Frame:
+//            <#statement#>
+//        case .Bounds:
+//            <#statement#>
+//        case .ScaleX:
+//            <#statement#>
+//        case .ScaleY:
+//            <#statement#>
+//        case .ScaleXY:
+//            <#statement#>
+//        case .CornerRadius: 
+//            <#statement#>
+//        case .BorderWidth: 
+//            <#statement#>
+//        case .ShadowRadius: 
+//            <#statement#>
+//        case .ZPosition: 
+//            <#statement#>
+//        case .AnchorPoint: 
+//            <#statement#>
+//        case .AnchorPointZ: 
+//            <#statement#>
+//        case .ShadowOffset: 
+//            <#statement#>
+//        case .ShadowColor: 
+//            <#statement#>
+//        case .ShadowOpacity: 
+//            <#statement#>
+//        }
+    }
+    
     //MARK: UIDynamicAnimatorDelegate methods
     
     func dynamicAnimatorDidPause(animator: UIDynamicAnimator) {
@@ -429,7 +483,7 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
     
     //MARK: Private step class
     private class Step {
-        var types = [ViewAnimationType]()
+        var types = [AnimationType]()
         var duration: CFTimeInterval = 0.25
         var easing: TimingFunctionType = .Default
         var delay: CFTimeInterval = 0.0
@@ -438,3 +492,15 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
         var completion: (() -> Void)?
     }
 }
+
+//temp record for animation type
+class AnimationType {
+    var type: ViewAnimationType
+    var subType: ViewAnimationSubType
+    
+    init (type: ViewAnimationType, subType: ViewAnimationSubType) {
+        self.type = type
+        self.subType = subType
+    }
+}
+

@@ -10,7 +10,8 @@ import UIKit
 
 class Example2ViewController: UIViewController {
     
-    @IBOutlet weak var interactionView: UIView!
+   
+    @IBOutlet var balls: [UIView]!
     
     var attachment: UIAttachmentBehavior!
     var animator = UIDynamicAnimator()
@@ -21,6 +22,7 @@ class Example2ViewController: UIViewController {
         
         self.view.backgroundColor = UIColor(red: 0.98,green: 0.98,blue: 0.98,alpha: 1.0)
         
+        self.title = "Chainable"
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,15 +32,23 @@ class Example2ViewController: UIViewController {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
-
-        interactionView.duration(1).shadowOffset(CGSizeMake(10, 10)).shadowColor(UIColor.blueColor()).shadowRadius(8).shadowOpacity(0.8)
-        .then().rotateX(CGFloat(M_PI_4)).moveX(-100).moveY(-100).duration(2)
-        .then().makeColor(UIColor.purpleColor()).autoreverses(true).moveX(100)
-        .then().moveY(200).duration(1).easing(.SwiftOut).animate()
+        
+        for (index, ball) in balls.enumerate() {
+            let move = CGFloat(-20 + index * 20)
+            let opacity = Float(1 - 0.2 * CGFloat(index))
+            ball.makeColor(UIColor.blackColor()).autoreverses()
+                .then().shadowOpacity(opacity).shadowOffset(CGSizeMake(20 - CGFloat(index) * 5, 20 - CGFloat(index) * 5)).shadowRadius(5).moveX(-move).moveY(-move).shadowColor(UIColor.grayColor()).duration(2)
+                .then().moveY(move).moveX(move).shadowOpacity(0).shadowOffset(CGSizeZero).shadowColor(UIColor.clearColor()).duration(1).animate()
+            
+        }
+        
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
+        
     }
+    
+    
 }
 

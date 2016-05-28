@@ -564,17 +564,49 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cG-b6-6gK" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
+                                <rect key="frame" x="95" y="219" width="130" height="130"/>
+                                <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="DbC-ID-Iwp"/>
+                                    <constraint firstAttribute="height" constant="130" id="Z9k-IC-rqc"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jv-Ak-maK" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
+                                <rect key="frame" x="95" y="219" width="130" height="130"/>
+                                <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="QHQ-9R-YqY"/>
+                                    <constraint firstAttribute="height" constant="130" id="kXL-9Z-yVK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="L8q-Ys-7ur" firstAttribute="centerX" secondItem="Et6-tf-rJx" secondAttribute="centerX" id="7Jk-xV-4DS"/>
+                            <constraint firstItem="9jv-Ak-maK" firstAttribute="centerX" secondItem="Et6-tf-rJx" secondAttribute="centerX" id="Huz-2z-1oP"/>
                             <constraint firstItem="L8q-Ys-7ur" firstAttribute="centerY" secondItem="Et6-tf-rJx" secondAttribute="centerY" id="QZt-Rg-TvV"/>
+                            <constraint firstItem="8cG-b6-6gK" firstAttribute="centerY" secondItem="Et6-tf-rJx" secondAttribute="centerY" id="bVX-zW-OPt"/>
+                            <constraint firstItem="8cG-b6-6gK" firstAttribute="centerX" secondItem="Et6-tf-rJx" secondAttribute="centerX" id="m3W-RZ-UzY"/>
+                            <constraint firstItem="9jv-Ak-maK" firstAttribute="centerY" secondItem="Et6-tf-rJx" secondAttribute="centerY" id="vLr-FN-2bA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aZ8-5U-OjU"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="interactionView" destination="L8q-Ys-7ur" id="P6U-Fk-5W9"/>
+                        <outletCollection property="balls" destination="L8q-Ys-7ur" collectionClass="NSMutableArray" id="Ero-yy-fdq"/>
+                        <outletCollection property="balls" destination="8cG-b6-6gK" collectionClass="NSMutableArray" id="b4o-ib-BP0"/>
+                        <outletCollection property="balls" destination="9jv-Ak-maK" collectionClass="NSMutableArray" id="VHg-3B-uJt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRq-Ca-dLv" userLabel="First Responder" sceneMemberID="firstResponder"/>

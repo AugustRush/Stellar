@@ -17,6 +17,8 @@ class Example1ViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(red: 0.97,green: 0.97,blue: 0.97,alpha: 1.0)
+        
+        self.title = "Basic"
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -28,11 +30,11 @@ class Example1ViewController: UIViewController {
             let center = ball.center
             let interval = 0.1 * Double(index)
             
-            center.animateTo(point!,
-                             duration: 0.8,
-                             delay: interval,
-                             type: .SwiftOut,
-                             autoreverses:  true,
+            center.snapTo(point!,
+//                             duration: 0.8,
+//                             delay: interval,
+//                             type: .SwiftOut,
+//                             autoreverses:  true,
                              render: { (p) in
                                 
                                 ball.center = p
@@ -48,6 +50,10 @@ class Example1ViewController: UIViewController {
                         render: { (c) in
                             
                         ball.backgroundColor = c
+                    })
+                    
+                    ball.center.attachmentTo(center, render: { (c) in
+                        ball.center = c
                     })
             })
         }
