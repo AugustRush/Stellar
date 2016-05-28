@@ -8,9 +8,9 @@
 
 import UIKit
 
-enum ViewAnimationType {
+public enum ViewAnimationType {
     case Basic
-    case Gravity
+    case Snap(CGFloat)
 }
 
 public extension UIView {
@@ -172,7 +172,14 @@ public extension UIView {
         return self
     }
     
-    //MARK: Animation configurations
+    //MARK: Physical Animation
+    
+    func snap(damping: CGFloat = 0.5) -> UIView {
+        context.changeMainType(.Snap(damping))
+        return self
+    }
+    
+    //MARK: Basic Animation configurations
     func duration(d: CFTimeInterval) -> UIView {
         context.changeDuration(d)
         return self
