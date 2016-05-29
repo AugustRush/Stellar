@@ -9,28 +9,28 @@ import UIKit
 
 extension Float: Physical, Vectorial, Interpolatable {
     
-    public func fallTo(to: Float, render: (Float) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: Float,magnitude: CGFloat = 1.0, render: (Float) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Float>(from: self, to: to,render: render)
         let directionX = item.toP.x - item.fromP.x
         let directionY = item.toP.y - item.fromP.y
-        let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
+        let gravity = item.gravityBehavior(magnitude, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         item.boundaryLimit = true
         item.completion = completion
         gravity.commit()
     }
     
-    public func snapTo(to: Float,render: (Float) -> Void, completion: (() -> Void)? = nil) {
+    public func snapTo(to: Float, damping: CGFloat = 0.5,render: ((Float) -> Void), completion: (() -> Void)? = nil) {
         let item = DynamicItem<Float>(from: self, to: to, render: render)
-        let snap = item.snapBehavior(item.toP, damping: 0.5)
+        let snap = item.snapBehavior(item.toP, damping: damping)
         item.behavior = snap
         item.completion = completion
         snap.commit()
     }
     
-    public func attachmentTo(to: Float,render: (Float) -> Void, completion: (() -> Void)? = nil) {
+    public func attachmentTo(to: Float,damping: CGFloat = 0.5,frequency: CGFloat = 0.5,render: (Float) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Float>(from: self, to: to,render: render)
-        let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: 0.5, frequency: 1)
+        let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: damping, frequency: frequency)
         item.behavior = attachment
         item.completion = completion
         attachment.commit()
@@ -75,28 +75,28 @@ extension Float: Physical, Vectorial, Interpolatable {
 
 extension Double: Physical, Vectorial, Interpolatable {
     
-    public func fallTo(to: Double,render: (Double) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: Double,magnitude: CGFloat = 1.0,render: (Double) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Double>(from: self, to: to,render: render)
         let directionX = item.toP.x - item.fromP.x
         let directionY = item.toP.y - item.fromP.y
-        let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
+        let gravity = item.gravityBehavior(magnitude, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         item.boundaryLimit = true
         item.completion = completion
         gravity.commit()
     }
     
-    public func snapTo(to: Double,render: (Double) -> Void, completion: (() -> Void)? = nil) {
+    public func snapTo(to: Double,damping: CGFloat = 0.5,render: ((Double) -> Void), completion: (() -> Void)? = nil) {
         let item = DynamicItem<Double>(from: self, to: to, render: render)
-        let snap = item.snapBehavior(item.toP, damping: 0.5)
+        let snap = item.snapBehavior(item.toP, damping: damping)
         item.behavior = snap
         item.completion = completion
         snap.commit()
     }
     
-    public func attachmentTo(to: Double,render: (Double) -> Void, completion: (() -> Void)? = nil) {
+    public func attachmentTo(to: Double,damping: CGFloat = 0.5,frequency: CGFloat = 0.5,render: (Double) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Double>(from: self, to: to,render: render)
-        let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: 0.5, frequency: 1)
+        let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: damping, frequency: frequency)
         item.behavior = attachment
         item.completion = completion
         attachment.commit()
@@ -145,28 +145,28 @@ extension Double: Physical, Vectorial, Interpolatable {
 
 extension CGFloat: Physical , Vectorial, Interpolatable {
     
-    public func fallTo(to: CGFloat,render: (CGFloat) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: CGFloat,magnitude: CGFloat = 1.0,render: (CGFloat) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGFloat>(from: self, to: to,render: render)
         let directionX = item.toP.x - item.fromP.x
         let directionY = item.toP.y - item.fromP.y
-        let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
+        let gravity = item.gravityBehavior(magnitude, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         item.boundaryLimit = true
         item.completion = completion
         gravity.commit()
     }
     
-    public func snapTo(to: CGFloat,render: (CGFloat) -> Void, completion: (() -> Void)? = nil) {
+    public func snapTo(to: CGFloat,damping: CGFloat = 0.5,render: ((CGFloat) -> Void), completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGFloat>(from: self, to: to, render: render)
-        let snap = item.snapBehavior(item.toP, damping: 0.5)
+        let snap = item.snapBehavior(item.toP, damping: damping)
         item.behavior = snap
         item.completion = completion
         snap.commit()
     }
     
-    public func attachmentTo(to: CGFloat,render: (CGFloat) -> Void, completion: (() -> Void)? = nil) {
+    public func attachmentTo(to: CGFloat,damping: CGFloat = 0.5,frequency: CGFloat = 0.5,render: (CGFloat) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGFloat>(from: self, to: to,render: render)
-        let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: 0.5, frequency: 1)
+        let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: damping, frequency: frequency)
         item.behavior = attachment
         item.completion = completion
         attachment.commit()
@@ -215,28 +215,28 @@ extension CGFloat: Physical , Vectorial, Interpolatable {
 
 extension CGSize: Physical, Vectorial, Interpolatable {
     
-    public func fallTo(to: CGSize, render: (CGSize) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: CGSize,magnitude: CGFloat = 1.0, render: (CGSize) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGSize>(from: self, to: to,render: render)
         let directionX = item.toP.x - item.fromP.x
         let directionY = item.toP.y - item.fromP.y
-        let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
+        let gravity = item.gravityBehavior(magnitude, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         item.boundaryLimit = true
         item.completion = completion
         gravity.commit()
     }
     
-    public func snapTo(to: CGSize,render: (CGSize) -> Void, completion: (() -> Void)? = nil) {
+    public func snapTo(to: CGSize,damping: CGFloat = 0.5,render: ((CGSize) -> Void), completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGSize>(from: self, to: to, render: render)
-        let snap = item.snapBehavior(item.toP, damping: 0.5)
+        let snap = item.snapBehavior(item.toP, damping: damping)
         item.behavior = snap
         item.completion = completion
         snap.commit()
     }
     
-    public func attachmentTo(to: CGSize,render: (CGSize) -> Void, completion: (() -> Void)? = nil) {
+    public func attachmentTo(to: CGSize,damping: CGFloat = 0.5,frequency: CGFloat = 0.5,render: (CGSize) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGSize>(from: self, to: to,render: render)
-        let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: 0.5, frequency: 1)
+        let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: damping, frequency: frequency)
         item.behavior = attachment
         item.completion = completion
         attachment.commit()
@@ -286,28 +286,28 @@ extension CGSize: Physical, Vectorial, Interpolatable {
 
 extension CGPoint: Physical, Vectorial, Interpolatable {
     
-    public func fallTo(to: CGPoint,render: (CGPoint) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: CGPoint,magnitude: CGFloat = 1.0,render: (CGPoint) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGPoint>(from: self, to: to,render: render)
         item.boundaryLimit = true
         let directionX = item.toP.x - item.fromP.x
         let directionY = item.toP.y - item.fromP.y
-        let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
+        let gravity = item.gravityBehavior(magnitude, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         item.completion = completion
         gravity.commit()
     }
     
-    public func snapTo(to: CGPoint,render: (CGPoint) -> Void, completion: (() -> Void)? = nil) {
+    public func snapTo(to: CGPoint,damping: CGFloat = 0.5,render: ((CGPoint) -> Void), completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGPoint>(from: self, to: to, render: render)
-        let snap = item.snapBehavior(item.toP, damping: 0.5)
+        let snap = item.snapBehavior(item.toP, damping: damping)
         item.behavior = snap
         item.completion = completion
         snap.commit()
     }
     
-    public func attachmentTo(to: CGPoint,render: (CGPoint) -> Void, completion: (() -> Void)? = nil) {
+    public func attachmentTo(to: CGPoint,damping: CGFloat = 0.5,frequency: CGFloat = 0.5,render: (CGPoint) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGPoint>(from: self, to: to,render: render)
-        let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: 0.5, frequency: 1)
+        let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: damping, frequency: frequency)
         item.behavior = attachment
         item.completion = completion
         attachment.commit()
@@ -355,27 +355,27 @@ extension CGPoint: Physical, Vectorial, Interpolatable {
 
 extension CGRect: Physical, Vectorial2, Interpolatable {
     
-    public func fallTo(to: CGRect, render: (CGRect) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: CGRect,magnitude: CGFloat = 1.0, render: (CGRect) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render: render)
-        let gravity = item.gravityBehavior(1,direction: .Down)
+        let gravity = item.gravityBehavior(magnitude,direction: .Down)
         item.behavior = gravity
         item.boundaryLimit = true
         item.completion = completion
         gravity.commit()
     }
     
-    public func snapTo(to: CGRect, render: (CGRect) -> Void, completion: (() -> Void)? = nil) {
+    public func snapTo(to: CGRect,damping: CGFloat = 05, render: ((CGRect) -> Void), completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render:render)
-        let snap = item.snapBehavior(CGPointMake(0.0, item.referenceChangeLength), damping: 0.5)
+        let snap = item.snapBehavior(CGPointMake(0.0, item.referenceChangeLength), damping: damping)
         item.behavior = snap
         item.completion = completion
         snap.commit()
     }
     
-    public func attachmentTo(to: CGRect, render: (CGRect) -> Void, completion: (() -> Void)? = nil) {
+    public func attachmentTo(to: CGRect,damping: CGFloat = 0.5,frequency: CGFloat = 0.5, render: (CGRect) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render:render)
         let point = CGPointMake(0.0, item.referenceChangeLength)
-        let attachment = item.attachmentBehavior(point, length: 0.0, damping: 0.8, frequency: 1)
+        let attachment = item.attachmentBehavior(point, length: 0.0, damping: damping, frequency: frequency)
         item.behavior = attachment
         item.completion = completion
         attachment.commit()
@@ -430,28 +430,28 @@ extension CGRect: Physical, Vectorial2, Interpolatable {
 
 extension UIColor: Physical, Vectorial2, Interpolatable {
     
-    public func fallTo(to: UIColor, render: (UIColor) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: UIColor,magnitude: CGFloat = 1.0, render: (UIColor) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render: render)
-        let gravity = item.gravityBehavior(1,direction: .Down)
+        let gravity = item.gravityBehavior(magnitude,direction: .Down)
         item.behavior = gravity
         item.boundaryLimit = true
         item.completion = completion
         gravity.commit()
     }
     
-    public func snapTo(to: UIColor, render: (UIColor) -> Void, completion: (() -> Void)? = nil) {
+    public func snapTo(to: UIColor,damping: CGFloat = 0.5, render: ((UIColor) -> Void), completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render:render)
         let point = CGPointMake(0.0, item.referenceChangeLength)
-        let snap = item.snapBehavior(point, damping: 0.5)
+        let snap = item.snapBehavior(point, damping: damping)
         item.behavior = snap
         item.completion = completion
         snap.commit()
     }
     
-    public func attachmentTo(to: UIColor, render: (UIColor) -> Void, completion: (() -> Void)? = nil) {
+    public func attachmentTo(to: UIColor,damping: CGFloat = 0.5,frequency: CGFloat = 0.5, render: (UIColor) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render:render)
         let point = CGPointMake(0.0, item.referenceChangeLength)
-        let attachment = item.attachmentBehavior(point, length: 0.0, damping: 0.8, frequency: 1)
+        let attachment = item.attachmentBehavior(point, length: 0.0, damping: damping, frequency: frequency)
         item.behavior = attachment
         item.completion = completion
         attachment.commit()

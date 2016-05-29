@@ -9,11 +9,11 @@ import UIKit
 
 extension Float: Physical, Vectorial, Interpolatable {
     
-    public func fallTo(to: Float, render: (Float) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: Float,magnitude: CGFloat = 1.0, render: (Float) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Float>(from: self, to: to,render: render)
         let directionX = item.toP.x - item.fromP.x
         let directionY = item.toP.y - item.fromP.y
-        let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
+        let gravity = item.gravityBehavior(magnitude, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         item.boundaryLimit = true
         item.completion = completion
@@ -45,7 +45,7 @@ extension Float: Physical, Vectorial, Interpolatable {
         item.completion = completion
         push.commit()
     }
-        
+    
     public func animateTo(to: Float, duration: CFTimeInterval = 0.25, delay: CFTimeInterval = 0.0, type: TimingFunctionType = .Default, autoreverses: Bool = false, repeatCount: Int = 0, render: (Float) -> Void, completion: ((Bool) -> Void)? = nil) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
@@ -75,11 +75,11 @@ extension Float: Physical, Vectorial, Interpolatable {
 
 extension Double: Physical, Vectorial, Interpolatable {
     
-    public func fallTo(to: Double,render: (Double) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: Double,magnitude: CGFloat = 1.0,render: (Double) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Double>(from: self, to: to,render: render)
         let directionX = item.toP.x - item.fromP.x
         let directionY = item.toP.y - item.fromP.y
-        let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
+        let gravity = item.gravityBehavior(magnitude, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         item.boundaryLimit = true
         item.completion = completion
@@ -140,16 +140,16 @@ extension Double: Physical, Vectorial, Interpolatable {
         let change = to - self
         return self + change * progress
     }
-
+    
 }
 
 extension CGFloat: Physical , Vectorial, Interpolatable {
     
-    public func fallTo(to: CGFloat,render: (CGFloat) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: CGFloat,magnitude: CGFloat = 1.0,render: (CGFloat) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGFloat>(from: self, to: to,render: render)
         let directionX = item.toP.x - item.fromP.x
         let directionY = item.toP.y - item.fromP.y
-        let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
+        let gravity = item.gravityBehavior(magnitude, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         item.boundaryLimit = true
         item.completion = completion
@@ -215,11 +215,11 @@ extension CGFloat: Physical , Vectorial, Interpolatable {
 
 extension CGSize: Physical, Vectorial, Interpolatable {
     
-    public func fallTo(to: CGSize, render: (CGSize) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: CGSize,magnitude: CGFloat = 1.0, render: (CGSize) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGSize>(from: self, to: to,render: render)
         let directionX = item.toP.x - item.fromP.x
         let directionY = item.toP.y - item.fromP.y
-        let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
+        let gravity = item.gravityBehavior(magnitude, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         item.boundaryLimit = true
         item.completion = completion
@@ -264,7 +264,7 @@ extension CGSize: Physical, Vectorial, Interpolatable {
         basicItem.delay = delay
         push.commitToBasic()
     }
-
+    
     //
     func convert(p: CGPoint) -> CGSize {
         return CGSizeMake(p.x, p.y)
@@ -286,12 +286,12 @@ extension CGSize: Physical, Vectorial, Interpolatable {
 
 extension CGPoint: Physical, Vectorial, Interpolatable {
     
-    public func fallTo(to: CGPoint,render: (CGPoint) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: CGPoint,magnitude: CGFloat = 1.0,render: (CGPoint) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<CGPoint>(from: self, to: to,render: render)
         item.boundaryLimit = true
         let directionX = item.toP.x - item.fromP.x
         let directionY = item.toP.y - item.fromP.y
-        let gravity = item.gravityBehavior(1, direction: .Vector(directionX,directionY))
+        let gravity = item.gravityBehavior(magnitude, direction: .Vector(directionX,directionY))
         item.behavior = gravity
         item.completion = completion
         gravity.commit()
@@ -355,9 +355,9 @@ extension CGPoint: Physical, Vectorial, Interpolatable {
 
 extension CGRect: Physical, Vectorial2, Interpolatable {
     
-    public func fallTo(to: CGRect, render: (CGRect) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: CGRect,magnitude: CGFloat = 1.0, render: (CGRect) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render: render)
-        let gravity = item.gravityBehavior(1,direction: .Down)
+        let gravity = item.gravityBehavior(magnitude,direction: .Down)
         item.behavior = gravity
         item.boundaryLimit = true
         item.completion = completion
@@ -430,9 +430,9 @@ extension CGRect: Physical, Vectorial2, Interpolatable {
 
 extension UIColor: Physical, Vectorial2, Interpolatable {
     
-    public func fallTo(to: UIColor, render: (UIColor) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: UIColor,magnitude: CGFloat = 1.0, render: (UIColor) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render: render)
-        let gravity = item.gravityBehavior(1,direction: .Down)
+        let gravity = item.gravityBehavior(magnitude,direction: .Down)
         item.behavior = gravity
         item.boundaryLimit = true
         item.completion = completion
@@ -482,7 +482,7 @@ extension UIColor: Physical, Vectorial2, Interpolatable {
         basicItem.externalData = (fromInfo,toInfo)
         push.commitToBasic()
     }
-
+    
     //
     func convert(r: CGRect) -> Self {
         let hue = r.minX / 250.0
@@ -511,7 +511,7 @@ extension UIColor: Physical, Vectorial2, Interpolatable {
     }
     
     //
-    func interpolate(progress: Double, to: UIColor, externalData: Any?) -> Self {        
+    func interpolate(progress: Double, to: UIColor, externalData: Any?) -> Self {
         let infos = externalData as! (ColorInfo,ColorInfo)
         let fromInfo = infos.0
         let toInfo = infos.1
@@ -519,7 +519,7 @@ extension UIColor: Physical, Vectorial2, Interpolatable {
         let changedSaturation = toInfo.saturation - fromInfo.saturation
         let changedBrightness = toInfo.brightness - fromInfo.brightness
         let changedAlpha = toInfo.alpha - fromInfo.alpha
-    
+        
         let curHue = fromInfo.hue + changedHue * CGFloat(progress)
         let curSaturation = fromInfo.saturation + changedSaturation * CGFloat(progress)
         let curBrightness = fromInfo.brightness + changedBrightness * CGFloat(progress)
