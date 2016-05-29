@@ -95,6 +95,7 @@
 		97EC4BFD1CF9E2620059BBFA /* BasicConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicConfigurable.swift; sourceTree = "<group>"; };
 		97EC4BFF1CF9E3310059BBFA /* Chainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chainable.swift; sourceTree = "<group>"; };
 		97EC4C011CF9E47D0059BBFA /* SnapConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapConfigurable.swift; sourceTree = "<group>"; };
+		97EC4C051CFA98DA0059BBFA /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +214,7 @@
 				97BE88C11CDDDAD000240523 /* AppDelegate.swift */,
 				97BE88C31CDDDAD000240523 /* Example2ViewController.swift */,
 				973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */,
+				97EC4C051CFA98DA0059BBFA /* MyPlayground.playground */,
 				973E59E61CF6F2E100F26487 /* Ball.swift */,
 				97BE88C51CDDDAD000240523 /* Main.storyboard */,
 				97BE88C81CDDDAD000240523 /* Assets.xcassets */,
