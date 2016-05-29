@@ -15,7 +15,7 @@ square.moveY(200).moveX(600).duration(1).easing(.SwiftOut)
     .animate()
 
 var x: Float = 100
-x.attachmentTo(250, render: { (f) in
+x.attachmentTo(350, render: { (f) in
     let y = f
 })
 
