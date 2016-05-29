@@ -174,33 +174,33 @@ extension UIView: BasicConfigurable, SnapConfigurable {
     
     //MARK: Physical Animation
     
-    public func snap(damping: CGFloat = 0.5) -> UIView {
+    public func snap(damping: CGFloat = 0.5) -> SnapConfigurable {
         context.changeMainType(.Snap(damping))
         return self
     }
     
     //MARK: Basic Animation configurations
-    public func duration(d: CFTimeInterval) -> UIView {
+    public func duration(d: CFTimeInterval) -> BasicConfigurable {
         context.changeDuration(d)
         return self
     }
     
-    public func easing(type: TimingFunctionType) -> UIView {
+    public func easing(type: TimingFunctionType) -> BasicConfigurable {
         context.changeEasing(type)
         return self
     }
     
-    public func completion(c: () -> Void) -> UIView {
+    public func completion(c: () -> Void) -> BasicConfigurable {
         context.changeCompletion(c)
         return self
     }
     
-    public func delay(d: CFTimeInterval) -> UIView {
+    public func delay(d: CFTimeInterval) -> BasicConfigurable {
         context.changeDelay(d)
         return self
     }
     
-    public func autoreverses() -> UIView {
+    public func autoreverses() -> BasicConfigurable {
         context.changeAutoreverses(true)
         return self
     }

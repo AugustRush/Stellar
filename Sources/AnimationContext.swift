@@ -153,10 +153,10 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
         switch type {
         case .MoveX(let inc):
             let from = view.center.x
-            let to = view.center.x + inc
+            let to = from + inc
             let render = {(f: CGFloat) in
-                if self.view != nil {
-                    self.view.center.x = f
+                if let view = self.view {
+                    view.center.x = f
                 }
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)

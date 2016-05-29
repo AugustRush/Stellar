@@ -30,11 +30,11 @@ class Example1ViewController: UIViewController {
             let center = ball.center
             let interval = 0.1 * Double(index)
             
-            center.snapTo(point!,
-//                             duration: 0.8,
-//                             delay: interval,
-//                             type: .SwiftOut,
-//                             autoreverses:  true,
+            center.animateTo(point!,
+                             duration: 0.8,
+                             delay: interval,
+                             type: .SwiftOut,
+                             autoreverses:  true,
                              render: { (p) in
                                 
                                 ball.center = p
