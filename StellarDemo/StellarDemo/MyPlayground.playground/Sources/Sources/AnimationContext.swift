@@ -73,6 +73,11 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
         step.autoreverses = a
     }
     
+    func changeRepeatCount(count: Int) {
+        let step = lastStep()
+        step.repeatCount = count
+    }
+    
     func changeCompletion(c: () -> Void) {
         let step = lastStep()
         step.completion = c

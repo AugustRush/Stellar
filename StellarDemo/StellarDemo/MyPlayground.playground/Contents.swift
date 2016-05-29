@@ -3,21 +3,20 @@ import UIKit
 import XCPlayground
 
 let container = UIView(frame: CGRectMake(0,0,1000,400))
-let square = UIView(frame: CGRectMake(50,50,60,60))
-square.backgroundColor = UIColor.redColor()
-square.layer.cornerRadius = 30
-container.addSubview(square)
+container.backgroundColor = UIColor(red: 0.97,green: 0.97,blue: 0.97,alpha: 1.0)
 
-square.moveY(100).moveX(600).duration(1).easing(.SwiftOut)
-    .then().moveX(-200).duration(2).makeColor(UIColor.purpleColor()).cornerRadius(5)
-    .then().moveY(-100).snap(0.1)
-    .then().rotate(1).snap(0.5)
+let ball = Ball(frame: CGRectMake(10,10,100,100))
+ball.backgroundColor = UIColor.lightGrayColor()
+container.addSubview(ball)
+
+ball.moveX(100).duration(1).delay(0.5)
+    .then().moveY(100).moveX(100).duration(0.5)
+    .then().scaleXY(2, 2)
+    .then().rotate(3.141592).duration(2).easing(.SwiftOut)
+    .then().scaleXY(0.5, 0.5).makeColor(UIColor.redColor()).duration(1)
+    .then().makeWidth(200).makeHeight(50).duration(0.5).easing(.EaseInEaseOut).moveY(-100)
+    .then().anchorPoint(CGPointMake(0, 0.5)).duration(0.5)
+    .then().makeWidth(100).snap(0.2)
     .animate()
-
-let number: Float = 100
-
-number.fallTo(200,magnitude: 0.1, render: { (f) in
-    let y = f
-    }, completion: nil)
 
 XCPlaygroundPage.currentPage.liveView = container

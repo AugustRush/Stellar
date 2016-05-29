@@ -172,6 +172,11 @@ extension UIView: BasicConfigurable, SnapConfigurable {
         return self
     }
     
+    public func makeTintColor(color: UIColor) -> UIView {
+        let type = AnimationType(type: .Basic, subType: .TintColor(color))
+        context.addAnimationType(type)
+        return self
+    }
     //MARK: Physical Animation
     
     public func snap(damping: CGFloat = 0.5) -> SnapConfigurable {
@@ -202,6 +207,11 @@ extension UIView: BasicConfigurable, SnapConfigurable {
     
     public func autoreverses() -> BasicConfigurable {
         context.changeAutoreverses(true)
+        return self
+    }
+    
+    public func repeatCount(count: Int) -> BasicConfigurable {
+        context.changeRepeatCount(count)
         return self
     }
     

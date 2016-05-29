@@ -205,6 +205,11 @@ extension UIView: BasicConfigurable, SnapConfigurable {
         return self
     }
     
+    public func repeatCount(count: Int) -> BasicConfigurable {
+        context.changeRepeatCount(count)
+        return self
+    }
+    
     //MARK: Chainable methods
     
     public func then() -> UIView {

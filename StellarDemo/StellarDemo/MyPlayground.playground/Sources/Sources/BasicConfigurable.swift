@@ -14,4 +14,5 @@ public protocol BasicConfigurable: BasicChainable {
     func completion(c: () -> Void) -> BasicConfigurable
     func delay(d: CFTimeInterval) -> BasicConfigurable
     func autoreverses() -> BasicConfigurable
+    func repeatCount(count: Int) -> BasicConfigurable
 }

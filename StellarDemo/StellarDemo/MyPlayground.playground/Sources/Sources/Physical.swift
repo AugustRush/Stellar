@@ -14,6 +14,6 @@ public protocol Physical {
     func attachmentTo(to: Self,damping: CGFloat, frequency: CGFloat,render: (Self) -> Void, completion: (() -> Void)?)
     func pushedTo(to: Self,render: (Self) -> Void, completion: (() -> Void)?)
     func animateTo(to: Self, duration: CFTimeInterval, delay: CFTimeInterval, type: TimingFunctionType, autoreverses: Bool, repeatCount: Int, render: (Self) -> Void, completion: ((Bool) -> Void)?)
-//    func collisionWith(path: UIBezierPath,render: (Self) -> Void)
+    //    func collisionWith(path: UIBezierPath,render: (Self) -> Void)
 }
 

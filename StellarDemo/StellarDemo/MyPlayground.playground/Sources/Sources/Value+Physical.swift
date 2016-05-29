@@ -45,7 +45,7 @@ extension Float: Physical, Vectorial, Interpolatable {
         item.completion = completion
         push.commit()
     }
-        
+    
     public func animateTo(to: Float, duration: CFTimeInterval = 0.25, delay: CFTimeInterval = 0.0, type: TimingFunctionType = .Default, autoreverses: Bool = false, repeatCount: Int = 0, render: (Float) -> Void, completion: ((Bool) -> Void)? = nil) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
@@ -140,7 +140,7 @@ extension Double: Physical, Vectorial, Interpolatable {
         let change = to - self
         return self + change * progress
     }
-
+    
 }
 
 extension CGFloat: Physical , Vectorial, Interpolatable {
@@ -264,7 +264,7 @@ extension CGSize: Physical, Vectorial, Interpolatable {
         basicItem.delay = delay
         push.commitToBasic()
     }
-
+    
     //
     func convert(p: CGPoint) -> CGSize {
         return CGSizeMake(p.x, p.y)
@@ -482,7 +482,7 @@ extension UIColor: Physical, Vectorial2, Interpolatable {
         basicItem.externalData = (fromInfo,toInfo)
         push.commitToBasic()
     }
-
+    
     //
     func convert(r: CGRect) -> Self {
         let hue = r.minX / 250.0
@@ -511,7 +511,7 @@ extension UIColor: Physical, Vectorial2, Interpolatable {
     }
     
     //
-    func interpolate(progress: Double, to: UIColor, externalData: Any?) -> Self {        
+    func interpolate(progress: Double, to: UIColor, externalData: Any?) -> Self {
         let infos = externalData as! (ColorInfo,ColorInfo)
         let fromInfo = infos.0
         let toInfo = infos.1
@@ -519,7 +519,7 @@ extension UIColor: Physical, Vectorial2, Interpolatable {
         let changedSaturation = toInfo.saturation - fromInfo.saturation
         let changedBrightness = toInfo.brightness - fromInfo.brightness
         let changedAlpha = toInfo.alpha - fromInfo.alpha
-    
+        
         let curHue = fromInfo.hue + changedHue * CGFloat(progress)
         let curSaturation = fromInfo.saturation + changedSaturation * CGFloat(progress)
         let curBrightness = fromInfo.brightness + changedBrightness * CGFloat(progress)

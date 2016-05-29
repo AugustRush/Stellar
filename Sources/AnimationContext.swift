@@ -35,6 +35,7 @@ enum ViewAnimationSubType {
     case ShadowOffset(CGSize)
     case ShadowColor(UIColor)
     case ShadowOpacity(Float)
+    case TintColor(UIColor)
 }
 
 internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
@@ -71,6 +72,11 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
     func changeAutoreverses(a: Bool) {
         let step = lastStep()
         step.autoreverses = a
+    }
+    
+    func changeRepeatCount(count: Int) {
+        let step = lastStep()
+        step.repeatCount = count
     }
     
     func changeCompletion(c: () -> Void) {
@@ -403,6 +409,17 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
                 }
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
+        case .TintColor(let color):
+            let from = self.view.tintColor ?? UIColor.clearColor()
+            let to = color
+            let render = {(c: UIColor) in
+                if let view = self.view {
+                    view.tintColor = c
+                }
+            }
+            let fromInfo = from.colorInfo()
+            let toInfo = to.colorInfo()
+            behavior = basicBehavior(step, from: from, to: to, render: render,externalData: (fromInfo,toInfo))
         }
         
         animator.addBehavior(behavior)
@@ -688,6 +705,16 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
             let render = {(f: Float) in
                 if let view = self.view {
                     view.layer.shadowOpacity = f
+                }
+            }
+            behavior = snapBehavior(damping, from: from, to: to, render: render)
+            
+        case .TintColor(let color):
+            let from = self.view.tintColor
+            let to = color
+            let render = {(c: UIColor) in
+                if let view = self.view {
+                    view.tintColor = c
                 }
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
