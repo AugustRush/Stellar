@@ -35,4 +35,5 @@ public protocol BasicChainable: Chainable {
     func shadowOffset(offset: CGSize) -> UIView
     func shadowColor(color: UIColor) -> UIView
     func shadowOpacity(opacity: Float) -> UIView
+    func makeTintColor(color: UIColor) -> UIView
 }
