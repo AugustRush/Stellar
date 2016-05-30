@@ -36,6 +36,8 @@ enum ViewAnimationSubType {
     case ShadowColor(UIColor)
     case ShadowOpacity(Float)
     case TintColor(UIColor)
+    //UILabel,UITextView...
+    case TextColor(UIColor)
 }
 
 internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
@@ -410,11 +412,24 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
         case .TintColor(let color):
-            let from = self.view.tintColor ?? UIColor.clearColor()
+            let from = self.view.tintColor
             let to = color
             let render = {(c: UIColor) in
                 if let view = self.view {
                     view.tintColor = c
+                }
+            }
+            let fromInfo = from.colorInfo()
+            let toInfo = to.colorInfo()
+            behavior = basicBehavior(step, from: from, to: to, render: render,externalData: (fromInfo,toInfo))
+            
+        case .TextColor(let color):
+            let fromColor = self.view.performSelector(Selector("textColor")).takeUnretainedValue() as? UIColor
+            let from = fromColor ?? UIColor.clearColor()
+            let to = color
+            let render = {(c: UIColor) in
+                if let view = self.view {
+                    view.performSelector(Selector("setTextColor:"),withObject: c)
                 }
             }
             let fromInfo = from.colorInfo()
@@ -715,6 +730,17 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
             let render = {(c: UIColor) in
                 if let view = self.view {
                     view.tintColor = c
+                }
+            }
+            behavior = snapBehavior(damping, from: from, to: to, render: render)
+            
+        case .TextColor(let color):
+            let fromColor = self.view.performSelector(Selector("textColor")).takeUnretainedValue() as? UIColor
+            let from = fromColor ?? UIColor.clearColor()
+            let to = color
+            let render = {(c: UIColor) in
+                if let view = self.view {
+                    view.performSelector(Selector("setTextColor:"), withObject: c)
                 }
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)

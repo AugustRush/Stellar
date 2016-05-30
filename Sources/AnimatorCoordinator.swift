@@ -53,12 +53,11 @@ internal class AnimatorCoordinator: NSObject, UIDynamicAnimatorDelegate {
     //MARK: UIDynamicAnimatorDelegate methods
     
     func dynamicAnimatorDidPause(animator: UIDynamicAnimator) {
-        print("dynamic paused")
         let index = activedAnimators.indexOf(animator)
         activedAnimators.removeAtIndex(index!)
     }
     
     func dynamicAnimatorWillResume(animator: UIDynamicAnimator) {
-        print("dynamic resume")
+        //
     }
 }
