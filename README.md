@@ -34,7 +34,8 @@ A fantastic Physical animation library for swift(Not Just Spring !!!), it is bas
 ## On display
 
 #### Chainable 
-<img src="https://github.com/AugustRush/Stellar/blob/master/chainable1.gif">
+<img src="https://github.com/AugustRush/Stellar/blob/master/chainable1.gif" width="200">
+
 ```
 ball.moveX(100).moveY(100).duration(1)
     .then().makeWidth(160).duration(2).anchorPoint(CGPointMake(0, 0.5))
