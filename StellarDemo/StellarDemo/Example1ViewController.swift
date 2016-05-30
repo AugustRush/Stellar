@@ -52,7 +52,7 @@ class Example1ViewController: UIViewController {
                         ball.backgroundColor = c
                     })
                     
-                    ball.center.attachmentTo(center, render: { (c) in
+                    ball.center.snapTo(center, damping: 0.3,render: { (c) in
                         ball.center = c
                     })
             })

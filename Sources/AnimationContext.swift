@@ -795,7 +795,7 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
 class AnimationType {
     var mainType: ViewAnimationType
     var subType: ViewAnimationSubType
-       
+    
     init (type: ViewAnimationType, subType: ViewAnimationSubType) {
         self.mainType = type
         self.subType = subType
