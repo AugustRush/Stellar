@@ -128,14 +128,14 @@ extension UIDynamicItem {
     
     //collision
     func collisionBehavior(mode: UICollisionBehaviorMode = .Boundaries) -> UICollisionBehavior {
-        let collision = CollisionBehavior()
+        let collision = UICollisionBehavior()
         collision.collisionMode = mode
         collision.addItem(self)
         return collision
     }
     
     func collisionBehavior(mode: UICollisionBehaviorMode = .Boundaries, path: UIBezierPath) -> UICollisionBehavior {
-        let collision = CollisionBehavior()
+        let collision = UICollisionBehavior()
         collision.collisionMode = mode
         let identifier = String(unsafeAddressOf(self))
         collision.addBoundaryWithIdentifier(identifier, forPath: path)
@@ -144,7 +144,7 @@ extension UIDynamicItem {
     }
     
     func collisionBehavior(mode: UICollisionBehaviorMode = .Boundaries, fromPoint: CGPoint, toPoint: CGPoint) -> UICollisionBehavior {
-        let collision = CollisionBehavior()
+        let collision = UICollisionBehavior()
         collision.collisionMode = mode
         let identifier = String(unsafeAddressOf(self))
         collision.addBoundaryWithIdentifier(identifier, fromPoint: fromPoint, toPoint: toPoint)
