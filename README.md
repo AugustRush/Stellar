@@ -1,5 +1,5 @@
 # Stellar
-A fantastic Physical animation library for swift, it is base on UIDynamic and extension to it, friendly APIs make you use it or custom your own animation very easily!
+A fantastic Physical animation library for swift(Not Just Spring !!!), it is base on UIDynamic and extension to it, friendly APIs make you use it or custom your own animation very easily!
 
 ## Support
 
@@ -7,7 +7,7 @@ A fantastic Physical animation library for swift, it is base on UIDynamic and ex
 - View's Animation
 - Layer's Animation
 - Chainable
-- File configurable (soon)
+- File configurable (come soon)
 
 ### Animations
 
@@ -27,4 +27,4 @@ A fantastic Physical animation library for swift, it is base on UIDynamic and ex
 - CGPoint
 - CGRect
 - UIColor
-- .....
+- ......(Any Intrpolatable)
