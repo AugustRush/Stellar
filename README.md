@@ -3,27 +3,6 @@
 
 A fantastic Physical animation library for swift(Not Just Spring !!!), it is base on UIDynamic and extension to it, friendly APIs make you use it or custom your own animation very easily!
 
-## On display
-----------
-#### Snap Curve
-<img src="https://github.com/AugustRush/Stellar/blob/master/snapCurve.gif">
-
-#### Attachment Curve
-<img src="https://github.com/AugustRush/Stellar/blob/master/attachmentCurve.gif">
-
-#### Gravity Curve
-<img src="https://github.com/AugustRush/Stellar/blob/master/gravityCurve.gif">
-
-#### Push Curve
-<img src="https://github.com/AugustRush/Stellar/blob/master/pushCurve.gif">
-
-#### Basic Curve
-<img src="https://github.com/AugustRush/Stellar/blob/master/basicCurve.gif">
-
-#### Funny demo's gif(s)
-<img src="https://github.com/AugustRush/Stellar/blob/master/balls.gif" width="320">
-<img src="https://github.com/AugustRush/Stellar/blob/master/layers.gif" width="320">
-
 ## Support
 
 ### Features
@@ -51,3 +30,61 @@ A fantastic Physical animation library for swift(Not Just Spring !!!), it is bas
 - CGRect
 - UIColor
 - ......(Any Intrpolatable)
+
+## On display
+
+#### Chainable 
+<img src="https://github.com/AugustRush/Stellar/blob/master/chainable1.gif">
+```
+ball.moveX(100).moveY(100).duration(1)
+    .then().makeWidth(160).duration(2).anchorPoint(CGPointMake(0, 0.5))
+    .then().rotate(1.5).snap(0.5)
+    .then().moveY(500).duration(0.5)
+    .animate()
+
+```
+----------
+#### Snap Curve
+<img src="https://github.com/AugustRush/Stellar/blob/master/snapCurve.gif">
+
+#### Attachment Curve
+<img src="https://github.com/AugustRush/Stellar/blob/master/attachmentCurve.gif">
+
+#### Gravity Curve
+<img src="https://github.com/AugustRush/Stellar/blob/master/gravityCurve.gif">
+
+#### Push Curve
+<img src="https://github.com/AugustRush/Stellar/blob/master/pushCurve.gif">
+
+#### Basic Curve
+<img src="https://github.com/AugustRush/Stellar/blob/master/basicCurve.gif">
+
+#### Funny demo's gif(s)
+<img src="https://github.com/AugustRush/Stellar/blob/master/balls.gif" width="320">
+<img src="https://github.com/AugustRush/Stellar/blob/master/layers.gif" width="320">
+
+### To do
+- File configurable
+- More demos
+
+### Licence
+
+Copyright (c) 2016 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
