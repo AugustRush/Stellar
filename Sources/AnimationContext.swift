@@ -42,7 +42,7 @@ enum ViewAnimationSubType {
 
 internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
     private weak var view: UIView!
-    private var steps = [Step]()
+    private var steps = [AnimationStep]()
     private lazy var animator: UIDynamicAnimator = {
         let animator = UIDynamicAnimator()
         animator.delegate = self
@@ -103,7 +103,7 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
     }
     
     func makeNextStep() {
-        let step = Step()
+        let step = AnimationStep()
         steps.append(step)
     }
     
@@ -114,10 +114,10 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
     
     //MARK: private methods
     
-    private func lastStep() -> Step {
+    private func lastStep() -> AnimationStep {
         var step = steps.last
         if step == nil {
-            step = Step()
+            step = AnimationStep()
             steps.append(step!)
         }
         
@@ -154,7 +154,7 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
     }
     
     //MARK: Basic
-    private func createBasicAnimationWithType(type: ViewAnimationSubType, step: Step) {
+    private func createBasicAnimationWithType(type: ViewAnimationSubType, step: AnimationStep) {
         
         var behavior: UIDynamicBehavior!
         
@@ -442,7 +442,7 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
     
     
     //basic item
-    private func basicBehavior<T: Interpolatable>(step: Step,from: T, to: T, render: ((T) -> Void), externalData: Any? = nil) -> UIPushBehavior {
+    private func basicBehavior<T: Interpolatable>(step: AnimationStep,from: T, to: T, render: ((T) -> Void), externalData: Any? = nil) -> UIPushBehavior {
         let item = DynamicItemBasic(from: from, to: to, render: render)
         let push = item.pushBehavior(.Down)
         item.behavior = push
@@ -780,14 +780,14 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
     }
     
     //MARK: Private step class
-    private class Step {
+    private class AnimationStep {
         var types = [AnimationType]()
         var duration: CFTimeInterval = 0.25
         var easing: TimingFunctionType = .Default
         var delay: CFTimeInterval = 0.0
         var autoreverses: Bool = false
         var repeatCount: Int = 0
-        var completion: (() -> Void)?    
+        var completion: (() -> Void)?
     }
 }
 
@@ -795,7 +795,7 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
 class AnimationType {
     var mainType: ViewAnimationType
     var subType: ViewAnimationSubType
-    
+       
     init (type: ViewAnimationType, subType: ViewAnimationSubType) {
         self.mainType = type
         self.subType = subType

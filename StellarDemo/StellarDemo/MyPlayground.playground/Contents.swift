@@ -13,4 +13,6 @@ ball.moveX(100).snap().moveY(100).snap()
     .then().makeColor(UIColor.blackColor()).duration(2).moveX(100).duration(1)
     .animate()
 
+ball.moveX(1000).duration(2).animate()
+
 XCPlaygroundPage.currentPage.liveView = container
