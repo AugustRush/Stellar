@@ -14,6 +14,7 @@
 		973E59E91CF6FD2200F26487 /* UIView+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */; };
 		973E59EB1CF6FD5B00F26487 /* AnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59EA1CF6FD5B00F26487 /* AnimationContext.swift */; };
 		973E5A041CF70FAE00F26487 /* TimingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E5A031CF70FAE00F26487 /* TimingType.swift */; };
+		977FDF1A1CFC7448009248FD /* Example3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977FDF191CFC7448009248FD /* Example3ViewController.swift */; };
 		97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A331CF05DAB009E60EB /* Vectorial.swift */; };
 		97A61A381CF082F6009E60EB /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A371CF082F6009E60EB /* UnitBezier.swift */; };
 		97A61A3A1CF09B8F009E60EB /* DynamicItem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A391CF09B8F009E60EB /* DynamicItem2.swift */; };
@@ -65,6 +66,7 @@
 		973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Stellar.swift"; sourceTree = "<group>"; };
 		973E59EA1CF6FD5B00F26487 /* AnimationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationContext.swift; sourceTree = "<group>"; };
 		973E5A031CF70FAE00F26487 /* TimingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingType.swift; sourceTree = "<group>"; };
+		977FDF191CFC7448009248FD /* Example3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example3ViewController.swift; sourceTree = "<group>"; };
 		97A61A331CF05DAB009E60EB /* Vectorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vectorial.swift; sourceTree = "<group>"; };
 		97A61A371CF082F6009E60EB /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
 		97A61A391CF09B8F009E60EB /* DynamicItem2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItem2.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				97BE88C11CDDDAD000240523 /* AppDelegate.swift */,
 				97BE88C31CDDDAD000240523 /* Example2ViewController.swift */,
 				973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */,
+				977FDF191CFC7448009248FD /* Example3ViewController.swift */,
 				97EC4C051CFA98DA0059BBFA /* MyPlayground.playground */,
 				973E59E61CF6F2E100F26487 /* Ball.swift */,
 				97BE88C51CDDDAD000240523 /* Main.storyboard */,
@@ -405,6 +408,7 @@
 				97E1A8DA1CEB4B5200F98D86 /* Value+Physical.swift in Sources */,
 				97E1A8DE1CEC0E9200F98D86 /* DynamicItem.swift in Sources */,
 				97A61A431CF1E159009E60EB /* TimingFunction.swift in Sources */,
+				977FDF1A1CFC7448009248FD /* Example3ViewController.swift in Sources */,
 				97E8D3F31CFC1F27004E6A80 /* UITextView+Stellar.swift in Sources */,
 				973E59E71CF6F2E100F26487 /* Ball.swift in Sources */,
 				973E5A041CF70FAE00F26487 /* TimingType.swift in Sources */,

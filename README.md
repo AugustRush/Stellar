@@ -43,6 +43,28 @@ ball.moveX(100).moveY(100).duration(1)
     .animate()
 
 ```
+<img src="https://github.com/AugustRush/Stellar/blob/master/lines.gif" width="200">
+
+```
+for (index,line) in leftLines.enumerate() {
+    let delay = Double(index) * 0.2
+    
+    line.moveX(200).duration(2).easing(.SwiftOut).delay(delay)
+        .then().moveX(-200).rotateY(1.43).easing(.SwiftOut)
+        .makeColor(UIColor.greenColor()).repeatCount(100)
+        .autoreverses().duration(2).animate()
+ }
+        
+ for (index,line) in rightLines.enumerate() {
+    let delay = Double(index) * 0.2
+    
+    line.moveX(-200).duration(2).easing(.SwiftOut).delay(delay)
+        .then().moveX(200).rotateY(1.43).easing(.SwiftOut)
+        .makeColor(UIColor.purpleColor()).repeatCount(100)
+        .autoreverses().duration(2).animate()
+ }
+
+```
 ----------
 #### Snap Curve
 <img src="https://github.com/AugustRush/Stellar/blob/master/snapCurve.gif">

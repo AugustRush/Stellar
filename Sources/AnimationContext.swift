@@ -257,35 +257,45 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
             let from = self.view.bounds.width
             let to = w
             let render = {(f: CGFloat) in
-                self.view.bounds.size.width = f
+                if let view = self.view {
+                    view.bounds.size.width = f
+                }
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
         case .Height(let h):
             let from = self.view.bounds.height
             let to = h
             let render = {(f: CGFloat) in
-                self.view.bounds.size.height = f
+                if let view = self.view {
+                    view.bounds.size.height = f
+                }
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
         case .Size(let size):
             let from = self.view.bounds.size
             let to = size
             let render = {(s: CGSize) in
-                self.view.bounds.size = s
+                if let view = self.view {
+                    view.bounds.size = s
+                }
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
         case .Frame(let frame):
             let from = self.view.frame
             let to = frame
             let render = {(f: CGRect) in
-                self.view.frame = f
+                if let view = self.view {
+                    view.frame = f
+                }
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
         case .Bounds(let frame):
             let from = self.view.bounds
             let to = frame
             let render = {(f: CGRect) in
-                self.view.bounds = f
+                if let view = self.view {
+                    view.bounds = f
+                }
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
@@ -562,7 +572,9 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
             let from = self.view.bounds.width
             let to = w
             let render = {(f: CGFloat) in
-                self.view.bounds.size.width = f
+                if let view = self.view {
+                    view.bounds.size.width = f
+                }
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
@@ -570,7 +582,9 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
             let from = self.view.bounds.height
             let to = h
             let render = {(f: CGFloat) in
-                self.view.bounds.size.height = f
+                if let view = self.view {
+                    view.bounds.size.height = f
+                }
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
@@ -578,7 +592,9 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
             let from = self.view.bounds.size
             let to = size
             let render = {(s: CGSize) in
-                self.view.bounds.size = s
+                if let view = self.view {
+                    view.bounds.size = s
+                }
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
@@ -586,7 +602,9 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
             let from = self.view.frame
             let to = frame
             let render = {(f: CGRect) in
-                self.view.frame = f
+                if let view = self.view {
+                    view.frame = f
+                }
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
@@ -594,7 +612,9 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate {
             let from = self.view.bounds
             let to = frame
             let render = {(f: CGRect) in
-                self.view.bounds = f
+                if let view = self.view {
+                    view.bounds = f   
+                }
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
