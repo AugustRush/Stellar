@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sources/AnimationSequence.swift"
-            timestampString = "486366875.351013"
+            timestampString = "486375401.666815"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "725"
-            endingLineNumber = "725"
+            startingLineNumber = "728"
+            endingLineNumber = "728"
             landmarkName = "dynamicAnimatorDidPause(_:)"
             landmarkType = "5">
          </BreakpointContent>

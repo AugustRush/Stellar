@@ -47,8 +47,11 @@ internal class AnimationSequence: NSObject, UIDynamicAnimatorDelegate {
     
     private func excuteFirstStepIfExist() {
         
-        let step = steps.first
+        if self.view == nil {
+            return
+        }
         
+        let step = steps.first
         
         if let step = step {
             //if step has no animation typesm it must be the last temple step
