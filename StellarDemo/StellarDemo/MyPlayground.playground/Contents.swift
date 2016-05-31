@@ -13,8 +13,12 @@ for i in 0...5 {
     container.addSubview(ball)
     balls.append(ball)
     
-    ball.moveX(200).makeWidth(100).duration(2).delay(Double(i) * 0.1).repeatCount(1000).autoreverses()
+    ball.moveX(200).makeWidth(100).duration(2)
+        .delay(Double(i) * 0.1).repeatCount(1)
+        .autoreverses()
         .animate()
+    
+    ball.makeWidth(200).animate()
 }
 
 

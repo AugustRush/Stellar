@@ -14,6 +14,9 @@
 		973E59E91CF6FD2200F26487 /* UIView+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */; };
 		973E59EB1CF6FD5B00F26487 /* AnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59EA1CF6FD5B00F26487 /* AnimationContext.swift */; };
 		973E5A041CF70FAE00F26487 /* TimingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E5A031CF70FAE00F26487 /* TimingType.swift */; };
+		97544FF81CFD56D7008046A1 /* AnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97544FF71CFD56D7008046A1 /* AnimationSequence.swift */; };
+		97544FFA1CFD572A008046A1 /* AnimationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97544FF91CFD572A008046A1 /* AnimationStep.swift */; };
+		97544FFC1CFD5733008046A1 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97544FFB1CFD5733008046A1 /* AnimationType.swift */; };
 		977FDF1A1CFC7448009248FD /* Example3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977FDF191CFC7448009248FD /* Example3ViewController.swift */; };
 		97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A331CF05DAB009E60EB /* Vectorial.swift */; };
 		97A61A381CF082F6009E60EB /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A371CF082F6009E60EB /* UnitBezier.swift */; };
@@ -66,6 +69,9 @@
 		973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Stellar.swift"; sourceTree = "<group>"; };
 		973E59EA1CF6FD5B00F26487 /* AnimationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationContext.swift; sourceTree = "<group>"; };
 		973E5A031CF70FAE00F26487 /* TimingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingType.swift; sourceTree = "<group>"; };
+		97544FF71CFD56D7008046A1 /* AnimationSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationSequence.swift; sourceTree = "<group>"; };
+		97544FF91CFD572A008046A1 /* AnimationStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationStep.swift; sourceTree = "<group>"; };
+		97544FFB1CFD5733008046A1 /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
 		977FDF191CFC7448009248FD /* Example3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example3ViewController.swift; sourceTree = "<group>"; };
 		97A61A331CF05DAB009E60EB /* Vectorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vectorial.swift; sourceTree = "<group>"; };
 		97A61A371CF082F6009E60EB /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
@@ -129,6 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				973E59EA1CF6FD5B00F26487 /* AnimationContext.swift */,
+				97544FF71CFD56D7008046A1 /* AnimationSequence.swift */,
+				97544FF91CFD572A008046A1 /* AnimationStep.swift */,
+				97544FFB1CFD5733008046A1 /* AnimationType.swift */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
@@ -406,8 +415,10 @@
 				973E59E91CF6FD2200F26487 /* UIView+Stellar.swift in Sources */,
 				97BE88C41CDDDAD000240523 /* Example2ViewController.swift in Sources */,
 				97E1A8DA1CEB4B5200F98D86 /* Value+Physical.swift in Sources */,
+				97544FFC1CFD5733008046A1 /* AnimationType.swift in Sources */,
 				97E1A8DE1CEC0E9200F98D86 /* DynamicItem.swift in Sources */,
 				97A61A431CF1E159009E60EB /* TimingFunction.swift in Sources */,
+				97544FFA1CFD572A008046A1 /* AnimationStep.swift in Sources */,
 				977FDF1A1CFC7448009248FD /* Example3ViewController.swift in Sources */,
 				97E8D3F31CFC1F27004E6A80 /* UITextView+Stellar.swift in Sources */,
 				973E59E71CF6F2E100F26487 /* Ball.swift in Sources */,
@@ -417,6 +428,7 @@
 				97E8D3EE1CFC11BA004E6A80 /* CALayer+Stellar.swift in Sources */,
 				97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */,
 				97EC4C001CF9E3310059BBFA /* Chainable.swift in Sources */,
+				97544FF81CFD56D7008046A1 /* AnimationSequence.swift in Sources */,
 				97EC4C021CF9E47D0059BBFA /* SnapConfigurable.swift in Sources */,
 				97A61A381CF082F6009E60EB /* UnitBezier.swift in Sources */,
 				97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */,

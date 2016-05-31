@@ -6,31 +6,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Sources/Coodinator.swift"
-            timestampString = "485181182.884523"
+            filePath = "../Sources/AnimationSequence.swift"
+            timestampString = "486366875.351013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "addBasic(_:)"
+            startingLineNumber = "725"
+            endingLineNumber = "725"
+            landmarkName = "dynamicAnimatorDidPause(_:)"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StellarDemo/Example2ViewController.swift"
-            timestampString = "486284863.778992"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

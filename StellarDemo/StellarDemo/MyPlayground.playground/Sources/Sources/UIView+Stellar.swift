@@ -229,7 +229,7 @@ extension UIView: BasicConfigurable, SnapConfigurable {
 
     
     //Private Context    
-    private var context: AnimationContext {
+    internal var context: AnimationContext {
         get {
             var context = objc_getAssociatedObject(self, &AnimationContextIdentifer) as? AnimationContext
             if context == nil {

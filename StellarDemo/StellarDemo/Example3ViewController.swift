@@ -18,14 +18,16 @@ class Example3ViewController: UIViewController {
         
         for (index,line) in leftLines.enumerate() {
             let delay = Double(index) * 0.2
-            line.moveX(200).duration(2).easing(.SwiftOut).delay(delay)
-                .then().moveX(-200).rotateY(1.43).easing(.SwiftOut).makeColor(UIColor.greenColor()).repeatCount(100).autoreverses().duration(2).animate()
+            line.moveX(200).duration(2).easing(.SwiftOut).delay(delay).completion({ 
+              line.rotateY(1.43).duration(1).autoreverses().repeatCount(1).animate()
+            }).then().moveX(-200).makeColor(UIColor.greenColor()).repeatCount(1).autoreverses().duration(2).animate()
         }
         
         for (index,line) in rightLines.enumerate() {
             let delay = Double(index) * 0.2
-            line.moveX(-200).duration(2).easing(.SwiftOut).delay(delay)
-                .then().moveX(200).rotateY(1.43).easing(.SwiftOut).makeColor(UIColor.purpleColor()).repeatCount(100).autoreverses().duration(2).animate()
+            line.moveX(-200).duration(2).easing(.SwiftOut).delay(delay).completion({ 
+              line.rotateY(1.43).duration(1).autoreverses().repeatCount(1).animate()
+            }).then().moveX(200).makeColor(UIColor.purpleColor()).repeatCount(1).autoreverses().duration(2).animate()
         }
 
 
