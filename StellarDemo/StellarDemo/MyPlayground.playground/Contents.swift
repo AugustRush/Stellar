@@ -6,20 +6,31 @@ let container = UIView(frame: CGRectMake(0,0,600,600))
 
 container.backgroundColor = UIColor(red: 0.97,green: 0.97,blue: 0.97,alpha: 1.0)
 
-var balls: [Ball] = Array()
-for i in 0...5 {
-    let ball = Ball(frame: CGRectMake(10,10 + 60 * CGFloat(i),50,50))
-    ball.backgroundColor = UIColor.redColor()
-    container.addSubview(ball)
-    balls.append(ball)
-    
-    ball.moveX(200).duration(2)
-        .delay(Double(i) * 0.1).repeatCount(1)
-        .autoreverses()
-        .animate()
-    
-    ball.makeWidth(200).duration(2).autoreverses().animate()
-}
+//var balls: [Ball] = Array()
+//for i in 0...5 {
+//    let ball = Ball(frame: CGRectMake(10,10 + 60 * CGFloat(i),50,50))
+//    ball.backgroundColor = UIColor.redColor()
+//    container.addSubview(ball)
+//    balls.append(ball)
+//    
+//    ball.moveX(200).duration(2)
+//        .delay(Double(i) * 0.1).repeatCount(1)
+//        .autoreverses()
+//        .animate()
+//    
+//    ball.makeWidth(200).duration(2).autoreverses().animate()
+//}
+
+let ball = Ball(frame: CGRectMake(100,100,50,50))
+ball.backgroundColor = UIColor.cyanColor()
+container.addSubview(ball)
+
+ball.moveX(100).moveY(100).duration(1)
+    .then().makeWidth(160).duration(2).anchorPoint(CGPointMake(0, 0.5))
+    .then().rotate(1.5).snap(0.5)
+    .then().moveY(500).duration(0.5)
+    .animate()
+
 
 
 XCPlaygroundPage.currentPage.liveView = container
