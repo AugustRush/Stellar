@@ -25,7 +25,7 @@ let ball = Ball(frame: CGRectMake(100,100,50,50))
 ball.backgroundColor = UIColor.cyanColor()
 container.addSubview(ball)
 
-ball.moveX(100).moveY(100).duration(1)
+ball.moveX(100).moveY(100).delay(0.5).duration(1)
     .then().makeWidth(160).duration(2).anchorPoint(CGPointMake(0, 0.5))
     .then().rotate(1.5).snap(0.5)
     .then().moveY(500).duration(0.5)

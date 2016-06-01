@@ -54,7 +54,7 @@ internal class AnimationSequence: NSObject, UIDynamicAnimatorDelegate {
         let step = steps.first
         
         if let step = step {
-            //if step has no animation typesm it must be the last temple step
+            //if step has no animation types it must be the last temple step
             if step.types.count == 0 {
                 steps.removeFirst()
                 popFirstStepIfExsist()
