@@ -116,6 +116,26 @@
                                             <segue destination="XiE-es-VSY" kind="push" id="CeU-px-VH6"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="MvG-Zy-jPk" style="IBUITableViewCellStyleDefault" id="eoe-eF-xXP">
+                                        <rect key="frame" x="0.0" y="284" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eoe-eF-xXP" id="mBJ-Dc-fv7">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Example 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MvG-Zy-jPk">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="W8S-SY-hhp" kind="push" id="WCc-C4-wIU"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -946,6 +966,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8nt-Yy-33M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-197" y="694"/>
+        </scene>
+        <!--Example6 View Controller-->
+        <scene sceneID="kQc-9s-AXO">
+            <objects>
+                <viewController id="W8S-SY-hhp" customClass="Example6ViewController" customModule="StellarDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yOu-h3-Jcz"/>
+                        <viewControllerLayoutGuide type="bottom" id="wAT-rf-Lnj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FbB-0X-BKo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y8y-4u-sfq">
+                                <rect key="frame" x="20" y="95" width="72" height="73"/>
+                                <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pKA-IW-RHu">
+                                <rect key="frame" x="20" y="280" width="72" height="73"/>
+                                <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qox-wT-6Dv">
+                                <rect key="frame" x="228" y="280" width="72" height="73"/>
+                                <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tEJ-eB-zHQ">
+                                <rect key="frame" x="228" y="95" width="72" height="73"/>
+                                <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="clc-bt-t3p">
+                                <rect key="frame" x="18" y="405" width="284" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="W8S-SY-hhp" eventType="valueChanged" id="SV8-Ji-eIz"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VyU-6y-Zcq"/>
+                    <connections>
+                        <outletCollection property="views" destination="Y8y-4u-sfq" collectionClass="NSMutableArray" id="i7t-vh-29I"/>
+                        <outletCollection property="views" destination="tEJ-eB-zHQ" collectionClass="NSMutableArray" id="TRX-JC-ipo"/>
+                        <outletCollection property="views" destination="pKA-IW-RHu" collectionClass="NSMutableArray" id="jiO-8Q-dEx"/>
+                        <outletCollection property="views" destination="qox-wT-6Dv" collectionClass="NSMutableArray" id="XKk-Bx-qIa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N8P-VD-N1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="173" y="694"/>
         </scene>
         <!--Example4 View Controller-->
         <scene sceneID="bya-JG-GYw">
