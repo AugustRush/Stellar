@@ -37,13 +37,13 @@ A fantastic Physical animation library for swift(Not Just Spring !!!), it is bas
 <img src="https://github.com/AugustRush/Stellar/blob/master/layers.gif" width="320">
 
 #### Chainable 
-<img src="https://github.com/AugustRush/Stellar/blob/master/chainable1.gif" width="200">
+<img src="https://github.com/AugustRush/Stellar/blob/master/chainable.gif" width="200">
 
 ```
-ball.moveX(100).moveY(100).duration(1)
-    .then().makeWidth(160).duration(2).anchorPoint(CGPointMake(0, 0.5))
-    .then().rotate(1.5).snap(0.5)
-    .then().moveY(500).duration(0.5)
+animateView.makeSize(CGSizeMake(50, 150)).snap(0.3)
+  	 .then().moveX(-100).moveY(-50).anchorPoint(CGPointMake(1, 1)).duration(1)
+    .then().rotate(CGFloat(M_PI)).snap(0.3)
+    .then().moveY(500)
     .animate()
 
 ```
