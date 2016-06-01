@@ -136,9 +136,7 @@ internal class AnimationSequence: NSObject, UIDynamicAnimatorDelegate {
                     view.backgroundColor = c
                 }
             }
-            let fromInfo = from.colorInfo()
-            let toInfo = to.colorInfo()
-            behavior = basicBehavior(step, from: from, to: to, render: render,externalData: (fromInfo,toInfo))
+            behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .Alpha(let a):
             let from = view.alpha
@@ -347,9 +345,7 @@ internal class AnimationSequence: NSObject, UIDynamicAnimatorDelegate {
                     view.layer.shadowColor = c.CGColor
                 }
             }
-            let fromInfo = from.colorInfo()
-            let toInfo = to.colorInfo()
-            behavior = basicBehavior(step, from: from, to: to, render: render,externalData: (fromInfo,toInfo))
+            behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .ShadowOpacity(let o):
             let from = view.layer.shadowOpacity
@@ -368,9 +364,7 @@ internal class AnimationSequence: NSObject, UIDynamicAnimatorDelegate {
                     view.tintColor = c
                 }
             }
-            let fromInfo = from.colorInfo()
-            let toInfo = to.colorInfo()
-            behavior = basicBehavior(step, from: from, to: to, render: render,externalData: (fromInfo,toInfo))
+            behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .TextColor(let color):
             let fromColor = self.view.performSelector(Selector("textColor")).takeUnretainedValue() as? UIColor
@@ -381,9 +375,7 @@ internal class AnimationSequence: NSObject, UIDynamicAnimatorDelegate {
                     view.performSelector(Selector("setTextColor:"),withObject: c)
                 }
             }
-            let fromInfo = from.colorInfo()
-            let toInfo = to.colorInfo()
-            behavior = basicBehavior(step, from: from, to: to, render: render,externalData: (fromInfo,toInfo))
+            behavior = basicBehavior(step, from: from, to: to, render: render)
         }
         
         animator.addBehavior(behavior)
@@ -391,7 +383,7 @@ internal class AnimationSequence: NSObject, UIDynamicAnimatorDelegate {
     
     
     //basic item
-    private func basicBehavior<T: Interpolatable>(step: AnimationStep,from: T, to: T, render: ((T) -> Void), externalData: Any? = nil) -> UIPushBehavior {
+    private func basicBehavior<T: Interpolatable>(step: AnimationStep,from: T, to: T, render: ((T) -> Void)) -> UIPushBehavior {
         let item = DynamicItemBasic(from: from, to: to, render: render)
         let push = item.pushBehavior(.Down)
         item.behavior = push
@@ -400,8 +392,6 @@ internal class AnimationSequence: NSObject, UIDynamicAnimatorDelegate {
         item.delay = step.delay
         item.repeatCount = step.repeatCount
         item.autoreverses = step.autoreverses
-        //May remove in future
-        item.externalData = externalData
         
         return push
     }

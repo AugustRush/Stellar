@@ -14,4 +14,6 @@ protocol TimingType {
     var timingFunction: TimingFunction { get set }
     var autoreverses: Bool { get set }
     var repeatCount: Int { get set }
+    var speed: Double { get set }
+    var timeOffset: CFTimeInterval { get set }
 }

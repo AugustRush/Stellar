@@ -477,9 +477,7 @@ extension UIColor: Physical, Vectorial2, Interpolatable {
         basicItem.autoreverses = autoreverses
         basicItem.repeatCount = repeatCount
         basicItem.delay = delay
-        let fromInfo = self.colorInfo()
-        let toInfo = to.colorInfo()
-        basicItem.externalData = (fromInfo,toInfo)
+        
         push.commitToBasic()
     }
     
