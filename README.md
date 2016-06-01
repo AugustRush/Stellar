@@ -32,6 +32,10 @@ A fantastic Physical animation library for swift(Not Just Spring !!!), it is bas
 
 ## On display
 
+#### Funny demo's gif(s)
+<img src="https://github.com/AugustRush/Stellar/blob/master/balls.gif" width="320">
+<img src="https://github.com/AugustRush/Stellar/blob/master/layers.gif" width="320">
+
 #### Chainable 
 <img src="https://github.com/AugustRush/Stellar/blob/master/chainable1.gif" width="200">
 
@@ -80,10 +84,6 @@ for (index,line) in leftLines.enumerate() {
 
 #### Basic Curve
 <img src="https://github.com/AugustRush/Stellar/blob/master/basicCurve.gif">
-
-#### Funny demo's gif(s)
-<img src="https://github.com/AugustRush/Stellar/blob/master/balls.gif" width="320">
-<img src="https://github.com/AugustRush/Stellar/blob/master/layers.gif" width="320">
 
 ### To do
 - File configurable
