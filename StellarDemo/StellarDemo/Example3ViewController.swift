@@ -18,16 +18,16 @@ class Example3ViewController: UIViewController {
         
         for (index,line) in leftLines.enumerate() {
             let delay = Double(index) * 0.2
-            line.moveX(200).duration(2).easing(.SwiftOut).delay(delay).completion({ 
-              line.rotateY(1.43).duration(1).autoreverses().repeatCount(1).animate()
-            }).then().moveX(-200).makeColor(UIColor.greenColor()).repeatCount(1).autoreverses().duration(2).animate()
+            line.moveX(200).duration(2).delay(delay)
+                .then().moveX(-200).makeColor(UIColor.greenColor()).easing(.Linear).repeatCount(100).autoreverses().duration(2).animate()
+            line.makeWidth(80).delay(delay).duration(1).autoreverses().easing(.Linear).repeatCount(100).animate()
         }
         
         for (index,line) in rightLines.enumerate() {
             let delay = Double(index) * 0.2
-            line.moveX(-200).duration(2).easing(.SwiftOut).delay(delay).completion({ 
-              line.rotateY(1.43).duration(1).autoreverses().repeatCount(1).animate()
-            }).then().moveX(200).makeColor(UIColor.purpleColor()).repeatCount(1).autoreverses().duration(2).animate()
+            line.moveX(-200).duration(2).delay(delay)
+                .then().moveX(200).makeColor(UIColor.purpleColor()).easing(.Linear).repeatCount(100).autoreverses().duration(2).animate()
+            line.makeWidth(80).delay(delay).duration(1).autoreverses().easing(.Linear).repeatCount(100).animate()
         }
 
 

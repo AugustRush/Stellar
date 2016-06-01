@@ -40,7 +40,6 @@ final class DynamicItem2<T: Vectorial2>: NSObject, UIDynamicItem {
         let originChange = sqrt(x*x + y*y)
         let sizeChange = sqrt(z*z + w*w)
         self.referenceChangeLength = max(originChange, sizeChange)
-        print(self.referenceChangeLength)
     }
     
     deinit {

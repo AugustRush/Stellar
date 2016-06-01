@@ -27,10 +27,10 @@ class Example4ViewController: UIViewController {
             .then().moveX(-100).moveY(-50).anchorPoint(CGPointMake(1, 1)).duration(1).completion({
                 print("Second step!")
             })
-            .then().rotate(CGFloat(M_PI)).snap(0.3).completion({
+            .then().rotate(CGFloat(M_PI)).attachment(0.3, frequency: 0.8).completion({
                 print("Third step!")
             })
-            .then().moveY(500).completion({ 
+            .then().moveY(500).completion({
                 print("last step, all completion")
             })
             .animate()

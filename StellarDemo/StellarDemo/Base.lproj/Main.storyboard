@@ -604,7 +604,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rg3-cU-b1h" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="13" y="139" width="100" height="14"/>
+                                <rect key="frame" x="60" y="140" width="14" height="14"/>
                                 <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -613,7 +613,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-LO-kJJ" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="13" y="220" width="100" height="14"/>
+                                <rect key="frame" x="60" y="221" width="14" height="14"/>
                                 <color key="backgroundColor" red="0.2096919663" green="0.25430050230000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -622,7 +622,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="unX-jo-XXC" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="13" y="247" width="100" height="14"/>
+                                <rect key="frame" x="60" y="248" width="14" height="14"/>
                                 <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -631,7 +631,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LLL-gS-wn4" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="13" y="274" width="100" height="14"/>
+                                <rect key="frame" x="60" y="275" width="14" height="14"/>
                                 <color key="backgroundColor" red="0.57831778990000005" green="1" blue="0.46677104060000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -640,7 +640,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYx-gB-3rY" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="13" y="193" width="100" height="14"/>
+                                <rect key="frame" x="60" y="194" width="14" height="14"/>
                                 <color key="backgroundColor" red="1" green="0.50744667560000001" blue="0.27057497279999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -649,7 +649,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sLY-3a-HT5" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="13" y="166" width="100" height="14"/>
+                                <rect key="frame" x="60" y="167" width="14" height="14"/>
                                 <color key="backgroundColor" red="1" green="0.2335054288" blue="0.60924332530000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -658,7 +658,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p9p-2a-Tw3" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="13" y="414" width="100" height="14"/>
+                                <rect key="frame" x="60" y="415" width="14" height="14"/>
                                 <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -667,7 +667,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wV-43-sPt" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="13" y="333" width="100" height="14"/>
+                                <rect key="frame" x="60" y="334" width="14" height="14"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -676,7 +676,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qsv-2a-dNL" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="13" y="360" width="100" height="14"/>
+                                <rect key="frame" x="60" y="361" width="14" height="14"/>
                                 <color key="backgroundColor" red="1" green="0.50744667560000001" blue="0.27057497279999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -685,7 +685,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="anE-Xt-Q97" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="13" y="387" width="100" height="14"/>
+                                <rect key="frame" x="60" y="388" width="14" height="14"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -694,7 +694,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0JJ-mq-H05" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="13" y="306" width="100" height="14"/>
+                                <rect key="frame" x="60" y="307" width="14" height="14"/>
                                 <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -703,7 +703,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uMq-Sp-CZO" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="13" y="441" width="100" height="14"/>
+                                <rect key="frame" x="60" y="442" width="14" height="14"/>
                                 <color key="backgroundColor" red="0.93632190240000002" green="0.12854005560000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -712,7 +712,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Eg-Rf-XYl" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="200" y="139" width="100" height="14"/>
+                                <rect key="frame" x="247" y="140" width="14" height="14"/>
                                 <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -721,7 +721,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RZ5-qN-3xW" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="200" y="220" width="100" height="14"/>
+                                <rect key="frame" x="247" y="221" width="14" height="14"/>
                                 <color key="backgroundColor" red="0.2096919663" green="0.25430050230000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -730,7 +730,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s9q-pi-rKZ" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="200" y="247" width="100" height="14"/>
+                                <rect key="frame" x="247" y="248" width="14" height="14"/>
                                 <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -739,7 +739,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ufS-n4-jX8" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="200" y="274" width="100" height="14"/>
+                                <rect key="frame" x="247" y="275" width="14" height="14"/>
                                 <color key="backgroundColor" red="0.57831778990000005" green="1" blue="0.46677104060000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -748,7 +748,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vjy-bB-0kO" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="200" y="193" width="100" height="14"/>
+                                <rect key="frame" x="247" y="194" width="14" height="14"/>
                                 <color key="backgroundColor" red="1" green="0.50744667560000001" blue="0.27057497279999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -757,7 +757,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oRR-JI-9al" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="200" y="166" width="100" height="14"/>
+                                <rect key="frame" x="247" y="167" width="14" height="14"/>
                                 <color key="backgroundColor" red="1" green="0.2335054288" blue="0.60924332530000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -766,7 +766,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bn7-Zr-El4" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="200" y="414" width="100" height="14"/>
+                                <rect key="frame" x="247" y="415" width="14" height="14"/>
                                 <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -775,7 +775,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dHC-9F-Zb9" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="200" y="333" width="100" height="14"/>
+                                <rect key="frame" x="247" y="334" width="14" height="14"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -784,7 +784,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JwU-GR-dUG" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="200" y="360" width="100" height="14"/>
+                                <rect key="frame" x="247" y="361" width="14" height="14"/>
                                 <color key="backgroundColor" red="1" green="0.50744667560000001" blue="0.27057497279999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -793,7 +793,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n5s-h9-B4z" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="200" y="387" width="100" height="14"/>
+                                <rect key="frame" x="247" y="388" width="14" height="14"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -802,7 +802,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gNh-uN-ZPK" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="200" y="306" width="100" height="14"/>
+                                <rect key="frame" x="247" y="307" width="14" height="14"/>
                                 <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -811,7 +811,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pdn-OH-L3A" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
-                                <rect key="frame" x="200" y="441" width="100" height="14"/>
+                                <rect key="frame" x="247" y="442" width="14" height="14"/>
                                 <color key="backgroundColor" red="0.93632190240000002" green="0.12854005560000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -933,6 +933,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="vPT-8H-gGw"/>
+                    <connections>
+                        <outletCollection property="views" destination="ssj-lx-6TK" collectionClass="NSMutableArray" id="VCU-hb-77Z"/>
+                        <outletCollection property="views" destination="1EQ-Xu-bgO" collectionClass="NSMutableArray" id="XAO-T1-n8v"/>
+                        <outletCollection property="views" destination="F4J-Kj-OrN" collectionClass="NSMutableArray" id="21Z-j0-61v"/>
+                        <outletCollection property="views" destination="AKK-iE-CjP" collectionClass="NSMutableArray" id="eFo-iP-xiP"/>
+                        <outletCollection property="views" destination="F8c-Nq-xPh" collectionClass="NSMutableArray" id="hCT-Wr-9oE"/>
+                        <outletCollection property="views" destination="hru-up-4Mk" collectionClass="NSMutableArray" id="uSR-Pv-Gp9"/>
+                        <outletCollection property="views" destination="gCX-lg-jWJ" collectionClass="NSMutableArray" id="saq-sh-G60"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8nt-Yy-33M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

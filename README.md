@@ -38,11 +38,11 @@ A fantastic Physical animation library for swift(Not Just Spring !!!), it is bas
 
 #### Chainable 
 
-* common</br>
+1) Common</br>
 
 <img src="https://github.com/AugustRush/Stellar/blob/master/lines.gif" width="200">
 
-```
+``` swift
 for (index,line) in leftLines.enumerate() {
     let delay = Double(index) * 0.2
     
@@ -60,28 +60,26 @@ for (index,line) in leftLines.enumerate() {
         .makeColor(UIColor.purpleColor()).repeatCount(100)
         .autoreverses().duration(2).animate()
  }
-
 ```
 
-* every step completion observable </br>
+2) every step completion observable </br>
 
-<img src="https://github.com/AugustRush/Stellar/blob/master/chainable.gif" width="200">
+<img src="https://github.com/AugustRush/Stellar/blob/master/example4.gif" width="200">
 
-```
+``` swift
 animateView.makeSize(CGSizeMake(50, 150)).snap(0.3).completion({
-                print("First step complete")
+                print("First step")
             })
             .then().moveX(-100).moveY(-50).anchorPoint(CGPointMake(1, 1)).duration(1).completion({
-                print("Second step complete")
+                print("Second step!")
             })
-            .then().rotate(CGFloat(M_PI)).snap(0.3).completion({
-                print("Third step complete")
+            .then().rotate(CGFloat(M_PI)).attachment(0.3, frequency: 0.8).completion({
+                print("Third step!")
             })
-            .then().moveY(500).completion({ 
+            .then().moveY(500).completion({
                 print("last step, all completion")
             })
             .animate()
-
 ```
 
 ----------

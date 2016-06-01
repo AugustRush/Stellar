@@ -10,4 +10,11 @@ import UIKit
 
 class Example5ViewController: UIViewController {
 
+    @IBOutlet var views: [Ball]!
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesMoved(touches, withEvent: event)
+        
+        
+    }
 }
