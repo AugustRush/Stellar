@@ -177,6 +177,12 @@ extension UIView: BasicConfigurable, SnapConfigurable {
         context.addAnimationType(type)
         return self
     }
+    
+    public func completion(c: () -> Void) -> UIView {
+        context.changeCompletion(c)
+        return self
+    }
+    
     //MARK: Physical Animation
     
     public func snap(damping: CGFloat = 0.5) -> SnapConfigurable {
@@ -192,11 +198,6 @@ extension UIView: BasicConfigurable, SnapConfigurable {
     
     public func easing(type: TimingFunctionType) -> BasicConfigurable {
         context.changeEasing(type)
-        return self
-    }
-    
-    public func completion(c: () -> Void) -> BasicConfigurable {
-        context.changeCompletion(c)
         return self
     }
     

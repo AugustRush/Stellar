@@ -83,7 +83,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Example 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BBm-wQ-ZKq">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Example 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BBm-wQ-ZKq">
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -94,6 +94,26 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="2yi-av-AQY" kind="push" id="Cjf-aZ-5AS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="z7a-YE-xLY" style="IBUITableViewCellStyleDefault" id="vne-BM-X6x">
+                                        <rect key="frame" x="0.0" y="240" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vne-BM-X6x" id="IDZ-1R-uwk">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Example 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z7a-YE-xLY">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="XiE-es-VSY" kind="push" id="CeU-px-VH6"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -833,6 +853,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNJ-Td-phW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-197" y="26"/>
+        </scene>
+        <!--Example5 View Controller-->
+        <scene sceneID="pKe-F9-DcO">
+            <objects>
+                <viewController id="XiE-es-VSY" customClass="Example5ViewController" customModule="StellarDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zQx-l1-wNk"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Ax-cf-5x6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GJC-sp-lmN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ssj-lx-6TK" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
+                                <rect key="frame" x="41" y="100" width="238" height="43"/>
+                                <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1EQ-Xu-bgO" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
+                                <rect key="frame" x="41" y="156" width="238" height="43"/>
+                                <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F4J-Kj-OrN" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
+                                <rect key="frame" x="41" y="212" width="238" height="43"/>
+                                <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AKK-iE-CjP" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
+                                <rect key="frame" x="41" y="271" width="238" height="43"/>
+                                <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F8c-Nq-xPh" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
+                                <rect key="frame" x="41" y="330" width="238" height="43"/>
+                                <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hru-up-4Mk" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
+                                <rect key="frame" x="41" y="388" width="238" height="43"/>
+                                <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gCX-lg-jWJ" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
+                                <rect key="frame" x="41" y="445" width="238" height="43"/>
+                                <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vPT-8H-gGw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8nt-Yy-33M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-197" y="694"/>
         </scene>
         <!--Example4 View Controller-->
         <scene sceneID="bya-JG-GYw">

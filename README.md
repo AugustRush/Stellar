@@ -7,7 +7,7 @@ A fantastic Physical animation library for swift(Not Just Spring !!!), it is bas
 ### Features
 - View's Animation
 - Layer's Animation
-- Chainable
+- Chainable (every step can be observed)
 - File configurable (come soon)
 
 ### Animations
@@ -37,16 +37,9 @@ A fantastic Physical animation library for swift(Not Just Spring !!!), it is bas
 <img src="https://github.com/AugustRush/Stellar/blob/master/layers.gif" width="320">
 
 #### Chainable 
-<img src="https://github.com/AugustRush/Stellar/blob/master/chainable.gif" width="200">
 
-```
-animateView.makeSize(CGSizeMake(50, 150)).snap(0.3)
-  	 .then().moveX(-100).moveY(-50).anchorPoint(CGPointMake(1, 1)).duration(1)
-    .then().rotate(CGFloat(M_PI)).snap(0.3)
-    .then().moveY(500)
-    .animate()
+* common</br>
 
-```
 <img src="https://github.com/AugustRush/Stellar/blob/master/lines.gif" width="200">
 
 ```
@@ -69,6 +62,28 @@ for (index,line) in leftLines.enumerate() {
  }
 
 ```
+
+* every step completion observable </br>
+
+<img src="https://github.com/AugustRush/Stellar/blob/master/chainable.gif" width="200">
+
+```
+animateView.makeSize(CGSizeMake(50, 150)).snap(0.3).completion({
+                print("First step complete")
+            })
+            .then().moveX(-100).moveY(-50).anchorPoint(CGPointMake(1, 1)).duration(1).completion({
+                print("Second step complete")
+            })
+            .then().rotate(CGFloat(M_PI)).snap(0.3).completion({
+                print("Third step complete")
+            })
+            .then().moveY(500).completion({ 
+                print("last step, all completion")
+            })
+            .animate()
+
+```
+
 ----------
 #### Snap Curve
 <img src="https://github.com/AugustRush/Stellar/blob/master/snapCurve.gif">

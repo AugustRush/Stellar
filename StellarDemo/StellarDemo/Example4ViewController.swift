@@ -13,14 +13,25 @@ class Example4ViewController: UIViewController {
     
     @IBOutlet weak var animateView: Ball!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
         
-        animateView.makeSize(CGSizeMake(50, 150)).snap(0.3)
-            .then().moveX(-100).moveY(-50).anchorPoint(CGPointMake(1, 1)).duration(1)
-            .then().rotate(CGFloat(M_PI)).snap(0.3)
+        animateView.makeSize(CGSizeMake(50, 150)).snap(0.3).completion({
+                print("First step")
+            })
+            .then().moveX(-100).moveY(-50).anchorPoint(CGPointMake(1, 1)).duration(1).completion({
+                print("Second step!")
+            })
+            .then().rotate(CGFloat(M_PI)).snap(0.3).completion({
+                print("Third step!")
+            })
             .then().moveY(500).completion({ 
-                print("all completion")
+                print("last step, all completion")
             })
             .animate()
     }
