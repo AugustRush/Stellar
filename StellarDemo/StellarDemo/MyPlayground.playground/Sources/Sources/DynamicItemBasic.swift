@@ -27,10 +27,16 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem, Timing
     var autoreverses = false
     var repeatCount = 0
     var completion: ((Bool) -> Void)?
-    //External data to store (performance)
-    var externalData: Any?
+    var speed: Double = 1.0
+    var timeOffset: CFTimeInterval = 0.0 {
+        didSet {
+            updateFrame()
+        }
+    }
     
-    weak var behavior: UIDynamicBehavior!
+    weak var behavior: UIDynamicBehavior?
+    //External data to store (performance)
+    private var externalData: Any?
     private var complete = false
     private var isReversing = false
     private var solveProgress = SolveForUnReverse
@@ -46,6 +52,13 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem, Timing
         self.from = from
         self.to = to
         self.render = render
+        
+        if let fromColor = from as? UIColor {
+            let fromInfo = fromColor.colorInfo()
+            let toColor = to as! UIColor
+            let toInfo = toColor.colorInfo()
+            self.externalData = (fromInfo,toInfo)
+        }
     }
     
     deinit {
@@ -56,7 +69,7 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem, Timing
     private func updateFrame() {
         let startTime = beginTime
         var currentTime = CACurrentMediaTime() - startTime - delay
-        currentTime = max(0, currentTime)
+        currentTime = max(0, currentTime) * speed + timeOffset
         var progress = currentTime / duration
         if progress >= 1.0 {
             isReversing = autoreverses ? !isReversing : false
@@ -67,7 +80,7 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem, Timing
                     solveProgress = SolveForReverse
                 } else {
                     progress = 1.0
-                    behavior.cancel()
+                    behavior?.cancel()
                     complete = true
                     self.completion?(complete)
                 }

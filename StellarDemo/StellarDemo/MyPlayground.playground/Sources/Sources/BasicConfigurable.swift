@@ -11,7 +11,6 @@ import UIKit
 public protocol BasicConfigurable: BasicChainable {
     func duration(d: CFTimeInterval) -> BasicConfigurable
     func easing(type: TimingFunctionType) -> BasicConfigurable
-    func completion(c: () -> Void) -> BasicConfigurable
     func delay(d: CFTimeInterval) -> BasicConfigurable
     func autoreverses() -> BasicConfigurable
     func repeatCount(count: Int) -> BasicConfigurable

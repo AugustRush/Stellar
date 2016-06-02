@@ -30,7 +30,7 @@ class Example4ViewController: UIViewController {
             .then().rotate(CGFloat(M_PI)).attachment(0.3, frequency: 0.8).completion({
                 print("Third step!")
             })
-            .then().moveY(500).completion({
+            .then().moveY(500).gravity().completion({
                 print("last step, all completion")
             })
             .animate()

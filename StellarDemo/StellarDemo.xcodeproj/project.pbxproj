@@ -12,6 +12,7 @@
 		970F91B31CFEBFC500B510BE /* Example5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91B21CFEBFC500B510BE /* Example5ViewController.swift */; };
 		970F91B51CFEC71600B510BE /* AttachmentConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91B41CFEC71600B510BE /* AttachmentConfigurable.swift */; };
 		970F91D51CFEF7C900B510BE /* Example6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91D41CFEF7C900B510BE /* Example6ViewController.swift */; };
+		970F91D71D000AA000B510BE /* GravityConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91D61D000AA000B510BE /* GravityConfigurable.swift */; };
 		973E59CB1CF5ACEC00F26487 /* Example1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */; };
 		973E59E71CF6F2E100F26487 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59E61CF6F2E100F26487 /* Ball.swift */; };
 		973E59E91CF6FD2200F26487 /* UIView+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */; };
@@ -71,6 +72,7 @@
 		970F91B21CFEBFC500B510BE /* Example5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example5ViewController.swift; sourceTree = "<group>"; };
 		970F91B41CFEC71600B510BE /* AttachmentConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentConfigurable.swift; sourceTree = "<group>"; };
 		970F91D41CFEF7C900B510BE /* Example6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example6ViewController.swift; sourceTree = "<group>"; };
+		970F91D61D000AA000B510BE /* GravityConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityConfigurable.swift; sourceTree = "<group>"; };
 		973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example1ViewController.swift; sourceTree = "<group>"; };
 		973E59E61CF6F2E100F26487 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Stellar.swift"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				97EC4BFD1CF9E2620059BBFA /* BasicConfigurable.swift */,
 				97EC4C011CF9E47D0059BBFA /* SnapConfigurable.swift */,
 				970F91B41CFEC71600B510BE /* AttachmentConfigurable.swift */,
+				970F91D61D000AA000B510BE /* GravityConfigurable.swift */,
 			);
 			name = protocols;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				973E59E71CF6F2E100F26487 /* Ball.swift in Sources */,
 				97733D6C1CFEAC930012C879 /* Example4ViewController.swift in Sources */,
 				973E5A041CF70FAE00F26487 /* TimingType.swift in Sources */,
+				970F91D71D000AA000B510BE /* GravityConfigurable.swift in Sources */,
 				97E1A8D81CEB4AF200F98D86 /* Physical.swift in Sources */,
 				97E1A9111CEDEF5200F98D86 /* DynamicItem+Behavior.swift in Sources */,
 				97E8D3EE1CFC11BA004E6A80 /* CALayer+Stellar.swift in Sources */,

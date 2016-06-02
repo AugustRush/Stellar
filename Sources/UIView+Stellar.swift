@@ -12,9 +12,10 @@ public enum ViewAnimationType {
     case Basic
     case Snap(CGFloat)
     case Attachment(CGFloat,CGFloat)
+    case Gravity(CGFloat)
 }
 
-extension UIView: BasicConfigurable, SnapConfigurable, AttachmentConfigurable {
+extension UIView: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, GravityConfigurable {
     
     //MARK: animation methods
     public func moveX(increment: CGFloat) -> UIView {
@@ -195,6 +196,12 @@ extension UIView: BasicConfigurable, SnapConfigurable, AttachmentConfigurable {
     //Attachment
     public func attachment(damping: CGFloat = 0.5, frequency: CGFloat = 0.5) -> AttachmentConfigurable {
         context.changeMainType(.Attachment(damping, frequency))
+        return self
+    }
+    
+    //Gravity
+    public func gravity(magnitude: CGFloat = 1.0) -> GravityConfigurable {
+        context.changeMainType(.Gravity(magnitude))
         return self
     }
     
