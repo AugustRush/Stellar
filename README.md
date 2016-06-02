@@ -101,6 +101,9 @@ animateView.makeSize(CGSizeMake(50, 150)).snap(0.3).completion({
 
 ### To do
 - File configurable
+- Easily Interactive Animations
+- Collision
+- Mutilple View/Layer performance
 - More demos
 
 ### Licence
