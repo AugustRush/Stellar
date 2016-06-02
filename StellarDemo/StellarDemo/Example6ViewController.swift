@@ -10,6 +10,8 @@ import UIKit
 
 class Example6ViewController: UIViewController {
 
+    //should be have more easily APIs to do
+    
     @IBOutlet var views: [UIView]!
     var centerItems: [DynamicItemBasic<CGPoint>] = Array()
     var colorItems: [DynamicItemBasic<UIColor>] = Array()
