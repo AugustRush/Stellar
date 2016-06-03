@@ -33,6 +33,7 @@ A fantastic Physical animation library for swift(Not Just Spring !!!), it is bas
 ## On display
 
 #### Funny demo's gif(s)
+<img src="https://github.com/AugustRush/Stellar/blob/master/example5.gif" width="320">
 <img src="https://github.com/AugustRush/Stellar/blob/master/balls.gif" width="320">
 <img src="https://github.com/AugustRush/Stellar/blob/master/layers.gif" width="320">
 <img src="https://github.com/AugustRush/Stellar/blob/master/example6.gif" width="320">

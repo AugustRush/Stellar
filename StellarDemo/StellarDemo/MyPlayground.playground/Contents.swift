@@ -21,7 +21,7 @@ container.backgroundColor = UIColor(red: 0.97,green: 0.97,blue: 0.97,alpha: 1.0)
 //    ball.makeWidth(200).duration(2).autoreverses().animate()
 //}
 
-let ball = Ball(frame: CGRectMake(100,100,50,50))
+let ball = Ball(frame: CGRectMake(100,100,250,250))
 ball.backgroundColor = UIColor.cyanColor()
 container.addSubview(ball)
 
@@ -31,6 +31,17 @@ container.addSubview(ball)
 //    .then().moveY(500).gravity(100)
 //    .animate()
 
+let rotation: CGFloat = CGFloat(M_PI) * 20.0
+ball.makeSize(CGSizeMake(100, 30)).gravity()
+    .then().moveY(-100).snap(1)
+    .then().rotate(rotation).duration(2).easing(.SwiftOut).makeHeight(100).cornerRadius(50)
+    .then().moveY(100).gravity()
+    .then().moveY(-80)
+    .then().moveY(80).gravity()
+    .then().moveY(-40)
+    .then().moveY(40).gravity()
+    .then().makeWidth(120).makeHeight(30).cornerRadius(15).easing(.SwiftOut).makeColor(UIColor.brownColor())
+    .animate()
 
 
 XCPlaygroundPage.currentPage.liveView = container

@@ -11,16 +11,26 @@ import UIKit
 class Example5ViewController: UIViewController {
 
     @IBOutlet weak var cyanView: UIView!
-    var animator: UIDynamicAnimator!
-    var collision: UICollisionBehavior!
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesMoved(touches, withEvent: event)
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
         
+        let rotation: CGFloat = CGFloat(M_PI) * 20.0
+        cyanView.makeSize(CGSizeMake(100, 30)).snap()
+            .then().moveY(-100).snap(1)
+            .then().rotate(rotation).duration(2).easing(.SwiftOut).makeHeight(100).cornerRadius(50)
+            .then().moveY(100).gravity()
+            .then().moveY(-80)
+            .then().moveY(80).gravity()
+            .then().moveY(-40)
+            .then().moveY(40).gravity()
+            .then().makeWidth(120).makeHeight(30).cornerRadius(15).easing(.SwiftOut).makeColor(UIColor.brownColor())
+            .animate()
+
     }
 }
