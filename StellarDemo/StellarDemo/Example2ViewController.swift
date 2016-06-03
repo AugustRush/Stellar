@@ -36,13 +36,11 @@ class Example2ViewController: UIViewController {
         for (index, ball) in balls.enumerate() {
             let move = CGFloat(-20 + index * 20)
             let opacity = Float(1 - 0.2 * CGFloat(index))
-            ball.shadowOpacity(opacity).shadowOffset(CGSizeMake(20 - CGFloat(index) * 5, 20 - CGFloat(index) * 5)).shadowRadius(5).moveX(-move).moveY(-move).shadowColor(UIColor.grayColor()).duration(2)
-                .then().moveY(move).moveX(move).shadowOpacity(0).shadowOffset(CGSizeZero).shadowColor(UIColor.clearColor()).duration(1)
+            ball.shadowOpacity(opacity).shadowOffset(CGSizeMake(20 - CGFloat(index) * 5, 20 - CGFloat(index) * 5)).shadowRadius(5).moveX(-move).moveY(-move).gravity().shadowColor(UIColor.grayColor()).duration(2)
+                .then().moveY(move).gravity().moveX(move).shadowOpacity(0).shadowOffset(CGSizeZero).shadowColor(UIColor.clearColor()).duration(1)
                 .completion({
                     print("all completion")
                 }).animate()
-
-            
         }
         
         

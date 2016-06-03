@@ -9,5 +9,5 @@
 import UIKit
 
 public protocol GravityConfigurable: BasicChainable {
-    func gravity(magnitude: CGFloat) -> GravityConfigurable
+    func gravity(magnitude: Double) -> GravityConfigurable
 }

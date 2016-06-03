@@ -12,7 +12,7 @@ public enum ViewAnimationType {
     case Basic
     case Snap(CGFloat)
     case Attachment(CGFloat,CGFloat)
-    case Gravity(CGFloat)
+    case Gravity(Double)
 }
 
 extension UIView: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, GravityConfigurable {
@@ -200,7 +200,7 @@ extension UIView: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, G
     }
     
     //Gravity
-    public func gravity(magnitude: CGFloat = 1.0) -> GravityConfigurable {
+    public func gravity(magnitude: Double = 1.0) -> GravityConfigurable {
         context.changeMainType(.Gravity(magnitude))
         return self
     }

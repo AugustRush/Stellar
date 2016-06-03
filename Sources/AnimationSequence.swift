@@ -1032,7 +1032,7 @@ internal class AnimationSequence: NSObject, UIDynamicAnimatorDelegate {
     }
     
     //MARK: Gravity
-    private func createGravityAnimationWithType(type: ViewAnimationSubType, magnitude: CGFloat = 1.0) {
+    private func createGravityAnimationWithType(type: ViewAnimationSubType, magnitude: Double) {
         var behavior: UIDynamicBehavior!
         
         switch type {
@@ -1332,22 +1332,12 @@ internal class AnimationSequence: NSObject, UIDynamicAnimatorDelegate {
     }
     
     
-    private func gravityBehavior<T: Vectorial>(magnitude: CGFloat, from: T, to: T, render: (T) -> Void) -> UIDynamicBehavior {
-        let item = DynamicItem(from: from, to: to, render: render)
-        let directionX = item.toP.x - item.fromP.x
-        let directionY = item.toP.y - item.fromP.y
-        let attachment = item.gravityBehavior(magnitude, direction: .Vector(directionX,directionY))
-        item.behavior = attachment
-        item.boundaryLimit = true
-        return attachment
-    }
-    
-    private func gravityBehavior<T: Vectorial2>(magnitude: CGFloat, from: T, to: T, render: (T) -> Void) -> UIDynamicBehavior {
-        let item = DynamicItem2(from: from, to: to, render: render)
-        let attachment = item.gravityBehavior(magnitude, direction: .Down)
-        item.behavior = attachment
-        item.boundaryLimit = true
-        return attachment
+    private func gravityBehavior<T: Interpolatable>(magnitude: Double, from: T, to: T, render: (T) -> Void) -> UIDynamicBehavior {
+        let item = DynamicItemGravity(from: from, to: to, render: render)
+        let push = item.pushBehavior(.Down)
+        item.behavior = push
+        item.magnitude = magnitude
+        return push
     }
     
     //MARK: UIDynamicAnimatorDelegate methods

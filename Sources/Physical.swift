@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol Physical {
-    func fallTo(to: Self, magnitude: CGFloat,render: (Self) -> Void, completion: (() -> Void)?)
+    func fallTo(to: Self, magnitude: Double,render: (Self) -> Void, completion: (() -> Void)?)
     func snapTo(to: Self, damping: CGFloat,render: (Self) -> Void, completion: (() -> Void)?)
     func attachmentTo(to: Self,damping: CGFloat, frequency: CGFloat,render: (Self) -> Void, completion: (() -> Void)?)
     func pushedTo(to: Self,render: (Self) -> Void, completion: (() -> Void)?)
