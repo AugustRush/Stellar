@@ -887,7 +887,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L9b-9X-pBB">
-                                <rect key="frame" x="40" y="122" width="240" height="128"/>
+                                <rect key="frame" x="40" y="122" width="260" height="128"/>
                                 <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
