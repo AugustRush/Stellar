@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>StellarDemo.xcscheme</key>
+		<key>StellarDemo.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,6 +12,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>97019FD51D054ECD00FD6644</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>97019FDE1D054ECD00FD6644</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>97BE88BD1CDDDAD000240523</key>
 		<dict>
 			<key>primary</key>
