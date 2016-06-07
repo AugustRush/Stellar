@@ -1,0 +1,18 @@
+language: Swift
+xcode_project: StellarDemo.xcodeproj
+before_install:
+  - brew update
+  - brew install carthage
+install: carthage bootstrap --verbose
+xcode_scheme: [Stellar, StellarDemo]
+xcode_sdk: [iphonesimulator8.3]
+osx_image: beta-xcode7.1
+
+matrix:
+  exclude:
+    - xcode_scheme: Stellar
+      xcode_sdk: iphonesimulator8.3
+
+branches:
+  only:
+    - master
