@@ -42,10 +42,10 @@ enum ViewAnimationSubType {
 
 //temp record for animation type
 internal class AnimationType {
-    var mainType: ViewAnimationType
+    var mainType: AnimationStyle
     var subType: ViewAnimationSubType
     
-    init (type: ViewAnimationType, subType: ViewAnimationSubType) {
+    init (type: AnimationStyle, subType: ViewAnimationSubType) {
         self.mainType = type
         self.subType = subType
     }

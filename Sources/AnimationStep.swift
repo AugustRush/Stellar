@@ -15,8 +15,5 @@ internal class AnimationStep {
     var delay: CFTimeInterval = 0.0
     var autoreverses: Bool = false
     var repeatCount: Int = 0
-    //for physical(snap, attachment)
-    var damping: CGFloat = 0.5
-    var frequency: CGFloat = 0.5
     var completion: (() -> Void)?
 }

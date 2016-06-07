@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum ViewAnimationType {
+public enum AnimationStyle {
     case Basic
     case Snap(CGFloat)
     case Attachment(CGFloat,CGFloat)
