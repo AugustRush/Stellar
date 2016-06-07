@@ -86,6 +86,13 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate, AnimationS
         makeNextSequence()
     }
     
+    func removeAllRemaining() {
+        for sequence in mutipleSequences {
+            sequence.removeAllSteps()
+        }
+        mutipleSequences.removeAll()
+    }
+    
     
     //MARK: private methods
     

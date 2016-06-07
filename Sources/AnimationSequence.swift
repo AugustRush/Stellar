@@ -45,6 +45,10 @@ internal class AnimationSequence: NSObject, UIDynamicAnimatorDelegate {
         }
     }
     
+    func removeAllSteps() {
+        steps.removeAll()
+    }
+    
     private func excuteFirstStepIfExist() {
         
         if self.view == nil {
