@@ -136,6 +136,26 @@
                                             <segue destination="W8S-SY-hhp" kind="push" id="WCc-C4-wIU"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="0NN-BX-hLq" style="IBUITableViewCellStyleDefault" id="9lj-Ge-eeD">
+                                        <rect key="frame" x="0.0" y="328" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9lj-Ge-eeD" id="QIR-Q1-Cg5">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Example 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0NN-BX-hLq">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="9iX-4y-7ig" kind="push" id="gHN-yZ-fn5"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -873,6 +893,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNJ-Td-phW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-197" y="26"/>
+        </scene>
+        <!--Example7 View Controller-->
+        <scene sceneID="vby-Y7-GdX">
+            <objects>
+                <viewController id="9iX-4y-7ig" customClass="Example7ViewController" customModule="StellarDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xfs-pC-Urq"/>
+                        <viewControllerLayoutGuide type="bottom" id="7qD-Yi-ENq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ia4-I2-loD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ek-xA-FhA">
+                                <rect key="frame" x="104" y="269" width="113" height="30"/>
+                                <state key="normal" title="Load from JSON"/>
+                                <connections>
+                                    <action selector="loadFromJSON:" destination="9iX-4y-7ig" eventType="touchUpInside" id="1P0-61-QA1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5aI-gS-anX"/>
+                    <connections>
+                        <outlet property="button" destination="1Ek-xA-FhA" id="9Sm-KZ-wbE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ga3-gS-pr0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-562" y="681"/>
         </scene>
         <!--Example5 View Controller-->
         <scene sceneID="pKe-F9-DcO">

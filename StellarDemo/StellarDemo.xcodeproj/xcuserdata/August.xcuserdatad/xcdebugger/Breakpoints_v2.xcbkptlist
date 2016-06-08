@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "StellarDemo/Example5ViewController.swift"
-            timestampString = "486975472.580745"
+            filePath = "../Sources/UIView+FileConfigurable.swift"
+            timestampString = "487050939.153446"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "touchesEnded(_:withEvent:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Sources/AnimationContext.swift"
-            timestampString = "486975867.618959"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "cancelAll()"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "configureWithJSON(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

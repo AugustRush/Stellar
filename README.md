@@ -4,6 +4,32 @@ A fantastic Physical animation library for swift(Not Just Spring !!!), it is bas
 
 ## Support
 
+### Integration
+#### Cocoapods(iOS 8+)
+* You can use [Cocoapods](https://cocoapods.org/) to install Stellar by adding it to your Podfile:
+
+```
+platform :ios, '8.0'
+use_frameworks!
+
+target 'YourApp' do
+    pod 'Stellar', :git => 'https://github.com/AugustRush/Stellar.git'
+end
+```
+
+#### Carthage (iOS 8+)
+* You can use [Carthage](https://github.com/Carthage/Carthage) to install Stellar by adding it to your Cartfile:
+
+```
+github "AugustRush/Stellar"
+```
+
+#### Manually (iOS 8+)
+To use this library in your project manually you may:
+
+- for Projects, just drag Stellar [Sources](https://github.com/AugustRush/Stellar/tree/master/Sources) to the project tree
+- for Workspaces, include the whole StellarDemo.xcodeproj
+
 ### Features
 - View's Animation
 - Layer's Animation
