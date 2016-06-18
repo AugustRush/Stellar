@@ -36,7 +36,7 @@ class Example5ViewController: UIViewController {
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
-        
-        cyanView.cancelAllRemaining()
+        //will cancel all remaining animations
+//        cyanView.cancelAllRemaining()
     }
 }

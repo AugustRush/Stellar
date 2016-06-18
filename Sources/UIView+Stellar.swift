@@ -250,13 +250,14 @@ extension UIView: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, G
     }
 
     
-    //Private Context    
+    //Internal Context for view and layer
     internal var context: AnimationContext {
         get {
-            var context = objc_getAssociatedObject(self, &AnimationContextIdentifer) as? AnimationContext
+            let identifier = String(unsafeAddressOf(self))
+            var context = self.layer.valueForKey(identifier) as? AnimationContext
             if context == nil {
                 context = AnimationContext(view: self)
-                objc_setAssociatedObject(self, &AnimationContextIdentifer, context!, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                self.layer.setValue(context!, forKey: identifier)
             }
             return context!
         }
