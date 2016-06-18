@@ -253,7 +253,7 @@ extension UIView: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, G
     //Internal Context for view and layer
     internal var context: AnimationContext {
         get {
-            let identifier = String(unsafeAddressOf(self))
+            let identifier = String(unsafeAddressOf(self.layer))
             var context = self.layer.valueForKey(identifier) as? AnimationContext
             if context == nil {
                 context = AnimationContext(view: self)
