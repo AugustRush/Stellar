@@ -11,4 +11,5 @@ import Foundation
 public protocol StepControllable {
     //remove all remaining from excute sequence
     func cancelAllRemaining()
+    //will add more methods to control animation steps
 }

@@ -256,7 +256,7 @@ extension UIView: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, G
             let identifier = String(unsafeAddressOf(self.layer))
             var context = self.layer.valueForKey(identifier) as? AnimationContext
             if context == nil {
-                context = AnimationContext(view: self)
+                context = AnimationContext(object: self)
                 self.layer.setValue(context!, forKey: identifier)
             }
             return context!

@@ -9,12 +9,12 @@
 import UIKit
 
 internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate, AnimationSequenceDelegate {
-    private weak var view: UIView!
+    private weak var object: DriveAnimateBehaviors!
     private var mutipleSequences = [AnimationSequence]()
     
     //MARK: init method
-    init(view: UIView) {
-        self.view = view
+    init(object: DriveAnimateBehaviors) {
+        self.object = object
     }
     
     //MARK: public methods
@@ -70,7 +70,7 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate, AnimationS
     }
     
     func makeNextSequence() -> AnimationSequence {
-        let sequence = AnimationSequence(view: self.view)
+        let sequence = AnimationSequence(object: self.object)
         sequence.delegate = self
         mutipleSequences.append(sequence)
         

@@ -10,10 +10,10 @@ import UIKit
 
 extension UITextView {
     
-    public func makeTextColor(color: UIColor) -> UIView {
-        let type = AnimationType(type: .Basic, subType: .TextColor(color))
-        context.addAnimationType(type)
-        return self
-    }
+//    public func makeTextColor(color: UIColor) -> UIView {
+//        let type = AnimationType(type: .Basic, subType: .TextColor(color))
+//        context.addAnimationType(type)
+//        return self
+//    }
 }
 

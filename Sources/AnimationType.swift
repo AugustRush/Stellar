@@ -36,8 +36,8 @@ enum ViewAnimationSubType {
     case ShadowColor(UIColor)
     case ShadowOpacity(Float)
     case TintColor(UIColor)
-    //UILabel,UITextView...
-    case TextColor(UIColor)
+//    UILabel,UITextView...
+//    case TextColor(UIColor)
 }
 
 //temp record for animation type

@@ -56,6 +56,8 @@
 		97544FF81CFD56D7008046A1 /* AnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97544FF71CFD56D7008046A1 /* AnimationSequence.swift */; };
 		97544FFA1CFD572A008046A1 /* AnimationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97544FF91CFD572A008046A1 /* AnimationStep.swift */; };
 		97544FFC1CFD5733008046A1 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97544FFB1CFD5733008046A1 /* AnimationType.swift */; };
+		976CC7CE1D190DF400476D77 /* UIView+AnimateBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976CC7CD1D190DF400476D77 /* UIView+AnimateBehavior.swift */; };
+		976CC7D01D190F4B00476D77 /* DriveAnimateBehaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976CC7CF1D190F4B00476D77 /* DriveAnimateBehaviors.swift */; };
 		97733D6C1CFEAC930012C879 /* Example4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97733D6B1CFEAC930012C879 /* Example4ViewController.swift */; };
 		977FDF1A1CFC7448009248FD /* Example3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977FDF191CFC7448009248FD /* Example3ViewController.swift */; };
 		97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A331CF05DAB009E60EB /* Vectorial.swift */; };
@@ -146,6 +148,8 @@
 		97544FF71CFD56D7008046A1 /* AnimationSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationSequence.swift; sourceTree = "<group>"; };
 		97544FF91CFD572A008046A1 /* AnimationStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationStep.swift; sourceTree = "<group>"; };
 		97544FFB1CFD5733008046A1 /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
+		976CC7CD1D190DF400476D77 /* UIView+AnimateBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AnimateBehavior.swift"; sourceTree = "<group>"; };
+		976CC7CF1D190F4B00476D77 /* DriveAnimateBehaviors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveAnimateBehaviors.swift; sourceTree = "<group>"; };
 		97733D6B1CFEAC930012C879 /* Example4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example4ViewController.swift; sourceTree = "<group>"; };
 		977FDF191CFC7448009248FD /* Example3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example3ViewController.swift; sourceTree = "<group>"; };
 		97A61A331CF05DAB009E60EB /* Vectorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vectorial.swift; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 				97544FF71CFD56D7008046A1 /* AnimationSequence.swift */,
 				97544FF91CFD572A008046A1 /* AnimationStep.swift */,
 				97544FFB1CFD5733008046A1 /* AnimationType.swift */,
+				976CC7CD1D190DF400476D77 /* UIView+AnimateBehavior.swift */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 				970F91B41CFEC71600B510BE /* AttachmentConfigurable.swift */,
 				970F91D61D000AA000B510BE /* GravityConfigurable.swift */,
 				9701A0AB1D06A58D00FD6644 /* StepControllable.swift */,
+				976CC7CF1D190F4B00476D77 /* DriveAnimateBehaviors.swift */,
 			);
 			name = protocols;
 			sourceTree = "<group>";
@@ -623,6 +629,7 @@
 				97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */,
 				97EC4C001CF9E3310059BBFA /* Chainable.swift in Sources */,
 				97544FF81CFD56D7008046A1 /* AnimationSequence.swift in Sources */,
+				976CC7CE1D190DF400476D77 /* UIView+AnimateBehavior.swift in Sources */,
 				970F91B51CFEC71600B510BE /* AttachmentConfigurable.swift in Sources */,
 				9701A0AE1D07CD8800FD6644 /* Example7ViewController.swift in Sources */,
 				970F91B31CFEBFC500B510BE /* Example5ViewController.swift in Sources */,
@@ -631,6 +638,7 @@
 				97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */,
 				970F91D51CFEF7C900B510BE /* Example6ViewController.swift in Sources */,
 				97A61A3A1CF09B8F009E60EB /* DynamicItem2.swift in Sources */,
+				976CC7D01D190F4B00476D77 /* DriveAnimateBehaviors.swift in Sources */,
 				97EC4BFC1CF9DF8D0059BBFA /* BasicChainable.swift in Sources */,
 				97E8D3F11CFC13FB004E6A80 /* UILabel+Stellar.swift in Sources */,
 				97EC4BFE1CF9E2620059BBFA /* BasicConfigurable.swift in Sources */,
