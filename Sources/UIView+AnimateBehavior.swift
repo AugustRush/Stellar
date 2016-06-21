@@ -32,7 +32,7 @@ extension UIView: DriveAnimateBehaviors {
     }
     
     //MARK: Basic
-    private func createBasicAnimationWithType(type: ViewAnimationSubType, step: AnimationStep) -> UIDynamicBehavior {
+    private func createBasicAnimationWithType(type: AnimationSubType, step: AnimationStep) -> UIDynamicBehavior {
         
         var behavior: UIDynamicBehavior!
         
@@ -270,7 +270,7 @@ extension UIView: DriveAnimateBehaviors {
     
     //MARK: Snap
     
-    private func createSnapAnimationWithType(type: ViewAnimationSubType, damping: CGFloat) -> UIDynamicBehavior {
+    private func createSnapAnimationWithType(type: AnimationSubType, damping: CGFloat) -> UIDynamicBehavior {
         
         var behavior: UIDynamicBehavior!
         
@@ -504,7 +504,7 @@ extension UIView: DriveAnimateBehaviors {
     }
     
     //MARK: Attachment
-    private func createAttachmentAnimationWithType(type: ViewAnimationSubType, damping: CGFloat, frequency: CGFloat) -> UIDynamicBehavior {
+    private func createAttachmentAnimationWithType(type: AnimationSubType, damping: CGFloat, frequency: CGFloat) -> UIDynamicBehavior {
         var behavior: UIDynamicBehavior!
         
         switch type {
@@ -737,7 +737,7 @@ extension UIView: DriveAnimateBehaviors {
     }
     
     //MARK: Gravity
-    private func createGravityAnimationWithType(type: ViewAnimationSubType, magnitude: Double) -> UIDynamicBehavior {
+    private func createGravityAnimationWithType(type: AnimationSubType, magnitude: Double) -> UIDynamicBehavior {
         var behavior: UIDynamicBehavior!
         
         switch type {

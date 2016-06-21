@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum ViewAnimationSubType {
+enum AnimationSubType {
     case MoveX(CGFloat)
     case MoveY(CGFloat)
     case MoveTo(CGPoint)
@@ -43,9 +43,9 @@ enum ViewAnimationSubType {
 //temp record for animation type
 internal class AnimationType {
     var mainType: AnimationStyle
-    var subType: ViewAnimationSubType
+    var subType: AnimationSubType
     
-    init (type: AnimationStyle, subType: ViewAnimationSubType) {
+    init (type: AnimationStyle, subType: AnimationSubType) {
         self.mainType = type
         self.subType = subType
     }
