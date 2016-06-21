@@ -1,5 +1,5 @@
 //
-//  UIView+AnimateBehavior.swift
+//  CALayer+AnimateBehavior.swift
 //  StellarDemo
 //
 //  Created by AugustRush on 6/21/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView: DriveAnimateBehaviors {
+extension CALayer: DriveAnimateBehaviors {
     
     func behavior(forType type: AnimationType, step: AnimationStep) -> UIDynamicBehavior {
         
@@ -27,7 +27,7 @@ extension UIView: DriveAnimateBehaviors {
         case .Gravity(let magnitude):
             behavior = createGravityAnimationWithType(subType, magnitude: magnitude)
         }
-
+        
         return behavior
     }
     
@@ -37,79 +37,76 @@ extension UIView: DriveAnimateBehaviors {
         var behavior: UIDynamicBehavior!
         
         switch type {
-        case .MoveX(let inc):
-            let from = self.center.x
-            let to = from + inc
-            let render = {(f: CGFloat) in
-                self.center.x = f
-            }
-            behavior = basicBehavior(step, from: from, to: to, render: render)
-            
-        case .MoveY(let inc):
-            let from = self.center.y
-            let to = from + inc
-            let render = {(f: CGFloat) in
-                self.center.y = f
-            }
-            behavior = basicBehavior(step, from: from, to: to, render: render)
-            
-        case .MoveTo(let point):
-            let from = self.center
-            let to = point
+        case .MoveTo(let position):
+            let from = self.position
+            let to = position
             let render = {(p: CGPoint) in
-                self.center = p
+                self.position = p
+            }
+            
+            behavior = basicBehavior(step, from: from, to: to, render: render)
+            
+        case .MoveXY(let x, let y):
+            let from = CGPointZero
+            let to = CGPointMake(x, y)
+            let frame = self.frame
+            let render = {(p: CGPoint) in
+                self.frame = CGRectOffset(frame, p.x, p.y)
             }
             
             behavior = basicBehavior(step, from: from, to: to, render: render)
         case .Color(let color):
-            let from = self.backgroundColor ?? UIColor.clearColor()
+            var from = UIColor.clearColor()
+            if let bc = self.backgroundColor {
+                from = UIColor(CGColor: bc)
+            }
             let to = color
             let render = {(c: UIColor) in
-                self.backgroundColor = c
+                self.backgroundColor = c.CGColor
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .Alpha(let a):
-            let from = self.alpha
-            let to = a
-            let render = {(f: CGFloat) in
-                self.alpha = f
+        case .Opacity(let o):
+            let from = self.opacity
+            let to = o
+            let render = {(f: Float) in
+                self.opacity = f
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .RotateX(let x):
             let from: CGFloat = 0.0
             let to = x
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DRotate(transform, f, 1, 0, 0)
+                self.transform = CATransform3DRotate(transform, f, 1, 0, 0)
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .RotateY(let y):
             let from: CGFloat = 0.0
             let to = y
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DRotate(transform, f, 0, 1, 0)
+                self.transform = CATransform3DRotate(transform, f, 0, 1, 0)
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .Rotate(let z):
             let from: CGFloat = 0.0
             let to = z
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DRotate(transform, f, 0, 0, 1)
+                self.transform = CATransform3DRotate(transform, f, 0, 0, 1)
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .RotateXY(let xy):
             let from: CGFloat = 0.0
             let to = xy
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DRotate(transform, f, 1, 1, 0)
+                self.transform = CATransform3DRotate(transform, f, 1, 1, 0)
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
@@ -156,115 +153,107 @@ extension UIView: DriveAnimateBehaviors {
         case .ScaleX(let x):
             let from: CGFloat = 1.0
             let to = x
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DScale(transform, f, 1, 1)
+                self.transform = CATransform3DScale(transform, f, 1, 1)
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .ScaleY(let y):
             let from: CGFloat = 1.0
             let to = y
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DScale(transform, 1, y, 1)
+                self.transform = CATransform3DScale(transform, 1, y, 1)
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .ScaleXY(let x, let y):
             let from = CGPointMake(1, 1)
             let to = CGPointMake(x, y)
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(p: CGPoint) in
-                self.layer.transform = CATransform3DScale(transform, p.x, p.y, 1)
+                self.transform = CATransform3DScale(transform, p.x, p.y, 1)
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .CornerRadius(let r):
-            let from = self.layer.cornerRadius
+            let from = self.cornerRadius
             let to = r
             let render = {(f: CGFloat) in
-                self.layer.cornerRadius = f
+                self.cornerRadius = f
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .BorderWidth(let b):
-            let from = self.layer.borderWidth
+            let from = self.borderWidth
             let to = b
             let render = {(f: CGFloat) in
-                self.layer.borderWidth = f
+                self.borderWidth = f
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .ShadowRadius(let s):
-            let from = self.layer.shadowRadius
+            let from = self.shadowRadius
             let to = s
             let render = {(f: CGFloat) in
-                self.layer.shadowRadius = f
+                self.shadowRadius = f
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .ZPosition(let p):
-            let from = self.layer.zPosition
+            let from = self.zPosition
             let to = p
             let render = {(f: CGFloat) in
-                self.layer.zPosition = f
+                self.zPosition = f
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .AnchorPoint(let point):
-            let from = self.layer.anchorPoint
+            let from = self.anchorPoint
             let to = point
             let render = {(p: CGPoint) in
-                self.layer.anchorPoint = p
+                self.anchorPoint = p
             }
             
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .AnchorPointZ(let z):
-            let from = self.layer.anchorPointZ
+            let from = self.anchorPointZ
             let to = z
             let render = {(f: CGFloat) in
-                self.layer.anchorPointZ = f
+                self.anchorPointZ = f
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .ShadowOffset(let size):
-            let from = self.layer.shadowOffset
+            let from = self.shadowOffset
             let to = size
             let render = {(s: CGSize) in
-                self.layer.shadowOffset = s
+                self.shadowOffset = s
             }
             
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .ShadowColor(let c):
-            let color = self.layer.shadowColor
+            let color = self.shadowColor
             let from = (color != nil) ? UIColor(CGColor: color!) : UIColor.clearColor()
             let to = c
             let render = {(c: UIColor) in
-                self.layer.shadowColor = c.CGColor
+                self.shadowColor = c.CGColor
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .ShadowOpacity(let o):
-            let from = self.layer.shadowOpacity
+            let from = self.shadowOpacity
             let to = o
             let render = {(f: Float) in
-                self.layer.shadowOpacity = f
+                self.shadowOpacity = f
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .TintColor(let color):
-            let from = self.tintColor
-            let to = color
-            let render = {(c: UIColor) in
-                self.tintColor = c
-            }
-            behavior = basicBehavior(step, from: from, to: to, render: render)
-        
         default:
-            fatalError("Should Not be excute forever!")
+            fatalError("Should not be excute forever!")
         }
         
         return behavior
@@ -278,79 +267,76 @@ extension UIView: DriveAnimateBehaviors {
         var behavior: UIDynamicBehavior!
         
         switch type {
-        case .MoveX(let inc):
-            let from = self.center.x
-            let to = from + inc
-            let render = {(f: CGFloat) in
-                self.center.x = f
-            }
-            behavior = snapBehavior(damping, from: from, to: to, render: render)
-            
-        case .MoveY(let inc):
-            let from = self.center.y
-            let to = from + inc
-            let render = {(f: CGFloat) in
-                self.center.y = f
-            }
-            behavior = snapBehavior(damping, from: from, to: to, render: render)
-            
-        case .MoveTo(let point):
-            let from = self.center
-            let to = point
+        case .MoveTo(let position):
+            let from = self.position
+            let to = position
             let render = {(p: CGPoint) in
-                self.center = p
+                self.position = p
+            }
+            
+            behavior = snapBehavior(damping, from: from, to: to, render: render)
+            
+        case .MoveXY(let x, let y):
+            let from = CGPointZero
+            let to = CGPointMake(x, y)
+            let frame = self.frame
+            let render = {(p: CGPoint) in
+                self.frame = CGRectOffset(frame, p.x, p.y)
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .Color(let color):
-            let from = self.backgroundColor ?? UIColor.clearColor()
+            var from = UIColor.clearColor()
+            if let bc = self.backgroundColor {
+                from = UIColor(CGColor: bc)
+            }
             let to = color
             let render = {(c: UIColor) in
-                self.backgroundColor = c
+                self.backgroundColor = c.CGColor
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .Alpha(let a):
-            let from = self.alpha
-            let to = a
-            let render = {(f: CGFloat) in
-                self.alpha = f
+        case .Opacity(let o):
+            let from = self.opacity
+            let to = o
+            let render = {(f: Float) in
+                self.opacity = f
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .RotateX(let x):
             let from: CGFloat = 0.0
             let to = x
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DRotate(transform, f, 1, 0, 0)
+                self.transform = CATransform3DRotate(transform, f, 1, 0, 0)
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .RotateY(let y):
             let from: CGFloat = 0.0
             let to = y
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DRotate(transform, f, 0, 1, 0)
+                self.transform = CATransform3DRotate(transform, f, 0, 1, 0)
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .Rotate(let z):
             let from: CGFloat = 0.0
             let to = z
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DRotate(transform, f, 0, 0, 1)
+                self.transform = CATransform3DRotate(transform, f, 0, 0, 1)
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .RotateXY(let xy):
             let from: CGFloat = 0.0
             let to = xy
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DRotate(transform, f, 1, 1, 0)
+                self.transform = CATransform3DRotate(transform, f, 1, 1, 0)
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
@@ -397,114 +383,105 @@ extension UIView: DriveAnimateBehaviors {
         case .ScaleX(let x):
             let from: CGFloat = 1.0
             let to = x
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DScale(transform, f, 1, 1)
+                self.transform = CATransform3DScale(transform, f, 1, 1)
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .ScaleY(let y):
             let from: CGFloat = 1.0
             let to = y
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DScale(transform, 1, y, 1)
+                self.transform = CATransform3DScale(transform, 1, y, 1)
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .ScaleXY(let x, let y):
             let from = CGPointMake(1, 1)
             let to = CGPointMake(x, y)
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(p: CGPoint) in
-                self.layer.transform = CATransform3DScale(transform, p.x, p.y, 1)
+                self.transform = CATransform3DScale(transform, p.x, p.y, 1)
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .CornerRadius(let r):
-            let from = self.layer.cornerRadius
+            let from = self.cornerRadius
             let to = r
             let render = {(f: CGFloat) in
-                self.layer.cornerRadius = f
+                self.cornerRadius = f
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .BorderWidth(let b):
-            let from = self.layer.borderWidth
+            let from = self.borderWidth
             let to = b
             let render = {(f: CGFloat) in
-                self.layer.borderWidth = f
+                self.borderWidth = f
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .ShadowRadius(let s):
-            let from = self.layer.shadowRadius
+            let from = self.shadowRadius
             let to = s
             let render = {(f: CGFloat) in
-                self.layer.shadowRadius = f
+                self.shadowRadius = f
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .ZPosition(let p):
-            let from = self.layer.zPosition
+            let from = self.zPosition
             let to = p
             let render = {(f: CGFloat) in
-                self.layer.zPosition = f
+                self.zPosition = f
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .AnchorPoint(let point):
-            let from = self.layer.anchorPoint
+            let from = self.anchorPoint
             let to = point
             let render = {(p: CGPoint) in
-                self.layer.anchorPoint = p
+                self.anchorPoint = p
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .AnchorPointZ(let z):
-            let from = self.layer.anchorPointZ
+            let from = self.anchorPointZ
             let to = z
             let render = {(f: CGFloat) in
-                self.layer.anchorPointZ = f
+                self.anchorPointZ = f
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .ShadowOffset(let size):
-            let from = self.layer.shadowOffset
+            let from = self.shadowOffset
             let to = size
             let render = {(s: CGSize) in
-                self.layer.shadowOffset = s
+                self.shadowOffset = s
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .ShadowColor(let c):
-            let color = self.layer.shadowColor
+            let color = self.shadowColor
             let from = (color != nil) ? UIColor(CGColor: color!) : UIColor.clearColor()
             let to = c
             let render = {(c: UIColor) in
-                self.layer.shadowColor = c.CGColor
+                self.shadowColor = c.CGColor
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .ShadowOpacity(let o):
-            let from = self.layer.shadowOpacity
+            let from = self.shadowOpacity
             let to = o
             let render = {(f: Float) in
-                self.layer.shadowOpacity = f
-            }
-            behavior = snapBehavior(damping, from: from, to: to, render: render)
-            
-        case .TintColor(let color):
-            let from = self.tintColor
-            let to = color
-            let render = {(c: UIColor) in
-                self.tintColor = c
+                self.shadowOpacity = f
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         default:
-            fatalError("Should Not be excute forever!")
-
+            fatalError("Should not be excute forever!")
         }
         
         return behavior
@@ -515,79 +492,76 @@ extension UIView: DriveAnimateBehaviors {
         var behavior: UIDynamicBehavior!
         
         switch type {
-        case .MoveX(let inc):
-            let from = self.center.x
-            let to = from + inc
-            let render = {(f: CGFloat) in
-                self.center.x = f
-            }
-            behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
-            
-        case .MoveY(let inc):
-            let from = self.center.y
-            let to = from + inc
-            let render = {(f: CGFloat) in
-                self.center.y = f
-            }
-            behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
-            
-        case .MoveTo(let point):
-            let from = self.center
-            let to = point
+        case .MoveTo(let position):
+            let from = self.position
+            let to = position
             let render = {(p: CGPoint) in
-                self.center = p
+                self.position = p
+            }
+            
+            behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
+            
+        case .MoveXY(let x, let y):
+            let from = CGPointZero
+            let to = CGPointMake(x, y)
+            let frame = self.frame
+            let render = {(p: CGPoint) in
+                self.frame = CGRectOffset(frame, p.x, p.y)
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .Color(let color):
-            let from = self.backgroundColor ?? UIColor.clearColor()
+            var from = UIColor.clearColor()
+            if let bc = self.backgroundColor {
+                from = UIColor(CGColor: bc)
+            }
             let to = color
             let render = {(c: UIColor) in
-                self.backgroundColor = c
+                self.backgroundColor = c.CGColor
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .Alpha(let a):
-            let from = self.alpha
-            let to = a
-            let render = {(f: CGFloat) in
-                self.alpha = f
+        case .Opacity(let o):
+            let from = self.opacity
+            let to = o
+            let render = {(f: Float) in
+                self.opacity = f
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .RotateX(let x):
             let from: CGFloat = 0.0
             let to = x
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DRotate(transform, f, 1, 0, 0)
+                self.transform = CATransform3DRotate(transform, f, 1, 0, 0)
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .RotateY(let y):
             let from: CGFloat = 0.0
             let to = y
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DRotate(transform, f, 0, 1, 0)
+                self.transform = CATransform3DRotate(transform, f, 0, 1, 0)
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .Rotate(let z):
             let from: CGFloat = 0.0
             let to = z
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DRotate(transform, f, 0, 0, 1)
+                self.transform = CATransform3DRotate(transform, f, 0, 0, 1)
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .RotateXY(let xy):
             let from: CGFloat = 0.0
             let to = xy
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DRotate(transform, f, 1, 1, 0)
+                self.transform = CATransform3DRotate(transform, f, 1, 1, 0)
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
@@ -634,113 +608,105 @@ extension UIView: DriveAnimateBehaviors {
         case .ScaleX(let x):
             let from: CGFloat = 1.0
             let to = x
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DScale(transform, f, 1, 1)
+                self.transform = CATransform3DScale(transform, f, 1, 1)
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .ScaleY(let y):
             let from: CGFloat = 1.0
             let to = y
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DScale(transform, 1, y, 1)
+                self.transform = CATransform3DScale(transform, 1, y, 1)
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .ScaleXY(let x, let y):
             let from = CGPointMake(1, 1)
             let to = CGPointMake(x, y)
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(p: CGPoint) in
-                self.layer.transform = CATransform3DScale(transform, p.x, p.y, 1)
+                self.transform = CATransform3DScale(transform, p.x, p.y, 1)
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .CornerRadius(let r):
-            let from = self.layer.cornerRadius
+            let from = self.cornerRadius
             let to = r
             let render = {(f: CGFloat) in
-                self.layer.cornerRadius = f
+                self.cornerRadius = f
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .BorderWidth(let b):
-            let from = self.layer.borderWidth
+            let from = self.borderWidth
             let to = b
             let render = {(f: CGFloat) in
-                self.layer.borderWidth = f
+                self.borderWidth = f
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .ShadowRadius(let s):
-            let from = self.layer.shadowRadius
+            let from = self.shadowRadius
             let to = s
             let render = {(f: CGFloat) in
-                self.layer.shadowRadius = f
+                self.shadowRadius = f
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .ZPosition(let p):
-            let from = self.layer.zPosition
+            let from = self.zPosition
             let to = p
             let render = {(f: CGFloat) in
-                self.layer.zPosition = f
+                self.zPosition = f
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .AnchorPoint(let point):
-            let from = self.layer.anchorPoint
+            let from = self.anchorPoint
             let to = point
             let render = {(p: CGPoint) in
-                self.layer.anchorPoint = p
+                self.anchorPoint = p
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .AnchorPointZ(let z):
-            let from = self.layer.anchorPointZ
+            let from = self.anchorPointZ
             let to = z
             let render = {(f: CGFloat) in
-                self.layer.anchorPointZ = f
+                self.anchorPointZ = f
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .ShadowOffset(let size):
-            let from = self.layer.shadowOffset
+            let from = self.shadowOffset
             let to = size
             let render = {(s: CGSize) in
-                self.layer.shadowOffset = s
+                self.shadowOffset = s
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .ShadowColor(let c):
-            let color = self.layer.shadowColor
+            let color = self.shadowColor
             let from = (color != nil) ? UIColor(CGColor: color!) : UIColor.clearColor()
             let to = c
             let render = {(c: UIColor) in
-                self.layer.shadowColor = c.CGColor
+                self.shadowColor = c.CGColor
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .ShadowOpacity(let o):
-            let from = self.layer.shadowOpacity
+            let from = self.shadowOpacity
             let to = o
             let render = {(f: Float) in
-                self.layer.shadowOpacity = f
+                self.shadowOpacity = f
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .TintColor(let color):
-            let from = self.tintColor
-            let to = color
-            let render = {(c: UIColor) in
-                self.tintColor = c
-            }
-            behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
         default:
-            fatalError("Should Not be excute forever!")
-
+            fatalError("Should not be excute forever!")
         }
         
         return behavior
@@ -751,79 +717,75 @@ extension UIView: DriveAnimateBehaviors {
         var behavior: UIDynamicBehavior!
         
         switch type {
-        case .MoveX(let inc):
-            let from = self.center.x
-            let to = from + inc
-            let render = {(f: CGFloat) in
-                self.center.x = f
-            }
-            behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
-            
-        case .MoveY(let inc):
-            let from = self.center.y
-            let to = from + inc
-            let render = {(f: CGFloat) in
-                self.center.y = f
-            }
-            behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
-            
-        case .MoveTo(let point):
-            let from = self.center
-            let to = point
+        case .MoveTo(let position):
+            let from = self.position
+            let to = position
             let render = {(p: CGPoint) in
-                self.center = p
+                self.position = p
+            }
+            behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
+
+        case .MoveXY(let x, let y):
+            let from = CGPointZero
+            let to = CGPointMake(x, y)
+            let frame = self.frame
+            let render = {(p: CGPoint) in
+                self.frame = CGRectOffset(frame, p.x, p.y)
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .Color(let color):
-            let from = self.backgroundColor ?? UIColor.clearColor()
+            var from = UIColor.clearColor()
+            if let bc = self.backgroundColor {
+                from = UIColor(CGColor: bc)
+            }
             let to = color
             let render = {(c: UIColor) in
-                self.backgroundColor = c
+                self.backgroundColor = c.CGColor
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .Alpha(let a):
-            let from = self.alpha
-            let to = a
-            let render = {(f: CGFloat) in
-                self.alpha = f
+        case .Opacity(let o):
+            let from = self.opacity
+            let to = o
+            let render = {(f: Float) in
+                self.opacity = f
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .RotateX(let x):
             let from: CGFloat = 0.0
             let to = x
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DRotate(transform, f, 1, 0, 0)
+                self.transform = CATransform3DRotate(transform, f, 1, 0, 0)
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .RotateY(let y):
             let from: CGFloat = 0.0
             let to = y
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DRotate(transform, f, 0, 1, 0)
+                self.transform = CATransform3DRotate(transform, f, 0, 1, 0)
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .Rotate(let z):
             let from: CGFloat = 0.0
             let to = z
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DRotate(transform, f, 0, 0, 1)
+                self.transform = CATransform3DRotate(transform, f, 0, 0, 1)
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .RotateXY(let xy):
             let from: CGFloat = 0.0
             let to = xy
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DRotate(transform, f, 1, 1, 0)
+                self.transform = CATransform3DRotate(transform, f, 1, 1, 0)
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
@@ -870,110 +832,105 @@ extension UIView: DriveAnimateBehaviors {
         case .ScaleX(let x):
             let from: CGFloat = 1.0
             let to = x
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DScale(transform, f, 1, 1)
+                self.transform = CATransform3DScale(transform, f, 1, 1)
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .ScaleY(let y):
             let from: CGFloat = 1.0
             let to = y
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(f: CGFloat) in
-                self.layer.transform = CATransform3DScale(transform, 1, y, 1)
+                self.transform = CATransform3DScale(transform, 1, y, 1)
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .ScaleXY(let x, let y):
             let from = CGPointMake(1, 1)
             let to = CGPointMake(x, y)
-            let transform = self.layer.transform
+            let transform = self.transform
             let render = {(p: CGPoint) in
-                self.layer.transform = CATransform3DScale(transform, p.x, p.y, 1)
+                self.transform = CATransform3DScale(transform, p.x, p.y, 1)
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .CornerRadius(let r):
-            let from = self.layer.cornerRadius
+            let from = self.cornerRadius
             let to = r
             let render = {(f: CGFloat) in
-                self.layer.cornerRadius = f
+                self.cornerRadius = f
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .BorderWidth(let b):
-            let from = self.layer.borderWidth
+            let from = self.borderWidth
             let to = b
             let render = {(f: CGFloat) in
-                self.layer.borderWidth = f
+                self.borderWidth = f
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .ShadowRadius(let s):
-            let from = self.layer.shadowRadius
+            let from = self.shadowRadius
             let to = s
             let render = {(f: CGFloat) in
-                self.layer.shadowRadius = f
+                self.shadowRadius = f
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .ZPosition(let p):
-            let from = self.layer.zPosition
+            let from = self.zPosition
             let to = p
             let render = {(f: CGFloat) in
-                self.layer.zPosition = f
+                self.zPosition = f
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .AnchorPoint(let point):
-            let from = self.layer.anchorPoint
+            let from = self.anchorPoint
             let to = point
             let render = {(p: CGPoint) in
-                self.layer.anchorPoint = p
+                self.anchorPoint = p
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .AnchorPointZ(let z):
-            let from = self.layer.anchorPointZ
+            let from = self.anchorPointZ
             let to = z
             let render = {(f: CGFloat) in
-                self.layer.anchorPointZ = f
+                self.anchorPointZ = f
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .ShadowOffset(let size):
-            let from = self.layer.shadowOffset
+            let from = self.shadowOffset
             let to = size
             let render = {(s: CGSize) in
-                self.layer.shadowOffset = s
+                self.shadowOffset = s
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .ShadowColor(let c):
-            let color = self.layer.shadowColor
+            let color = self.shadowColor
             let from = (color != nil) ? UIColor(CGColor: color!) : UIColor.clearColor()
             let to = c
             let render = {(c: UIColor) in
-                self.layer.shadowColor = c.CGColor
+                self.shadowColor = c.CGColor
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .ShadowOpacity(let o):
-            let from = self.layer.shadowOpacity
+            let from = self.shadowOpacity
             let to = o
             let render = {(f: Float) in
-                self.layer.shadowOpacity = f
+                self.shadowOpacity = f
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .TintColor(let color):
-            let from = self.tintColor
-            let to = color
-            let render = {(c: UIColor) in
-                self.tintColor = c
-            }
-            behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
+        default:
+            fatalError("Should not be excute forever!")
             
             //        case .TextColor(let color):
             //            let fromColor = self.performSelector(Selector("textColor")).takeUnretainedValue() as? UIColor
@@ -983,9 +940,6 @@ extension UIView: DriveAnimateBehaviors {
             //                self.performSelector(Selector("setTextColor:"),withObject: cc)
             //            }
             //            behavior = basicBehavior(step, from: from, to: to, render: render)
-        default:
-            fatalError("Should Not be excute forever!")
-
         }
         
         return behavior

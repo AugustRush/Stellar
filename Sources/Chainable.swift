@@ -13,3 +13,10 @@ public protocol Chainable {
     func then() -> UIView
     func animate() -> Void
 }
+
+//CALayer
+public protocol Chainable1 {
+    //Chainable methods
+    func then() -> CALayer
+    func animate() -> Void
+}

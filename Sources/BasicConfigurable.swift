@@ -15,3 +15,12 @@ public protocol BasicConfigurable: BasicChainable {
     func autoreverses() -> BasicConfigurable
     func repeatCount(count: Int) -> BasicConfigurable
 }
+
+//CALayer
+public protocol BasicConfigurable1: BasicChainable1 {
+    func duration(d: CFTimeInterval) -> BasicConfigurable1
+    func easing(type: TimingFunctionType) -> BasicConfigurable1
+    func delay(d: CFTimeInterval) -> BasicConfigurable1
+    func autoreverses() -> BasicConfigurable1
+    func repeatCount(count: Int) -> BasicConfigurable1
+}

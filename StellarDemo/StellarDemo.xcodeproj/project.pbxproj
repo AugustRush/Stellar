@@ -58,6 +58,7 @@
 		97544FFC1CFD5733008046A1 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97544FFB1CFD5733008046A1 /* AnimationType.swift */; };
 		976CC7CE1D190DF400476D77 /* UIView+AnimateBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976CC7CD1D190DF400476D77 /* UIView+AnimateBehavior.swift */; };
 		976CC7D01D190F4B00476D77 /* DriveAnimateBehaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976CC7CF1D190F4B00476D77 /* DriveAnimateBehaviors.swift */; };
+		976CC7EB1D193C5E00476D77 /* CALayer+AnimateBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976CC7EA1D193C5E00476D77 /* CALayer+AnimateBehavior.swift */; };
 		97733D6C1CFEAC930012C879 /* Example4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97733D6B1CFEAC930012C879 /* Example4ViewController.swift */; };
 		977FDF1A1CFC7448009248FD /* Example3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977FDF191CFC7448009248FD /* Example3ViewController.swift */; };
 		97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A331CF05DAB009E60EB /* Vectorial.swift */; };
@@ -150,6 +151,7 @@
 		97544FFB1CFD5733008046A1 /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
 		976CC7CD1D190DF400476D77 /* UIView+AnimateBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AnimateBehavior.swift"; sourceTree = "<group>"; };
 		976CC7CF1D190F4B00476D77 /* DriveAnimateBehaviors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveAnimateBehaviors.swift; sourceTree = "<group>"; };
+		976CC7EA1D193C5E00476D77 /* CALayer+AnimateBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+AnimateBehavior.swift"; sourceTree = "<group>"; };
 		97733D6B1CFEAC930012C879 /* Example4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example4ViewController.swift; sourceTree = "<group>"; };
 		977FDF191CFC7448009248FD /* Example3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example3ViewController.swift; sourceTree = "<group>"; };
 		97A61A331CF05DAB009E60EB /* Vectorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vectorial.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				97544FF91CFD572A008046A1 /* AnimationStep.swift */,
 				97544FFB1CFD5733008046A1 /* AnimationType.swift */,
 				976CC7CD1D190DF400476D77 /* UIView+AnimateBehavior.swift */,
+				976CC7EA1D193C5E00476D77 /* CALayer+AnimateBehavior.swift */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
@@ -273,7 +276,6 @@
 				97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */,
 				97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */,
 				97E1A9101CEDEF5200F98D86 /* DynamicItem+Behavior.swift */,
-				97E8D3ED1CFC11BA004E6A80 /* CALayer+Stellar.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -391,6 +393,7 @@
 				97E8D3F01CFC13FB004E6A80 /* UILabel+Stellar.swift */,
 				97E8D3F21CFC1F27004E6A80 /* UITextView+Stellar.swift */,
 				9701A0A91D06A31900FD6644 /* UIView+FileConfigurable.swift */,
+				97E8D3ED1CFC11BA004E6A80 /* CALayer+Stellar.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				9701A0AA1D06A31900FD6644 /* UIView+FileConfigurable.swift in Sources */,
 				970F91D71D000AA000B510BE /* GravityConfigurable.swift in Sources */,
 				97E1A8D81CEB4AF200F98D86 /* Physical.swift in Sources */,
+				976CC7EB1D193C5E00476D77 /* CALayer+AnimateBehavior.swift in Sources */,
 				97E1A9111CEDEF5200F98D86 /* DynamicItem+Behavior.swift in Sources */,
 				97E8D3EE1CFC11BA004E6A80 /* CALayer+Stellar.swift in Sources */,
 				97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */,

@@ -38,3 +38,32 @@ public protocol BasicChainable: Chainable {
     func makeTintColor(color: UIColor) -> UIView
     func completion(c: () -> Void) -> UIView
 }
+
+//CALayer
+public protocol BasicChainable1: Chainable1 {
+    func moveTo(point: CGPoint) -> CALayer
+    func makeColor(color: UIColor) -> CALayer
+    func makeOpacity(opacity: Float) -> CALayer
+    func rotate(z: CGFloat) -> CALayer
+    func rotateX(x: CGFloat) -> CALayer
+    func rotateY(y: CGFloat) -> CALayer
+    func rotateXY(xy: CGFloat) -> CALayer
+    func makeWidth(width: CGFloat) -> CALayer
+    func makeHeight(height: CGFloat) -> CALayer
+    func makeSize(size: CGSize) -> CALayer
+    func makeFrame(frame: CGRect) -> CALayer
+    func makeBounds(bounds: CGRect) -> CALayer
+    func scaleX(x: CGFloat) -> CALayer
+    func scaleY(y: CGFloat) -> CALayer
+    func scaleXY(x: CGFloat, _ y: CGFloat) -> CALayer
+    func cornerRadius(radius: CGFloat) -> CALayer
+    func borderWidth(width: CGFloat) -> CALayer
+    func shadowRadius(radius: CGFloat) -> CALayer
+    func zPosition(position: CGFloat) -> CALayer
+    func anchorPoint(point: CGPoint) -> CALayer
+    func anchorPointZ(z: CGFloat) -> CALayer
+    func shadowOffset(offset: CGSize) -> CALayer
+    func shadowColor(color: UIColor) -> CALayer
+    func shadowOpacity(opacity: Float) -> CALayer
+    func completion(c: () -> Void) -> CALayer
+}

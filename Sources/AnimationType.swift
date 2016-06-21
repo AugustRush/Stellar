@@ -11,9 +11,11 @@ import UIKit
 enum AnimationSubType {
     case MoveX(CGFloat)
     case MoveY(CGFloat)
+    case MoveXY(CGFloat,CGFloat)//Layer
     case MoveTo(CGPoint)
     case Color(UIColor)
     case Alpha(CGFloat)
+    case Opacity(Float)//Layer
     case RotateX(CGFloat)
     case RotateY(CGFloat)
     case Rotate(CGFloat)
