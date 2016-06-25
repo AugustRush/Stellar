@@ -72,7 +72,6 @@
 		97BE88CC1CDDDAD000240523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97BE88CA1CDDDAD000240523 /* LaunchScreen.storyboard */; };
 		97BE88D71CDDDAD000240523 /* StellarDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88D61CDDDAD000240523 /* StellarDemoTests.swift */; };
 		97BE88E21CDDDAD000240523 /* StellarDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88E11CDDDAD000240523 /* StellarDemoUITests.swift */; };
-		97DD65371D1E48CF00255F40 /* DynamicItemSpring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DD65361D1E48CF00255F40 /* DynamicItemSpring.swift */; };
 		97E1A8D81CEB4AF200F98D86 /* Physical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8D71CEB4AF200F98D86 /* Physical.swift */; };
 		97E1A8DA1CEB4B5200F98D86 /* Value+Physical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */; };
 		97E1A8DC1CEB4D6700F98D86 /* AnimatorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8DB1CEB4D6700F98D86 /* AnimatorCoordinator.swift */; };
@@ -172,7 +171,6 @@
 		97BE88DD1CDDDAD000240523 /* StellarDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97BE88E11CDDDAD000240523 /* StellarDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarDemoUITests.swift; sourceTree = "<group>"; };
 		97BE88E31CDDDAD000240523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97DD65361D1E48CF00255F40 /* DynamicItemSpring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItemSpring.swift; sourceTree = "<group>"; };
 		97E1A8D71CEB4AF200F98D86 /* Physical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Physical.swift; sourceTree = "<group>"; };
 		97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Value+Physical.swift"; sourceTree = "<group>"; };
 		97E1A8DB1CEB4D6700F98D86 /* AnimatorCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatorCoordinator.swift; sourceTree = "<group>"; };
@@ -298,7 +296,6 @@
 				97A61A391CF09B8F009E60EB /* DynamicItem2.swift */,
 				970A7FB41CF2AA8F00C7555C /* DynamicItemBasic.swift */,
 				970F91E41D01730B00B510BE /* DynamicItemGravity.swift */,
-				97DD65361D1E48CF00255F40 /* DynamicItemSpring.swift */,
 			);
 			name = items;
 			sourceTree = "<group>";
@@ -633,7 +630,6 @@
 				976CC7EB1D193C5E00476D77 /* CALayer+AnimateBehavior.swift in Sources */,
 				97E1A9111CEDEF5200F98D86 /* DynamicItem+Behavior.swift in Sources */,
 				97E8D3EE1CFC11BA004E6A80 /* CALayer+Stellar.swift in Sources */,
-				97DD65371D1E48CF00255F40 /* DynamicItemSpring.swift in Sources */,
 				97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */,
 				97EC4C001CF9E3310059BBFA /* Chainable.swift in Sources */,
 				97544FF81CFD56D7008046A1 /* AnimationSequence.swift in Sources */,
