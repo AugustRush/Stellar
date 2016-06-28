@@ -11,7 +11,7 @@ import Foundation
 protocol TimingType {
     var duration: CFTimeInterval { get set }
     var delay: CFTimeInterval { get set }
-    var timingFunction: TimingFunction { get set }
+    var timingFunction: TimingSolvable { get set }
     var autoreverses: Bool { get set }
     var repeatCount: Int { get set }
     var speed: Double { get set }

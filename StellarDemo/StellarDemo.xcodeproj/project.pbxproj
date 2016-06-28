@@ -72,6 +72,7 @@
 		97BE88CC1CDDDAD000240523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97BE88CA1CDDDAD000240523 /* LaunchScreen.storyboard */; };
 		97BE88D71CDDDAD000240523 /* StellarDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88D61CDDDAD000240523 /* StellarDemoTests.swift */; };
 		97BE88E21CDDDAD000240523 /* StellarDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88E11CDDDAD000240523 /* StellarDemoUITests.swift */; };
+		97DD65D21D2252FD00255F40 /* TimingSolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DD65D11D2252FD00255F40 /* TimingSolvable.swift */; };
 		97E1A8D81CEB4AF200F98D86 /* Physical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8D71CEB4AF200F98D86 /* Physical.swift */; };
 		97E1A8DA1CEB4B5200F98D86 /* Value+Physical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */; };
 		97E1A8DC1CEB4D6700F98D86 /* AnimatorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8DB1CEB4D6700F98D86 /* AnimatorCoordinator.swift */; };
@@ -171,6 +172,7 @@
 		97BE88DD1CDDDAD000240523 /* StellarDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97BE88E11CDDDAD000240523 /* StellarDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarDemoUITests.swift; sourceTree = "<group>"; };
 		97BE88E31CDDDAD000240523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97DD65D11D2252FD00255F40 /* TimingSolvable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingSolvable.swift; sourceTree = "<group>"; };
 		97E1A8D71CEB4AF200F98D86 /* Physical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Physical.swift; sourceTree = "<group>"; };
 		97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Value+Physical.swift"; sourceTree = "<group>"; };
 		97E1A8DB1CEB4D6700F98D86 /* AnimatorCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatorCoordinator.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				97E1A8D71CEB4AF200F98D86 /* Physical.swift */,
 				970A7FB61CF2AC0000C7555C /* Interpolatable.swift */,
 				973E5A031CF70FAE00F26487 /* TimingType.swift */,
+				97DD65D11D2252FD00255F40 /* TimingSolvable.swift */,
 				97EC4BFF1CF9E3310059BBFA /* Chainable.swift */,
 				97EC4BFB1CF9DF8D0059BBFA /* BasicChainable.swift */,
 				97EC4BFD1CF9E2620059BBFA /* BasicConfigurable.swift */,
@@ -645,6 +648,7 @@
 				976CC7D01D190F4B00476D77 /* DriveAnimateBehaviors.swift in Sources */,
 				97EC4BFC1CF9DF8D0059BBFA /* BasicChainable.swift in Sources */,
 				97E8D3F11CFC13FB004E6A80 /* UILabel+Stellar.swift in Sources */,
+				97DD65D21D2252FD00255F40 /* TimingSolvable.swift in Sources */,
 				97EC4BFE1CF9E2620059BBFA /* BasicConfigurable.swift in Sources */,
 				9701A0AC1D06A58D00FD6644 /* StepControllable.swift in Sources */,
 				970A7FB71CF2AC0000C7555C /* Interpolatable.swift in Sources */,

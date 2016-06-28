@@ -951,7 +951,7 @@ extension CALayer: DriveAnimateBehaviors {
         let push = item.pushBehavior(.Down)
         item.behavior = push
         item.duration = step.duration
-        item.timingFunction = step.easing.timingFunction()
+        item.timingFunction = step.timing.easing()
         item.delay = step.delay
         item.repeatCount = step.repeatCount
         item.autoreverses = step.autoreverses

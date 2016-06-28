@@ -20,7 +20,7 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem, Timing
     
     var duration: CFTimeInterval = 0.25
     var delay: CFTimeInterval = 0.0
-    var timingFunction = TimingFunctionType.Default.timingFunction()
+    var timingFunction: TimingSolvable = TimingFunctionType.Default.easing()
     var from: T
     var to: T
     var render: (T) -> Void
@@ -96,7 +96,7 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem, Timing
             }
         }
         let solveP = solveProgress(progress)
-        let adjustProgress = timingFunction.solve(Scalar(solveP), epsilon: epsilon)
+        let adjustProgress = timingFunction.solveOn(solveP, epslion: epsilon)
         let value = from.interpolate(adjustProgress, to: to, externalData: externalData)
         self.render(value)
     }

@@ -50,7 +50,7 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate, AnimationS
     
     func changeEasing(e: TimingFunctionType) {
         let step = lastStep()
-        step.easing = e
+        step.timing = e
     }
     
     func changeMainType(type: AnimationStyle) {

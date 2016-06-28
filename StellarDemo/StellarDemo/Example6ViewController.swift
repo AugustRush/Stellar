@@ -26,7 +26,7 @@ class Example6ViewController: UIViewController {
             })
             basic.duration = 1.0
             basic.speed = 0.0
-            basic.timingFunction = TimingFunctionType.SwiftOut.timingFunction()
+            basic.timingFunction = TimingFunctionType.SwiftOut.easing()
             centerItems.append(basic)
             
             let color = view.backgroundColor!
@@ -35,7 +35,7 @@ class Example6ViewController: UIViewController {
             })
             basic1.duration = 1.0
             basic1.speed = 0.0
-            basic1.timingFunction = TimingFunctionType.SwiftOut.timingFunction()
+            basic1.timingFunction = TimingFunctionType.SwiftOut.easing()
             colorItems.append(basic1)
 
         }
