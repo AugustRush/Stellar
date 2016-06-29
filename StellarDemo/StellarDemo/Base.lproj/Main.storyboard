@@ -156,6 +156,26 @@
                                             <segue destination="9iX-4y-7ig" kind="push" id="gHN-yZ-fn5"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="0Xg-J6-GRJ" style="IBUITableViewCellStyleDefault" id="XhY-TJ-8cU">
+                                        <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XhY-TJ-8cU" id="fFB-xr-3O1">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Example 8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Xg-J6-GRJ">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="4UI-4r-CVy" kind="push" id="iN7-4s-f5i"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -893,6 +913,104 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNJ-Td-phW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-197" y="26"/>
+        </scene>
+        <!--Example8 View Controller-->
+        <scene sceneID="rCq-YO-CGb">
+            <objects>
+                <viewController id="4UI-4r-CVy" customClass="Example8ViewController" customModule="StellarDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MK9-Lb-pIU"/>
+                        <viewControllerLayoutGuide type="bottom" id="z1w-Pm-YVc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hU8-z4-Vta">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="46o-3I-AST" customClass="Ball" customModule="StellarDemo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="120" width="40" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.2335054288" blue="0.60924332530000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eYP-3l-wu9">
+                                <rect key="frame" x="0.0" y="376" width="320" height="29"/>
+                                <segments>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                    <segment title="4"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segment1ValueChanged:" destination="4UI-4r-CVy" eventType="valueChanged" id="jGc-vQ-lWB"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ubi-ky-PBn">
+                                <rect key="frame" x="0.0" y="412" width="320" height="29"/>
+                                <segments>
+                                    <segment title="5"/>
+                                    <segment title="6"/>
+                                    <segment title="7"/>
+                                    <segment title="8"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segment2ValueChanged:" destination="4UI-4r-CVy" eventType="valueChanged" id="sTd-gk-Yif"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bEN-Pf-meJ">
+                                <rect key="frame" x="0.0" y="448" width="320" height="29"/>
+                                <segments>
+                                    <segment title="9"/>
+                                    <segment title="10"/>
+                                    <segment title="11"/>
+                                    <segment title="12"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segment3ValueChanged:" destination="4UI-4r-CVy" eventType="valueChanged" id="ZAk-WU-KxZ"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4dk-NY-R6E">
+                                <rect key="frame" x="0.0" y="484" width="320" height="29"/>
+                                <segments>
+                                    <segment title="13"/>
+                                    <segment title="14"/>
+                                    <segment title="15"/>
+                                    <segment title="16"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segment4ValueChanged:" destination="4UI-4r-CVy" eventType="valueChanged" id="c7Z-Io-nNf"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="L6w-jp-9IF">
+                                <rect key="frame" x="0.0" y="520" width="320" height="29"/>
+                                <segments>
+                                    <segment title="17"/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                </segments>
+                                <connections>
+                                    <action selector="segment5ValueChanged:" destination="4UI-4r-CVy" eventType="valueChanged" id="yB9-fu-uba"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gkj-6x-XnF"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                            <color key="value" red="1" green="0.2335054288" blue="0.60924332530000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="animateView" destination="46o-3I-AST" id="p0E-TU-wSF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VcU-6x-Kj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-906" y="681"/>
         </scene>
         <!--Example7 View Controller-->
         <scene sceneID="vby-Y7-GdX">
