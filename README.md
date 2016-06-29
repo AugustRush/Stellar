@@ -34,22 +34,23 @@ To use this library in your project manually you may:
 - for Workspaces, include the whole StellarDemo.xcodeproj
 
 ### Features
+```
 - View's Animation
 - Layer's Animation
 - Chainable (every step can be observed)
 - File configurable (come soon)
-
+```
 ### Animations
-
+```
 - Basic
 - Gravity
 - Snap
 - Attachment
 - Push
 - Collsion(come soon)
-
+```
 ### Animatable type
-
+```
 - Float
 - CGFloat
 - Double
@@ -58,7 +59,29 @@ To use this library in your project manually you may:
 - CGRect
 - UIColor
 - ......(Any Intrpolatable)
+```
+### Easing Curve
 
+```swift
+- Default
+- EaseIn
+- EaseOut
+- EaseInEaseOut
+- Linear
+- SwiftOut
+- BackEaseIn
+- BackEaseOut
+- BackEaseInOut
+- BounceOut
+- Sine
+- Circ
+- ExponentialIn
+- ExponentialOut
+- ElasticIn
+- ElasticOut
+- BounceReverse
+- Custom(Double, Double, Double, Double)
+```
 ## On display
 
 #### Funny demo's gif(s)
@@ -130,14 +153,15 @@ animateView.makeSize(CGSizeMake(50, 150)).snap(0.3).completion({
 <img src="https://github.com/AugustRush/Stellar/blob/master/basicCurve.gif">
 
 ### To do
+```
 - File configurable
 - Easily Interactive Animations
 - Collision
 - Mutilple View/Layer performance
 - More demos
-
+```
 ### Licence
-
+```
 Copyright (c) 2016 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -157,3 +181,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```

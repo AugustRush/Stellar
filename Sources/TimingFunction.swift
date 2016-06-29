@@ -49,7 +49,7 @@ public enum TimingFunctionType {
     ///
     case ElasticOut
     /// custom
-    case CustomUnitBezier(Double, Double, Double, Double)
+    case Custom(Double, Double, Double, Double)
     
     
     func easing() -> TimingSolvable {
@@ -134,7 +134,7 @@ public enum TimingFunctionType {
                 
                 return 1 / pow( 4, 3 - bounce ) - 7.5625 * pow( ( pow2 * 3 - 2 ) / 22 - t, 2 );
             })
-        case .CustomUnitBezier(let p1x,let p1y,let p2x,let p2y):
+        case .Custom(let p1x,let p1y,let p2x,let p2y):
             return UnitBezier(p1x: p1x, p1y: p1y, p2x: p2x, p2y: p2y)
         }
     }

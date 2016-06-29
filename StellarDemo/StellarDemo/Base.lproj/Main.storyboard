@@ -914,7 +914,7 @@
             </objects>
             <point key="canvasLocation" x="-197" y="26"/>
         </scene>
-        <!--Example8 View Controller-->
+        <!--Easing-->
         <scene sceneID="rCq-YO-CGb">
             <objects>
                 <viewController id="4UI-4r-CVy" customClass="Example8ViewController" customModule="StellarDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -998,7 +998,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gkj-6x-XnF"/>
+                    <navigationItem key="navigationItem" title="Easing" id="gkj-6x-XnF"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="color">
                             <color key="value" red="1" green="0.2335054288" blue="0.60924332530000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -1012,7 +1012,7 @@
             </objects>
             <point key="canvasLocation" x="-906" y="681"/>
         </scene>
-        <!--Example7 View Controller-->
+        <!--File-->
         <scene sceneID="vby-Y7-GdX">
             <objects>
                 <viewController id="9iX-4y-7ig" customClass="Example7ViewController" customModule="StellarDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -1034,7 +1034,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5aI-gS-anX"/>
+                    <navigationItem key="navigationItem" title="File" id="5aI-gS-anX"/>
                     <connections>
                         <outlet property="button" destination="1Ek-xA-FhA" id="9Sm-KZ-wbE"/>
                     </connections>

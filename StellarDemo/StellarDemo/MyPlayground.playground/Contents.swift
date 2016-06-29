@@ -62,7 +62,7 @@ XCPlaygroundPage.currentPage.liveView = container
 
 //basic curve
 
-100.0.animateTo(300, duration: 1, delay: 0.0, type: .CustomUnitBezier(0.0, 1.39, 1.0, -0.55), autoreverses: false, repeatCount: 0, render: { (d) in
+100.0.animateTo(300, duration: 1, delay: 0.0, type: .Custom(0.0, 1.39, 1.0, -0.55), autoreverses: false, repeatCount: 0, render: { (d) in
     let y = d
     }, completion: nil)
 
