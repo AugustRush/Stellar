@@ -15,7 +15,7 @@ public enum AnimationStyle {
     case Gravity(Double)
 }
 
-extension UIView: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, GravityConfigurable {
+extension UIView: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, GravityConfigurable, StepControllable {
     
     //MARK: animation methods
     public func moveX(increment: CGFloat) -> UIView {
@@ -242,15 +242,22 @@ extension UIView: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, G
     public func animate() -> Void {
         context.commit()
     }
+    
+    //MARK: StepControllable methods
+    
+    public func cancelAllRemaining() {
+        context.removeAllRemaining()
+    }
 
     
-    //Private Context    
-    internal var context: AnimationContext {
+    //Private Context for view and layer
+    private var context: AnimationContext {
         get {
-            var context = objc_getAssociatedObject(self, &AnimationContextIdentifer) as? AnimationContext
+            let identifier = String(unsafeAddressOf(self.layer))
+            var context = self.layer.valueForKey(identifier) as? AnimationContext
             if context == nil {
-                context = AnimationContext(view: self)
-                objc_setAssociatedObject(self, &AnimationContextIdentifer, context!, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                context = AnimationContext(object: self)
+                self.layer.setValue(context!, forKey: identifier)
             }
             return context!
         }

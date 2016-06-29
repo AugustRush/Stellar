@@ -21,7 +21,7 @@ container.backgroundColor = UIColor(red: 0.97,green: 0.97,blue: 0.97,alpha: 1.0)
 //    ball.makeWidth(200).duration(2).autoreverses().animate()
 //}
 
-let ball = Ball(frame: CGRectMake(100,100,250,250))
+let ball = Ball(frame: CGRectMake(100,100,25,25))
 ball.backgroundColor = UIColor.cyanColor()
 container.addSubview(ball)
 
@@ -43,14 +43,26 @@ container.addSubview(ball)
 //    .then().makeWidth(120).makeHeight(30).cornerRadius(15).easing(.SwiftOut).makeColor(UIColor.brownColor())
 //    .animate()
 
-ball.moveX(100).moveY(100).delay(1.5).animate()
+/**
+ *  @brief Easing Curve
+ *
+ *  @param 200 move foreard
+ */
+//ball.moveX(200).easing(.BounceOut).delay(0.5).duration(1).animate()
+//ball.moveX(200).easing(.ElasticIn).delay(0.5).duration(1).animate()
+//ball.moveX(200).easing(.ElasticOut).delay(0.5).duration(1).animate()
+//ball.moveX(200).easing(.Sine).delay(0.5).duration(1).animate()
+//ball.moveX(200).easing(.Circ).delay(0.5).duration(1).animate()
+//ball.moveX(200).easing(.ExponentialOut).delay(0.5).duration(1).animate()
+//ball.moveX(200).easing(.ExponentialIn).delay(0.5).duration(1).animate()
 
+ball.moveX(200).easing(.BounceReverse).delay(0.5).duration(3).autoreverses().animate()
 
 XCPlaygroundPage.currentPage.liveView = container
 
 //basic curve
 
-100.0.animateTo(300, duration: 1, delay: 0.0, type: .Custom(0.0, 1.39, 1.0, -0.55), autoreverses: false, repeatCount: 0, render: { (d) in
+100.0.animateTo(300, duration: 1, delay: 0.0, type: .CustomUnitBezier(0.0, 1.39, 1.0, -0.55), autoreverses: false, repeatCount: 0, render: { (d) in
     let y = d
     }, completion: nil)
 

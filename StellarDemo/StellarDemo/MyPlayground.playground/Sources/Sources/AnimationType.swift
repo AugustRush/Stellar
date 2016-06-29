@@ -8,12 +8,14 @@
 
 import UIKit
 
-enum ViewAnimationSubType {
+enum AnimationSubType {
     case MoveX(CGFloat)
     case MoveY(CGFloat)
+    case MoveXY(CGFloat,CGFloat)//Layer
     case MoveTo(CGPoint)
     case Color(UIColor)
     case Alpha(CGFloat)
+    case Opacity(Float)//Layer
     case RotateX(CGFloat)
     case RotateY(CGFloat)
     case Rotate(CGFloat)
@@ -36,16 +38,16 @@ enum ViewAnimationSubType {
     case ShadowColor(UIColor)
     case ShadowOpacity(Float)
     case TintColor(UIColor)
-    //UILabel,UITextView...
-    case TextColor(UIColor)
+//    UILabel,UITextView...
+//    case TextColor(UIColor)
 }
 
 //temp record for animation type
 internal class AnimationType {
     var mainType: AnimationStyle
-    var subType: ViewAnimationSubType
+    var subType: AnimationSubType
     
-    init (type: AnimationStyle, subType: ViewAnimationSubType) {
+    init (type: AnimationStyle, subType: AnimationSubType) {
         self.mainType = type
         self.subType = subType
     }

@@ -6,21 +6,10 @@
 //
 //THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import UIKit
+import Foundation
 
-public protocol BasicConfigurable: BasicChainable {
-    func duration(d: CFTimeInterval) -> BasicConfigurable
-    func easing(type: TimingFunctionType) -> BasicConfigurable
-    func delay(d: CFTimeInterval) -> BasicConfigurable
-    func autoreverses() -> BasicConfigurable
-    func repeatCount(count: Int) -> BasicConfigurable
-}
-
-//CALayer
-public protocol BasicConfigurable1: BasicChainable1 {
-    func duration(d: CFTimeInterval) -> BasicConfigurable1
-    func easing(type: TimingFunctionType) -> BasicConfigurable1
-    func delay(d: CFTimeInterval) -> BasicConfigurable1
-    func autoreverses() -> BasicConfigurable1
-    func repeatCount(count: Int) -> BasicConfigurable1
+public protocol StepControllable {
+    //remove all remaining from excute sequence
+    func cancelAllRemaining()
+    //will add more methods to control animation steps
 }

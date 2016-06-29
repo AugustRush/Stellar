@@ -34,6 +34,20 @@ public enum TimingFunctionType {
     case BackEaseInOut
     ///
     case BounceOut
+    ///
+    case Sine
+    ///
+    case Circ
+    ///
+    case ExponentialIn
+    ///
+    case ExponentialOut
+    ///
+    case ElasticIn
+    ///
+    case BounceReverse
+    ///
+    case ElasticOut
     /// custom
     case CustomUnitBezier(Double, Double, Double, Double)
     
@@ -84,6 +98,42 @@ public enum TimingFunctionType {
                     return (54/5.0 * t * t) - (513/25.0 * t) + 268/25.0;
                 }
             })
+        case .Sine:
+            return EasingContainer(easing: { (t: Double) in
+                return 1 - cos( t * M_PI / 2.0)
+            })
+        case .Circ:
+            return EasingContainer(easing: { (t: Double) in
+                return 1 - sqrt( 1.0 - t * t )
+            })
+        case .ExponentialIn:
+            return EasingContainer(easing: { (t: Double) in
+                return (t == 0.0) ? t : pow(2, 10 * (t - 1))
+            })
+        case .ExponentialOut:
+            return EasingContainer(easing: { (t: Double) in
+                return (t == 1.0) ? t : 1 - pow(2, -10 * t)
+            })
+        case .ElasticIn:
+            return EasingContainer(easing: { (t: Double) in
+                return sin(13.0 * M_PI_2 * t) * pow(2, 10 * (t - 1))
+            })
+        case .ElasticOut:
+            return EasingContainer(easing: { (t: Double) in
+                return sin(-13.0 * M_PI_2 * (t + 1)) * pow(2, -10 * t) + 1.0;
+            })
+        case .BounceReverse:
+            return EasingContainer(easing: { (t: Double) in
+                var bounce: Double = 4.0
+                var pow2 = 0.0
+                
+                repeat {
+                    bounce = bounce - 1.0
+                    pow2 = pow(2, bounce)
+                } while (t < (pow2 - 1.0 ) / 11.0)
+                
+                return 1 / pow( 4, 3 - bounce ) - 7.5625 * pow( ( pow2 * 3 - 2 ) / 22 - t, 2 );
+            })
         case .CustomUnitBezier(let p1x,let p1y,let p2x,let p2y):
             return UnitBezier(p1x: p1x, p1y: p1y, p2x: p2x, p2y: p2y)
         }
@@ -101,5 +151,6 @@ class EasingContainer: TimingSolvable {
     func solveOn(time: Double, epslion: Double) -> Double {
         return self.easing(time)
     }
-    
 }
+
+

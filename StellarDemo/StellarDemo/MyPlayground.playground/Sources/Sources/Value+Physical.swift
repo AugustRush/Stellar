@@ -50,7 +50,7 @@ extension Float: Physical, Vectorial, Interpolatable {
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
         basicItem.duration = duration
-        basicItem.timingFunction = type.timingFunction()
+        basicItem.timingFunction = type.easing()
         basicItem.completion = completion
         basicItem.delay = delay
         push.commitToBasic()
@@ -114,7 +114,7 @@ extension Double: Physical, Vectorial, Interpolatable {
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
         basicItem.duration = duration
-        basicItem.timingFunction = type.timingFunction()
+        basicItem.timingFunction = type.easing()
         basicItem.completion = completion
         basicItem.autoreverses = autoreverses
         basicItem.repeatCount = repeatCount
@@ -182,7 +182,7 @@ extension CGFloat: Physical , Vectorial, Interpolatable {
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
         basicItem.duration = duration
-        basicItem.timingFunction = type.timingFunction()
+        basicItem.timingFunction = type.easing()
         basicItem.completion = completion
         basicItem.autoreverses = autoreverses
         basicItem.repeatCount = repeatCount
@@ -250,7 +250,7 @@ extension CGSize: Physical, Vectorial, Interpolatable {
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
         basicItem.duration = duration
-        basicItem.timingFunction = type.timingFunction()
+        basicItem.timingFunction = type.easing()
         basicItem.completion = completion
         basicItem.autoreverses = autoreverses
         basicItem.repeatCount = repeatCount
@@ -319,7 +319,7 @@ extension CGPoint: Physical, Vectorial, Interpolatable {
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
         basicItem.duration = duration
-        basicItem.timingFunction = type.timingFunction()
+        basicItem.timingFunction = type.easing()
         basicItem.completion = completion
         basicItem.autoreverses = autoreverses
         basicItem.repeatCount = repeatCount
@@ -387,7 +387,7 @@ extension CGRect: Physical, Vectorial2, Interpolatable {
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
         basicItem.duration = duration
-        basicItem.timingFunction = type.timingFunction()
+        basicItem.timingFunction = type.easing()
         basicItem.completion = completion
         basicItem.autoreverses = autoreverses
         basicItem.repeatCount = repeatCount
@@ -463,7 +463,7 @@ extension UIColor: Physical, Vectorial2, Interpolatable {
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
         basicItem.duration = duration
-        basicItem.timingFunction = type.timingFunction()
+        basicItem.timingFunction = type.easing()
         basicItem.completion = completion
         basicItem.autoreverses = autoreverses
         basicItem.repeatCount = repeatCount
