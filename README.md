@@ -60,7 +60,7 @@ To use this library in your project manually you may:
 - UIColor
 - ......(Any Intrpolatable)
 ```
-### Easing Curve
+### Easing Curve (Just Base)
 
 ```swift
 - Default
