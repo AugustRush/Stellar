@@ -114,10 +114,10 @@ extension UIView: DriveAnimateBehaviors {
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
         case .Width(let w):
-            let from = self.bounds.width
+            let from = self.frame.width
             let to = w
             let render = {(f: CGFloat) in
-                self.bounds.size.width = f
+                self.frame.size.width = f
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
@@ -355,10 +355,10 @@ extension UIView: DriveAnimateBehaviors {
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
         case .Width(let w):
-            let from = self.bounds.width
+            let from = self.frame.width
             let to = w
             let render = {(f: CGFloat) in
-                self.bounds.size.width = f
+                self.frame.size.width = f
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
@@ -592,10 +592,10 @@ extension UIView: DriveAnimateBehaviors {
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
         case .Width(let w):
-            let from = self.bounds.width
+            let from = self.frame.width
             let to = w
             let render = {(f: CGFloat) in
-                self.bounds.size.width = f
+                self.frame.size.width = f
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
@@ -828,10 +828,10 @@ extension UIView: DriveAnimateBehaviors {
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
         case .Width(let w):
-            let from = self.bounds.width
+            let from = self.frame.width
             let to = w
             let render = {(f: CGFloat) in
-                self.bounds.size.width = f
+                self.frame.size.width = f
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             

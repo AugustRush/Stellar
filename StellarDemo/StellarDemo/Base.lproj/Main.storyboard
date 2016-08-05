@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="eww-ck-nhO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="eww-ck-nhO">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -1059,12 +1060,25 @@
                                 <rect key="frame" x="30" y="220" width="260" height="128"/>
                                 <color key="backgroundColor" red="0.13024942819999999" green="1" blue="0.89251197790000003" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6GH-Ys-fP4">
+                                <rect key="frame" x="26" y="378" width="101" height="95"/>
+                                <color key="backgroundColor" red="1" green="0.2335054288" blue="0.60924332530000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="cyc-d0-lwa"/>
+                                    <constraint firstAttribute="width" constant="101" id="fzg-KF-nDs"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Ax-cf-5x6" firstAttribute="top" secondItem="6GH-Ys-fP4" secondAttribute="bottom" constant="95" id="7dP-S8-8SX"/>
+                            <constraint firstItem="6GH-Ys-fP4" firstAttribute="leading" secondItem="GJC-sp-lmN" secondAttribute="leadingMargin" constant="10" id="ynZ-cW-Hz3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vPT-8H-gGw"/>
                     <connections>
                         <outlet property="cyanView" destination="L9b-9X-pBB" id="glv-zZ-lNr"/>
+                        <outlet property="pinkView" destination="6GH-Ys-fP4" id="oiW-Uh-0cO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8nt-Yy-33M" userLabel="First Responder" sceneMemberID="firstResponder"/>
