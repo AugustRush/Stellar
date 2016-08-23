@@ -344,7 +344,7 @@ extension CGPoint: Physical, Vectorial, Interpolatable {
     }
 }
 
-extension CGRect: Physical, Vectorial2, Interpolatable {
+extension CGRect: Physical, Vectorial, Interpolatable {
     
     public func fallTo(to: CGRect,magnitude: Double = 1.0, render: (CGRect) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItemGravity(from: self, to: to, render: render)
@@ -419,7 +419,7 @@ extension CGRect: Physical, Vectorial2, Interpolatable {
     }
 }
 
-extension UIColor: Physical, Vectorial2, Interpolatable {
+extension UIColor: Physical, Vectorial, Interpolatable {
     
     public func fallTo(to: UIColor,magnitude: Double = 1.0, render: (UIColor) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItemGravity(from: self, to: to, render: render)

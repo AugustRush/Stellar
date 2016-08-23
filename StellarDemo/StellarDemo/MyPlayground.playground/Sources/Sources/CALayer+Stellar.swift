@@ -10,6 +10,8 @@ import UIKit
 
 extension CALayer: BasicConfigurable1, SnapConfigurable1, AttachmentConfigurable1, GravityConfigurable1, StepControllable {
     
+    typealias AnimationItem = CALayer
+    
     //MARK: animation methods
     public func moveTo(point: CGPoint) -> CALayer {
         let type = AnimationType(type: .Basic, subType: .MoveTo(point))

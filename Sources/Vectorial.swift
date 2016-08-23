@@ -9,11 +9,7 @@
 import UIKit
 
 protocol Vectorial {
-    func convert(p: CGPoint) -> Self
-    func reverse() -> CGPoint
-}
-
-protocol Vectorial2 {
-    func convert(r: CGRect) -> Self
-    func reverse() -> CGRect
+    associatedtype VectorType
+    func convert(p: VectorType) -> Self
+    func reverse() -> VectorType
 }

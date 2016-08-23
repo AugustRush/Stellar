@@ -9,7 +9,7 @@
 import UIKit
 
 //for 4 latitude
-final class DynamicItem2<T: Vectorial2>: NSObject, UIDynamicItem {
+final class DynamicItem2<T: Vectorial where T.VectorType == CGRect>: NSObject, UIDynamicItem {
     
     var from: T
     var to: T
