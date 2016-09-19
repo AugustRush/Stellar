@@ -10,62 +10,15 @@
 		97019FD91D054ECD00FD6644 /* Stellar.h in Headers */ = {isa = PBXBuildFile; fileRef = 97019FD81D054ECD00FD6644 /* Stellar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		97019FEB1D054ECD00FD6644 /* Stellar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97019FD61D054ECD00FD6644 /* Stellar.framework */; };
 		97019FEC1D054ECD00FD6644 /* Stellar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97019FD61D054ECD00FD6644 /* Stellar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		97019FF41D054EE700FD6644 /* UIView+Stellar.swift in Headers */ = {isa = PBXBuildFile; fileRef = 973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FF51D054EEA00FD6644 /* UILabel+Stellar.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E8D3F01CFC13FB004E6A80 /* UILabel+Stellar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FF61D054EED00FD6644 /* UITextView+Stellar.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E8D3F21CFC1F27004E6A80 /* UITextView+Stellar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FF71D054EFB00FD6644 /* AnimationContext.swift in Headers */ = {isa = PBXBuildFile; fileRef = 973E59EA1CF6FD5B00F26487 /* AnimationContext.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FF81D054EFE00FD6644 /* AnimationSequence.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97544FF71CFD56D7008046A1 /* AnimationSequence.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FF91D054F0100FD6644 /* AnimationStep.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97544FF91CFD572A008046A1 /* AnimationStep.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FFA1D054F0400FD6644 /* AnimationType.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97544FFB1CFD5733008046A1 /* AnimationType.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FFB1D054F0700FD6644 /* AnimatorCoordinator.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E1A8DB1CEB4D6700F98D86 /* AnimatorCoordinator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FFC1D054F0A00FD6644 /* DynamicItem.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E1A8DD1CEC0E9200F98D86 /* DynamicItem.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FFD1D054F0D00FD6644 /* DynamicItem2.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97A61A391CF09B8F009E60EB /* DynamicItem2.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FFE1D054F1100FD6644 /* DynamicItemBasic.swift in Headers */ = {isa = PBXBuildFile; fileRef = 970A7FB41CF2AA8F00C7555C /* DynamicItemBasic.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FFF1D054F1300FD6644 /* DynamicItemGravity.swift in Headers */ = {isa = PBXBuildFile; fileRef = 970F91E41D01730B00B510BE /* DynamicItemGravity.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0001D054F1700FD6644 /* UnitBezier.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97A61A371CF082F6009E60EB /* UnitBezier.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0011D054F1900FD6644 /* TimingFunction.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97A61A421CF1E159009E60EB /* TimingFunction.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0021D054F1E00FD6644 /* UIDynamicBehavior+Commit.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0031D054F2000FD6644 /* Value+Physical.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0041D054F2200FD6644 /* DynamicItem+Behavior.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E1A9101CEDEF5200F98D86 /* DynamicItem+Behavior.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0051D054F2500FD6644 /* CALayer+Stellar.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E8D3ED1CFC11BA004E6A80 /* CALayer+Stellar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0061D054F2800FD6644 /* Vectorial.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97A61A331CF05DAB009E60EB /* Vectorial.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0071D054F2A00FD6644 /* Physical.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E1A8D71CEB4AF200F98D86 /* Physical.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0081D054F2B00FD6644 /* Interpolatable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 970A7FB61CF2AC0000C7555C /* Interpolatable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0091D054F2D00FD6644 /* TimingType.swift in Headers */ = {isa = PBXBuildFile; fileRef = 973E5A031CF70FAE00F26487 /* TimingType.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A00A1D054F2F00FD6644 /* Chainable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97EC4BFF1CF9E3310059BBFA /* Chainable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A00B1D054F3000FD6644 /* BasicChainable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97EC4BFB1CF9DF8D0059BBFA /* BasicChainable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A00C1D054F3200FD6644 /* BasicConfigurable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97EC4BFD1CF9E2620059BBFA /* BasicConfigurable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A00D1D054F3400FD6644 /* SnapConfigurable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97EC4C011CF9E47D0059BBFA /* SnapConfigurable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A00E1D054F3600FD6644 /* AttachmentConfigurable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 970F91B41CFEC71600B510BE /* AttachmentConfigurable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A00F1D054F3800FD6644 /* GravityConfigurable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 970F91D61D000AA000B510BE /* GravityConfigurable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0AA1D06A31900FD6644 /* UIView+FileConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9701A0A91D06A31900FD6644 /* UIView+FileConfigurable.swift */; };
-		9701A0AC1D06A58D00FD6644 /* StepControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9701A0AB1D06A58D00FD6644 /* StepControllable.swift */; };
 		9701A0AE1D07CD8800FD6644 /* Example7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9701A0AD1D07CD8800FD6644 /* Example7ViewController.swift */; };
-		970A7FB51CF2AA8F00C7555C /* DynamicItemBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A7FB41CF2AA8F00C7555C /* DynamicItemBasic.swift */; };
-		970A7FB71CF2AC0000C7555C /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A7FB61CF2AC0000C7555C /* Interpolatable.swift */; };
 		970F91B31CFEBFC500B510BE /* Example5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91B21CFEBFC500B510BE /* Example5ViewController.swift */; };
-		970F91B51CFEC71600B510BE /* AttachmentConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91B41CFEC71600B510BE /* AttachmentConfigurable.swift */; };
 		970F91D51CFEF7C900B510BE /* Example6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91D41CFEF7C900B510BE /* Example6ViewController.swift */; };
-		970F91D71D000AA000B510BE /* GravityConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91D61D000AA000B510BE /* GravityConfigurable.swift */; };
-		970F91E51D01730B00B510BE /* DynamicItemGravity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91E41D01730B00B510BE /* DynamicItemGravity.swift */; };
+		9710E27F1D8FD7EA003FA9D5 /* Physical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710E27E1D8FD7EA003FA9D5 /* Physical.swift */; };
 		9734A5591D23C742000D02A8 /* Example8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734A5581D23C742000D02A8 /* Example8ViewController.swift */; };
 		973E59CB1CF5ACEC00F26487 /* Example1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */; };
 		973E59E71CF6F2E100F26487 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59E61CF6F2E100F26487 /* Ball.swift */; };
-		973E59E91CF6FD2200F26487 /* UIView+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */; };
-		973E59EB1CF6FD5B00F26487 /* AnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59EA1CF6FD5B00F26487 /* AnimationContext.swift */; };
-		973E5A041CF70FAE00F26487 /* TimingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E5A031CF70FAE00F26487 /* TimingType.swift */; };
-		97544FF81CFD56D7008046A1 /* AnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97544FF71CFD56D7008046A1 /* AnimationSequence.swift */; };
-		97544FFA1CFD572A008046A1 /* AnimationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97544FF91CFD572A008046A1 /* AnimationStep.swift */; };
-		97544FFC1CFD5733008046A1 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97544FFB1CFD5733008046A1 /* AnimationType.swift */; };
-		976CC7CE1D190DF400476D77 /* UIView+AnimateBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976CC7CD1D190DF400476D77 /* UIView+AnimateBehavior.swift */; };
-		976CC7D01D190F4B00476D77 /* DriveAnimateBehaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976CC7CF1D190F4B00476D77 /* DriveAnimateBehaviors.swift */; };
-		976CC7EB1D193C5E00476D77 /* CALayer+AnimateBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976CC7EA1D193C5E00476D77 /* CALayer+AnimateBehavior.swift */; };
 		97733D6C1CFEAC930012C879 /* Example4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97733D6B1CFEAC930012C879 /* Example4ViewController.swift */; };
 		977FDF1A1CFC7448009248FD /* Example3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977FDF191CFC7448009248FD /* Example3ViewController.swift */; };
-		97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A331CF05DAB009E60EB /* Vectorial.swift */; };
-		97A61A381CF082F6009E60EB /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A371CF082F6009E60EB /* UnitBezier.swift */; };
-		97A61A3A1CF09B8F009E60EB /* DynamicItem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A391CF09B8F009E60EB /* DynamicItem2.swift */; };
-		97A61A431CF1E159009E60EB /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A61A421CF1E159009E60EB /* TimingFunction.swift */; };
 		97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88C11CDDDAD000240523 /* AppDelegate.swift */; };
 		97BE88C41CDDDAD000240523 /* Example2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88C31CDDDAD000240523 /* Example2ViewController.swift */; };
 		97BE88C71CDDDAD000240523 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97BE88C51CDDDAD000240523 /* Main.storyboard */; };
@@ -73,20 +26,6 @@
 		97BE88CC1CDDDAD000240523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97BE88CA1CDDDAD000240523 /* LaunchScreen.storyboard */; };
 		97BE88D71CDDDAD000240523 /* StellarDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88D61CDDDAD000240523 /* StellarDemoTests.swift */; };
 		97BE88E21CDDDAD000240523 /* StellarDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88E11CDDDAD000240523 /* StellarDemoUITests.swift */; };
-		97DD65D21D2252FD00255F40 /* TimingSolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DD65D11D2252FD00255F40 /* TimingSolvable.swift */; };
-		97E1A8D81CEB4AF200F98D86 /* Physical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8D71CEB4AF200F98D86 /* Physical.swift */; };
-		97E1A8DA1CEB4B5200F98D86 /* Value+Physical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */; };
-		97E1A8DC1CEB4D6700F98D86 /* AnimatorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8DB1CEB4D6700F98D86 /* AnimatorCoordinator.swift */; };
-		97E1A8DE1CEC0E9200F98D86 /* DynamicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8DD1CEC0E9200F98D86 /* DynamicItem.swift */; };
-		97E1A90F1CED918400F98D86 /* UIDynamicBehavior+Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */; };
-		97E1A9111CEDEF5200F98D86 /* DynamicItem+Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A9101CEDEF5200F98D86 /* DynamicItem+Behavior.swift */; };
-		97E8D3EE1CFC11BA004E6A80 /* CALayer+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E8D3ED1CFC11BA004E6A80 /* CALayer+Stellar.swift */; };
-		97E8D3F11CFC13FB004E6A80 /* UILabel+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E8D3F01CFC13FB004E6A80 /* UILabel+Stellar.swift */; };
-		97E8D3F31CFC1F27004E6A80 /* UITextView+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E8D3F21CFC1F27004E6A80 /* UITextView+Stellar.swift */; };
-		97EC4BFC1CF9DF8D0059BBFA /* BasicChainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC4BFB1CF9DF8D0059BBFA /* BasicChainable.swift */; };
-		97EC4BFE1CF9E2620059BBFA /* BasicConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC4BFD1CF9E2620059BBFA /* BasicConfigurable.swift */; };
-		97EC4C001CF9E3310059BBFA /* Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC4BFF1CF9E3310059BBFA /* Chainable.swift */; };
-		97EC4C021CF9E47D0059BBFA /* SnapConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC4C011CF9E47D0059BBFA /* SnapConfigurable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,34 +72,15 @@
 		97019FDA1D054ECD00FD6644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97019FE61D054ECD00FD6644 /* StellarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarTests.swift; sourceTree = "<group>"; };
 		97019FE81D054ECD00FD6644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9701A0A91D06A31900FD6644 /* UIView+FileConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FileConfigurable.swift"; sourceTree = "<group>"; };
-		9701A0AB1D06A58D00FD6644 /* StepControllable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepControllable.swift; sourceTree = "<group>"; };
 		9701A0AD1D07CD8800FD6644 /* Example7ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example7ViewController.swift; sourceTree = "<group>"; };
-		970A7FB41CF2AA8F00C7555C /* DynamicItemBasic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItemBasic.swift; sourceTree = "<group>"; };
-		970A7FB61CF2AC0000C7555C /* Interpolatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interpolatable.swift; sourceTree = "<group>"; };
 		970F91B21CFEBFC500B510BE /* Example5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example5ViewController.swift; sourceTree = "<group>"; };
-		970F91B41CFEC71600B510BE /* AttachmentConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentConfigurable.swift; sourceTree = "<group>"; };
 		970F91D41CFEF7C900B510BE /* Example6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example6ViewController.swift; sourceTree = "<group>"; };
-		970F91D61D000AA000B510BE /* GravityConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityConfigurable.swift; sourceTree = "<group>"; };
-		970F91E41D01730B00B510BE /* DynamicItemGravity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItemGravity.swift; sourceTree = "<group>"; };
+		9710E27E1D8FD7EA003FA9D5 /* Physical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Physical.swift; sourceTree = "<group>"; };
 		9734A5581D23C742000D02A8 /* Example8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example8ViewController.swift; sourceTree = "<group>"; };
 		973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example1ViewController.swift; sourceTree = "<group>"; };
 		973E59E61CF6F2E100F26487 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
-		973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Stellar.swift"; sourceTree = "<group>"; };
-		973E59EA1CF6FD5B00F26487 /* AnimationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationContext.swift; sourceTree = "<group>"; };
-		973E5A031CF70FAE00F26487 /* TimingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingType.swift; sourceTree = "<group>"; };
-		97544FF71CFD56D7008046A1 /* AnimationSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationSequence.swift; sourceTree = "<group>"; };
-		97544FF91CFD572A008046A1 /* AnimationStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationStep.swift; sourceTree = "<group>"; };
-		97544FFB1CFD5733008046A1 /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
-		976CC7CD1D190DF400476D77 /* UIView+AnimateBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AnimateBehavior.swift"; sourceTree = "<group>"; };
-		976CC7CF1D190F4B00476D77 /* DriveAnimateBehaviors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveAnimateBehaviors.swift; sourceTree = "<group>"; };
-		976CC7EA1D193C5E00476D77 /* CALayer+AnimateBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+AnimateBehavior.swift"; sourceTree = "<group>"; };
 		97733D6B1CFEAC930012C879 /* Example4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example4ViewController.swift; sourceTree = "<group>"; };
 		977FDF191CFC7448009248FD /* Example3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example3ViewController.swift; sourceTree = "<group>"; };
-		97A61A331CF05DAB009E60EB /* Vectorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vectorial.swift; sourceTree = "<group>"; };
-		97A61A371CF082F6009E60EB /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
-		97A61A391CF09B8F009E60EB /* DynamicItem2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItem2.swift; sourceTree = "<group>"; };
-		97A61A421CF1E159009E60EB /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
 		97BE88BE1CDDDAD000240523 /* StellarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StellarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97BE88C11CDDDAD000240523 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97BE88C31CDDDAD000240523 /* Example2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example2ViewController.swift; sourceTree = "<group>"; };
@@ -174,20 +94,6 @@
 		97BE88DD1CDDDAD000240523 /* StellarDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97BE88E11CDDDAD000240523 /* StellarDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarDemoUITests.swift; sourceTree = "<group>"; };
 		97BE88E31CDDDAD000240523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97DD65D11D2252FD00255F40 /* TimingSolvable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingSolvable.swift; sourceTree = "<group>"; };
-		97E1A8D71CEB4AF200F98D86 /* Physical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Physical.swift; sourceTree = "<group>"; };
-		97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Value+Physical.swift"; sourceTree = "<group>"; };
-		97E1A8DB1CEB4D6700F98D86 /* AnimatorCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatorCoordinator.swift; sourceTree = "<group>"; };
-		97E1A8DD1CEC0E9200F98D86 /* DynamicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItem.swift; sourceTree = "<group>"; };
-		97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDynamicBehavior+Commit.swift"; sourceTree = "<group>"; };
-		97E1A9101CEDEF5200F98D86 /* DynamicItem+Behavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicItem+Behavior.swift"; sourceTree = "<group>"; };
-		97E8D3ED1CFC11BA004E6A80 /* CALayer+Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Stellar.swift"; sourceTree = "<group>"; };
-		97E8D3F01CFC13FB004E6A80 /* UILabel+Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Stellar.swift"; sourceTree = "<group>"; };
-		97E8D3F21CFC1F27004E6A80 /* UITextView+Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Stellar.swift"; sourceTree = "<group>"; };
-		97EC4BFB1CF9DF8D0059BBFA /* BasicChainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicChainable.swift; sourceTree = "<group>"; };
-		97EC4BFD1CF9E2620059BBFA /* BasicConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicConfigurable.swift; sourceTree = "<group>"; };
-		97EC4BFF1CF9E3310059BBFA /* Chainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chainable.swift; sourceTree = "<group>"; };
-		97EC4C011CF9E47D0059BBFA /* SnapConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapConfigurable.swift; sourceTree = "<group>"; };
 		97EC4C051CFA98DA0059BBFA /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -242,75 +148,21 @@
 			path = StellarTests;
 			sourceTree = "<group>";
 		};
-		970A80001CF448B900C7555C /* Internal */ = {
+		9710E27A1D8FD6DA003FA9D5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				973E59EA1CF6FD5B00F26487 /* AnimationContext.swift */,
-				97544FF71CFD56D7008046A1 /* AnimationSequence.swift */,
-				97544FF91CFD572A008046A1 /* AnimationStep.swift */,
-				97544FFB1CFD5733008046A1 /* AnimationType.swift */,
-				976CC7CD1D190DF400476D77 /* UIView+AnimateBehavior.swift */,
-				976CC7EA1D193C5E00476D77 /* CALayer+AnimateBehavior.swift */,
+				9710E27D1D8FD7CE003FA9D5 /* protocols */,
 			);
-			name = Internal;
+			name = Sources;
+			path = ../../Sources;
 			sourceTree = "<group>";
 		};
-		97A61A3B1CF1B254009E60EB /* protocols */ = {
+		9710E27D1D8FD7CE003FA9D5 /* protocols */ = {
 			isa = PBXGroup;
 			children = (
-				97A61A331CF05DAB009E60EB /* Vectorial.swift */,
-				97E1A8D71CEB4AF200F98D86 /* Physical.swift */,
-				970A7FB61CF2AC0000C7555C /* Interpolatable.swift */,
-				973E5A031CF70FAE00F26487 /* TimingType.swift */,
-				97DD65D11D2252FD00255F40 /* TimingSolvable.swift */,
-				97EC4BFF1CF9E3310059BBFA /* Chainable.swift */,
-				97EC4BFB1CF9DF8D0059BBFA /* BasicChainable.swift */,
-				97EC4BFD1CF9E2620059BBFA /* BasicConfigurable.swift */,
-				97EC4C011CF9E47D0059BBFA /* SnapConfigurable.swift */,
-				970F91B41CFEC71600B510BE /* AttachmentConfigurable.swift */,
-				970F91D61D000AA000B510BE /* GravityConfigurable.swift */,
-				9701A0AB1D06A58D00FD6644 /* StepControllable.swift */,
-				976CC7CF1D190F4B00476D77 /* DriveAnimateBehaviors.swift */,
+				9710E27E1D8FD7EA003FA9D5 /* Physical.swift */,
 			);
-			name = protocols;
-			sourceTree = "<group>";
-		};
-		97A61A3C1CF1B26A009E60EB /* extension */ = {
-			isa = PBXGroup;
-			children = (
-				97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */,
-				97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */,
-				97E1A9101CEDEF5200F98D86 /* DynamicItem+Behavior.swift */,
-			);
-			name = extension;
-			sourceTree = "<group>";
-		};
-		97A61A3E1CF1B28D009E60EB /* utils */ = {
-			isa = PBXGroup;
-			children = (
-				97A61A371CF082F6009E60EB /* UnitBezier.swift */,
-				97A61A421CF1E159009E60EB /* TimingFunction.swift */,
-			);
-			name = utils;
-			sourceTree = "<group>";
-		};
-		97A61A3F1CF1B29B009E60EB /* items */ = {
-			isa = PBXGroup;
-			children = (
-				97E1A8DD1CEC0E9200F98D86 /* DynamicItem.swift */,
-				97A61A391CF09B8F009E60EB /* DynamicItem2.swift */,
-				970A7FB41CF2AA8F00C7555C /* DynamicItemBasic.swift */,
-				970F91E41D01730B00B510BE /* DynamicItemGravity.swift */,
-			);
-			name = items;
-			sourceTree = "<group>";
-		};
-		97A61A401CF1B2BF009E60EB /* coordnator */ = {
-			isa = PBXGroup;
-			children = (
-				97E1A8DB1CEB4D6700F98D86 /* AnimatorCoordinator.swift */,
-			);
-			name = coordnator;
+			path = protocols;
 			sourceTree = "<group>";
 		};
 		97BE88B51CDDDAD000240523 = {
@@ -339,7 +191,7 @@
 		97BE88C01CDDDAD000240523 /* StellarDemo */ = {
 			isa = PBXGroup;
 			children = (
-				97BE88EF1CDDDBCE00240523 /* Sources */,
+				9710E27A1D8FD6DA003FA9D5 /* Sources */,
 				97BE88C11CDDDAD000240523 /* AppDelegate.swift */,
 				97BE88C31CDDDAD000240523 /* Example2ViewController.swift */,
 				973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */,
@@ -377,33 +229,6 @@
 			path = StellarDemoUITests;
 			sourceTree = "<group>";
 		};
-		97BE88EF1CDDDBCE00240523 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				97E8D3EF1CFC13D0004E6A80 /* UI */,
-				970A80001CF448B900C7555C /* Internal */,
-				97A61A401CF1B2BF009E60EB /* coordnator */,
-				97A61A3F1CF1B29B009E60EB /* items */,
-				97A61A3E1CF1B28D009E60EB /* utils */,
-				97A61A3C1CF1B26A009E60EB /* extension */,
-				97A61A3B1CF1B254009E60EB /* protocols */,
-			);
-			name = Sources;
-			path = ../../Sources;
-			sourceTree = "<group>";
-		};
-		97E8D3EF1CFC13D0004E6A80 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */,
-				97E8D3F01CFC13FB004E6A80 /* UILabel+Stellar.swift */,
-				97E8D3F21CFC1F27004E6A80 /* UITextView+Stellar.swift */,
-				9701A0A91D06A31900FD6644 /* UIView+FileConfigurable.swift */,
-				97E8D3ED1CFC11BA004E6A80 /* CALayer+Stellar.swift */,
-			);
-			name = UI;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -412,34 +237,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				97019FD91D054ECD00FD6644 /* Stellar.h in Headers */,
-				97019FF41D054EE700FD6644 /* UIView+Stellar.swift in Headers */,
-				97019FF51D054EEA00FD6644 /* UILabel+Stellar.swift in Headers */,
-				97019FF71D054EFB00FD6644 /* AnimationContext.swift in Headers */,
-				97019FF81D054EFE00FD6644 /* AnimationSequence.swift in Headers */,
-				97019FF91D054F0100FD6644 /* AnimationStep.swift in Headers */,
-				97019FFA1D054F0400FD6644 /* AnimationType.swift in Headers */,
-				97019FFB1D054F0700FD6644 /* AnimatorCoordinator.swift in Headers */,
-				97019FFC1D054F0A00FD6644 /* DynamicItem.swift in Headers */,
-				97019FFD1D054F0D00FD6644 /* DynamicItem2.swift in Headers */,
-				97019FFE1D054F1100FD6644 /* DynamicItemBasic.swift in Headers */,
-				97019FFF1D054F1300FD6644 /* DynamicItemGravity.swift in Headers */,
-				9701A0001D054F1700FD6644 /* UnitBezier.swift in Headers */,
-				9701A0011D054F1900FD6644 /* TimingFunction.swift in Headers */,
-				9701A0031D054F2000FD6644 /* Value+Physical.swift in Headers */,
-				9701A0041D054F2200FD6644 /* DynamicItem+Behavior.swift in Headers */,
-				9701A0061D054F2800FD6644 /* Vectorial.swift in Headers */,
-				9701A00A1D054F2F00FD6644 /* Chainable.swift in Headers */,
-				9701A00B1D054F3000FD6644 /* BasicChainable.swift in Headers */,
-				9701A0091D054F2D00FD6644 /* TimingType.swift in Headers */,
-				9701A00C1D054F3200FD6644 /* BasicConfigurable.swift in Headers */,
-				9701A0081D054F2B00FD6644 /* Interpolatable.swift in Headers */,
-				9701A00F1D054F3800FD6644 /* GravityConfigurable.swift in Headers */,
-				9701A00E1D054F3600FD6644 /* AttachmentConfigurable.swift in Headers */,
-				9701A00D1D054F3400FD6644 /* SnapConfigurable.swift in Headers */,
-				9701A0071D054F2A00FD6644 /* Physical.swift in Headers */,
-				9701A0021D054F1E00FD6644 /* UIDynamicBehavior+Commit.swift in Headers */,
-				9701A0051D054F2500FD6644 /* CALayer+Stellar.swift in Headers */,
-				97019FF61D054EED00FD6644 /* UITextView+Stellar.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,16 +328,22 @@
 				TargetAttributes = {
 					97019FD51D054ECD00FD6644 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = Y2BAKEHXE4;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 					97BE88BD1CDDDAD000240523 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					97BE88D11CDDDAD000240523 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 97BE88BD1CDDDAD000240523;
 					};
 					97BE88DC1CDDDAD000240523 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 97BE88BD1CDDDAD000240523;
 					};
 				};
@@ -612,50 +415,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9710E27F1D8FD7EA003FA9D5 /* Physical.swift in Sources */,
 				973E59CB1CF5ACEC00F26487 /* Example1ViewController.swift in Sources */,
-				973E59EB1CF6FD5B00F26487 /* AnimationContext.swift in Sources */,
-				97E1A90F1CED918400F98D86 /* UIDynamicBehavior+Commit.swift in Sources */,
-				970A7FB51CF2AA8F00C7555C /* DynamicItemBasic.swift in Sources */,
-				97E1A8DC1CEB4D6700F98D86 /* AnimatorCoordinator.swift in Sources */,
-				973E59E91CF6FD2200F26487 /* UIView+Stellar.swift in Sources */,
 				97BE88C41CDDDAD000240523 /* Example2ViewController.swift in Sources */,
-				97E1A8DA1CEB4B5200F98D86 /* Value+Physical.swift in Sources */,
-				97544FFC1CFD5733008046A1 /* AnimationType.swift in Sources */,
-				97E1A8DE1CEC0E9200F98D86 /* DynamicItem.swift in Sources */,
-				97A61A431CF1E159009E60EB /* TimingFunction.swift in Sources */,
-				97544FFA1CFD572A008046A1 /* AnimationStep.swift in Sources */,
 				977FDF1A1CFC7448009248FD /* Example3ViewController.swift in Sources */,
-				97E8D3F31CFC1F27004E6A80 /* UITextView+Stellar.swift in Sources */,
 				973E59E71CF6F2E100F26487 /* Ball.swift in Sources */,
 				97733D6C1CFEAC930012C879 /* Example4ViewController.swift in Sources */,
-				973E5A041CF70FAE00F26487 /* TimingType.swift in Sources */,
-				970F91E51D01730B00B510BE /* DynamicItemGravity.swift in Sources */,
-				9701A0AA1D06A31900FD6644 /* UIView+FileConfigurable.swift in Sources */,
-				970F91D71D000AA000B510BE /* GravityConfigurable.swift in Sources */,
-				97E1A8D81CEB4AF200F98D86 /* Physical.swift in Sources */,
-				976CC7EB1D193C5E00476D77 /* CALayer+AnimateBehavior.swift in Sources */,
 				9734A5591D23C742000D02A8 /* Example8ViewController.swift in Sources */,
-				97E1A9111CEDEF5200F98D86 /* DynamicItem+Behavior.swift in Sources */,
-				97E8D3EE1CFC11BA004E6A80 /* CALayer+Stellar.swift in Sources */,
 				97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */,
-				97EC4C001CF9E3310059BBFA /* Chainable.swift in Sources */,
-				97544FF81CFD56D7008046A1 /* AnimationSequence.swift in Sources */,
-				976CC7CE1D190DF400476D77 /* UIView+AnimateBehavior.swift in Sources */,
-				970F91B51CFEC71600B510BE /* AttachmentConfigurable.swift in Sources */,
 				9701A0AE1D07CD8800FD6644 /* Example7ViewController.swift in Sources */,
 				970F91B31CFEBFC500B510BE /* Example5ViewController.swift in Sources */,
-				97EC4C021CF9E47D0059BBFA /* SnapConfigurable.swift in Sources */,
-				97A61A381CF082F6009E60EB /* UnitBezier.swift in Sources */,
-				97A61A341CF05DAB009E60EB /* Vectorial.swift in Sources */,
 				970F91D51CFEF7C900B510BE /* Example6ViewController.swift in Sources */,
-				97A61A3A1CF09B8F009E60EB /* DynamicItem2.swift in Sources */,
-				976CC7D01D190F4B00476D77 /* DriveAnimateBehaviors.swift in Sources */,
-				97EC4BFC1CF9DF8D0059BBFA /* BasicChainable.swift in Sources */,
-				97E8D3F11CFC13FB004E6A80 /* UILabel+Stellar.swift in Sources */,
-				97DD65D21D2252FD00255F40 /* TimingSolvable.swift in Sources */,
-				97EC4BFE1CF9E2620059BBFA /* BasicConfigurable.swift in Sources */,
-				9701A0AC1D06A58D00FD6644 /* StepControllable.swift in Sources */,
-				970A7FB71CF2AC0000C7555C /* Interpolatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,17 +488,21 @@
 		97019FED1D054ECD00FD6644 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Y2BAKEHXE4;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Stellar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AR.Stellar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -737,17 +511,21 @@
 		97019FEE1D054ECD00FD6644 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Y2BAKEHXE4;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Stellar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AR.Stellar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -848,6 +626,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AR.StellarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -861,6 +640,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AR.StellarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -872,6 +652,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AR.StellarDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StellarDemo.app/StellarDemo";
 			};
 			name = Debug;
@@ -884,6 +665,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AR.StellarDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StellarDemo.app/StellarDemo";
 			};
 			name = Release;
@@ -895,6 +677,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AR.StellarDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = StellarDemo;
 			};
 			name = Debug;
@@ -906,6 +689,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AR.StellarDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = StellarDemo;
 			};
 			name = Release;

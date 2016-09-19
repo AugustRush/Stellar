@@ -28,29 +28,6 @@ class Example2ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
-        
-        for (index, ball) in balls.enumerate() {
-            let move = CGFloat(-20 + index * 20)
-            let opacity = Float(1 - 0.2 * CGFloat(index))
-            ball.shadowOpacity(opacity).shadowOffset(CGSizeMake(20 - CGFloat(index) * 5, 20 - CGFloat(index) * 5)).shadowRadius(5).moveX(-move).moveY(-move).shadowColor(UIColor.grayColor()).duration(2).easing(.BounceOut)
-                .then().moveY(move).moveX(move).shadowOpacity(0).shadowOffset(CGSizeZero).shadowColor(UIColor.clearColor()).duration(1).easing(.BounceOut)
-                .completion({
-                    print("all completion")
-                }).animate()
-        }
-        
-        
-    }
-    
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesMoved(touches, withEvent: event)
-        
-    }
-    
     
 }
 

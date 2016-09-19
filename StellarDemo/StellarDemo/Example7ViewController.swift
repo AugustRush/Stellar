@@ -13,11 +13,6 @@ class Example7ViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
     
     @IBAction func loadFromJSON(sender: AnyObject) {
-        do {
-            try button.configureWithJSON("{\"moveX\": \"100\", \"duration\": \"1\"}")
-            button.animate()
-        } catch {
-            print(error)
-        }
+        
     }
 }

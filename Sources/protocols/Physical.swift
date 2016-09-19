@@ -1,9 +1,13 @@
 //
-//  CALayer+DriveAnimationBehaviors.swift
+//  Physical.swift
 //  StellarDemo
 //
-//  Created by AugustRush on 6/21/16.
+//  Created by AugustRush on 9/19/16.
 //  Copyright © 2016 August. All rights reserved.
 //
 
 import Foundation
+
+public protocol Physical {
+
+}
