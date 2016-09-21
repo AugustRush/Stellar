@@ -39,7 +39,7 @@ public struct UnitBezier {
     /// - parameter epsilon: The required precision of the result (where `x * epsilon` is the maximum time segment to be evaluated).
     /// - returns: The solved `y` value.
     public func solve(x: Scalar, epsilon: Scalar) -> Scalar {
-        return UnitBezierSolver(bezier: self).solve(x, eps: epsilon)
+        return UnitBezierSolver(bezier: self).solve(x: x, eps: epsilon)
     }
 }
 
@@ -47,7 +47,7 @@ extension UnitBezier: Equatable { }
 
 extension UnitBezier: TimingSolvable {
     func solveOn(time: Double, epslion: Double) -> Double {
-        return self.solve(time, epsilon: epslion)
+        return self.solve(x: time, epsilon: epslion)
     }
 }
 
@@ -137,11 +137,11 @@ private struct UnitBezierSolver {
         // First try a few iterations of Newton's method -- normally very fast.
         t2 = x
         for _ in 0..<8 {
-            x2 = sampleCurveX(t2) - x
+            x2 = sampleCurveX(t: t2) - x
             if abs(x2) < eps {
                 return t2
             }
-            d2 = sampleCurveDerivativeX(t2)
+            d2 = sampleCurveDerivativeX(t: t2)
             if abs(d2) < 1e-6 {
                 break
             }
@@ -161,7 +161,7 @@ private struct UnitBezierSolver {
         }
         
         while t0 < t1 {
-            x2 = sampleCurveX(t2)
+            x2 = sampleCurveX(t: t2)
             if abs(x2-x) < eps {
                 return t2
             }
@@ -177,6 +177,6 @@ private struct UnitBezierSolver {
     }
     
     func solve(x: Scalar, eps: Scalar) -> Scalar {
-        return sampleCurveY(solveCurveX(x, eps: eps))
+        return sampleCurveY(t: solveCurveX(x: x, eps: eps))
     }
 }

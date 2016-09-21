@@ -143,7 +143,7 @@ public enum TimingFunctionType {
 class EasingContainer: TimingSolvable {
     let easing: (Double) -> Double
     
-    init(easing: (Double) -> Double) {
+    init(easing: @escaping (Double) -> Double) {
         self.easing = easing
     }
     

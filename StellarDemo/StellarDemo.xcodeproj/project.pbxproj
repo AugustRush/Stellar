@@ -13,12 +13,19 @@
 		9701A0AE1D07CD8800FD6644 /* Example7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9701A0AD1D07CD8800FD6644 /* Example7ViewController.swift */; };
 		970F91B31CFEBFC500B510BE /* Example5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91B21CFEBFC500B510BE /* Example5ViewController.swift */; };
 		970F91D51CFEF7C900B510BE /* Example6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91D41CFEF7C900B510BE /* Example6ViewController.swift */; };
-		9710E27F1D8FD7EA003FA9D5 /* Physical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710E27E1D8FD7EA003FA9D5 /* Physical.swift */; };
+		9710E2891D9114ED003FA9D5 /* DynamicDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710E2881D9114ED003FA9D5 /* DynamicDriver.swift */; };
+		9710E28B1D9115C0003FA9D5 /* DynamicTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710E28A1D9115C0003FA9D5 /* DynamicTransmission.swift */; };
+		9710E28D1D9116BE003FA9D5 /* DynamicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710E28C1D9116BE003FA9D5 /* DynamicItem.swift */; };
+		9710E28F1D91183F003FA9D5 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710E28E1D91183F003FA9D5 /* Animation.swift */; };
+		9710E2911D911CDE003FA9D5 /* Value+DynamicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710E2901D911CDE003FA9D5 /* Value+DynamicItem.swift */; };
 		9734A5591D23C742000D02A8 /* Example8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734A5581D23C742000D02A8 /* Example8ViewController.swift */; };
 		973E59CB1CF5ACEC00F26487 /* Example1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */; };
 		973E59E71CF6F2E100F26487 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59E61CF6F2E100F26487 /* Ball.swift */; };
 		97733D6C1CFEAC930012C879 /* Example4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97733D6B1CFEAC930012C879 /* Example4ViewController.swift */; };
 		977FDF1A1CFC7448009248FD /* Example3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977FDF191CFC7448009248FD /* Example3ViewController.swift */; };
+		97AA96AF1D912A9400DEC6FA /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AA96AD1D912A9400DEC6FA /* UnitBezier.swift */; };
+		97AA96B01D912A9400DEC6FA /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AA96AE1D912A9400DEC6FA /* TimingFunction.swift */; };
+		97AA96B21D912D8700DEC6FA /* TimingSolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AA96B11D912D8700DEC6FA /* TimingSolvable.swift */; };
 		97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88C11CDDDAD000240523 /* AppDelegate.swift */; };
 		97BE88C41CDDDAD000240523 /* Example2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE88C31CDDDAD000240523 /* Example2ViewController.swift */; };
 		97BE88C71CDDDAD000240523 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97BE88C51CDDDAD000240523 /* Main.storyboard */; };
@@ -75,12 +82,19 @@
 		9701A0AD1D07CD8800FD6644 /* Example7ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example7ViewController.swift; sourceTree = "<group>"; };
 		970F91B21CFEBFC500B510BE /* Example5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example5ViewController.swift; sourceTree = "<group>"; };
 		970F91D41CFEF7C900B510BE /* Example6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example6ViewController.swift; sourceTree = "<group>"; };
-		9710E27E1D8FD7EA003FA9D5 /* Physical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Physical.swift; sourceTree = "<group>"; };
+		9710E2881D9114ED003FA9D5 /* DynamicDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicDriver.swift; sourceTree = "<group>"; };
+		9710E28A1D9115C0003FA9D5 /* DynamicTransmission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTransmission.swift; sourceTree = "<group>"; };
+		9710E28C1D9116BE003FA9D5 /* DynamicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItem.swift; sourceTree = "<group>"; };
+		9710E28E1D91183F003FA9D5 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		9710E2901D911CDE003FA9D5 /* Value+DynamicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Value+DynamicItem.swift"; sourceTree = "<group>"; };
 		9734A5581D23C742000D02A8 /* Example8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example8ViewController.swift; sourceTree = "<group>"; };
 		973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example1ViewController.swift; sourceTree = "<group>"; };
 		973E59E61CF6F2E100F26487 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		97733D6B1CFEAC930012C879 /* Example4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example4ViewController.swift; sourceTree = "<group>"; };
 		977FDF191CFC7448009248FD /* Example3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example3ViewController.swift; sourceTree = "<group>"; };
+		97AA96AD1D912A9400DEC6FA /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
+		97AA96AE1D912A9400DEC6FA /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
+		97AA96B11D912D8700DEC6FA /* TimingSolvable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingSolvable.swift; sourceTree = "<group>"; };
 		97BE88BE1CDDDAD000240523 /* StellarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StellarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97BE88C11CDDDAD000240523 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97BE88C31CDDDAD000240523 /* Example2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example2ViewController.swift; sourceTree = "<group>"; };
@@ -151,18 +165,17 @@
 		9710E27A1D8FD6DA003FA9D5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				9710E27D1D8FD7CE003FA9D5 /* protocols */,
+				97AA96B11D912D8700DEC6FA /* TimingSolvable.swift */,
+				97AA96AD1D912A9400DEC6FA /* UnitBezier.swift */,
+				97AA96AE1D912A9400DEC6FA /* TimingFunction.swift */,
+				9710E2881D9114ED003FA9D5 /* DynamicDriver.swift */,
+				9710E28A1D9115C0003FA9D5 /* DynamicTransmission.swift */,
+				9710E28C1D9116BE003FA9D5 /* DynamicItem.swift */,
+				9710E28E1D91183F003FA9D5 /* Animation.swift */,
+				9710E2901D911CDE003FA9D5 /* Value+DynamicItem.swift */,
 			);
 			name = Sources;
 			path = ../../Sources;
-			sourceTree = "<group>";
-		};
-		9710E27D1D8FD7CE003FA9D5 /* protocols */ = {
-			isa = PBXGroup;
-			children = (
-				9710E27E1D8FD7EA003FA9D5 /* Physical.swift */,
-			);
-			path = protocols;
 			sourceTree = "<group>";
 		};
 		97BE88B51CDDDAD000240523 = {
@@ -323,7 +336,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = August;
 				TargetAttributes = {
 					97019FD51D054ECD00FD6644 = {
@@ -415,17 +428,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9710E27F1D8FD7EA003FA9D5 /* Physical.swift in Sources */,
 				973E59CB1CF5ACEC00F26487 /* Example1ViewController.swift in Sources */,
 				97BE88C41CDDDAD000240523 /* Example2ViewController.swift in Sources */,
+				97AA96B01D912A9400DEC6FA /* TimingFunction.swift in Sources */,
 				977FDF1A1CFC7448009248FD /* Example3ViewController.swift in Sources */,
+				9710E28D1D9116BE003FA9D5 /* DynamicItem.swift in Sources */,
 				973E59E71CF6F2E100F26487 /* Ball.swift in Sources */,
 				97733D6C1CFEAC930012C879 /* Example4ViewController.swift in Sources */,
 				9734A5591D23C742000D02A8 /* Example8ViewController.swift in Sources */,
 				97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */,
+				9710E2911D911CDE003FA9D5 /* Value+DynamicItem.swift in Sources */,
 				9701A0AE1D07CD8800FD6644 /* Example7ViewController.swift in Sources */,
 				970F91B31CFEBFC500B510BE /* Example5ViewController.swift in Sources */,
+				9710E2891D9114ED003FA9D5 /* DynamicDriver.swift in Sources */,
+				97AA96AF1D912A9400DEC6FA /* UnitBezier.swift in Sources */,
 				970F91D51CFEF7C900B510BE /* Example6ViewController.swift in Sources */,
+				97AA96B21D912D8700DEC6FA /* TimingSolvable.swift in Sources */,
+				9710E28F1D91183F003FA9D5 /* Animation.swift in Sources */,
+				9710E28B1D9115C0003FA9D5 /* DynamicTransmission.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,7 +508,7 @@
 		97019FED1D054ECD00FD6644 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = Y2BAKEHXE4;
@@ -511,7 +531,7 @@
 		97019FEE1D054ECD00FD6644 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = Y2BAKEHXE4;
@@ -545,8 +565,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -591,8 +613,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -611,6 +635,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -619,8 +644,8 @@
 		97BE88E71CDDDAD000240523 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = StellarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -633,8 +658,8 @@
 		97BE88E81CDDDAD000240523 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = StellarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
