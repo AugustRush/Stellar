@@ -10,12 +10,9 @@ import Foundation
 
 public protocol DynamicItem {
     
+    func snapshot(to: Self, progress: Double) -> Self
 }
 
 extension DynamicItem {
-
-    func addAnimation<T>(_ a: Animation<T>) -> Void {
-        
-    }
-
+    
 }

@@ -13,9 +13,6 @@ class Example2ViewController: UIViewController {
    
     @IBOutlet var balls: [UIView]!
     
-    var attachment: UIAttachmentBehavior!
-    var animator = UIDynamicAnimator()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +21,17 @@ class Example2ViewController: UIViewController {
         
         self.title = "Chainable"
         
+        let transimission = BasicTransmission()
+        transimission.repeatCount = 100
+        transimission.duration = 1.0
+        
         let animation = Animation<Double>()
         animation.from = 100.0
-        animation.to = 200.0
-        animation.transmission = BasicTransmission()
+        animation.to = 210.0
+        animation.transmission = transimission
+        animation.render = { (v: Double) in
+            print("render value is \(v)")
+        }
         animation.start()
     }
     

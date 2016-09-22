@@ -21,6 +21,7 @@
 		9734A5591D23C742000D02A8 /* Example8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734A5581D23C742000D02A8 /* Example8ViewController.swift */; };
 		973E59CB1CF5ACEC00F26487 /* Example1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */; };
 		973E59E71CF6F2E100F26487 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59E61CF6F2E100F26487 /* Ball.swift */; };
+		974934501D93FDB900071D7C /* Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9749344F1D93FDB900071D7C /* Chainable.swift */; };
 		97733D6C1CFEAC930012C879 /* Example4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97733D6B1CFEAC930012C879 /* Example4ViewController.swift */; };
 		977FDF1A1CFC7448009248FD /* Example3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977FDF191CFC7448009248FD /* Example3ViewController.swift */; };
 		97AA96AF1D912A9400DEC6FA /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AA96AD1D912A9400DEC6FA /* UnitBezier.swift */; };
@@ -90,6 +91,7 @@
 		9734A5581D23C742000D02A8 /* Example8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example8ViewController.swift; sourceTree = "<group>"; };
 		973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example1ViewController.swift; sourceTree = "<group>"; };
 		973E59E61CF6F2E100F26487 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		9749344F1D93FDB900071D7C /* Chainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chainable.swift; sourceTree = "<group>"; };
 		97733D6B1CFEAC930012C879 /* Example4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example4ViewController.swift; sourceTree = "<group>"; };
 		977FDF191CFC7448009248FD /* Example3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example3ViewController.swift; sourceTree = "<group>"; };
 		97AA96AD1D912A9400DEC6FA /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				9710E28C1D9116BE003FA9D5 /* DynamicItem.swift */,
 				9710E28E1D91183F003FA9D5 /* Animation.swift */,
 				9710E2901D911CDE003FA9D5 /* Value+DynamicItem.swift */,
+				9749344F1D93FDB900071D7C /* Chainable.swift */,
 			);
 			name = Sources;
 			path = ../../Sources;
@@ -445,6 +448,7 @@
 				970F91D51CFEF7C900B510BE /* Example6ViewController.swift in Sources */,
 				97AA96B21D912D8700DEC6FA /* TimingSolvable.swift in Sources */,
 				9710E28F1D91183F003FA9D5 /* Animation.swift in Sources */,
+				974934501D93FDB900071D7C /* Chainable.swift in Sources */,
 				9710E28B1D9115C0003FA9D5 /* DynamicTransmission.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
