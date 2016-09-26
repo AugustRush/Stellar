@@ -21,18 +21,24 @@ class Example2ViewController: UIViewController {
         
         self.title = "Chainable"
         
-        let transimission = BasicTransmission()
-        transimission.repeatCount = 100
-        transimission.duration = 1.0
+//        let transimission = BasicTransmission()
+//        transimission.repeatCount = 100
+//        transimission.duration = 1.0
+//        
+//        let animation = Animation<CGSize>()
+//        animation.from = CGSize(width: 100,height: 100)
+//        animation.to = CGSize(width: 30,height: 30)
+//        animation.transmission = transimission
+//        animation.render = { (v: CGSize) in
+//            print("render value is \(v)")
+//        }
+//        animation.start()
         
-        let animation = Animation<Double>()
-        animation.from = 100.0
-        animation.to = 210.0
-        animation.transmission = transimission
-        animation.render = { (v: Double) in
-            print("render value is \(v)")
+        100.0.animateTo(200, duration: 1.0, render: { (v) in
+            print("value is \(v)")
+            }) { 
+                print("animation is completion!!!")
         }
-        animation.start()
     }
     
     override func didReceiveMemoryWarning() {

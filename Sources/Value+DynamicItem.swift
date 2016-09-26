@@ -34,3 +34,25 @@ extension CGFloat: DynamicItem {
         return self + incremental
     }
 }
+
+extension CGSize: DynamicItem {
+
+    public func snapshot(to: CGSize, progress: Double) -> CGSize {
+        let distanceW = to.width - self.width
+        let distanceH = to.height - self.height
+        let incrementalW = distanceW * CGFloat(progress)
+        let incrementalH = distanceH * CGFloat(progress)
+        return CGSize(width: self.width + incrementalW, height: self.height + incrementalH)
+    }
+}
+
+extension CGPoint: DynamicItem {
+    
+    public func snapshot(to: CGPoint, progress: Double) -> CGPoint {
+        let distanceX = to.x - self.x
+        let distanceY = to.y - self.y
+        let incrementalX = distanceX * CGFloat(progress)
+        let incrementalY = distanceY * CGFloat(progress)
+        return CGPoint(x: self.x + incrementalX, y: self.y + incrementalY)
+    }
+}

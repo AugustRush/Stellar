@@ -32,14 +32,15 @@ class Animation<T: DynamicItem> {
     @objc private func frameRender() -> Void {
         let progress = transmission.progress()
         let snapshot = from.snapshot(to: to, progress: progress)
+        // frame
+        self.render(snapshot)
+        //
         if transmission.completed {
             self.remove()
             if let completion = self.completion {
                 completion()
             }
         }
-        // frame
-        self.render(snapshot)
     }
     
     //MARK: Public methods
@@ -55,5 +56,4 @@ class Animation<T: DynamicItem> {
     func remove() -> Void {
         driver.remove(from: RunLoop.main, forMode: .commonModes)
     }
-    
 }

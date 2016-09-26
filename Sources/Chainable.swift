@@ -9,6 +9,10 @@
 import Foundation
 
 protocol Chainable {
-    func then() -> Chainable
+    func then() -> Self
     func animate() -> Void
+}
+
+protocol BasicChainable: Chainable {
+    
 }

@@ -15,4 +15,17 @@ public protocol DynamicItem {
 
 extension DynamicItem {
     
+    func animateTo(_ to: Self, duration: CFTimeInterval, timingFunction: TimingFunctionType = .Default, render: @escaping (Self) -> Void, completion: @escaping () -> Void) -> Void {
+        let transimission = BasicTransmission()
+        transimission.timingCurve = timingFunction.easing()
+        transimission.duration = duration
+        
+        let animation = Animation<Self>()
+        animation.from = self
+        animation.to = to
+        animation.transmission = transimission
+        animation.render = render
+        animation.completion = completion
+        animation.start()
+    }
 }
