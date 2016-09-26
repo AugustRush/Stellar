@@ -21,29 +21,21 @@ class Example2ViewController: UIViewController {
         
         self.title = "Chainable"
         
-//        let transimission = BasicTransmission()
-//        transimission.repeatCount = 100
-//        transimission.duration = 1.0
-//        
-//        let animation = Animation<CGSize>()
-//        animation.from = CGSize(width: 100,height: 100)
-//        animation.to = CGSize(width: 30,height: 30)
-//        animation.transmission = transimission
-//        animation.render = { (v: CGSize) in
-//            print("render value is \(v)")
-//        }
-//        animation.start()
-        
-        100.0.animateTo(200, duration: 1.0, render: { (v) in
-            print("value is \(v)")
-            }) { 
-                print("animation is completion!!!")
-        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        for ball in balls {
+            ball.center.y.animateTo(400, duration: 1, render: { (c) in
+                ball.center.y = c
+                print("center y is \(c)")
+            })
+        }
+    }
 }
 
