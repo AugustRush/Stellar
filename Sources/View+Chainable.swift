@@ -24,7 +24,7 @@ extension View: BasicChainable {
     
     func then() -> Self {
         let context = animationContext()
-        context.addGroup()
+        context.addStep()
         return self
     }
     
@@ -37,10 +37,10 @@ extension View: BasicChainable {
     
     func addAnimationStep(type: UIAnimationType, change: Any) -> Void {
         let context = animationContext()
-        var step = AnimationStep()
-        step.type = .MoveX
-        step.change = change
-        context.addStep(step)
+        var descriptor = AnimationDescriptor()
+        descriptor.type = type
+        descriptor.change = change
+        context.addDescriptor(descriptor)
     }
     
     private func animationContext() -> AnimationContext {

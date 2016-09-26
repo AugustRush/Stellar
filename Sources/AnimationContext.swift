@@ -13,24 +13,24 @@ enum UIAnimationType {
     case MoveY
 }
 
-struct AnimationStep {
+struct AnimationDescriptor {
     var type: UIAnimationType!
     var change: Any!
 }
 
 class AnimationContext {
-    typealias AnimationGroup = Array<AnimationStep>
+    typealias AnimationStep = Array<AnimationDescriptor>
     //
-    private var steps: [AnimationGroup] = Array()
+    private var steps: [AnimationStep] = Array()
     
     //MARK: Public methods
-    func addStep(_ step: AnimationStep) -> Void {
-        var group = lastGroup()
+    func addDescriptor(_ step: AnimationDescriptor) -> Void {
+        var group = lastStep()
         group.append(step)
     }
     
-    func addGroup() -> Void {
-        let group = AnimationGroup()
+    func addStep() -> Void {
+        let group = AnimationStep()
         steps.append(group)
     }
     
@@ -39,13 +39,13 @@ class AnimationContext {
     }
     
     //MARK: Private methods
-    private func lastGroup() -> AnimationGroup {
-        var group = steps.last
-        if group == nil {
-            group = Array()
-            steps.append(group!)
+    private func lastStep() -> AnimationStep {
+        var step = steps.last
+        if step == nil {
+            step = Array()
+            steps.append(step!)
         }
-        return group!
+        return step!
     }
     
 }
