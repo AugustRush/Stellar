@@ -163,7 +163,7 @@ extension CALayer: BasicConfigurable1, SnapConfigurable1, AttachmentConfigurable
         return self
     }
     
-    public func completion(c: () -> Void) -> CALayer {
+    public func completion(c: @escaping () -> Void) -> CALayer {
         context.changeCompletion(c)
         return self
     }

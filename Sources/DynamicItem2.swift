@@ -9,7 +9,7 @@
 import UIKit
 
 //for 4 latitude
-final class DynamicItem2<T: Vectorial where T.VectorType == CGRect>: NSObject, UIDynamicItem {
+final class DynamicItem2<T: Vectorial>: NSObject, UIDynamicItem where T.VectorType == CGRect {
     
     var from: T
     var to: T
@@ -20,10 +20,10 @@ final class DynamicItem2<T: Vectorial where T.VectorType == CGRect>: NSObject, U
     internal var fromR: CGRect
     internal var toR: CGRect
     weak var behavior: UIDynamicBehavior!
-    private var change: (x: CGFloat,y: CGFloat,z: CGFloat,w: CGFloat)
+    fileprivate var change: (x: CGFloat,y: CGFloat,z: CGFloat,w: CGFloat)
     var referenceChangeLength: CGFloat
     
-    init(from: T, to: T, render: (T) -> Void) {
+    init(from: T, to: T, render: @escaping (T) -> Void) {
         self.from = from
         self.to = to
         self.render = render
@@ -58,7 +58,7 @@ final class DynamicItem2<T: Vectorial where T.VectorType == CGRect>: NSObject, U
         let curZ = fromR.width + change.z * progress;
         let curW = fromR.height + change.w * progress;
         
-        let rect = CGRectMake(curX, curY, curZ, curW)
+        let rect = CGRect(x: curX, y: curY, width: curZ, height: curW)
         var curV = from.convert(rect)
         if progress >= 1.0 {
             if boundaryLimit {
@@ -71,16 +71,16 @@ final class DynamicItem2<T: Vectorial where T.VectorType == CGRect>: NSObject, U
     }
     
     //MARK: UIDynamicItem protocol
-    var center: CGPoint = CGPointZero {
+    var center: CGPoint = CGPoint.zero {
         didSet {
             updateFrame()
         }
     }
     
-    var transform: CGAffineTransform = CGAffineTransformIdentity
+    var transform: CGAffineTransform = CGAffineTransform.identity
     var bounds: CGRect {
         get {
-            return CGRectMake(0.0, 0.0, 100.0, 100.0)
+            return CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
         }
     }
 }

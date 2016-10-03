@@ -23,7 +23,7 @@ final class DynamicItem2<T: Vectorial2>: NSObject, UIDynamicItem {
     private var change: (x: CGFloat,y: CGFloat,z: CGFloat,w: CGFloat)
     var referenceChangeLength: CGFloat
     
-    init(from: T, to: T, render: (T) -> Void) {
+    init(from: T, to: T, render: @escaping (T) -> Void) {
         self.from = from
         self.to = to
         self.render = render

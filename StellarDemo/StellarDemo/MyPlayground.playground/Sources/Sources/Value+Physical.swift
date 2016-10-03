@@ -10,7 +10,7 @@ import UIKit
 
 extension Float: Physical, Vectorial, Interpolatable {
     
-    public func fallTo(to: Float,magnitude: Double = 1.0, render: (Float) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: Float,magnitude: Double = 1.0, render: @escaping (Float) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItemGravity(from: self, to: to, render: render)
         let push = item.pushBehavior(.Down)
         item.behavior = push
@@ -19,7 +19,7 @@ extension Float: Physical, Vectorial, Interpolatable {
         push.commitToBasic()
     }
     
-    public func snapTo(to: Float, damping: CGFloat = 0.5,render: ((Float) -> Void), completion: (() -> Void)? = nil) {
+    public func snapTo(to: Float, damping: CGFloat = 0.5,render: ((Float) -> Void), completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem<Float>(from: self, to: to, render: render)
         let snap = item.snapBehavior(item.toP, damping: damping)
         item.behavior = snap
@@ -27,7 +27,7 @@ extension Float: Physical, Vectorial, Interpolatable {
         snap.commit()
     }
     
-    public func attachmentTo(to: Float,damping: CGFloat = 0.5,frequency: CGFloat = 0.5,render: (Float) -> Void, completion: (() -> Void)? = nil) {
+    public func attachmentTo(to: Float,damping: CGFloat = 0.5,frequency: CGFloat = 0.5,render: @escaping (Float) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem<Float>(from: self, to: to,render: render)
         let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: damping, frequency: frequency)
         item.behavior = attachment
@@ -35,7 +35,7 @@ extension Float: Physical, Vectorial, Interpolatable {
         attachment.commit()
     }
     
-    public func pushedTo(to: Float,render: (Float) -> Void, completion: (() -> Void)? = nil) {
+    public func pushedTo(to: Float,render: @escaping (Float) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem<Float>(from: self,to: to,render: render)
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
         let push = item.pushBehavior(direction, mode: .Instantaneous, magnitude: 1.0)
@@ -45,7 +45,7 @@ extension Float: Physical, Vectorial, Interpolatable {
         push.commit()
     }
     
-    public func animateTo(to: Float, duration: CFTimeInterval = 0.25, delay: CFTimeInterval = 0.0, type: TimingFunctionType = .Default, autoreverses: Bool = false, repeatCount: Int = 0, render: (Float) -> Void, completion: ((Bool) -> Void)? = nil) {
+    public func animateTo(to: Float, duration: CFTimeInterval = 0.25, delay: CFTimeInterval = 0.0, type: TimingFunctionType = .Default, autoreverses: Bool = false, repeatCount: Int = 0, render: @escaping (Float) -> Void, completion: ((Bool) -> Void)? = nil) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
@@ -74,7 +74,7 @@ extension Float: Physical, Vectorial, Interpolatable {
 
 extension Double: Physical, Vectorial, Interpolatable {
     
-    public func fallTo(to: Double,magnitude: Double = 1.0,render: (Double) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: Double,magnitude: Double = 1.0,render: (Double) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItemGravity(from: self, to: to, render: render)
         let push = item.pushBehavior(.Down)
         item.behavior = push
@@ -83,7 +83,7 @@ extension Double: Physical, Vectorial, Interpolatable {
         push.commitToBasic()
     }
     
-    public func snapTo(to: Double,damping: CGFloat = 0.5,render: ((Double) -> Void), completion: (() -> Void)? = nil) {
+    public func snapTo(to: Double,damping: CGFloat = 0.5,render: ((Double) -> Void), completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem<Double>(from: self, to: to, render: render)
         let snap = item.snapBehavior(item.toP, damping: damping)
         item.behavior = snap
@@ -91,7 +91,7 @@ extension Double: Physical, Vectorial, Interpolatable {
         snap.commit()
     }
     
-    public func attachmentTo(to: Double,damping: CGFloat = 0.5,frequency: CGFloat = 0.5,render: (Double) -> Void, completion: (() -> Void)? = nil) {
+    public func attachmentTo(to: Double,damping: CGFloat = 0.5,frequency: CGFloat = 0.5,render: (Double) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem<Double>(from: self, to: to,render: render)
         let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: damping, frequency: frequency)
         item.behavior = attachment
@@ -99,7 +99,7 @@ extension Double: Physical, Vectorial, Interpolatable {
         attachment.commit()
     }
     
-    public func pushedTo(to: Double,render: (Double) -> Void, completion: (() -> Void)? = nil) {
+    public func pushedTo(to: Double,render: @escaping (Double) -> Void, completion: (() -> Void)? = nil) {
         let item = DynamicItem<Double>(from: self,to: to,render: render)
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
         let push = item.pushBehavior(direction, mode: .Instantaneous, magnitude: 1.0)
@@ -109,7 +109,7 @@ extension Double: Physical, Vectorial, Interpolatable {
         push.commit()
     }
     
-    public func animateTo(to: Double, duration: CFTimeInterval = 0.25, delay: CFTimeInterval = 0.0,type: TimingFunctionType = .Default, autoreverses: Bool = false, repeatCount: Int = 0, render: (Double) -> Void, completion: ((Bool) -> Void)? = nil) {
+    public func animateTo(to: Double, duration: CFTimeInterval = 0.25, delay: CFTimeInterval = 0.0,type: TimingFunctionType = .Default, autoreverses: Bool = false, repeatCount: Int = 0, render: @escaping (Double) -> Void, completion: ((Bool) -> Void)? = nil) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
@@ -142,7 +142,7 @@ extension Double: Physical, Vectorial, Interpolatable {
 
 extension CGFloat: Physical , Vectorial, Interpolatable {
     
-    public func fallTo(to: CGFloat,magnitude: Double = 1.0,render: (CGFloat) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: CGFloat,magnitude: Double = 1.0,render: @escaping (CGFloat) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItemGravity(from: self, to: to, render: render)
         let push = item.pushBehavior(.Down)
         item.behavior = push
@@ -151,7 +151,7 @@ extension CGFloat: Physical , Vectorial, Interpolatable {
         push.commitToBasic()
     }
     
-    public func snapTo(to: CGFloat,damping: CGFloat = 0.5,render: ((CGFloat) -> Void), completion: (() -> Void)? = nil) {
+    public func snapTo(to: CGFloat,damping: CGFloat = 0.5,render: @escaping ((CGFloat) -> Void), completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem<CGFloat>(from: self, to: to, render: render)
         let snap = item.snapBehavior(item.toP, damping: damping)
         item.behavior = snap
@@ -159,7 +159,7 @@ extension CGFloat: Physical , Vectorial, Interpolatable {
         snap.commit()
     }
     
-    public func attachmentTo(to: CGFloat,damping: CGFloat = 0.5,frequency: CGFloat = 0.5,render: (CGFloat) -> Void, completion: (() -> Void)? = nil) {
+    public func attachmentTo(to: CGFloat,damping: CGFloat = 0.5,frequency: CGFloat = 0.5,render: @escaping (CGFloat) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem<CGFloat>(from: self, to: to,render: render)
         let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: damping, frequency: frequency)
         item.behavior = attachment
@@ -167,7 +167,7 @@ extension CGFloat: Physical , Vectorial, Interpolatable {
         attachment.commit()
     }
     
-    public func pushedTo(to: CGFloat,render: (CGFloat) -> Void, completion: (() -> Void)? = nil) {
+    public func pushedTo(to: CGFloat,render: @escaping (CGFloat) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem<CGFloat>(from: self,to: to,render: render)
         item.boundaryLimit = true
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
@@ -177,7 +177,7 @@ extension CGFloat: Physical , Vectorial, Interpolatable {
         push.commit()
     }
     
-    public func animateTo(to: CGFloat, duration: CFTimeInterval = 0.25, delay:CFTimeInterval = 0.25, type: TimingFunctionType = .Default, autoreverses: Bool = false, repeatCount: Int = 0, render: (CGFloat) -> Void, completion: ((Bool) -> Void)? = nil) {
+    public func animateTo(to: CGFloat, duration: CFTimeInterval = 0.25, delay:CFTimeInterval = 0.25, type: TimingFunctionType = .Default, autoreverses: Bool = false, repeatCount: Int = 0, render: @escaping (CGFloat) -> Void, completion: ((Bool) -> Void)? = nil) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
@@ -210,7 +210,7 @@ extension CGFloat: Physical , Vectorial, Interpolatable {
 
 extension CGSize: Physical, Vectorial, Interpolatable {
     
-    public func fallTo(to: CGSize,magnitude: Double = 1.0, render: (CGSize) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: CGSize,magnitude: Double = 1.0, render: @escaping (CGSize) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItemGravity(from: self, to: to, render: render)
         let push = item.pushBehavior(.Down)
         item.behavior = push
@@ -219,7 +219,7 @@ extension CGSize: Physical, Vectorial, Interpolatable {
         push.commitToBasic()
     }
     
-    public func snapTo(to: CGSize,damping: CGFloat = 0.5,render: ((CGSize) -> Void), completion: (() -> Void)? = nil) {
+    public func snapTo(to: CGSize,damping: CGFloat = 0.5,render: @escaping ((CGSize) -> Void), completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem<CGSize>(from: self, to: to, render: render)
         let snap = item.snapBehavior(item.toP, damping: damping)
         item.behavior = snap
@@ -227,7 +227,7 @@ extension CGSize: Physical, Vectorial, Interpolatable {
         snap.commit()
     }
     
-    public func attachmentTo(to: CGSize,damping: CGFloat = 0.5,frequency: CGFloat = 0.5,render: (CGSize) -> Void, completion: (() -> Void)? = nil) {
+    public func attachmentTo(to: CGSize,damping: CGFloat = 0.5,frequency: CGFloat = 0.5,render: @escaping (CGSize) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem<CGSize>(from: self, to: to,render: render)
         let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: damping, frequency: frequency)
         item.behavior = attachment
@@ -235,7 +235,7 @@ extension CGSize: Physical, Vectorial, Interpolatable {
         attachment.commit()
     }
     
-    public func pushedTo(to: CGSize,render: (CGSize) -> Void, completion: (() -> Void)? = nil) {
+    public func pushedTo(to: CGSize,render: @escaping (CGSize) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem<CGSize>(from: self,to: to,render: render)
         item.boundaryLimit = true
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
@@ -245,7 +245,7 @@ extension CGSize: Physical, Vectorial, Interpolatable {
         push.commit()
     }
     
-    public func animateTo(to: CGSize, duration: CFTimeInterval = 0.25, delay: CFTimeInterval = 0.0, type: TimingFunctionType = .Default, autoreverses: Bool = false, repeatCount: Int = 0, render: (CGSize) -> Void, completion: ((Bool) -> Void)? = nil) {
+    public func animateTo(to: CGSize, duration: CFTimeInterval = 0.25, delay: CFTimeInterval = 0.0, type: TimingFunctionType = .Default, autoreverses: Bool = false, repeatCount: Int = 0, render: @escaping (CGSize) -> Void, completion: ((Bool) -> Void)? = nil) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push
@@ -279,7 +279,7 @@ extension CGSize: Physical, Vectorial, Interpolatable {
 
 extension CGPoint: Physical, Vectorial, Interpolatable {
     
-    public func fallTo(to: CGPoint,magnitude: Double = 1.0,render: (CGPoint) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: CGPoint,magnitude: Double = 1.0,render: (CGPoint) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItemGravity(from: self, to: to, render: render)
         let push = item.pushBehavior(.Down)
         item.behavior = push
@@ -288,7 +288,7 @@ extension CGPoint: Physical, Vectorial, Interpolatable {
         push.commitToBasic()
     }
     
-    public func snapTo(to: CGPoint,damping: CGFloat = 0.5,render: ((CGPoint) -> Void), completion: (() -> Void)? = nil) {
+    public func snapTo(to: CGPoint,damping: CGFloat = 0.5,render: @escaping ((CGPoint) -> Void), completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem<CGPoint>(from: self, to: to, render: render)
         let snap = item.snapBehavior(item.toP, damping: damping)
         item.behavior = snap
@@ -296,7 +296,7 @@ extension CGPoint: Physical, Vectorial, Interpolatable {
         snap.commit()
     }
     
-    public func attachmentTo(to: CGPoint,damping: CGFloat = 0.5,frequency: CGFloat = 0.5,render: (CGPoint) -> Void, completion: (() -> Void)? = nil) {
+    public func attachmentTo(to: CGPoint,damping: CGFloat = 0.5,frequency: CGFloat = 0.5,render: (CGPoint) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem<CGPoint>(from: self, to: to,render: render)
         let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: damping, frequency: frequency)
         item.behavior = attachment
@@ -304,7 +304,7 @@ extension CGPoint: Physical, Vectorial, Interpolatable {
         attachment.commit()
     }
     
-    public func pushedTo(to: CGPoint,render: (CGPoint) -> Void, completion: (() -> Void)? = nil) {
+    public func pushedTo(to: CGPoint,render: (CGPoint) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem<CGPoint>(from: self,to: to,render: render)
         item.boundaryLimit = true
         let direction = CGVectorMake(item.toP.x - item.fromP.x, item.toP.y - item.fromP.y)
@@ -346,7 +346,7 @@ extension CGPoint: Physical, Vectorial, Interpolatable {
 
 extension CGRect: Physical, Vectorial2, Interpolatable {
     
-    public func fallTo(to: CGRect,magnitude: Double = 1.0, render: (CGRect) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: CGRect,magnitude: Double = 1.0, render: (CGRect) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItemGravity(from: self, to: to, render: render)
         let push = item.pushBehavior(.Down)
         item.behavior = push
@@ -355,7 +355,7 @@ extension CGRect: Physical, Vectorial2, Interpolatable {
         push.commitToBasic()
     }
     
-    public func snapTo(to: CGRect,damping: CGFloat = 05, render: ((CGRect) -> Void), completion: (() -> Void)? = nil) {
+    public func snapTo(to: CGRect,damping: CGFloat = 05, render: ((CGRect) -> Void), completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render:render)
         let snap = item.snapBehavior(CGPointMake(0.0, item.referenceChangeLength), damping: damping)
         item.behavior = snap
@@ -363,7 +363,7 @@ extension CGRect: Physical, Vectorial2, Interpolatable {
         snap.commit()
     }
     
-    public func attachmentTo(to: CGRect,damping: CGFloat = 0.5,frequency: CGFloat = 0.5, render: (CGRect) -> Void, completion: (() -> Void)? = nil) {
+    public func attachmentTo(to: CGRect,damping: CGFloat = 0.5,frequency: CGFloat = 0.5, render: (CGRect) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render:render)
         let point = CGPointMake(0.0, item.referenceChangeLength)
         let attachment = item.attachmentBehavior(point, length: 0.0, damping: damping, frequency: frequency)
@@ -372,7 +372,7 @@ extension CGRect: Physical, Vectorial2, Interpolatable {
         attachment.commit()
     }
     
-    public func pushedTo(to: CGRect, render: (CGRect) -> Void, completion: (() -> Void)? = nil) {
+    public func pushedTo(to: CGRect, render: (CGRect) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render:render)
         let push = item.pushBehavior(.Down)
         push.magnitude = 2.0
@@ -421,7 +421,7 @@ extension CGRect: Physical, Vectorial2, Interpolatable {
 
 extension UIColor: Physical, Vectorial2, Interpolatable {
     
-    public func fallTo(to: UIColor,magnitude: Double = 1.0, render: (UIColor) -> Void, completion: (() -> Void)? = nil) {
+    public func fallTo(to: UIColor,magnitude: Double = 1.0, render: @escaping (UIColor) -> Void, completion: @escaping (() -> Void)? = nil) {
         let item = DynamicItemGravity(from: self, to: to, render: render)
         let push = item.pushBehavior(.Down)
         item.behavior = push
@@ -430,7 +430,7 @@ extension UIColor: Physical, Vectorial2, Interpolatable {
         push.commitToBasic()
     }
     
-    public func snapTo(to: UIColor,damping: CGFloat = 0.5, render: ((UIColor) -> Void), completion: (() -> Void)? = nil) {
+    public func snapTo(to: UIColor,damping: CGFloat = 0.5, render: ((UIColor) -> Void), completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render:render)
         let point = CGPointMake(0.0, item.referenceChangeLength)
         let snap = item.snapBehavior(point, damping: damping)
@@ -439,7 +439,7 @@ extension UIColor: Physical, Vectorial2, Interpolatable {
         snap.commit()
     }
     
-    public func attachmentTo(to: UIColor,damping: CGFloat = 0.5,frequency: CGFloat = 0.5, render: (UIColor) -> Void, completion: (() -> Void)? = nil) {
+    public func attachmentTo(to: UIColor,damping: CGFloat = 0.5,frequency: CGFloat = 0.5, render: @escaping (UIColor) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render:render)
         let point = CGPointMake(0.0, item.referenceChangeLength)
         let attachment = item.attachmentBehavior(point, length: 0.0, damping: damping, frequency: frequency)
@@ -448,7 +448,7 @@ extension UIColor: Physical, Vectorial2, Interpolatable {
         attachment.commit()
     }
     
-    public func pushedTo(to: UIColor, render: (UIColor) -> Void, completion: (() -> Void)? = nil) {
+    public func pushedTo(to: UIColor, render: @escaping (UIColor) -> Void, completion: (@escaping () -> Void)? = nil) {
         let item = DynamicItem2(from: self, to: to, render:render)
         let push = item.pushBehavior(.Down)
         push.magnitude = 2.0
@@ -458,7 +458,7 @@ extension UIColor: Physical, Vectorial2, Interpolatable {
         push.commit()
     }
     
-    public func animateTo(to: UIColor, duration: CFTimeInterval = 0.25, delay:CFTimeInterval = 0.0, type: TimingFunctionType = .Default, autoreverses: Bool = false, repeatCount: Int = 0, render: (UIColor) -> Void, completion: ((Bool) -> Void)? = nil) {
+    public func animateTo(to: UIColor, duration: CFTimeInterval = 0.25, delay:CFTimeInterval = 0.0, type: TimingFunctionType = .Default, autoreverses: Bool = false, repeatCount: Int = 0, render: @escaping (UIColor) -> Void, completion: ((Bool) -> Void)? = nil) {
         let basicItem = DynamicItemBasic(from: self, to: to, render: render)
         let push = basicItem.pushBehavior(.Down)
         basicItem.behavior = push

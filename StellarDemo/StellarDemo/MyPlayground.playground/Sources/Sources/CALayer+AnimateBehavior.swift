@@ -959,7 +959,7 @@ extension CALayer: DriveAnimateBehaviors {
         return push
     }
     
-    private func snapBehavior<T: Vectorial>(damping: CGFloat, from: T, to: T, render: (T) -> Void) -> UIDynamicBehavior {
+    private func snapBehavior<T: Vectorial>(damping: CGFloat, from: T, to: T, render: @escaping (T) -> Void) -> UIDynamicBehavior {
         let item = DynamicItem(from: from, to: to, render: render)
         let snap = item.snapBehavior(item.toP, damping: damping)
         item.behavior = snap
@@ -967,7 +967,7 @@ extension CALayer: DriveAnimateBehaviors {
         return snap
     }
     
-    private func snapBehavior<T: Vectorial2>(damping: CGFloat, from: T, to: T, render: (T) -> Void) -> UIDynamicBehavior {
+    private func snapBehavior<T: Vectorial2>(damping: CGFloat, from: T, to: T, render: @escaping (T) -> Void) -> UIDynamicBehavior {
         let item = DynamicItem2(from: from, to: to, render: render)
         let point = CGPointMake(0.0, item.referenceChangeLength)
         let snap = item.snapBehavior(point, damping: damping)
@@ -976,14 +976,14 @@ extension CALayer: DriveAnimateBehaviors {
         return snap
     }
     
-    private func attachmentBehavior<T: Vectorial>(damping: CGFloat, frequency: CGFloat, from: T, to: T, render: (T) -> Void) -> UIDynamicBehavior {
+    private func attachmentBehavior<T: Vectorial>(damping: CGFloat, frequency: CGFloat, from: T, to: T, render: @escaping (T) -> Void) -> UIDynamicBehavior {
         let item = DynamicItem(from: from, to: to, render: render)
         let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: damping, frequency: frequency)
         item.behavior = attachment
         return attachment
     }
     
-    private func attachmentBehavior<T: Vectorial2>(damping: CGFloat, frequency: CGFloat, from: T, to: T, render: (T) -> Void) -> UIDynamicBehavior {
+    private func attachmentBehavior<T: Vectorial2>(damping: CGFloat, frequency: CGFloat, from: T, to: T, render: @escaping (T) -> Void) -> UIDynamicBehavior {
         let item = DynamicItem2(from: from, to: to, render: render)
         let point = CGPointMake(0.0, item.referenceChangeLength)
         let attachment = item.attachmentBehavior(point, length: 0.0, damping: damping, frequency: frequency)
@@ -991,7 +991,7 @@ extension CALayer: DriveAnimateBehaviors {
         return attachment
     }
     
-    private func gravityBehavior<T: Interpolatable>(magnitude: Double, from: T, to: T, render: (T) -> Void) -> UIDynamicBehavior {
+    private func gravityBehavior<T: Interpolatable>(magnitude: Double, from: T, to: T, render: @escaping (T) -> Void) -> UIDynamicBehavior {
         let item = DynamicItemGravity(from: from, to: to, render: render)
         let push = item.pushBehavior(.Down)
         item.behavior = push

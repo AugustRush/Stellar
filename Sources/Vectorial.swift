@@ -10,6 +10,6 @@ import UIKit
 
 protocol Vectorial {
     associatedtype VectorType
-    func convert(p: VectorType) -> Self
+    func convert(_ p: VectorType) -> Self
     func reverse() -> VectorType
 }

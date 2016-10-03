@@ -180,7 +180,7 @@ extension UIView: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, G
         return self
     }
     
-    public func completion(c: () -> Void) -> UIView {
+    public func completion(c: @escaping () -> Void) -> UIView {
         context.changeCompletion(c)
         return self
     }

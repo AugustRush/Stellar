@@ -9,11 +9,14 @@
 import UIKit
 
 public protocol Physical {
-    func fallTo(to: Self, magnitude: Double,render: (Self) -> Void, completion: (() -> Void)?)
-    func snapTo(to: Self, damping: CGFloat,render: (Self) -> Void, completion: (() -> Void)?)
-    func attachmentTo(to: Self,damping: CGFloat, frequency: CGFloat,render: (Self) -> Void, completion: (() -> Void)?)
-    func pushedTo(to: Self,render: (Self) -> Void, completion: (() -> Void)?)
-    func animateTo(to: Self, duration: CFTimeInterval, delay: CFTimeInterval, type: TimingFunctionType, autoreverses: Bool, repeatCount: Int, render: (Self) -> Void, completion: ((Bool) -> Void)?)
+    
+    associatedtype T
+    
+    func fallTo(to: T, magnitude: Double,render: @escaping (T) -> Void, completion: (() -> Void)?)
+    func snapTo(to: T, damping: CGFloat,render: @escaping (T) -> Void, completion: (() -> Void)?)
+    func attachmentTo(to: T,damping: CGFloat, frequency: CGFloat,render: @escaping (T) -> Void, completion: (() -> Void)?)
+    func pushedTo(to: T,render: @escaping (T) -> Void, completion: (() -> Void)?)
+    func animateTo(to: T, duration: CFTimeInterval, delay: CFTimeInterval, type: TimingFunctionType, autoreverses: Bool, repeatCount: Int, render: @escaping (T) -> Void, completion: ((Bool) -> Void)?)
     //    func collisionWith(path: UIBezierPath,render: (Self) -> Void)
 }
 

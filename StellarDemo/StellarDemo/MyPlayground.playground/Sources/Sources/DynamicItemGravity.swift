@@ -26,7 +26,7 @@ class DynamicItemGravity<T: Interpolatable>: NSObject, UIDynamicItem {
     }()
     
     //MARK: init method
-    init(from: T, to: T, render: (T) -> Void) {
+    init(from: T, to: T, render: @escaping (T) -> Void) {
         self.from = from
         self.to = to
         self.render = render

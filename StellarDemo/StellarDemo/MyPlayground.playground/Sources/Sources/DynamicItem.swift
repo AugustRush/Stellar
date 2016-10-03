@@ -20,7 +20,7 @@ final class DynamicItem<T: Vectorial>: NSObject, UIDynamicItem {
     internal var toP: CGPoint
     private var change: CGFloat
     
-    init(from: T, to: T, render: (T) -> Void) {
+    init(from: T, to: T, render: @escaping (T) -> Void) {
         self.from = from
         self.to = to
         self.fromP = from.reverse()

@@ -9,26 +9,26 @@
 import UIKit
 
 enum PhysicalDirection {
-    case Left
-    case Right
-    case Up
-    case Down
+    case left
+    case right
+    case up
+    case down
     case Angle(CGFloat)
-    case Vector(CGFloat,CGFloat)
+    case vector(CGFloat,CGFloat)
     
     func angle() -> CGFloat {
         switch self {
         case .Angle(let a):
             return a
-        case .Vector(let x, let y):
+        case .vector(let x, let y):
             return atan2(y, x)
-        case .Left:
+        case .left:
             return atan2(0, -1)
-        case .Right:
+        case .right:
             return atan2(0, 1)
-        case .Up: 
+        case .up: 
             return atan2(-1, 0)
-        case .Down: 
+        case .down: 
             return atan2(1, 0)
         }
     }
@@ -37,21 +37,21 @@ enum PhysicalDirection {
 extension UIDynamicItem {
     
     //gravity
-    func gravityBehavior(magnitude: CGFloat = 1.0, direction: PhysicalDirection = .Down) -> UIGravityBehavior {
+    func gravityBehavior(_ magnitude: CGFloat = 1.0, direction: PhysicalDirection = .down) -> UIGravityBehavior {
         let gravity = UIGravityBehavior()
         switch direction {
         case .Angle(let a):
             gravity.setAngle(a, magnitude: magnitude)
-        case .Left:
-            gravity.gravityDirection = CGVectorMake(-1, 0)
-        case .Right:
-            gravity.gravityDirection = CGVectorMake(1, 0)
-        case .Up:
-            gravity.gravityDirection = CGVectorMake(0, -1)
-        case .Down:
-            gravity.gravityDirection = CGVectorMake(0, 1)
-        case .Vector(let x, let y):
-            gravity.gravityDirection = CGVectorMake(x, y)
+        case .left:
+            gravity.gravityDirection = CGVector(dx: -1, dy: 0)
+        case .right:
+            gravity.gravityDirection = CGVector(dx: 1, dy: 0)
+        case .up:
+            gravity.gravityDirection = CGVector(dx: 0, dy: -1)
+        case .down:
+            gravity.gravityDirection = CGVector(dx: 0, dy: 1)
+        case .vector(let x, let y):
+            gravity.gravityDirection = CGVector(dx: x, dy: y)
         }
         gravity.magnitude = magnitude
         gravity.addItem(self)
@@ -59,14 +59,14 @@ extension UIDynamicItem {
     }
 
     //snap
-    func snapBehavior(toPoint: CGPoint, damping: CGFloat = 0.5) -> UISnapBehavior {
-        let snap = UISnapBehavior(item: self,snapToPoint: toPoint)
+    func snapBehavior(_ toPoint: CGPoint, damping: CGFloat = 0.5) -> UISnapBehavior {
+        let snap = UISnapBehavior(item: self,snapTo: toPoint)
         snap.damping = damping
         return snap
     }
     
     //attachment
-    func attachmentBehavior(toAnchor: CGPoint, length: CGFloat = 0.0, damping: CGFloat = 0.5, frequency: CGFloat = 1.0) -> UIAttachmentBehavior {
+    func attachmentBehavior(_ toAnchor: CGPoint, length: CGFloat = 0.0, damping: CGFloat = 0.5, frequency: CGFloat = 1.0) -> UIAttachmentBehavior {
         let attachment = UIAttachmentBehavior(item: self,attachedToAnchor: toAnchor)
         attachment.length = length
         attachment.damping = damping
@@ -74,15 +74,15 @@ extension UIDynamicItem {
         return attachment
     }
     
-    func attachmentBehavior(toItem: UIDynamicItem, damping: CGFloat = 0.5, frequency: CGFloat = 1.0) -> UIAttachmentBehavior {
-        let attachment = UIAttachmentBehavior(item: self,attachedToItem: toItem)
+    func attachmentBehavior(_ toItem: UIDynamicItem, damping: CGFloat = 0.5, frequency: CGFloat = 1.0) -> UIAttachmentBehavior {
+        let attachment = UIAttachmentBehavior(item: self,attachedTo: toItem)
         attachment.damping = damping
         attachment.frequency = frequency
         return attachment
     }
     
-    func attachmentBehavior(toItem: UIDynamicItem, damping: CGFloat = 0.5, frequency: CGFloat = 1.0, length: CGFloat = 0.0) -> UIAttachmentBehavior {
-        let attachment = UIAttachmentBehavior(item: self,attachedToItem: toItem)
+    func attachmentBehavior(_ toItem: UIDynamicItem, damping: CGFloat = 0.5, frequency: CGFloat = 1.0, length: CGFloat = 0.0) -> UIAttachmentBehavior {
+        let attachment = UIAttachmentBehavior(item: self,attachedTo: toItem)
         attachment.damping = damping
         attachment.length = length
         attachment.frequency = frequency
@@ -90,28 +90,28 @@ extension UIDynamicItem {
     }
     
     //push
-    func pushBehavior(direction: CGVector, mode:UIPushBehaviorMode = .Instantaneous, magnitude: CGFloat = 1.0) -> UIPushBehavior {
+    func pushBehavior(_ direction: CGVector, mode:UIPushBehaviorMode = .instantaneous, magnitude: CGFloat = 1.0) -> UIPushBehavior {
         let push = UIPushBehavior(items: [self], mode: mode)
         push.pushDirection = direction
         push.magnitude = magnitude
         return push
     }
     
-    func pushBehavior(direction: PhysicalDirection, mode:UIPushBehaviorMode = .Instantaneous, magnitude: CGFloat = 1.0) -> UIPushBehavior {
+    func pushBehavior(_ direction: PhysicalDirection, mode:UIPushBehaviorMode = .instantaneous, magnitude: CGFloat = 1.0) -> UIPushBehavior {
         let push = UIPushBehavior(items: [self], mode: mode)
         switch direction {
         case .Angle(let a):
             push.setAngle(a, magnitude: magnitude)
-        case .Left:
-            push.pushDirection = CGVectorMake(-1, 0)
-        case .Right:
-            push.pushDirection = CGVectorMake(1, 0)
-        case .Up:
-            push.pushDirection = CGVectorMake(0, -1)
-        case .Down:
-            push.pushDirection = CGVectorMake(0, 1)
-        case .Vector(let x, let y):
-            push.pushDirection = CGVectorMake(x, y)
+        case .left:
+            push.pushDirection = CGVector(dx: -1, dy: 0)
+        case .right:
+            push.pushDirection = CGVector(dx: 1, dy: 0)
+        case .up:
+            push.pushDirection = CGVector(dx: 0, dy: -1)
+        case .down:
+            push.pushDirection = CGVector(dx: 0, dy: 1)
+        case .vector(let x, let y):
+            push.pushDirection = CGVector(dx: x, dy: y)
         }
         
         push.magnitude = magnitude
@@ -119,7 +119,7 @@ extension UIDynamicItem {
     }
 
     
-    func pushBehavior(angle: CGFloat, mode:UIPushBehaviorMode = .Instantaneous, magnitude: CGFloat = 1.0) -> UIPushBehavior {
+    func pushBehavior(_ angle: CGFloat, mode:UIPushBehaviorMode = .instantaneous, magnitude: CGFloat = 1.0) -> UIPushBehavior {
         let push = UIPushBehavior(items: [self], mode: mode)
         push.angle = angle
         push.magnitude = magnitude
@@ -127,33 +127,33 @@ extension UIDynamicItem {
     }
     
     //collision
-    func collisionBehavior(mode: UICollisionBehaviorMode = .Boundaries) -> UICollisionBehavior {
+    func collisionBehavior(_ mode: UICollisionBehaviorMode = .boundaries) -> UICollisionBehavior {
         let collision = UICollisionBehavior()
         collision.collisionMode = mode
         collision.addItem(self)
         return collision
     }
     
-    func collisionBehavior(mode: UICollisionBehaviorMode = .Boundaries, path: UIBezierPath) -> UICollisionBehavior {
+    func collisionBehavior(_ mode: UICollisionBehaviorMode = .boundaries, path: UIBezierPath) -> UICollisionBehavior {
         let collision = UICollisionBehavior()
         collision.collisionMode = mode
-        let identifier = String(unsafeAddressOf(self))
-        collision.addBoundaryWithIdentifier(identifier, forPath: path)
+        let identifier = String(describing: Unmanaged.passUnretained(self).toOpaque())
+        collision.addBoundary(withIdentifier: identifier as NSCopying, for: path)
         collision.addItem(self)
         return collision
     }
     
-    func collisionBehavior(mode: UICollisionBehaviorMode = .Boundaries, fromPoint: CGPoint, toPoint: CGPoint) -> UICollisionBehavior {
+    func collisionBehavior(_ mode: UICollisionBehaviorMode = .boundaries, fromPoint: CGPoint, toPoint: CGPoint) -> UICollisionBehavior {
         let collision = UICollisionBehavior()
         collision.collisionMode = mode
-        let identifier = String(unsafeAddressOf(self))
-        collision.addBoundaryWithIdentifier(identifier, fromPoint: fromPoint, toPoint: toPoint)
+        let identifier = String(describing: Unmanaged.passUnretained(self).toOpaque())
+        collision.addBoundary(withIdentifier: identifier as NSCopying, from: fromPoint, to: toPoint)
         collision.addItem(self)
         return collision
     }
     
     //itemBehavior
-    func itemBehavior(elasticity: CGFloat = 0.5, friction: CGFloat = 0.5, density: CGFloat = 1, resistance: CGFloat = 0, angularResistance: CGFloat = 0, allowsRotation: Bool = true) -> UIDynamicItemBehavior {
+    func itemBehavior(_ elasticity: CGFloat = 0.5, friction: CGFloat = 0.5, density: CGFloat = 1, resistance: CGFloat = 0, angularResistance: CGFloat = 0, allowsRotation: Bool = true) -> UIDynamicItemBehavior {
         let behavior = UIDynamicItemBehavior()
         behavior.addItem(self)
         behavior.elasticity = elasticity

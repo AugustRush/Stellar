@@ -18,15 +18,15 @@ class DynamicItemGravity<T: Interpolatable>: NSObject, UIDynamicItem {
     var boundary = true
     weak var behavior: UIDynamicBehavior?
     //private vars
-    private var referenceChangedLength: Double = 0.0
+    fileprivate var referenceChangedLength: Double = 0.0
     //External data to store (performance)
-    private var externalData: Any?
-    private lazy var beginTime = {
+    fileprivate var externalData: Any?
+    fileprivate lazy var beginTime = {
         return CACurrentMediaTime()
     }()
     
     //MARK: init method
-    init(from: T, to: T, render: (T) -> Void) {
+    init(from: T, to: T, render: @escaping (T) -> Void) {
         self.from = from
         self.to = to
         self.render = render
@@ -39,7 +39,7 @@ class DynamicItemGravity<T: Interpolatable>: NSObject, UIDynamicItem {
     }
     
     //MARK: private methods
-    private func caculateReferenceChangedLength() {
+    fileprivate func caculateReferenceChangedLength() {
         switch from {
         case let f as CGFloat:
             let t = to as! CGFloat
@@ -94,7 +94,7 @@ class DynamicItemGravity<T: Interpolatable>: NSObject, UIDynamicItem {
         }
     }
     
-    private func updateFrame() {
+    fileprivate func updateFrame() {
         if referenceChangedLength <= 0.0 {
             behavior?.cancel()
             return
@@ -114,21 +114,21 @@ class DynamicItemGravity<T: Interpolatable>: NSObject, UIDynamicItem {
         render(value)
     }
     
-    private func gravityOffset(t: CFTimeInterval) -> Double {
+    fileprivate func gravityOffset(_ t: CFTimeInterval) -> Double {
         return t * t * 1000.0 * magnitude;
     }
     
     //MARK: UIDynamicItem protocol
-    var center: CGPoint = CGPointZero {
+    var center: CGPoint = CGPoint.zero {
         didSet {
             updateFrame()
         }
     }
     
-    var transform: CGAffineTransform = CGAffineTransformIdentity
+    var transform: CGAffineTransform = CGAffineTransform.identity
     var bounds: CGRect {
         get {
-            return CGRectMake(0.0, 0.0, 100.0, 100.0)
+            return CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
         }
     }
 }

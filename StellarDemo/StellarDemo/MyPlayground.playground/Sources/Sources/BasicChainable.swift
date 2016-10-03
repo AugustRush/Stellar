@@ -36,7 +36,7 @@ public protocol BasicChainable: Chainable {
     func shadowColor(color: UIColor) -> UIView
     func shadowOpacity(opacity: Float) -> UIView
     func makeTintColor(color: UIColor) -> UIView
-    func completion(c: () -> Void) -> UIView
+    func completion(c: @escaping () -> Void) -> UIView
 }
 
 //CALayer
@@ -65,5 +65,5 @@ public protocol BasicChainable1: Chainable1 {
     func shadowOffset(offset: CGSize) -> CALayer
     func shadowColor(color: UIColor) -> CALayer
     func shadowOpacity(opacity: Float) -> CALayer
-    func completion(c: () -> Void) -> CALayer
+    func completion(c: @escaping () -> Void) -> CALayer
 }

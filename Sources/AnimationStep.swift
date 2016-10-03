@@ -11,7 +11,7 @@ import UIKit
 internal class AnimationStep {
     var types = [AnimationType]()
     var duration: CFTimeInterval = 0.25
-    var timing: TimingFunctionType = .Default
+    var timing: TimingFunctionType = .default
     var delay: CFTimeInterval = 0.0
     var autoreverses: Bool = false
     var repeatCount: Int = 0

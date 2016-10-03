@@ -48,7 +48,7 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem, Timing
     }()
     
     //MARK: Life cycle methods
-    init(from: T, to: T, render: (T) -> Void) {
+    init(from: T, to: T, render: @escaping (T) -> Void) {
         self.from = from
         self.to = to
         self.render = render
