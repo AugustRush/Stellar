@@ -83,7 +83,7 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate, AnimationS
             sequence.start()
         }
         //make a temple sequence for next step
-        makeNextSequence()
+        _ = makeNextSequence()
     }
     
     func removeAllRemaining() {
