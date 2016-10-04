@@ -30,14 +30,14 @@ class Example2ViewController: UIViewController {
     }
 
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         
-        for (index, ball) in balls.enumerate() {
+        for (index, ball) in balls.enumerated() {
             let move = CGFloat(-20 + index * 20)
             let opacity = Float(1 - 0.2 * CGFloat(index))
-            ball.shadowOpacity(opacity).shadowOffset(CGSizeMake(20 - CGFloat(index) * 5, 20 - CGFloat(index) * 5)).shadowRadius(5).moveX(-move).moveY(-move).shadowColor(UIColor.grayColor()).duration(2).easing(.BounceOut)
-                .then().moveY(move).moveX(move).shadowOpacity(0).shadowOffset(CGSizeZero).shadowColor(UIColor.clearColor()).duration(1).easing(.BounceOut)
+            ball.shadowOpacity(opacity).shadowOffset(CGSize(width: 20 - CGFloat(index) * 5, height: 20 - CGFloat(index) * 5)).shadowRadius(5).moveX(-move).moveY(-move).shadowColor(UIColor.gray).duration(2).easing(.bounceOut)
+                .then().moveY(move).moveX(move).shadowOpacity(0).shadowOffset(CGSize.zero).shadowColor(UIColor.clear).duration(1).easing(.bounceOut)
                 .completion({
                     print("all completion")
                 }).animate()
@@ -46,8 +46,8 @@ class Example2ViewController: UIViewController {
         
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesMoved(touches, withEvent: event)
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
         
     }
     

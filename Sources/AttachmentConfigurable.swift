@@ -9,9 +9,9 @@
 import UIKit
 
 public protocol AttachmentConfigurable: BasicChainable {
-    func attachment(damping: CGFloat, frequency: CGFloat) -> AttachmentConfigurable
+    func attachment(_ damping: CGFloat, frequency: CGFloat) -> AttachmentConfigurable
 }
 
 public protocol AttachmentConfigurable1: BasicChainable1 {
-    func attachment(damping: CGFloat, frequency: CGFloat) -> AttachmentConfigurable1
+    func attachment(_ damping: CGFloat, frequency: CGFloat) -> AttachmentConfigurable1
 }

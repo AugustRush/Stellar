@@ -9,61 +9,61 @@
 import UIKit
 
 public protocol BasicChainable: Chainable {
-    func moveX(increment: CGFloat) -> UIView
-    func moveY(increment: CGFloat) -> UIView
-    func moveTo(point: CGPoint) -> UIView
-    func makeColor(color: UIColor) -> UIView
-    func makeAlpha(alpha: CGFloat) -> UIView
-    func rotate(z: CGFloat) -> UIView
-    func rotateX(x: CGFloat) -> UIView
-    func rotateY(y: CGFloat) -> UIView
-    func rotateXY(xy: CGFloat) -> UIView
-    func makeWidth(width: CGFloat) -> UIView
-    func makeHeight(height: CGFloat) -> UIView
-    func makeSize(size: CGSize) -> UIView
-    func makeFrame(frame: CGRect) -> UIView
-    func makeBounds(bounds: CGRect) -> UIView
-    func scaleX(x: CGFloat) -> UIView
-    func scaleY(y: CGFloat) -> UIView
-    func scaleXY(x: CGFloat, _ y: CGFloat) -> UIView
-    func cornerRadius(radius: CGFloat) -> UIView
-    func borderWidth(width: CGFloat) -> UIView
-    func shadowRadius(radius: CGFloat) -> UIView
-    func zPosition(position: CGFloat) -> UIView
-    func anchorPoint(point: CGPoint) -> UIView
-    func anchorPointZ(z: CGFloat) -> UIView
-    func shadowOffset(offset: CGSize) -> UIView
-    func shadowColor(color: UIColor) -> UIView
-    func shadowOpacity(opacity: Float) -> UIView
-    func makeTintColor(color: UIColor) -> UIView
-    func completion(c: () -> Void) -> UIView
+    func moveX(_ increment: CGFloat) -> UIView
+    func moveY(_ increment: CGFloat) -> UIView
+    func moveTo(_ point: CGPoint) -> UIView
+    func makeColor(_ color: UIColor) -> UIView
+    func makeAlpha(_ alpha: CGFloat) -> UIView
+    func rotate(_ z: CGFloat) -> UIView
+    func rotateX(_ x: CGFloat) -> UIView
+    func rotateY(_ y: CGFloat) -> UIView
+    func rotateXY(_ xy: CGFloat) -> UIView
+    func makeWidth(_ width: CGFloat) -> UIView
+    func makeHeight(_ height: CGFloat) -> UIView
+    func makeSize(_ size: CGSize) -> UIView
+    func makeFrame(_ frame: CGRect) -> UIView
+    func makeBounds(_ bounds: CGRect) -> UIView
+    func scaleX(_ x: CGFloat) -> UIView
+    func scaleY(_ y: CGFloat) -> UIView
+    func scaleXY(_ x: CGFloat, _ y: CGFloat) -> UIView
+    func cornerRadius(_ radius: CGFloat) -> UIView
+    func borderWidth(_ width: CGFloat) -> UIView
+    func shadowRadius(_ radius: CGFloat) -> UIView
+    func zPosition(_ position: CGFloat) -> UIView
+    func anchorPoint(_ point: CGPoint) -> UIView
+    func anchorPointZ(_ z: CGFloat) -> UIView
+    func shadowOffset(_ offset: CGSize) -> UIView
+    func shadowColor(_ color: UIColor) -> UIView
+    func shadowOpacity(_ opacity: Float) -> UIView
+    func makeTintColor(_ color: UIColor) -> UIView
+    func completion(_ c: @escaping () -> Void) -> UIView
 }
 
 //CALayer
 public protocol BasicChainable1: Chainable1 {
-    func moveTo(point: CGPoint) -> CALayer
-    func makeColor(color: UIColor) -> CALayer
-    func makeOpacity(opacity: Float) -> CALayer
-    func rotate(z: CGFloat) -> CALayer
-    func rotateX(x: CGFloat) -> CALayer
-    func rotateY(y: CGFloat) -> CALayer
-    func rotateXY(xy: CGFloat) -> CALayer
-    func makeWidth(width: CGFloat) -> CALayer
-    func makeHeight(height: CGFloat) -> CALayer
-    func makeSize(size: CGSize) -> CALayer
-    func makeFrame(frame: CGRect) -> CALayer
-    func makeBounds(bounds: CGRect) -> CALayer
-    func scaleX(x: CGFloat) -> CALayer
-    func scaleY(y: CGFloat) -> CALayer
-    func scaleXY(x: CGFloat, _ y: CGFloat) -> CALayer
-    func cornerRadius(radius: CGFloat) -> CALayer
-    func borderWidth(width: CGFloat) -> CALayer
-    func shadowRadius(radius: CGFloat) -> CALayer
-    func zPosition(position: CGFloat) -> CALayer
-    func anchorPoint(point: CGPoint) -> CALayer
-    func anchorPointZ(z: CGFloat) -> CALayer
-    func shadowOffset(offset: CGSize) -> CALayer
-    func shadowColor(color: UIColor) -> CALayer
-    func shadowOpacity(opacity: Float) -> CALayer
-    func completion(c: () -> Void) -> CALayer
+    func moveTo(_ point: CGPoint) -> CALayer
+    func makeColor(_ color: UIColor) -> CALayer
+    func makeOpacity(_ opacity: Float) -> CALayer
+    func rotate(_ z: CGFloat) -> CALayer
+    func rotateX(_ x: CGFloat) -> CALayer
+    func rotateY(_ y: CGFloat) -> CALayer
+    func rotateXY(_ xy: CGFloat) -> CALayer
+    func makeWidth(_ width: CGFloat) -> CALayer
+    func makeHeight(_ height: CGFloat) -> CALayer
+    func makeSize(_ size: CGSize) -> CALayer
+    func makeFrame(_ frame: CGRect) -> CALayer
+    func makeBounds(_ bounds: CGRect) -> CALayer
+    func scaleX(_ x: CGFloat) -> CALayer
+    func scaleY(_ y: CGFloat) -> CALayer
+    func scaleXY(_ x: CGFloat, _ y: CGFloat) -> CALayer
+    func cornerRadius(_ radius: CGFloat) -> CALayer
+    func borderWidth(_ width: CGFloat) -> CALayer
+    func shadowRadius(_ radius: CGFloat) -> CALayer
+    func zPosition(_ position: CGFloat) -> CALayer
+    func anchorPoint(_ point: CGPoint) -> CALayer
+    func anchorPointZ(_ z: CGFloat) -> CALayer
+    func shadowOffset(_ offset: CGSize) -> CALayer
+    func shadowColor(_ color: UIColor) -> CALayer
+    func shadowOpacity(_ opacity: Float) -> CALayer
+    func completion(_ c: @escaping () -> Void) -> CALayer
 }

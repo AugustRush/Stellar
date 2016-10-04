@@ -11,87 +11,87 @@ import UIKit
 class Example8ViewController: UIViewController {
     @IBOutlet weak var animateView: Ball!
     
-    @IBAction func segment1ValueChanged(sender: UISegmentedControl) {
+    @IBAction func segment1ValueChanged(_ sender: UISegmentedControl) {
         
         let index = sender.selectedSegmentIndex;
         
         switch index {
         case 0:
-            animateView.moveX(200).duration(1.0).easing(.Default).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.default).autoreverses().animate()
         case 1:
-            animateView.moveX(200).duration(1.0).easing(.EaseIn).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.easeIn).autoreverses().animate()
         case 2:
-            animateView.moveX(200).duration(1.0).easing(.EaseOut).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.easeOut).autoreverses().animate()
         case 3:
-            animateView.moveX(200).duration(1.0).easing(.EaseInEaseOut).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.easeInEaseOut).autoreverses().animate()
         default:
             print("")
         }
         
     }
-    @IBAction func segment2ValueChanged(sender: UISegmentedControl) {
+    @IBAction func segment2ValueChanged(_ sender: UISegmentedControl) {
         animateView.frame = CGRect(x: 20,y: 120,width: 40,height: 40)
         let index = sender.selectedSegmentIndex;
         
         switch index {
         case 0:
-            animateView.moveX(200).duration(1.0).easing(.Linear).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.linear).autoreverses().animate()
         case 1:
-            animateView.moveX(200).duration(1.0).easing(.SwiftOut).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.swiftOut).autoreverses().animate()
         case 2:
-            animateView.moveX(200).duration(1.0).easing(.BackEaseIn).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.backEaseIn).autoreverses().animate()
         case 3:
-            animateView.moveX(200).duration(1.0).easing(.BackEaseOut).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.backEaseOut).autoreverses().animate()
         default:
             print("")
         }
 
     }
-    @IBAction func segment3ValueChanged(sender: UISegmentedControl) {
+    @IBAction func segment3ValueChanged(_ sender: UISegmentedControl) {
         animateView.frame = CGRect(x: 20,y: 120,width: 40,height: 40)
         let index = sender.selectedSegmentIndex;
         
         switch index {
         case 0:
-            animateView.moveX(200).duration(1.0).easing(.BackEaseInOut).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.backEaseInOut).autoreverses().animate()
         case 1:
-            animateView.moveX(200).duration(1.0).easing(.BounceOut).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.bounceOut).autoreverses().animate()
         case 2:
-            animateView.moveX(200).duration(1.0).easing(.Sine).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.sine).autoreverses().animate()
         case 3:
-            animateView.moveX(200).duration(1.0).easing(.Circ).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.circ).autoreverses().animate()
         default:
             print("")
         }
 
     }
     
-    @IBAction func segment4ValueChanged(sender: UISegmentedControl) {
+    @IBAction func segment4ValueChanged(_ sender: UISegmentedControl) {
         animateView.frame = CGRect(x: 20,y: 120,width: 40,height: 40)
         let index = sender.selectedSegmentIndex;
         
         switch index {
         case 0:
-            animateView.moveX(200).duration(1.0).easing(.ExponentialIn).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.exponentialIn).autoreverses().animate()
         case 1:
-            animateView.moveX(200).duration(1.0).easing(.ExponentialOut).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.exponentialOut).autoreverses().animate()
         case 2:
-            animateView.moveX(200).duration(1.0).easing(.ElasticIn).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.elasticIn).autoreverses().animate()
         case 3:
-            animateView.moveX(200).duration(1.0).easing(.ElasticOut).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.elasticOut).autoreverses().animate()
         default:
             print("")
         }
         
     }
     
-    @IBAction func segment5ValueChanged(sender: UISegmentedControl) {
+    @IBAction func segment5ValueChanged(_ sender: UISegmentedControl) {
         animateView.frame = CGRect(x: 20,y: 120,width: 40,height: 40)
         let index = sender.selectedSegmentIndex;
         
         switch index {
         case 0:
-            animateView.moveX(200).duration(1.0).easing(.BounceReverse).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.bounceReverse).autoreverses().animate()
         case 1:
             fallthrough
         case 2:

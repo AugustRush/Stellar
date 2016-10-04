@@ -9,9 +9,9 @@
 import UIKit
 
 public protocol SnapConfigurable: BasicChainable {
-    func snap(damping: CGFloat) -> SnapConfigurable
+    func snap(_ damping: CGFloat) -> SnapConfigurable
 }
 
 public protocol SnapConfigurable1: BasicChainable1 {
-    func snap(damping: CGFloat) -> SnapConfigurable1
+    func snap(_ damping: CGFloat) -> SnapConfigurable1
 }

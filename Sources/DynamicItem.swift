@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DynamicItem<T: Vectorial where T.VectorType == CGPoint>: NSObject, UIDynamicItem {
+final class DynamicItem<T: Vectorial>: NSObject, UIDynamicItem where T.VectorType == CGPoint {
     var from: T
     var to: T
     var render: (T) -> Void
@@ -18,9 +18,9 @@ final class DynamicItem<T: Vectorial where T.VectorType == CGPoint>: NSObject, U
     weak var behavior: UIDynamicBehavior!
     internal var fromP: CGPoint
     internal var toP: CGPoint
-    private var change: CGFloat
+    fileprivate var change: CGFloat
     
-    init(from: T, to: T, render: (T) -> Void) {
+    init(from: T, to: T, render: @escaping (T) -> Void) {
         self.from = from
         self.to = to
         self.fromP = from.reverse()
@@ -63,10 +63,10 @@ final class DynamicItem<T: Vectorial where T.VectorType == CGPoint>: NSObject, U
             updateFrame()
         }
     }
-    var transform: CGAffineTransform = CGAffineTransformIdentity
+    var transform: CGAffineTransform = CGAffineTransform.identity
     var bounds: CGRect {
         get {
-            return CGRectMake(center.x, center.y, 100, 100)
+            return CGRect(x: center.x, y: center.y, width: 100, height: 100)
         }
     }
 }

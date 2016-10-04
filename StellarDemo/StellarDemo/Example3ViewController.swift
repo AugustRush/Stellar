@@ -13,21 +13,21 @@ class Example3ViewController: UIViewController {
     @IBOutlet var leftLines: [Ball]!
     @IBOutlet var rightLines: [Ball]!
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesEnded(touches, withEvent: event)
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
         
-        for (index,line) in leftLines.enumerate() {
+        for (index,line) in leftLines.enumerated() {
             let delay = Double(index) * 0.2
             line.moveX(200).duration(2).delay(delay)
-                .then().moveX(-200).makeColor(UIColor.greenColor()).easing(.Linear).repeatCount(100).autoreverses().duration(2).animate()
-            line.makeWidth(80).delay(delay).duration(1).autoreverses().easing(.Linear).repeatCount(100).animate()
+                .then().moveX(-200).makeColor(UIColor.green).easing(.linear).repeatCount(100).autoreverses().duration(2).animate()
+            line.makeWidth(80).delay(delay).duration(1).autoreverses().easing(.linear).repeatCount(100).animate()
         }
         
-        for (index,line) in rightLines.enumerate() {
+        for (index,line) in rightLines.enumerated() {
             let delay = Double(index) * 0.2
             line.moveX(-200).duration(2).delay(delay)
-                .then().moveX(200).makeColor(UIColor.purpleColor()).easing(.Linear).repeatCount(100).autoreverses().duration(2).animate()
-            line.makeWidth(80).delay(delay).duration(1).autoreverses().easing(.Linear).repeatCount(100).animate()
+                .then().moveX(200).makeColor(UIColor.purple).easing(.linear).repeatCount(100).autoreverses().duration(2).animate()
+            line.makeWidth(80).delay(delay).duration(1).autoreverses().easing(.linear).repeatCount(100).animate()
         }
 
 
