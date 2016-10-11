@@ -8,35 +8,23 @@
 
 import UIKit
 
-class Animation<T: DynamicItem> {
+class Animation<T: DynamicItem>: Animatable {
     public var transmission: DynamicTransmission!
     public var from: T!
     public var to: T!
     public var render: ((T) -> Void)!
     public var completion: (() -> Void)?
-    private lazy var driver: DynamicDiver = {
-        let driver = DynamicDiver(target: self, selector: #selector(frameRender))
-        driver.isPaused = true
-        driver.add(to: RunLoop.main, forMode: .commonModes)
-        return driver
-    }()
-    
-    
-    init() {
-        driver = DynamicDiver(target: self, selector: #selector(frameRender))
-        driver.isPaused = true
-        driver.add(to: RunLoop.main, forMode: .commonModes)
-    }
     
     //MARK: Private methods
-    @objc private func frameRender() -> Void {
+    func frameRender() -> Void {
         let progress = transmission.progress()
         let snapshot = from.snapshot(to: to, progress: progress)
         // frame
         self.render(snapshot)
         //
         if transmission.completed {
-            self.remove()
+            let identifier = String(unsafeBitCast(self, to: Int.self))
+            Animator.shared.removeAnimation(forKey: identifier)
             if let completion = self.completion {
                 completion()
             }
@@ -44,16 +32,4 @@ class Animation<T: DynamicItem> {
     }
     
     //MARK: Public methods
-    
-    func start() -> Void {
-        driver.isPaused = false
-    }
-    
-    func pause() -> Void {
-        driver.isPaused = true
-    }
-    
-    func remove() -> Void {
-        driver.remove(from: RunLoop.main, forMode: .commonModes)
-    }
 }

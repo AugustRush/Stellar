@@ -13,7 +13,7 @@ protocol Chainable {
     func animate() -> Void
 }
 
-protocol BasicChainable: Chainable {
+protocol UIChainable: Chainable {
     func moveX(_ increment: CGFloat) -> Self
     func moveY(_ increment: CGFloat) -> Self
 }

@@ -31,11 +31,12 @@ class Example2ViewController: UIViewController {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         for ball in balls {
-            ball.center.y.animateTo(400, duration: 1, render: { (c) in
-                ball.center.y = c
-                print("center y is \(c)")
-            })
+            ball.moveX(100).moveY(100).animate()
         }
+    }
+    
+    deinit {
+        print("dealloc !!!")
     }
 }
 

@@ -13,10 +13,6 @@
 		9701A0AE1D07CD8800FD6644 /* Example7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9701A0AD1D07CD8800FD6644 /* Example7ViewController.swift */; };
 		970F91B31CFEBFC500B510BE /* Example5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91B21CFEBFC500B510BE /* Example5ViewController.swift */; };
 		970F91D51CFEF7C900B510BE /* Example6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91D41CFEF7C900B510BE /* Example6ViewController.swift */; };
-		9710E2891D9114ED003FA9D5 /* DynamicDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710E2881D9114ED003FA9D5 /* DynamicDriver.swift */; };
-		9710E28B1D9115C0003FA9D5 /* DynamicTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710E28A1D9115C0003FA9D5 /* DynamicTransmission.swift */; };
-		9710E28D1D9116BE003FA9D5 /* DynamicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710E28C1D9116BE003FA9D5 /* DynamicItem.swift */; };
-		9710E28F1D91183F003FA9D5 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710E28E1D91183F003FA9D5 /* Animation.swift */; };
 		9710E2911D911CDE003FA9D5 /* Value+DynamicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710E2901D911CDE003FA9D5 /* Value+DynamicItem.swift */; };
 		9734A5591D23C742000D02A8 /* Example8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734A5581D23C742000D02A8 /* Example8ViewController.swift */; };
 		973E59CB1CF5ACEC00F26487 /* Example1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */; };
@@ -24,6 +20,12 @@
 		974934501D93FDB900071D7C /* Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9749344F1D93FDB900071D7C /* Chainable.swift */; };
 		97733D6C1CFEAC930012C879 /* Example4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97733D6B1CFEAC930012C879 /* Example4ViewController.swift */; };
 		977FDF1A1CFC7448009248FD /* Example3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977FDF191CFC7448009248FD /* Example3ViewController.swift */; };
+		9784792B1DACBF23007D32B4 /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978479271DACBF23007D32B4 /* Animatable.swift */; };
+		9784792C1DACBF23007D32B4 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978479281DACBF23007D32B4 /* Animation.swift */; };
+		9784792D1DACBF23007D32B4 /* DynamicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978479291DACBF23007D32B4 /* DynamicItem.swift */; };
+		9784792E1DACBF23007D32B4 /* DynamicTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784792A1DACBF23007D32B4 /* DynamicTransmission.swift */; };
+		978479311DACBF2C007D32B4 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784792F1DACBF2C007D32B4 /* Animator.swift */; };
+		978479321DACBF2C007D32B4 /* DynamicDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978479301DACBF2C007D32B4 /* DynamicDriver.swift */; };
 		97AA96AF1D912A9400DEC6FA /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AA96AD1D912A9400DEC6FA /* UnitBezier.swift */; };
 		97AA96B01D912A9400DEC6FA /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AA96AE1D912A9400DEC6FA /* TimingFunction.swift */; };
 		97AA96B21D912D8700DEC6FA /* TimingSolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AA96B11D912D8700DEC6FA /* TimingSolvable.swift */; };
@@ -85,10 +87,6 @@
 		9701A0AD1D07CD8800FD6644 /* Example7ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example7ViewController.swift; sourceTree = "<group>"; };
 		970F91B21CFEBFC500B510BE /* Example5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example5ViewController.swift; sourceTree = "<group>"; };
 		970F91D41CFEF7C900B510BE /* Example6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example6ViewController.swift; sourceTree = "<group>"; };
-		9710E2881D9114ED003FA9D5 /* DynamicDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicDriver.swift; sourceTree = "<group>"; };
-		9710E28A1D9115C0003FA9D5 /* DynamicTransmission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTransmission.swift; sourceTree = "<group>"; };
-		9710E28C1D9116BE003FA9D5 /* DynamicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItem.swift; sourceTree = "<group>"; };
-		9710E28E1D91183F003FA9D5 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		9710E2901D911CDE003FA9D5 /* Value+DynamicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Value+DynamicItem.swift"; sourceTree = "<group>"; };
 		9734A5581D23C742000D02A8 /* Example8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example8ViewController.swift; sourceTree = "<group>"; };
 		973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example1ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +94,12 @@
 		9749344F1D93FDB900071D7C /* Chainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chainable.swift; sourceTree = "<group>"; };
 		97733D6B1CFEAC930012C879 /* Example4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example4ViewController.swift; sourceTree = "<group>"; };
 		977FDF191CFC7448009248FD /* Example3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example3ViewController.swift; sourceTree = "<group>"; };
+		978479271DACBF23007D32B4 /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
+		978479281DACBF23007D32B4 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		978479291DACBF23007D32B4 /* DynamicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItem.swift; sourceTree = "<group>"; };
+		9784792A1DACBF23007D32B4 /* DynamicTransmission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTransmission.swift; sourceTree = "<group>"; };
+		9784792F1DACBF2C007D32B4 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		978479301DACBF2C007D32B4 /* DynamicDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicDriver.swift; sourceTree = "<group>"; };
 		97AA96AD1D912A9400DEC6FA /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
 		97AA96AE1D912A9400DEC6FA /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
 		97AA96B11D912D8700DEC6FA /* TimingSolvable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingSolvable.swift; sourceTree = "<group>"; };
@@ -174,11 +178,13 @@
 				97AA96B11D912D8700DEC6FA /* TimingSolvable.swift */,
 				97AA96AD1D912A9400DEC6FA /* UnitBezier.swift */,
 				97AA96AE1D912A9400DEC6FA /* TimingFunction.swift */,
-				9710E2881D9114ED003FA9D5 /* DynamicDriver.swift */,
-				9710E28A1D9115C0003FA9D5 /* DynamicTransmission.swift */,
-				9710E28C1D9116BE003FA9D5 /* DynamicItem.swift */,
-				9710E28E1D91183F003FA9D5 /* Animation.swift */,
 				9710E2901D911CDE003FA9D5 /* Value+DynamicItem.swift */,
+				978479271DACBF23007D32B4 /* Animatable.swift */,
+				9784792F1DACBF2C007D32B4 /* Animator.swift */,
+				978479301DACBF2C007D32B4 /* DynamicDriver.swift */,
+				978479281DACBF23007D32B4 /* Animation.swift */,
+				978479291DACBF23007D32B4 /* DynamicItem.swift */,
+				9784792A1DACBF23007D32B4 /* DynamicTransmission.swift */,
 				9749344F1D93FDB900071D7C /* Chainable.swift */,
 				97AC2CB41D9944ED00422EE6 /* View+Chainable.swift */,
 				97AC2CB61D9946F700422EE6 /* AnimationContext.swift */,
@@ -356,6 +362,7 @@
 					};
 					97BE88BD1CDDDAD000240523 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 2TV8FB59SP;
 						LastSwiftMigration = 0800;
 					};
 					97BE88D11CDDDAD000240523 = {
@@ -438,26 +445,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				973E59CB1CF5ACEC00F26487 /* Example1ViewController.swift in Sources */,
+				978479321DACBF2C007D32B4 /* DynamicDriver.swift in Sources */,
 				97BE88C41CDDDAD000240523 /* Example2ViewController.swift in Sources */,
 				97AA96B01D912A9400DEC6FA /* TimingFunction.swift in Sources */,
 				977FDF1A1CFC7448009248FD /* Example3ViewController.swift in Sources */,
+				9784792D1DACBF23007D32B4 /* DynamicItem.swift in Sources */,
 				97AC2CB51D9944ED00422EE6 /* View+Chainable.swift in Sources */,
-				9710E28D1D9116BE003FA9D5 /* DynamicItem.swift in Sources */,
 				973E59E71CF6F2E100F26487 /* Ball.swift in Sources */,
 				97733D6C1CFEAC930012C879 /* Example4ViewController.swift in Sources */,
+				9784792E1DACBF23007D32B4 /* DynamicTransmission.swift in Sources */,
 				9734A5591D23C742000D02A8 /* Example8ViewController.swift in Sources */,
 				97BE88C21CDDDAD000240523 /* AppDelegate.swift in Sources */,
 				97AC2CB71D9946F700422EE6 /* AnimationContext.swift in Sources */,
 				9710E2911D911CDE003FA9D5 /* Value+DynamicItem.swift in Sources */,
 				9701A0AE1D07CD8800FD6644 /* Example7ViewController.swift in Sources */,
 				970F91B31CFEBFC500B510BE /* Example5ViewController.swift in Sources */,
-				9710E2891D9114ED003FA9D5 /* DynamicDriver.swift in Sources */,
+				9784792B1DACBF23007D32B4 /* Animatable.swift in Sources */,
+				9784792C1DACBF23007D32B4 /* Animation.swift in Sources */,
 				97AA96AF1D912A9400DEC6FA /* UnitBezier.swift in Sources */,
 				970F91D51CFEF7C900B510BE /* Example6ViewController.swift in Sources */,
 				97AA96B21D912D8700DEC6FA /* TimingSolvable.swift in Sources */,
-				9710E28F1D91183F003FA9D5 /* Animation.swift in Sources */,
+				978479311DACBF2C007D32B4 /* Animator.swift in Sources */,
 				974934501D93FDB900071D7C /* Chainable.swift in Sources */,
-				9710E28B1D9115C0003FA9D5 /* DynamicTransmission.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,6 +667,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2TV8FB59SP;
 				INFOPLIST_FILE = StellarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -672,6 +682,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2TV8FB59SP;
 				INFOPLIST_FILE = StellarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

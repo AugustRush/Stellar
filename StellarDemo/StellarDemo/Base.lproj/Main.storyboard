@@ -1299,8 +1299,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="aZ8-5U-OjU"/>
                     <connections>
-                        <outletCollection property="balls" destination="L8q-Ys-7ur" collectionClass="NSMutableArray" id="Ero-yy-fdq"/>
-                        <outletCollection property="balls" destination="8cG-b6-6gK" collectionClass="NSMutableArray" id="b4o-ib-BP0"/>
                         <outletCollection property="balls" destination="9jv-Ak-maK" collectionClass="NSMutableArray" id="VHg-3B-uJt"/>
                     </connections>
                 </viewController>

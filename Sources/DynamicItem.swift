@@ -26,6 +26,8 @@ extension DynamicItem {
         animation.transmission = transimission
         animation.render = render
         animation.completion = completion
-        animation.start()
+        
+        let identifier = String(describing:animation)
+        Animator.shared.addAnimation(animation, forKey: identifier)
     }
 }
