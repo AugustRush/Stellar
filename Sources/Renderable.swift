@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Animatable: class {
+protocol Renderable {
     func frameRender() -> Void
 }

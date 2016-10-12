@@ -13,7 +13,7 @@ internal class Animator {
     static let shared = Animator()
     
     //MARK: Properties
-    var animations: [String:Animatable] = Dictionary()
+    var animations: [String:Renderable] = Dictionary()
     
     private lazy var driver: DynamicDiver = {
         let driver = DynamicDiver(target: self, selector: #selector(rendering))
@@ -30,7 +30,7 @@ internal class Animator {
     }
     
     //MARK: Public methods
-    func addAnimation(_ a: Animatable, forKey key: String) -> Void {
+    func addAnimation(_ a: Renderable, forKey key: String) -> Void {
         animations.updateValue(a, forKey: key)
         //start render
         if driver.isPaused {

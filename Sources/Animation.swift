@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Animation<T: DynamicItem>: Animatable {
+class Animation<T: DynamicItem>: Renderable {
     public var transmission: DynamicTransmission!
     public var from: T!
     public var to: T!
