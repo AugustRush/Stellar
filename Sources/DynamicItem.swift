@@ -27,7 +27,23 @@ extension DynamicItem {
         animation.render = render
         animation.completion = completion
         
-        let identifier = String(describing:animation)
+        let identifier = String(unsafeBitCast(animation, to: Int.self))
+        Animator.shared.addAnimation(animation, forKey: identifier)
+    }
+    
+    func animateTo(_ to: Self, duration: CFTimeInterval = 0.25, easing: @escaping (Double) -> Double, render: @escaping (Self) -> Void, completion: (() -> Void)? ) -> Void {
+        let transimission = BasicTransmission()
+        transimission.timingCurve = EasingContainer(easing: easing)
+        transimission.duration = duration
+        
+        let animation = Animation<Self>()
+        animation.from = self
+        animation.to = to
+        animation.transmission = transimission
+        animation.render = render
+        animation.completion = completion
+        
+        let identifier = String(unsafeBitCast(animation, to: Int.self))
         Animator.shared.addAnimation(animation, forKey: identifier)
     }
 }

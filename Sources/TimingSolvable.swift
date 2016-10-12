@@ -9,5 +9,6 @@
 import Foundation
 
 protocol TimingSolvable {
+    /// time (0-1) just like progress
     func solveOn(time: Double, epslion: Double) -> Double
 }
