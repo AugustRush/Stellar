@@ -9,6 +9,7 @@
 import UIKit
 
 class Animation<T: DynamicItem>: Renderable {
+    
     public var transmission: DynamicTransmission!
     public var from: T!
     public var to: T!
@@ -18,6 +19,22 @@ class Animation<T: DynamicItem>: Renderable {
     //MARK: Private methods
     func frameRender() -> Void {
         let progress = transmission.progress()
+        let snapshot = from.snapshot(to: to, progress: progress)
+        //
+        if transmission.completed {
+            self.render(to)
+            let identifier = String(unsafeBitCast(self, to: Int.self))
+            Animator.shared.removeAnimation(forKey: identifier)
+            if let completion = self.completion {
+                completion()
+            }
+        } else {
+            // frame
+            self.render(snapshot)
+        }
+    }
+    
+    func frameRender(forProgress progress: Double) -> Void {
         let snapshot = from.snapshot(to: to, progress: progress)
         // frame
         self.render(snapshot)
@@ -30,6 +47,32 @@ class Animation<T: DynamicItem>: Renderable {
             }
         }
     }
+}
+
+class AnimationGroup: Renderable {
     
-    //MARK: Public methods
+    var animations: [Renderable] = Array()
+    public var transmission: DynamicTransmission!
+    public var completion: (() -> Void)?
+    
+    
+    func frameRender() {
+        //
+        let progress = transmission.progress()
+        frameRender(forProgress: progress)
+    }
+    
+    func frameRender(forProgress progress: Double) {
+        for ani in animations {
+            ani.frameRender(forProgress: progress)
+        }
+        //
+        if transmission.completed {
+            let identifier = String(unsafeBitCast(self, to: Int.self))
+            Animator.shared.removeAnimation(forKey: identifier)
+            if let completion = self.completion {
+                completion()
+            }
+        }
+    }
 }

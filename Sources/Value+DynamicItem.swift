@@ -56,3 +56,49 @@ extension CGPoint: DynamicItem {
         return CGPoint(x: self.x + incrementalX, y: self.y + incrementalY)
     }
 }
+
+extension CGRect: DynamicItem {
+    
+    public func snapshot(to: CGRect, progress: Double) -> CGRect {
+        let distanceX = to.origin.x - self.origin.x
+        let distanceY = to.origin.y - self.origin.y
+        let distanceW = to.size.width - self.size.width
+        let distanceH = to.size.height - self.size.height
+        let incrementalX = distanceX * CGFloat(progress)
+        let incrementalY = distanceY * CGFloat(progress)
+        let incrementalW = distanceW * CGFloat(progress)
+        let incrementalH = distanceH * CGFloat(progress)
+        return CGRect(x: self.origin.x + incrementalX, y: self.origin.y + incrementalY, width: self.size.width + incrementalW, height: self.size.height + incrementalH)
+
+    }
+    
+    // (/255.0)
+    internal func color() -> UIColor {
+        return UIColor(hue: self.origin.x / 255.0, saturation: self.origin.y / 255.0, brightness: self.size.width / 255.0, alpha: self.size.height / 255.0)
+    }
+}
+
+extension UIColor: DynamicItem {
+    
+    public func snapshot(to: UIColor, progress: Double) -> Self {
+        let fromR = self.rect()
+        let toR = to.rect()
+        let currentR = fromR.snapshot(to: toR, progress: progress)
+        return convertT(hue: currentR.origin.x / 255.0, saturation: currentR.origin.y / 255.0, brightness: currentR.size.width / 255.0, alpha: currentR.height / 255.0)
+    }
+    
+    private func convertT<T>(hue: CGFloat,saturation: CGFloat, brightness: CGFloat, alpha: CGFloat) -> T {
+        let color = UIColor(hue: hue,saturation: saturation,brightness: brightness,alpha: alpha)
+        return unsafeBitCast(color, to: T.self)
+    }
+    // (*255.0)
+    internal func rect() -> CGRect {
+        var hue: CGFloat = 0.0
+        var saturation: CGFloat = 0.0
+        var brightness: CGFloat = 0.0
+        var alpha: CGFloat = 0.0
+        self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        
+        return CGRect(x: hue * 255.0, y: saturation * 255.0, width: brightness * 255.0, height: alpha * 255.0)
+    }
+}

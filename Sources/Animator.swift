@@ -6,7 +6,7 @@
 //  Copyright © 2016 August. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 internal class Animator {
     //MARK: Singleton
@@ -24,9 +24,14 @@ internal class Animator {
     
     //MARK: Private methods
     @objc private func rendering() -> Void {
+        CATransaction.lock()
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
         for ani in animations.values {
             ani.frameRender()
         }
+        CATransaction.commit()
+        CATransaction.unlock()
     }
     
     //MARK: Public methods

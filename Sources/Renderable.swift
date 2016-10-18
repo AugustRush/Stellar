@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol Renderable {
+internal protocol Renderable {
     func frameRender() -> Void
+    func frameRender(forProgress progress: Double) -> Void
 }
