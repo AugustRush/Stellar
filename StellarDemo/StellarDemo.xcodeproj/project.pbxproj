@@ -181,25 +181,57 @@
 		970F54EA1DB5BE950046D403 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				970F54EB1DB5BE950046D403 /* Animation.swift */,
+				9717A8931DBE0D3900514621 /* TimingFunction */,
+				9717A8921DBE0CA000514621 /* Protocols */,
+				9717A8911DBE0BB900514621 /* Extensions */,
+				9717A8901DBE0B8F00514621 /* Animation */,
 				970F54EC1DB5BE950046D403 /* AnimationContext.swift */,
-				970F54ED1DB5BE950046D403 /* Animator.swift */,
-				970F54EE1DB5BE950046D403 /* CALayer+ConvenientProperties.swift */,
-				970F54EF1DB5BE950046D403 /* Chainable.swift */,
-				970F54F01DB5BE950046D403 /* DynamicDriver.swift */,
-				970F54F11DB5BE950046D403 /* DynamicItem.swift */,
-				970F54F21DB5BE950046D403 /* DynamicTransmission.swift */,
-				970F54F31DB5BE950046D403 /* Renderable.swift */,
-				970F54F41DB5BE950046D403 /* TimingFunction.swift */,
-				970F54F51DB5BE950046D403 /* TimingSolvable.swift */,
-				970F54F61DB5BE950046D403 /* UnitBezier.swift */,
-				970F54F71DB5BE950046D403 /* Value+DynamicItem.swift */,
-				970F54F81DB5BE950046D403 /* View+Animation.swift */,
-				970F54F91DB5BE950046D403 /* View+BlockAnimationPrivate.swift */,
-				970F54FA1DB5BE950046D403 /* View+Chainable.swift */,
 			);
 			name = Sources;
 			path = ../../Sources;
+			sourceTree = "<group>";
+		};
+		9717A8901DBE0B8F00514621 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				970F54F91DB5BE950046D403 /* View+BlockAnimationPrivate.swift */,
+				970F54F81DB5BE950046D403 /* View+Animation.swift */,
+				970F54ED1DB5BE950046D403 /* Animator.swift */,
+				970F54F01DB5BE950046D403 /* DynamicDriver.swift */,
+				970F54F21DB5BE950046D403 /* DynamicTransmission.swift */,
+				970F54EB1DB5BE950046D403 /* Animation.swift */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
+		9717A8911DBE0BB900514621 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				970F54EE1DB5BE950046D403 /* CALayer+ConvenientProperties.swift */,
+				970F54F71DB5BE950046D403 /* Value+DynamicItem.swift */,
+				970F54FA1DB5BE950046D403 /* View+Chainable.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		9717A8921DBE0CA000514621 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				970F54F31DB5BE950046D403 /* Renderable.swift */,
+				970F54F11DB5BE950046D403 /* DynamicItem.swift */,
+				970F54EF1DB5BE950046D403 /* Chainable.swift */,
+				970F54F51DB5BE950046D403 /* TimingSolvable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9717A8931DBE0D3900514621 /* TimingFunction */ = {
+			isa = PBXGroup;
+			children = (
+				970F54F41DB5BE950046D403 /* TimingFunction.swift */,
+				970F54F61DB5BE950046D403 /* UnitBezier.swift */,
+			);
+			name = TimingFunction;
 			sourceTree = "<group>";
 		};
 		97BE88B51CDDDAD000240523 = {
