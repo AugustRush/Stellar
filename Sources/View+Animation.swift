@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias View = UIView
+
 private var st_currentAnimationContext = 0.0
 private let st_animationContext = 2468.1
 private let st_animationContextKey = "st_animationContextKey"

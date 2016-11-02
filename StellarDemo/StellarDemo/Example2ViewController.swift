@@ -31,32 +31,12 @@ class Example2ViewController: UIViewController {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         for ball in balls {
-//            let targetX = ball.center.x + 30
-//            ball.center.x.animateTo(targetX, render: { (x) in
-//                ball.center.x = x
-//            })
-//            
-//            let targetY = ball.center.y + 30
-//            ball.center.y.animateTo(targetY, render: { (y) in
-//                ball.center.y = y
-//            })
-            // TimingFunction
             let random = CGFloat(arc4random() % 100)
             let size = CGSize(width: ball.bounds.size.width + random, height: ball.bounds.size.height + random)
-//            ball.bounds.size.animateTo(size, duration: 1.0, timingFunction: TimingFunctionType.BounceOut, render: { (s) in
-//                print("ball is \(ball) size is \(s)")
-//                ball.bounds.size = s
-//                }, completion: { 
-//                    print("completion")
-//            })
-            //Custom Easing
-            ball.bounds.size.animateTo(size, duration: 1.0, easing: { (t) -> Double in
-                return sin(13.0 * M_PI_2 * t) * pow(2, 10 * (t - 1))
-                }, render: { (s) in
-                    print("ball is \(ball) size is \(s)")
-                    ball.bounds.size = s
-                }, completion: { 
-                    print("animation completion!")
+            
+            UIView.st_animate(withDuration: 1.0, delay: 0.0, animations: { 
+                ball.bounds.size = size
+                ball.backgroundColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
             })
         }
     }

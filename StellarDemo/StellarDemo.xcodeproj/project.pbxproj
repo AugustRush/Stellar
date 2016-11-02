@@ -12,7 +12,6 @@
 		97019FEC1D054ECD00FD6644 /* Stellar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97019FD61D054ECD00FD6644 /* Stellar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9701A0AE1D07CD8800FD6644 /* Example7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9701A0AD1D07CD8800FD6644 /* Example7ViewController.swift */; };
 		970F54FB1DB5BE950046D403 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F54EB1DB5BE950046D403 /* Animation.swift */; };
-		970F54FC1DB5BE950046D403 /* AnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F54EC1DB5BE950046D403 /* AnimationContext.swift */; };
 		970F54FD1DB5BE950046D403 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F54ED1DB5BE950046D403 /* Animator.swift */; };
 		970F54FE1DB5BE950046D403 /* CALayer+ConvenientProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F54EE1DB5BE950046D403 /* CALayer+ConvenientProperties.swift */; };
 		970F54FF1DB5BE950046D403 /* Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F54EF1DB5BE950046D403 /* Chainable.swift */; };
@@ -26,7 +25,6 @@
 		970F55071DB5BE950046D403 /* Value+DynamicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F54F71DB5BE950046D403 /* Value+DynamicItem.swift */; };
 		970F55081DB5BE950046D403 /* View+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F54F81DB5BE950046D403 /* View+Animation.swift */; };
 		970F55091DB5BE950046D403 /* View+BlockAnimationPrivate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F54F91DB5BE950046D403 /* View+BlockAnimationPrivate.swift */; };
-		970F550A1DB5BE950046D403 /* View+Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F54FA1DB5BE950046D403 /* View+Chainable.swift */; };
 		970F91B31CFEBFC500B510BE /* Example5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91B21CFEBFC500B510BE /* Example5ViewController.swift */; };
 		970F91D51CFEF7C900B510BE /* Example6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91D41CFEF7C900B510BE /* Example6ViewController.swift */; };
 		9734A5591D23C742000D02A8 /* Example8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734A5581D23C742000D02A8 /* Example8ViewController.swift */; };
@@ -89,7 +87,6 @@
 		97019FE81D054ECD00FD6644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9701A0AD1D07CD8800FD6644 /* Example7ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example7ViewController.swift; sourceTree = "<group>"; };
 		970F54EB1DB5BE950046D403 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		970F54EC1DB5BE950046D403 /* AnimationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationContext.swift; sourceTree = "<group>"; };
 		970F54ED1DB5BE950046D403 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		970F54EE1DB5BE950046D403 /* CALayer+ConvenientProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+ConvenientProperties.swift"; sourceTree = "<group>"; };
 		970F54EF1DB5BE950046D403 /* Chainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chainable.swift; sourceTree = "<group>"; };
@@ -103,7 +100,6 @@
 		970F54F71DB5BE950046D403 /* Value+DynamicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Value+DynamicItem.swift"; sourceTree = "<group>"; };
 		970F54F81DB5BE950046D403 /* View+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Animation.swift"; sourceTree = "<group>"; };
 		970F54F91DB5BE950046D403 /* View+BlockAnimationPrivate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+BlockAnimationPrivate.swift"; sourceTree = "<group>"; };
-		970F54FA1DB5BE950046D403 /* View+Chainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Chainable.swift"; sourceTree = "<group>"; };
 		970F91B21CFEBFC500B510BE /* Example5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example5ViewController.swift; sourceTree = "<group>"; };
 		970F91D41CFEF7C900B510BE /* Example6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example6ViewController.swift; sourceTree = "<group>"; };
 		9734A5581D23C742000D02A8 /* Example8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example8ViewController.swift; sourceTree = "<group>"; };
@@ -181,11 +177,11 @@
 		970F54EA1DB5BE950046D403 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				97D042B51DC72DA400D9A24A /* Chainable */,
 				9717A8931DBE0D3900514621 /* TimingFunction */,
 				9717A8921DBE0CA000514621 /* Protocols */,
 				9717A8911DBE0BB900514621 /* Extensions */,
 				9717A8901DBE0B8F00514621 /* Animation */,
-				970F54EC1DB5BE950046D403 /* AnimationContext.swift */,
 			);
 			name = Sources;
 			path = ../../Sources;
@@ -209,7 +205,6 @@
 			children = (
 				970F54EE1DB5BE950046D403 /* CALayer+ConvenientProperties.swift */,
 				970F54F71DB5BE950046D403 /* Value+DynamicItem.swift */,
-				970F54FA1DB5BE950046D403 /* View+Chainable.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -296,6 +291,13 @@
 				97BE88E31CDDDAD000240523 /* Info.plist */,
 			);
 			path = StellarDemoUITests;
+			sourceTree = "<group>";
+		};
+		97D042B51DC72DA400D9A24A /* Chainable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Chainable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,7 +490,6 @@
 				970F54FB1DB5BE950046D403 /* Animation.swift in Sources */,
 				973E59CB1CF5ACEC00F26487 /* Example1ViewController.swift in Sources */,
 				970F55011DB5BE950046D403 /* DynamicItem.swift in Sources */,
-				970F54FC1DB5BE950046D403 /* AnimationContext.swift in Sources */,
 				970F55031DB5BE950046D403 /* Renderable.swift in Sources */,
 				970F55081DB5BE950046D403 /* View+Animation.swift in Sources */,
 				970F55041DB5BE950046D403 /* TimingFunction.swift in Sources */,
@@ -497,7 +498,6 @@
 				973E59E71CF6F2E100F26487 /* Ball.swift in Sources */,
 				97733D6C1CFEAC930012C879 /* Example4ViewController.swift in Sources */,
 				970F54FF1DB5BE950046D403 /* Chainable.swift in Sources */,
-				970F550A1DB5BE950046D403 /* View+Chainable.swift in Sources */,
 				970F54FE1DB5BE950046D403 /* CALayer+ConvenientProperties.swift in Sources */,
 				970F54FD1DB5BE950046D403 /* Animator.swift in Sources */,
 				970F55021DB5BE950046D403 /* DynamicTransmission.swift in Sources */,
