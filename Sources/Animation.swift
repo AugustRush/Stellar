@@ -22,7 +22,7 @@ class Animation<T: DynamicItem>: Renderable {
         let snapshot = from.snapshot(to: to, progress: progress)
         //
         if transmission.completed {
-            self.render(to)
+            self.render(snapshot)
             let identifier = String(unsafeBitCast(self, to: Int.self))
             Animator.shared.removeAnimation(forKey: identifier)
             if let completion = self.completion {
