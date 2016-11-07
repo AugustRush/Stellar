@@ -16,7 +16,7 @@ public protocol DynamicItem {
 extension DynamicItem {
     
     ////Default Easing type
-    public func animateTo(_ to: Self, duration: TimeInterval = 0.25, delay: TimeInterval = 0.0, timingFunction: TimingFunctionType = .Default, render: @escaping (Self) -> Void, completion: (() -> Void)? ) -> Void {
+    public func animateTo(_ to: Self, duration: TimeInterval = 0.25, delay: TimeInterval = 0.0, timingFunction: TimingFunctionType = .Default, render: @escaping (Self) -> Void, completion: (() -> Void)? = nil) -> Void {
         let transimission = BasicTransmission()
         transimission.timingCurve = timingFunction.easing()
         transimission.duration = duration
@@ -33,8 +33,8 @@ extension DynamicItem {
         Animator.shared.addAnimation(animation, forKey: identifier)
     }
     
-    public func animateTo(_ to: Self, duration: TimeInterval, timingFunction: TimingFunctionType = .Default, render: @escaping (Self) -> Void, completion: (() -> Void)? = nil) -> Void {
-        animateTo(to, duration: duration, delay: 0.0, timingFunction: timingFunction, render: render, completion: completion)
+    public func animateTo(_ to: Self, duration: TimeInterval, timingFunction: TimingFunctionType = .Default, render: @escaping (Self) -> Void) -> Void {
+        animateTo(to, duration: duration, delay: 0.0, timingFunction: timingFunction, render: render, completion: nil)
     }
     
     ////// Custom Easing

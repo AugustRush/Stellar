@@ -11,7 +11,7 @@ import UIKit
 class Example1ViewController: UIViewController {
 
     
-    @IBOutlet var balls: [UIView]!
+    @IBOutlet weak var animatedView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,5 +21,40 @@ class Example1ViewController: UIViewController {
         self.title = "Basic"
     }
     
+    @IBAction func startAnimation(_ sender: Any) {
+        let randomW = CGFloat(arc4random() % 300)
+        let randomH = CGFloat(arc4random() % 200)
+        let size = CGSize(width: randomW, height: randomH)
+
+        // 1
+        
+        let transimission = BasicTransmission()
+        transimission.duration = 1.0
+        transimission.repeatCount = 2
+        transimission.autoreverses = true
+        transimission.timingCurve = TimingFunctionType.Linear.easing()
+        
+        let animation = Animation<CGSize>()
+        animation.from = animatedView.bounds.size
+        animation.to = size
+        animation.transmission = transimission
+        animation.render = { (s) in
+            self.animatedView.bounds.size = s
+            print("size is \(s), \(size)")
+        }
+        
+        animation.completion = {
+            print("animation completion.")
+        }
+        animation.start()
+        
+//        // 2
+//        animatedView.bounds.size.animateTo(size, duration: 1.0, timingFunction: .SwiftOut, render: { (size) in
+//            self.animatedView.bounds.size = size
+//        }, completion: {
+//            print("animation completion.")
+//        })
+        
+    }
 }
 

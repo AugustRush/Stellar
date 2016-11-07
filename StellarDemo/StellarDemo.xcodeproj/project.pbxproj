@@ -257,8 +257,8 @@
 			children = (
 				970F54EA1DB5BE950046D403 /* Sources */,
 				97BE88C11CDDDAD000240523 /* AppDelegate.swift */,
-				97BE88C31CDDDAD000240523 /* Example2ViewController.swift */,
 				973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */,
+				97BE88C31CDDDAD000240523 /* Example2ViewController.swift */,
 				977FDF191CFC7448009248FD /* Example3ViewController.swift */,
 				97733D6B1CFEAC930012C879 /* Example4ViewController.swift */,
 				970F91B21CFEBFC500B510BE /* Example5ViewController.swift */,
