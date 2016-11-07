@@ -73,7 +73,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="dUf-ZG-iwx" kind="push" id="F61-hU-UVH"/>
+                                            <segue destination="cNv-WA-JEb" kind="push" id="vCo-oC-Vfa"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="KiG-Zm-ThH" style="IBUITableViewCellStyleDefault" id="clr-db-HZn">
@@ -93,7 +93,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="cNv-WA-JEb" kind="push" id="o28-GV-kAq"/>
+                                            <segue destination="dUf-ZG-iwx" kind="push" id="gKy-fU-cVB"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="J7t-TO-V4X" style="IBUITableViewCellStyleDefault" id="HQO-7B-lNg">
@@ -128,7 +128,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Me-dM-GUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-773" y="20"/>
+            <point key="canvasLocation" x="-876" y="71"/>
         </scene>
         <!--Basic-->
         <scene sceneID="g9x-D3-H66">
@@ -213,10 +213,10 @@
             </objects>
             <point key="canvasLocation" x="141" y="217"/>
         </scene>
-        <!--Example3 View Controller-->
+        <!--Example2 View Controller-->
         <scene sceneID="ASe-Iw-vnJ">
             <objects>
-                <viewController id="cNv-WA-JEb" customClass="Example3ViewController" customModule="StellarDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cNv-WA-JEb" customClass="Example2ViewController" customModule="StellarDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mDd-Jp-FZk"/>
                         <viewControllerLayoutGuide type="bottom" id="INH-mR-P6d"/>
@@ -224,9 +224,36 @@
                     <view key="view" contentMode="scaleToFill" id="Fqd-8v-pd2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOJ-wa-4io">
+                                <rect key="frame" x="170" y="364" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startAnimation:" destination="T1G-Uh-Hdm" eventType="touchUpInside" id="HMp-Ba-5Da"/>
+                                    <action selector="startAnimation:" destination="cNv-WA-JEb" eventType="touchUpInside" id="L4W-7S-tR6"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vld-uq-9fB">
+                                <rect key="frame" x="87" y="164" width="200" height="100"/>
+                                <color key="backgroundColor" red="0.18728764570000001" green="0.71903877900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="1UJ-Oc-OI0"/>
+                                    <constraint firstAttribute="width" constant="200" id="cCj-Q0-gVv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vld-uq-9fB" firstAttribute="top" secondItem="mDd-Jp-FZk" secondAttribute="bottom" constant="100" id="3ND-SB-ahK"/>
+                            <constraint firstItem="Vld-uq-9fB" firstAttribute="centerX" secondItem="Fqd-8v-pd2" secondAttribute="centerX" id="8Hd-fj-IH7"/>
+                            <constraint firstItem="OOJ-wa-4io" firstAttribute="top" secondItem="Vld-uq-9fB" secondAttribute="bottom" constant="100" id="VBd-0J-hWo"/>
+                            <constraint firstItem="OOJ-wa-4io" firstAttribute="centerX" secondItem="Fqd-8v-pd2" secondAttribute="centerX" id="e3f-GQ-xTk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="h3p-UC-6yW"/>
+                    <connections>
+                        <outlet property="animatedView" destination="Vld-uq-9fB" id="hYJ-Ot-9gu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpS-To-zLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

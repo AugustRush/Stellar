@@ -10,9 +10,7 @@ import UIKit
 
 class Example2ViewController: UIViewController {
     
-   
-    @IBOutlet var balls: [UIView]!
-    
+    @IBOutlet weak var animatedView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +24,41 @@ class Example2ViewController: UIViewController {
     }
     
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
+    @IBAction func startAnimation(_ sender: Any) {
         
+        let randomW = CGFloat(arc4random() % 300)
+        let randomH = CGFloat(100 + arc4random() % 400)
+        let point = CGPoint(x: randomW, y: randomH)
+        
+        // 1
+        
+//        let transimission = SpringTransmission()
+//        transimission.stiffness = 200
+//        transimission.mass = 2.0
+//        transimission.initialVelocity = 0.3
+//        
+//        let animation = Animation<CGPoint>()
+//        animation.from = animatedView.center
+//        animation.to = point
+//        animation.transmission = transimission
+//        animation.render = { (p) in
+//            self.animatedView.center = p
+//        }
+//        
+//        animation.completion = {
+//            print("animation completion.")
+//        }
+//        animation.start()
+        
+        // 2
+        
+        animatedView.center.springTo(point, damping: 8.0, stiffness: 200, mass: 1.0, initialVelocity: 0.5, render: { (p) in
+            self.animatedView.center = p
+        }, completion: {
+            print("animation completion")
+        })
+        
+
     }
     
     deinit {

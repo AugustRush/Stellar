@@ -23,7 +23,7 @@ private let SolveForUnReverse = { (f: TimeInterval) in
 
 ////// Just like basic Animation TimingFunction
 
-class BasicTransmission: DynamicTransmission {
+public class BasicTransmission: DynamicTransmission {
     var duration: TimeInterval = 0.25
     var delay: TimeInterval = 0.0
     var speed: Double = 1.0
@@ -39,9 +39,9 @@ class BasicTransmission: DynamicTransmission {
         return 1.0 / (self.duration * 1000.0)
     }()
     //MARK: DynamicTransimission protocol
-    var completed: Bool = false
+    public var completed: Bool = false
     
-    func progress() -> TimeInterval {
+    public func progress() -> TimeInterval {
         let currentInterval = CACurrentMediaTime() - beginTime - delay
         var progress = (max(0.0, currentInterval) * speed) / duration
         
@@ -77,7 +77,7 @@ class BasicTransmission: DynamicTransmission {
 
 /// Spring Aniamtion Easing
 
-class SpringTransmission: DynamicTransmission {
+public class SpringTransmission: DynamicTransmission {
     var damping = 8.0 // > 0
     var stiffness = 100.0 // > 0
     var mass = 1.0 // > 0
@@ -91,13 +91,13 @@ class SpringTransmission: DynamicTransmission {
     }()
     
     var delay: TimeInterval = 0.0
-    var completed: Bool {
+    public var completed: Bool {
         get {
             return self.solver.hasCorverd()
         }
     }
     
-    func progress() -> TimeInterval {
+    public func progress() -> TimeInterval {
         
         let currentInterval = CACurrentMediaTime() - self.beginTime - self.delay
         let progress = solver.solveOn(time: max(0.0, currentInterval))
