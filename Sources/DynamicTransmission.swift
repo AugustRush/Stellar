@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol DynamicTransmission {
+public protocol DynamicTransmission {
     var completed: Bool { get }
     func progress() -> TimeInterval
 }

@@ -16,11 +16,13 @@ public protocol DynamicItem {
 extension DynamicItem {
     
     ////Default Easing type
-    public func animateTo(_ to: Self, duration: TimeInterval = 0.25, delay: TimeInterval = 0.0, timingFunction: TimingFunctionType = .Default, render: @escaping (Self) -> Void, completion: (() -> Void)? = nil) -> Void {
+    public func animateTo(_ to: Self, duration: TimeInterval = 0.25, delay: TimeInterval = 0.0, timingFunction: TimingFunctionType = .Default, autoreverses: Bool = false, repeatCount: UInt = 0, render: @escaping (Self) -> Void, completion: (() -> Void)? = nil) -> Void {
         let transimission = BasicTransmission()
         transimission.timingCurve = timingFunction.easing()
         transimission.duration = duration
         transimission.delay = delay
+        transimission.repeatCount = repeatCount
+        transimission.autoreverses = autoreverses
         
         let animation = Animation<Self>()
         animation.from = self

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Animation<T: DynamicItem>: Renderable {
+public class Animation<T: DynamicItem>: Renderable {
     
     public var transmission: DynamicTransmission!
     public var from: T!
@@ -54,7 +54,7 @@ class Animation<T: DynamicItem>: Renderable {
     }
 }
 
-class AnimationGroup: Renderable {
+public class AnimationGroup: Renderable {
     
     var animations: [Renderable] = Array()
     public var transmission: DynamicTransmission!

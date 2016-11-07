@@ -28,32 +28,33 @@ class Example1ViewController: UIViewController {
 
         // 1
         
-        let transimission = BasicTransmission()
-        transimission.duration = 1.0
-        transimission.repeatCount = 2
-        transimission.autoreverses = true
-        transimission.timingCurve = TimingFunctionType.Linear.easing()
-        
-        let animation = Animation<CGSize>()
-        animation.from = animatedView.bounds.size
-        animation.to = size
-        animation.transmission = transimission
-        animation.render = { (s) in
-            self.animatedView.bounds.size = s
-            print("size is \(s), \(size)")
-        }
-        
-        animation.completion = {
-            print("animation completion.")
-        }
-        animation.start()
+//        let transimission = BasicTransmission()
+//        transimission.duration = 1.0
+//        transimission.repeatCount = 2
+//        transimission.autoreverses = true
+//        transimission.timingCurve = TimingFunctionType.SwiftOut.easing()
+//        
+//        let animation = Animation<CGSize>()
+//        animation.from = animatedView.bounds.size
+//        animation.to = size
+//        animation.transmission = transimission
+//        animation.render = { (s) in
+//            self.animatedView.bounds.size = s
+//            print("size is \(s), \(size)")
+//        }
+//        
+//        animation.completion = {
+//            print("animation completion.")
+//        }
+//        animation.start()
         
 //        // 2
-//        animatedView.bounds.size.animateTo(size, duration: 1.0, timingFunction: .SwiftOut, render: { (size) in
-//            self.animatedView.bounds.size = size
-//        }, completion: {
-//            print("animation completion.")
-//        })
+        animatedView.bounds.size.animateTo(size, duration: 1.0, timingFunction: .SwiftOut, autoreverses: true, repeatCount: 2, render: { (size) in
+            
+            self.animatedView.bounds.size = size
+        }, completion: {
+            print("animation completion.")
+        })
         
     }
 }
