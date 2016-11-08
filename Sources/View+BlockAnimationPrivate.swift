@@ -11,7 +11,7 @@ import UIKit
 internal extension View {
     //MARK: Private methods
     
-    class func addBasicAnimation(context: BlockAnimationContext, type: TimingFunctionType, duration: TimeInterval, delay: TimeInterval, repeatCount: UInt, autoreverses: Bool, completion: (() -> Swift.Void)?) {
+    class func addBasicAnimation(context: _AnimationContext, type: TimingFunctionType, duration: TimeInterval, delay: TimeInterval, repeatCount: UInt, autoreverses: Bool, completion: (() -> Swift.Void)?) {
         
         let transimission = BasicTransmission()
         transimission.timingCurve = type.easing()
@@ -27,7 +27,7 @@ internal extension View {
         parseAndAddAnimation(withContext: context, toGroup: group, transimission: transimission)
     }
     
-    class func addSpringAnimation(context: BlockAnimationContext, delay: Double, damping: Double, stiffness: Double, mass: Double, initialVelocity: Double, completion: (() -> Swift.Void)?) {
+    class func addSpringAnimation(context: _AnimationContext, delay: Double, damping: Double, stiffness: Double, mass: Double, initialVelocity: Double, completion: (() -> Swift.Void)?) {
         let transimission = SpringTransmission()
         transimission.delay = delay
         transimission.damping = damping
@@ -42,7 +42,7 @@ internal extension View {
         parseAndAddAnimation(withContext: context, toGroup: group, transimission: transimission)
     }
     
-    private class func parseAndAddAnimation(withContext context: BlockAnimationContext, toGroup group: AnimationGroup, transimission: DynamicTransmission) -> Void {
+    private class func parseAndAddAnimation(withContext context: _AnimationContext, toGroup group: AnimationGroup, transimission: DynamicTransmission) -> Void {
         
         for info in context.animationInfos {
             

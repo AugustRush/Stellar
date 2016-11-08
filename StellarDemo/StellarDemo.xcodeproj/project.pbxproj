@@ -27,6 +27,7 @@
 		970F55091DB5BE950046D403 /* View+BlockAnimationPrivate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F54F91DB5BE950046D403 /* View+BlockAnimationPrivate.swift */; };
 		970F91B31CFEBFC500B510BE /* Example5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91B21CFEBFC500B510BE /* Example5ViewController.swift */; };
 		970F91D51CFEF7C900B510BE /* Example6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91D41CFEF7C900B510BE /* Example6ViewController.swift */; };
+		9726ABAA1DD0764B00753AED /* AnimationSquence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9726ABA91DD0764B00753AED /* AnimationSquence.swift */; };
 		9734A5591D23C742000D02A8 /* Example8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734A5581D23C742000D02A8 /* Example8ViewController.swift */; };
 		973E59CB1CF5ACEC00F26487 /* Example1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */; };
 		973E59E71CF6F2E100F26487 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59E61CF6F2E100F26487 /* Ball.swift */; };
@@ -102,6 +103,7 @@
 		970F54F91DB5BE950046D403 /* View+BlockAnimationPrivate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+BlockAnimationPrivate.swift"; sourceTree = "<group>"; };
 		970F91B21CFEBFC500B510BE /* Example5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example5ViewController.swift; sourceTree = "<group>"; };
 		970F91D41CFEF7C900B510BE /* Example6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example6ViewController.swift; sourceTree = "<group>"; };
+		9726ABA91DD0764B00753AED /* AnimationSquence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationSquence.swift; sourceTree = "<group>"; };
 		9734A5581D23C742000D02A8 /* Example8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example8ViewController.swift; sourceTree = "<group>"; };
 		973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example1ViewController.swift; sourceTree = "<group>"; };
 		973E59E61CF6F2E100F26487 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 		97D042B51DC72DA400D9A24A /* Chainable */ = {
 			isa = PBXGroup;
 			children = (
+				9726ABA91DD0764B00753AED /* AnimationSquence.swift */,
 			);
 			name = Chainable;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9726ABAA1DD0764B00753AED /* AnimationSquence.swift in Sources */,
 				970F54FB1DB5BE950046D403 /* Animation.swift in Sources */,
 				973E59CB1CF5ACEC00F26487 /* Example1ViewController.swift in Sources */,
 				970F55011DB5BE950046D403 /* DynamicItem.swift in Sources */,

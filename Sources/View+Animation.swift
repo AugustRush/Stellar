@@ -22,7 +22,7 @@ extension View {
         CATransaction.begin()
         CATransaction.setDisableActions(false)
         st_currentAnimationContext = st_animationContext
-        let context = BlockAnimationContext()
+        let context = _AnimationContext()
         //store for current transaction
         CATransaction.setValue(context, forKey: st_animationContextKey)
         //get animation info
@@ -47,7 +47,7 @@ extension View {
         CATransaction.begin()
         CATransaction.setDisableActions(false)
         st_currentAnimationContext = st_animationContext
-        let context = BlockAnimationContext()
+        let context = _AnimationContext()
         //store for current transaction
         CATransaction.setValue(context, forKey: st_animationContextKey)
         //get animation info
@@ -155,11 +155,10 @@ extension View {
     }
     
     public func st_action(forLayer layer: CALayer, forKey event: String) -> CAAction? {
-        print("event is \(event)")
         if st_animationContext == st_currentAnimationContext && keysAndAnimations[event] != nil {
-            let storedContext = CATransaction.value(forKey: st_animationContextKey) as? BlockAnimationContext
+            let storedContext = CATransaction.value(forKey: st_animationContextKey) as? _AnimationContext
             if let context = storedContext {
-                let info = BlockAnimationInfo()
+                let info = _AnimationInfo()
                 info.event = keysAndAnimations[event]
                 info.layer = layer
                 info.eventName = event
@@ -173,11 +172,11 @@ extension View {
 }
 
 //// Animation context
-internal class BlockAnimationContext {
-    var animationInfos: [BlockAnimationInfo] = Array()
+internal class _AnimationContext {
+    var animationInfos: [_AnimationInfo] = Array()
 }
 
-internal class BlockAnimationInfo {
+internal class _AnimationInfo {
     weak var layer: CALayer!
     var event: LayerAnimatableEvent!
     var eventName: String!

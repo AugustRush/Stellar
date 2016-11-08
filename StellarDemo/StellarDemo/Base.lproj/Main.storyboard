@@ -241,7 +241,7 @@
             </objects>
             <point key="canvasLocation" x="-270.5" y="216.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Manual-->
         <scene sceneID="hW5-Yq-bnR">
             <objects>
                 <viewController id="X07-lt-EXL" sceneMemberID="viewController">
@@ -252,13 +252,35 @@
                     <view key="view" contentMode="scaleToFill" id="xg5-b6-gfu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtf-Of-zg0">
+                                <rect key="frame" x="87" y="164" width="200" height="100"/>
+                                <color key="backgroundColor" red="0.18728764570000001" green="0.71903877900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ENs-Dc-WNI"/>
+                                    <constraint firstAttribute="height" constant="100" id="wUe-yk-FGq"/>
+                                </constraints>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wIo-Gj-zH6">
+                                <rect key="frame" x="35.5" y="403" width="304" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="p1f-Sb-hKy"/>
+                                </constraints>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wIo-Gj-zH6" firstAttribute="top" secondItem="wtf-Of-zg0" secondAttribute="bottom" constant="139" id="Fuk-rP-mHX"/>
+                            <constraint firstItem="wtf-Of-zg0" firstAttribute="top" secondItem="N9T-fw-FdR" secondAttribute="bottom" constant="100" id="IOS-Ps-0g8"/>
+                            <constraint firstItem="wtf-Of-zg0" firstAttribute="centerX" secondItem="xg5-b6-gfu" secondAttribute="centerX" id="b6M-Bv-bfr"/>
+                            <constraint firstItem="wIo-Gj-zH6" firstAttribute="centerX" secondItem="xg5-b6-gfu" secondAttribute="centerX" id="d0m-ds-zzj"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qMy-mc-vrF"/>
+                    <navigationItem key="navigationItem" title="Manual" id="qMy-mc-vrF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmX-OY-BOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-270" y="973"/>
+            <point key="canvasLocation" x="-270.5" y="972.5"/>
         </scene>
         <!--Example4 View Controller-->
         <scene sceneID="AqL-bz-LmW">

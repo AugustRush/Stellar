@@ -48,6 +48,7 @@ public class Animation<T: DynamicItem>: Renderable {
         }
     }
     
+    //MARK: Public methods
     public func start() -> Void {
         let identifier = String(unsafeBitCast(self, to: Int.self))
         Animator.shared.addAnimation(self, forKey: identifier)
@@ -79,5 +80,11 @@ public class AnimationGroup: Renderable {
                 completion()
             }
         }
+    }
+    
+    //MARK: Public methods
+    public func start() -> Void {
+        let identifier = String(unsafeBitCast(self, to: Int.self))
+        Animator.shared.addAnimation(self, forKey: identifier)
     }
 }
