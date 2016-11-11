@@ -8,13 +8,16 @@
 
 import UIKit
 
-public class Animation<T: DynamicItem>: Renderable {
+public class Animation<T: DynamicItem>: Renderable, Hashable {
     
     public var transmission: DynamicTransmission!
     public var from: T!
     public var to: T!
     public var render: ((T) -> Void)!
     public var completion: (() -> Void)?
+    public lazy var hashID: String = {
+       return String(self.hashValue)
+    }()
     
     //MARK: Private methods
     func frameRender() -> Void {
@@ -23,8 +26,7 @@ public class Animation<T: DynamicItem>: Renderable {
         //
         if transmission.completed {
             self.render(snapshot)
-            let identifier = String(unsafeBitCast(self, to: Int.self))
-            Animator.shared.removeAnimation(forKey: identifier)
+            Animator.shared.removeAnimation(forKey: hashID)
             if let completion = self.completion {
                 completion()
             }
@@ -40,8 +42,7 @@ public class Animation<T: DynamicItem>: Renderable {
         self.render(snapshot)
         //
         if transmission.completed {
-            let identifier = String(unsafeBitCast(self, to: Int.self))
-            Animator.shared.removeAnimation(forKey: identifier)
+            Animator.shared.removeAnimation(forKey: hashID)
             if let completion = self.completion {
                 completion()
             }
@@ -50,17 +51,27 @@ public class Animation<T: DynamicItem>: Renderable {
     
     //MARK: Public methods
     public func start() -> Void {
-        let identifier = String(unsafeBitCast(self, to: Int.self))
-        Animator.shared.addAnimation(self, forKey: identifier)
+        Animator.shared.addAnimation(self, forKey: hashID)
+    }
+    
+    // Hashable protocol
+    public var hashValue: Int {
+        return unsafeBitCast(self, to: Int.self)
+    }
+    
+    public static func ==(lhs: Animation<T>, rhs: Animation<T>) -> Bool {
+        return lhs.hashValue == rhs.hashValue
     }
 }
 
-public class AnimationGroup: Renderable {
+public class AnimationGroup: Renderable, Hashable {
     
     var animations: [Renderable] = Array()
     public var transmission: DynamicTransmission!
     public var completion: (() -> Void)?
-    
+    public lazy var hashID: String = {
+        return String(self.hashValue)
+    }()
     
     func frameRender() {
         //
@@ -74,8 +85,7 @@ public class AnimationGroup: Renderable {
         }
         //
         if transmission.completed {
-            let identifier = String(unsafeBitCast(self, to: Int.self))
-            Animator.shared.removeAnimation(forKey: identifier)
+            Animator.shared.removeAnimation(forKey: hashID)
             if let completion = self.completion {
                 completion()
             }
@@ -84,7 +94,15 @@ public class AnimationGroup: Renderable {
     
     //MARK: Public methods
     public func start() -> Void {
-        let identifier = String(unsafeBitCast(self, to: Int.self))
-        Animator.shared.addAnimation(self, forKey: identifier)
+        Animator.shared.addAnimation(self, forKey: hashID)
+    }
+    
+    // Hashable protocol
+    public var hashValue: Int {
+        return unsafeBitCast(self, to: Int.self)
+    }
+    
+    public static func ==(lhs: AnimationGroup, rhs: AnimationGroup) -> Bool {
+        return lhs.hashValue == rhs.hashValue
     }
 }

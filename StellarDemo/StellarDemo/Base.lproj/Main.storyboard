@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mON-gR-TWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1299" y="9"/>
+            <point key="canvasLocation" x="-1556" y="-4"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="FI8-dD-E3N">
@@ -124,7 +124,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Chainable Animation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GAO-xm-ogV">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Manual Animation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GAO-xm-ogV">
                                                     <rect key="frame" x="15" y="0.0" width="325" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -244,7 +244,7 @@
         <!--Manual-->
         <scene sceneID="hW5-Yq-bnR">
             <objects>
-                <viewController id="X07-lt-EXL" sceneMemberID="viewController">
+                <viewController id="X07-lt-EXL" customClass="Example5ViewController" customModule="StellarDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N9T-fw-FdR"/>
                         <viewControllerLayoutGuide type="bottom" id="Rep-PR-rZ0"/>
@@ -266,6 +266,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="p1f-Sb-hKy"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="sliderValueDidChanged:" destination="X07-lt-EXL" eventType="valueChanged" id="yi6-eG-8t0"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -277,6 +280,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Manual" id="qMy-mc-vrF"/>
+                    <connections>
+                        <outlet property="blueView" destination="wtf-Of-zg0" id="Pb6-4w-sTO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmX-OY-BOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
