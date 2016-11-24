@@ -40,7 +40,7 @@ class Example1ViewController: UIViewController {
                                 ball.center = p
                                 
                 }, completion: { (f) in
-                 
+                  
                     ball.backgroundColor?.animateTo(UIColor.redColor(),
                         duration: 0.5,
                         delay: interval,
