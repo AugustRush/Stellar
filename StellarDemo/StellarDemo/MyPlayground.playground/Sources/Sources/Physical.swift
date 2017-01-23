@@ -21,8 +21,8 @@ extension Physical {
     }
     
     public func snap(to: Self, damping: CGFloat = 0.5,render: @escaping (Self) -> Void, completion: (() -> Void)? = nil) {
-        let item = DynamicItem2(from: self, to: to, render: render)
-        let toP = CGPoint.init(x: item.toR.one, y: item.toR.two)
+        let item = DynamicItem(from: self, to: to, render: render)
+        let toP = CGPoint.init(x: 0, y: CGFloat(item.referenceChangeLength))
         let snap = item.snapBehavior(toP, damping: damping)
         item.behavior = snap
         item.completion = completion
@@ -30,8 +30,8 @@ extension Physical {
     }
     
     public func attachment(to: Self,damping: CGFloat = 0.5, frequency: CGFloat = 0.5,render: @escaping (Self) -> Void, completion: (() -> Void)? = nil) {
-        let item = DynamicItem2(from: self, to: to,render: render)
-        let toP = CGPoint.init(x: item.toR.one, y: item.toR.two)
+        let item = DynamicItem(from: self, to: to,render: render)
+        let toP = CGPoint.init(x: 0, y: CGFloat(item.referenceChangeLength))
         let attachment = item.attachmentBehavior(toP, length: 0.0, damping: damping, frequency: frequency)
         item.behavior = attachment
         item.completion = completion
@@ -39,7 +39,7 @@ extension Physical {
     }
     
     public func pushed(to: Self,render: @escaping (Self) -> Void, completion: (() -> Void)? = nil) {
-        let item = DynamicItem2(from: self,to: to,render: render)
+        let item = DynamicItem(from: self,to: to,render: render)
         let direction = CGVector(dx: item.toR.one - item.fromR.one, dy: item.toR.two - item.fromR.two)
         let push = item.pushBehavior(direction, mode: .instantaneous, magnitude: 1.0)
         item.behavior = push
@@ -56,7 +56,7 @@ extension Physical {
         basicItem.timingFunction = type.easing()
         basicItem.completion = completion
         basicItem.delay = delay
-        basicItem.autoreverses = true
+        basicItem.autoreverses = autoreverses
         push.commitToBasic()
     }
 }

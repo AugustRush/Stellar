@@ -51,7 +51,7 @@ final class DynamicItem<T: Vectorial>: NSObject, UIDynamicItem {
     //MARK: Update frame
     
     func updateFrame() {
-        let yChange = Double(center.y)
+        let yChange = fabs(Double(center.y))
         let progress = yChange / referenceChangeLength
         let curX = fromR.one + change.x * progress;
         let curY = fromR.two + change.y * progress;
@@ -80,7 +80,7 @@ final class DynamicItem<T: Vectorial>: NSObject, UIDynamicItem {
     var transform: CGAffineTransform = CGAffineTransform.identity
     var bounds: CGRect {
         get {
-            return CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
+            return CGRect(x: -50.0, y: -50.0, width: 100.0, height: 100.0)
         }
     }
 }

@@ -34,7 +34,6 @@ class Example1ViewController: UIViewController {
                              duration: 0.8,
                              delay: interval,
                              type: .swiftOut,
-                             autoreverses:  false,
                              render: { (p) in
                                 
                             ball.center = p
@@ -42,14 +41,17 @@ class Example1ViewController: UIViewController {
                 }, completion: { (f) in
                  
                     ball.backgroundColor?.animate(to: UIColor.red,
-                        duration: 0.4,
-                        delay: interval,
-                        type: .easeIn,
+                        duration: 1.4,
+                        type: .swiftOut,
                         autoreverses: true,
-                        repeatCount: 2,
                         render: { (c) in
                             
                         ball.backgroundColor = c
+                    })
+                    
+                    ball.center.snap(to: center, damping: 0.1
+                        , render: { (p) in
+                            ball.center = p
                     })
             })
         }

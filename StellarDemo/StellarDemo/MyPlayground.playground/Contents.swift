@@ -25,11 +25,15 @@ let ball = Ball(frame: CGRect.init(x: 100, y: 100, width: 25, height: 25))
 ball.backgroundColor = UIColor.cyan
 container.addSubview(ball)
 
-//ball.moveX(100).moveY(100).delay(0.5).duration(1)
-//    .then().makeWidth(160).duration(2).anchorPoint(CGPointMake(0, 0.5))
-//    .then().rotate(1.5).snap(0.5)
-//    .then().moveY(500).gravity(100)
+//ball.moveX(100).moveY(100).duration(2.5)
+//    .then().makeColor(UIColor.purple)
 //    .animate()
+
+ball.moveX(100).moveY(100).delay(0.5).duration(2)
+    .then().makeWidth(160).duration(2).anchorPoint(CGPoint.init(x: 0, y: 0.5))
+    .then().rotate(1.5).snap(0.2)
+    .then().moveY(500).gravity(100)
+    .animate()
 
 //let rotation: CGFloat = CGFloat(M_PI) * 20.0
 //ball.makeSize(CGSizeMake(100, 30)).gravity()
@@ -72,7 +76,7 @@ PlaygroundPage.current.liveView = container
     }, completion: nil)
 
 
-100.0.snap(to: 150, damping: 0.4, render: { (d) in
+100.0.snap(to: 150, damping: 0.8, render: { (d) in
     let t = d
     }, completion: nil)
 

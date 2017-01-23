@@ -1006,7 +1006,7 @@ extension UIView: DriveAnimateBehaviors {
     }
     
     fileprivate func snapBehavior<T: Vectorial>(_ damping: CGFloat, from: T, to: T, render: @escaping (T) -> Void) -> UIDynamicBehavior {
-        let item = DynamicItem2(from: from, to: to, render: render)
+        let item = DynamicItem(from: from, to: to, render: render)
         let point = CGPoint(x: 0.0, y: item.referenceChangeLength)
         let snap = item.snapBehavior(point, damping: damping)
         item.behavior = snap
@@ -1016,7 +1016,7 @@ extension UIView: DriveAnimateBehaviors {
     
     
     fileprivate func attachmentBehavior<T: Vectorial>(_ damping: CGFloat, frequency: CGFloat, from: T, to: T, render: @escaping (T) -> Void) -> UIDynamicBehavior {
-        let item = DynamicItem2(from: from, to: to, render: render)
+        let item = DynamicItem(from: from, to: to, render: render)
         let point = CGPoint(x: 0.0, y: item.referenceChangeLength)
         let attachment = item.attachmentBehavior(point, length: 0.0, damping: damping, frequency: frequency)
         item.behavior = attachment

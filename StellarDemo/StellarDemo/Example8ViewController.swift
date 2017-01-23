@@ -93,9 +93,14 @@ class Example8ViewController: UIViewController {
         case 0:
             animateView.moveX(200).duration(1.0).easing(.bounceReverse).autoreverses().animate()
         case 1:
-            fallthrough
+            100.0.animate(to: 200, duration: 1.0, delay: 0.0, type: .swiftOut, autoreverses: false, repeatCount: 0, render: { (d) in
+                print("current value is \(d)")
+            }, completion: nil)
         case 2:
-            fallthrough
+            100.0.attachment(to: 200, render: { (d) in
+                print("current value is \(d)")
+            })
+            
         case 3:
             fallthrough
         default:

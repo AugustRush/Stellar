@@ -303,8 +303,8 @@
 			children = (
 				97BE88EF1CDDDBCE00240523 /* Sources */,
 				97BE88C11CDDDAD000240523 /* AppDelegate.swift */,
-				97BE88C31CDDDAD000240523 /* Example2ViewController.swift */,
 				973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */,
+				97BE88C31CDDDAD000240523 /* Example2ViewController.swift */,
 				977FDF191CFC7448009248FD /* Example3ViewController.swift */,
 				97733D6B1CFEAC930012C879 /* Example4ViewController.swift */,
 				970F91B21CFEBFC500B510BE /* Example5ViewController.swift */,
@@ -460,6 +460,7 @@
 					};
 					97BE88BD1CDDDAD000240523 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = Y2BAKEHXE4;
 						LastSwiftMigration = 0820;
 					};
 				};
@@ -728,6 +729,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y2BAKEHXE4;
 				INFOPLIST_FILE = StellarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -742,6 +744,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y2BAKEHXE4;
 				INFOPLIST_FILE = StellarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

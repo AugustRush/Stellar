@@ -12,7 +12,6 @@ class Example5ViewController: UIViewController {
 
     @IBOutlet weak var cyanView: UIView!
     
-    @IBOutlet weak var pinkView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -33,10 +32,6 @@ class Example5ViewController: UIViewController {
             .then().makeWidth(120).makeHeight(30).cornerRadius(15).easing(.swiftOut).makeColor(UIColor.brown)
             .animate()
         
-        
-        pinkView.makeWidth(0).duration(0)
-                .then().makeWidth(100).duration(1).animate()
-
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
