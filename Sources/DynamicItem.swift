@@ -1,72 +1,86 @@
-////Copyright (c) 2016
-////
-////Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-////
-////The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-////
-////THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//Copyright (c) 2016
 //
-//import UIKit
+//Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 //
-//final class DynamicItem<T: Vectorial>: NSObject, UIDynamicItem {
-//    var from: T
-//    var to: T
-//    var render: (T) -> Void
-//    var boundaryLimit = false
-//    var complete = false
-//    var completion: (() -> Void)?
-//    weak var behavior: UIDynamicBehavior!
-//    internal var fromP: CGPoint
-//    internal var toP: CGPoint
-//    fileprivate var change: CGFloat
-//    
-//    init(from: T, to: T, render: @escaping (T) -> Void) {
-//        self.from = from
-//        self.to = to
-//        self.fromP = from.reverse()
-//        self.toP = to.reverse()
-//        self.render = render
-//        self.center = self.fromP
-//        self.change = fabs(self.toP.y - self.fromP.y)
-//    }
-//    
-//    deinit {
-//        //correct target value
-//        let value = to.convert(toP)
-//        render(value)
-//        //completion
-//        complete = true
-//        completion?()
-//    }
-//    
-//    //MARK: Update frame
-//    
-//    func updateFrame() {
-//        var current = center
-//        let hasChanged = fabs(current.y - fromP.y)
-//        if hasChanged >= change {
-//            if boundaryLimit {
-//                current = toP
-//                //remove behavior
-//                behavior.cancel()
-//                //completion
-//                complete = true
-//            }
-//        }
-//        let value = to.convert(current)
-//        render(value)
-//    }
-//    
-//    //MARK: UIDynamicItem protocol
-//    var center: CGPoint {
-//        didSet {
-//            updateFrame()
-//        }
-//    }
-//    var transform: CGAffineTransform = CGAffineTransform.identity
-//    var bounds: CGRect {
-//        get {
-//            return CGRect(x: center.x, y: center.y, width: 100, height: 100)
-//        }
-//    }
-//}
+//The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+//
+//THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+import UIKit
+
+//for 4 latitude
+final class DynamicItem<T: Vectorial>: NSObject, UIDynamicItem {
+    
+    var from: T
+    var to: T
+    var render: (T) -> Void
+    var complete = false
+    var boundaryLimit = false
+    var completion: (() -> Void)?
+    internal var fromR: Vector4
+    internal var toR: Vector4
+    weak var behavior: UIDynamicBehavior!
+    fileprivate var change: (x: Double,y: Double,z: Double,w: Double)
+    var referenceChangeLength: Double
+    
+    init(from: T, to: T, render: @escaping (T) -> Void) {
+        self.from = from
+        self.to = to
+        self.render = render
+        //
+        self.fromR = from.reverse()
+        self.toR = to.reverse()
+        //
+        let x = toR.one - fromR.one
+        let y = toR.two - fromR.two
+        let z = toR.three - fromR.three
+        let w = toR.four - fromR.four
+        self.change = (x,y,z,w)
+        //
+        let originChange = sqrt(x*x + y*y)
+        let sizeChange = sqrt(z*z + w*w)
+        self.referenceChangeLength = max(originChange, sizeChange)
+    }
+    
+    deinit {
+        self.render(to)
+        complete = true
+        completion?()
+    }
+    
+    //MARK: Update frame
+    
+    func updateFrame() {
+        let yChange = Double(center.y)
+        let progress = yChange / referenceChangeLength
+        let curX = fromR.one + change.x * progress;
+        let curY = fromR.two + change.y * progress;
+        let curZ = fromR.three + change.z * progress;
+        let curW = fromR.four + change.w * progress;
+        
+        let rect = Vector4.init((curX,curY,curZ,curW))
+        var curV = from.convert(rect)
+        if progress >= 1.0 {
+            if boundaryLimit {
+                curV = to
+                behavior.cancel()
+                complete = true
+            }
+        }
+        self.render(curV)
+    }
+    
+    //MARK: UIDynamicItem protocol
+    var center: CGPoint = CGPoint.zero {
+        didSet {
+            updateFrame()
+        }
+    }
+    
+    var transform: CGAffineTransform = CGAffineTransform.identity
+    var bounds: CGRect {
+        get {
+            return CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
+        }
+    }
+}

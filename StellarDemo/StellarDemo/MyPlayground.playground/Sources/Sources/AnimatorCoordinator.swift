@@ -10,18 +10,18 @@ import UIKit
 
 internal class AnimatorCoordinator: NSObject, UIDynamicAnimatorDelegate {
     static let shared = AnimatorCoordinator()
-    private var activedAnimators: [UIDynamicAnimator] = Array()
-    private var basicAnimator = UIDynamicAnimator()
+    fileprivate var activedAnimators: [UIDynamicAnimator] = Array()
+    fileprivate var basicAnimator = UIDynamicAnimator()
     
     //MARK: public methods    
-    func addBasicBehavior(b: UIDynamicBehavior) {
+    func addBasicBehavior(_ b: UIDynamicBehavior) {
         basicAnimator.addBehavior(b)
     }
-    func addBehavior(b: UIDynamicBehavior) {
+    func addBehavior(_ b: UIDynamicBehavior) {
         addBehaviors([b])
     }
     
-    func addBehaviors(behaviors: [UIDynamicBehavior]) {
+    func addBehaviors(_ behaviors: [UIDynamicBehavior]) {
         
         let animator = activedAnimators.last
         for b in behaviors {
@@ -42,7 +42,7 @@ internal class AnimatorCoordinator: NSObject, UIDynamicAnimatorDelegate {
         }
     }
     
-    private func createAnimator(behavior: UIDynamicBehavior) {
+    fileprivate func createAnimator(_ behavior: UIDynamicBehavior) {
         let animator = UIDynamicAnimator()
         animator.delegate = self
         animator.addBehavior(behavior)
@@ -52,12 +52,12 @@ internal class AnimatorCoordinator: NSObject, UIDynamicAnimatorDelegate {
     
     //MARK: UIDynamicAnimatorDelegate methods
     
-    func dynamicAnimatorDidPause(animator: UIDynamicAnimator) {
-        let index = activedAnimators.indexOf(animator)
-        activedAnimators.removeAtIndex(index!)
+    func dynamicAnimatorDidPause(_ animator: UIDynamicAnimator) {
+        let index = activedAnimators.index(of: animator)
+        activedAnimators.remove(at: index!)
     }
     
-    func dynamicAnimatorWillResume(animator: UIDynamicAnimator) {
+    func dynamicAnimatorWillResume(_ animator: UIDynamicAnimator) {
         //
     }
 }

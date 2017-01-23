@@ -8,12 +8,57 @@
 
 import UIKit
 
-public protocol Physical {
-    func fallTo(to: Self, magnitude: Double,render: (Self) -> Void, completion: (() -> Void)?)
-    func snapTo(to: Self, damping: CGFloat,render: (Self) -> Void, completion: (() -> Void)?)
-    func attachmentTo(to: Self,damping: CGFloat, frequency: CGFloat,render: (Self) -> Void, completion: (() -> Void)?)
-    func pushedTo(to: Self,render: (Self) -> Void, completion: (() -> Void)?)
-    func animateTo(to: Self, duration: CFTimeInterval, delay: CFTimeInterval, type: TimingFunctionType, autoreverses: Bool, repeatCount: Int, render: (Self) -> Void, completion: ((Bool) -> Void)?)
-    //    func collisionWith(path: UIBezierPath,render: (Self) -> Void)
+public protocol Physical: Interpolatable {}
+
+extension Physical {
+    public func fall(to: Self,magnitude: Double = 1.0, render: @escaping (Self) -> Void, completion: (() -> Void)? = nil) {
+        let item = DynamicItemGravity(from: self, to: to, render: render)
+        let push = item.pushBehavior(.down)
+        item.behavior = push
+        item.magnitude = magnitude
+        item.completion = completion
+        push.commitToBasic()
+    }
+    
+    public func snap(to: Self, damping: CGFloat = 0.5,render: @escaping (Self) -> Void, completion: (() -> Void)? = nil) {
+        let item = DynamicItem2(from: self, to: to, render: render)
+        let toP = CGPoint.init(x: item.toR.one, y: item.toR.two)
+        let snap = item.snapBehavior(toP, damping: damping)
+        item.behavior = snap
+        item.completion = completion
+        snap.commit()
+    }
+    
+    public func attachment(to: Self,damping: CGFloat = 0.5, frequency: CGFloat = 0.5,render: @escaping (Self) -> Void, completion: (() -> Void)? = nil) {
+        let item = DynamicItem2(from: self, to: to,render: render)
+        let toP = CGPoint.init(x: item.toR.one, y: item.toR.two)
+        let attachment = item.attachmentBehavior(toP, length: 0.0, damping: damping, frequency: frequency)
+        item.behavior = attachment
+        item.completion = completion
+        attachment.commit()
+    }
+    
+    public func pushed(to: Self,render: @escaping (Self) -> Void, completion: (() -> Void)? = nil) {
+        let item = DynamicItem2(from: self,to: to,render: render)
+        let direction = CGVector(dx: item.toR.one - item.fromR.one, dy: item.toR.two - item.fromR.two)
+        let push = item.pushBehavior(direction, mode: .instantaneous, magnitude: 1.0)
+        item.behavior = push
+        item.boundaryLimit = true
+        item.completion = completion
+        push.commit()
+    }
+    
+    public func animate(to: Self, duration: CFTimeInterval = 0.25, delay: CFTimeInterval = 0.0, type: TimingFunctionType = .default, autoreverses: Bool = false, repeatCount: Int = 0, render: @escaping (Self) -> Void, completion: ((Bool) -> Void)? = nil) {
+        let basicItem = DynamicItemBasic(from: self, to: to, render: render)
+        let push = basicItem.pushBehavior(.down)
+        basicItem.behavior = push
+        basicItem.duration = duration
+        basicItem.timingFunction = type.easing()
+        basicItem.completion = completion
+        basicItem.delay = delay
+        basicItem.autoreverses = true
+        push.commitToBasic()
+    }
 }
+
 

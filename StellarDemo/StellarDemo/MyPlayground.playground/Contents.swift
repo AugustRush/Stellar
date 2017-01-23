@@ -1,8 +1,8 @@
 
 import UIKit
-import XCPlayground
+import PlaygroundSupport
 
-let container = UIView(frame: CGRectMake(0,0,600,600))
+let container = UIView(frame: CGRect.init(x: 0, y: 0, width: 600, height: 600))
 
 container.backgroundColor = UIColor(red: 0.97,green: 0.97,blue: 0.97,alpha: 1.0)
 
@@ -21,8 +21,8 @@ container.backgroundColor = UIColor(red: 0.97,green: 0.97,blue: 0.97,alpha: 1.0)
 //    ball.makeWidth(200).duration(2).autoreverses().animate()
 //}
 
-let ball = Ball(frame: CGRectMake(100,100,25,25))
-ball.backgroundColor = UIColor.cyanColor()
+let ball = Ball(frame: CGRect.init(x: 100, y: 100, width: 25, height: 25))
+ball.backgroundColor = UIColor.cyan
 container.addSubview(ball)
 
 //ball.moveX(100).moveY(100).delay(0.5).duration(1)
@@ -56,27 +56,27 @@ container.addSubview(ball)
 //ball.moveX(200).easing(.ExponentialOut).delay(0.5).duration(1).animate()
 //ball.moveX(200).easing(.ExponentialIn).delay(0.5).duration(1).animate()
 
-ball.moveX(200).easing(.BounceReverse).delay(0.5).duration(3).autoreverses().animate()
+ball.moveX(200).easing(.bounceReverse).delay(0.5).duration(3).autoreverses().animate()
 
-XCPlaygroundPage.currentPage.liveView = container
+PlaygroundPage.current.liveView = container
 
 //basic curve
 
-100.0.animateTo(300, duration: 1, delay: 0.0, type: .Custom(0.0, 1.39, 1.0, -0.55), autoreverses: false, repeatCount: 0, render: { (d) in
+100.0.animate(to: 300, duration: 1, delay: 0.0, type: .custom(0.0, 1.39, 1.0, -0.55), autoreverses: false, repeatCount: 0, render: { (d) in
     let y = d
     }, completion: nil)
 
 
-100.0.pushedTo(300, render: { (d) in
+100.0.pushed(to: 300, render: { (d) in
     let y = d
     }, completion: nil)
 
 
-100.0.snapTo(150, damping: 0.4, render: { (d) in
+100.0.snap(to: 150, damping: 0.4, render: { (d) in
     let t = d
     }, completion: nil)
 
-100.0.attachmentTo(200, damping: 0.3, frequency: 1, render: { (d) in
+100.0.attachment(to: 200, damping: 0.3, frequency: 1, render: { (d) in
     let y = d
     }, completion: nil)
 

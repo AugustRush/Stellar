@@ -8,12 +8,22 @@
 
 import UIKit
 
-protocol Vectorial {
-    func convert(p: CGPoint) -> Self
-    func reverse() -> CGPoint
+public class Vector4 {
+    var one: Double = 0
+    var two: Double = 0
+    var three: Double = 0
+    var four: Double = 0
+    
+    convenience init(_ fourLatitude: (Double,Double,Double,Double)) {
+        self.init()
+        self.one = fourLatitude.0
+        self.two = fourLatitude.1
+        self.three = fourLatitude.2
+        self.four = fourLatitude.3
+    }
 }
 
-protocol Vectorial2 {
-    func convert(r: CGRect) -> Self
-    func reverse() -> CGRect
+public protocol Vectorial {
+    func convert(_ p: Vector4) -> Self
+    func reverse() -> Vector4
 }

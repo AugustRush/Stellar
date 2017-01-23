@@ -9,5 +9,5 @@
 import Foundation
 
 protocol TimingSolvable {
-    func solveOn(time: Double, epslion: Double) -> Double
+    func solveOn(_ time: Double, epslion: Double) -> Double
 }

@@ -30,32 +30,28 @@ class Example1ViewController: UIViewController {
             let center = ball.center
             let interval = 0.1 * Double(index)
             
-//            center.animate(to: point!,
-//                             duration: 0.8,
-//                             delay: interval,
-//                             type: .swiftOut,
-//                             autoreverses:  true,
-//                             render: { (p) in
-//                                
-//                                ball.center = p
-//                                
-//                }, completion: { (f) in
-//                 
-//                    ball.backgroundColor?.animateTo(UIColor.red,
-//                        duration: 0.5,
-//                        delay: interval,
-//                        type: .easeIn,
-//                        autoreverses: true,
-//                        repeatCount: 2,
-//                        render: { (c) in
-//                            
-//                        ball.backgroundColor = c
-//                    })
-//                    
-//                    ball.center.snapTo(center, damping: 0.3,render: { (c) in
-//                        ball.center = c
-//                    })
-//            })
+            center.animate(to: point!,
+                             duration: 0.8,
+                             delay: interval,
+                             type: .swiftOut,
+                             autoreverses:  false,
+                             render: { (p) in
+                                
+                            ball.center = p
+                                
+                }, completion: { (f) in
+                 
+                    ball.backgroundColor?.animate(to: UIColor.red,
+                        duration: 0.4,
+                        delay: interval,
+                        type: .easeIn,
+                        autoreverses: true,
+                        repeatCount: 2,
+                        render: { (c) in
+                            
+                        ball.backgroundColor = c
+                    })
+            })
         }
     }
     

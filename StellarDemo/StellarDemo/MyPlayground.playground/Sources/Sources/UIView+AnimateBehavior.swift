@@ -18,13 +18,13 @@ extension UIView: DriveAnimateBehaviors {
         let subType = type.subType
         
         switch mainType {
-        case .Basic:
+        case .basic:
             behavior = createBasicAnimationWithType(subType, step: step)
-        case .Snap(let d):
+        case .snap(let d):
             behavior = createSnapAnimationWithType(subType, damping: d)
-        case .Attachment(let damping, let frequency):
+        case .attachment(let damping, let frequency):
             behavior = createAttachmentAnimationWithType(subType, damping: damping, frequency: frequency)
-        case .Gravity(let magnitude):
+        case .gravity(let magnitude):
             behavior = createGravityAnimationWithType(subType, magnitude: magnitude)
         }
 
@@ -32,12 +32,12 @@ extension UIView: DriveAnimateBehaviors {
     }
     
     //MARK: Basic
-    private func createBasicAnimationWithType(type: AnimationSubType, step: AnimationStep) -> UIDynamicBehavior {
+    fileprivate func createBasicAnimationWithType(_ type: AnimationSubType, step: AnimationStep) -> UIDynamicBehavior {
         
         var behavior: UIDynamicBehavior!
         
         switch type {
-        case .MoveX(let inc):
+        case .moveX(let inc):
             let from = self.center.x
             let to = from + inc
             let render = {(f: CGFloat) in
@@ -45,7 +45,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .MoveY(let inc):
+        case .moveY(let inc):
             let from = self.center.y
             let to = from + inc
             let render = {(f: CGFloat) in
@@ -53,7 +53,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .MoveTo(let point):
+        case .moveTo(let point):
             let from = self.center
             let to = point
             let render = {(p: CGPoint) in
@@ -61,15 +61,15 @@ extension UIView: DriveAnimateBehaviors {
             }
             
             behavior = basicBehavior(step, from: from, to: to, render: render)
-        case .Color(let color):
-            let from = self.backgroundColor ?? UIColor.clearColor()
+        case .color(let color):
+            let from = self.backgroundColor ?? UIColor.clear
             let to = color
             let render = {(c: UIColor) in
                 self.backgroundColor = c
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .Alpha(let a):
+        case .alpha(let a):
             let from = self.alpha
             let to = a
             let render = {(f: CGFloat) in
@@ -77,7 +77,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .RotateX(let x):
+        case .rotateX(let x):
             let from: CGFloat = 0.0
             let to = x
             let transform = self.layer.transform
@@ -86,7 +86,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .RotateY(let y):
+        case .rotateY(let y):
             let from: CGFloat = 0.0
             let to = y
             let transform = self.layer.transform
@@ -95,7 +95,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .Rotate(let z):
+        case .rotate(let z):
             let from: CGFloat = 0.0
             let to = z
             let transform = self.layer.transform
@@ -104,7 +104,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .RotateXY(let xy):
+        case .rotateXY(let xy):
             let from: CGFloat = 0.0
             let to = xy
             let transform = self.layer.transform
@@ -113,15 +113,15 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .Width(let w):
-            let from = self.bounds.width
+        case .width(let w):
+            let from = self.frame.width
             let to = w
             let render = {(f: CGFloat) in
-                self.bounds.size.width = f
+                self.frame.size.width = f
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .Height(let h):
+        case .height(let h):
             let from = self.bounds.height
             let to = h
             let render = {(f: CGFloat) in
@@ -129,7 +129,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .Size(let size):
+        case .size(let size):
             let from = self.bounds.size
             let to = size
             let render = {(s: CGSize) in
@@ -137,7 +137,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .Frame(let frame):
+        case .frame(let frame):
             let from = self.frame
             let to = frame
             let render = {(f: CGRect) in
@@ -145,7 +145,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .Bounds(let frame):
+        case .bounds(let frame):
             let from = self.bounds
             let to = frame
             let render = {(f: CGRect) in
@@ -153,7 +153,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .ScaleX(let x):
+        case .scaleX(let x):
             let from: CGFloat = 1.0
             let to = x
             let transform = self.layer.transform
@@ -162,7 +162,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .ScaleY(let y):
+        case .scaleY(let y):
             let from: CGFloat = 1.0
             let to = y
             let transform = self.layer.transform
@@ -171,16 +171,16 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .ScaleXY(let x, let y):
-            let from = CGPointMake(1, 1)
-            let to = CGPointMake(x, y)
+        case .scaleXY(let x, let y):
+            let from = CGPoint(x: 1, y: 1)
+            let to = CGPoint(x: x, y: y)
             let transform = self.layer.transform
             let render = {(p: CGPoint) in
                 self.layer.transform = CATransform3DScale(transform, p.x, p.y, 1)
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .CornerRadius(let r):
+        case .cornerRadius(let r):
             let from = self.layer.cornerRadius
             let to = r
             let render = {(f: CGFloat) in
@@ -188,7 +188,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .BorderWidth(let b):
+        case .borderWidth(let b):
             let from = self.layer.borderWidth
             let to = b
             let render = {(f: CGFloat) in
@@ -196,7 +196,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .ShadowRadius(let s):
+        case .shadowRadius(let s):
             let from = self.layer.shadowRadius
             let to = s
             let render = {(f: CGFloat) in
@@ -204,7 +204,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .ZPosition(let p):
+        case .zPosition(let p):
             let from = self.layer.zPosition
             let to = p
             let render = {(f: CGFloat) in
@@ -212,7 +212,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .AnchorPoint(let point):
+        case .anchorPoint(let point):
             let from = self.layer.anchorPoint
             let to = point
             let render = {(p: CGPoint) in
@@ -221,7 +221,7 @@ extension UIView: DriveAnimateBehaviors {
             
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .AnchorPointZ(let z):
+        case .anchorPointZ(let z):
             let from = self.layer.anchorPointZ
             let to = z
             let render = {(f: CGFloat) in
@@ -229,7 +229,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .ShadowOffset(let size):
+        case .shadowOffset(let size):
             let from = self.layer.shadowOffset
             let to = size
             let render = {(s: CGSize) in
@@ -238,16 +238,16 @@ extension UIView: DriveAnimateBehaviors {
             
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .ShadowColor(let c):
+        case .shadowColor(let c):
             let color = self.layer.shadowColor
-            let from = (color != nil) ? UIColor(CGColor: color!) : UIColor.clearColor()
+            let from = (color != nil) ? UIColor(cgColor: color!) : UIColor.clear
             let to = c
             let render = {(c: UIColor) in
-                self.layer.shadowColor = c.CGColor
+                self.layer.shadowColor = c.cgColor
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .ShadowOpacity(let o):
+        case .shadowOpacity(let o):
             let from = self.layer.shadowOpacity
             let to = o
             let render = {(f: Float) in
@@ -255,13 +255,13 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = basicBehavior(step, from: from, to: to, render: render)
             
-        case .TintColor(let color):
+        case .tintColor(let color):
             let from = self.tintColor
             let to = color
             let render = {(c: UIColor) in
                 self.tintColor = c
             }
-            behavior = basicBehavior(step, from: from, to: to, render: render)
+            behavior = basicBehavior(step, from: from!, to: to, render: render)
         
         default:
             fatalError("Should Not be excute forever!")
@@ -273,12 +273,12 @@ extension UIView: DriveAnimateBehaviors {
     
     //MARK: Snap
     
-    private func createSnapAnimationWithType(type: AnimationSubType, damping: CGFloat) -> UIDynamicBehavior {
+    fileprivate func createSnapAnimationWithType(_ type: AnimationSubType, damping: CGFloat) -> UIDynamicBehavior {
         
         var behavior: UIDynamicBehavior!
         
         switch type {
-        case .MoveX(let inc):
+        case .moveX(let inc):
             let from = self.center.x
             let to = from + inc
             let render = {(f: CGFloat) in
@@ -286,7 +286,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .MoveY(let inc):
+        case .moveY(let inc):
             let from = self.center.y
             let to = from + inc
             let render = {(f: CGFloat) in
@@ -294,7 +294,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .MoveTo(let point):
+        case .moveTo(let point):
             let from = self.center
             let to = point
             let render = {(p: CGPoint) in
@@ -302,15 +302,15 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .Color(let color):
-            let from = self.backgroundColor ?? UIColor.clearColor()
+        case .color(let color):
+            let from = self.backgroundColor ?? UIColor.clear
             let to = color
             let render = {(c: UIColor) in
                 self.backgroundColor = c
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .Alpha(let a):
+        case .alpha(let a):
             let from = self.alpha
             let to = a
             let render = {(f: CGFloat) in
@@ -318,7 +318,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .RotateX(let x):
+        case .rotateX(let x):
             let from: CGFloat = 0.0
             let to = x
             let transform = self.layer.transform
@@ -327,7 +327,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .RotateY(let y):
+        case .rotateY(let y):
             let from: CGFloat = 0.0
             let to = y
             let transform = self.layer.transform
@@ -336,7 +336,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .Rotate(let z):
+        case .rotate(let z):
             let from: CGFloat = 0.0
             let to = z
             let transform = self.layer.transform
@@ -345,7 +345,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .RotateXY(let xy):
+        case .rotateXY(let xy):
             let from: CGFloat = 0.0
             let to = xy
             let transform = self.layer.transform
@@ -354,15 +354,15 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .Width(let w):
-            let from = self.bounds.width
+        case .width(let w):
+            let from = self.frame.width
             let to = w
             let render = {(f: CGFloat) in
-                self.bounds.size.width = f
+                self.frame.size.width = f
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .Height(let h):
+        case .height(let h):
             let from = self.bounds.height
             let to = h
             let render = {(f: CGFloat) in
@@ -370,7 +370,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .Size(let size):
+        case .size(let size):
             let from = self.bounds.size
             let to = size
             let render = {(s: CGSize) in
@@ -378,7 +378,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .Frame(let frame):
+        case .frame(let frame):
             let from = self.frame
             let to = frame
             let render = {(f: CGRect) in
@@ -386,7 +386,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .Bounds(let frame):
+        case .bounds(let frame):
             let from = self.bounds
             let to = frame
             let render = {(f: CGRect) in
@@ -394,7 +394,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .ScaleX(let x):
+        case .scaleX(let x):
             let from: CGFloat = 1.0
             let to = x
             let transform = self.layer.transform
@@ -403,7 +403,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .ScaleY(let y):
+        case .scaleY(let y):
             let from: CGFloat = 1.0
             let to = y
             let transform = self.layer.transform
@@ -412,16 +412,16 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .ScaleXY(let x, let y):
-            let from = CGPointMake(1, 1)
-            let to = CGPointMake(x, y)
+        case .scaleXY(let x, let y):
+            let from = CGPoint(x: 1, y: 1)
+            let to = CGPoint(x: x, y: y)
             let transform = self.layer.transform
             let render = {(p: CGPoint) in
                 self.layer.transform = CATransform3DScale(transform, p.x, p.y, 1)
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .CornerRadius(let r):
+        case .cornerRadius(let r):
             let from = self.layer.cornerRadius
             let to = r
             let render = {(f: CGFloat) in
@@ -429,7 +429,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .BorderWidth(let b):
+        case .borderWidth(let b):
             let from = self.layer.borderWidth
             let to = b
             let render = {(f: CGFloat) in
@@ -437,7 +437,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .ShadowRadius(let s):
+        case .shadowRadius(let s):
             let from = self.layer.shadowRadius
             let to = s
             let render = {(f: CGFloat) in
@@ -445,7 +445,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .ZPosition(let p):
+        case .zPosition(let p):
             let from = self.layer.zPosition
             let to = p
             let render = {(f: CGFloat) in
@@ -453,7 +453,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .AnchorPoint(let point):
+        case .anchorPoint(let point):
             let from = self.layer.anchorPoint
             let to = point
             let render = {(p: CGPoint) in
@@ -461,7 +461,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .AnchorPointZ(let z):
+        case .anchorPointZ(let z):
             let from = self.layer.anchorPointZ
             let to = z
             let render = {(f: CGFloat) in
@@ -469,7 +469,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .ShadowOffset(let size):
+        case .shadowOffset(let size):
             let from = self.layer.shadowOffset
             let to = size
             let render = {(s: CGSize) in
@@ -477,16 +477,16 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .ShadowColor(let c):
+        case .shadowColor(let c):
             let color = self.layer.shadowColor
-            let from = (color != nil) ? UIColor(CGColor: color!) : UIColor.clearColor()
+            let from = (color != nil) ? UIColor(cgColor: color!) : UIColor.clear
             let to = c
             let render = {(c: UIColor) in
-                self.layer.shadowColor = c.CGColor
+                self.layer.shadowColor = c.cgColor
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .ShadowOpacity(let o):
+        case .shadowOpacity(let o):
             let from = self.layer.shadowOpacity
             let to = o
             let render = {(f: Float) in
@@ -494,13 +494,13 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = snapBehavior(damping, from: from, to: to, render: render)
             
-        case .TintColor(let color):
+        case .tintColor(let color):
             let from = self.tintColor
             let to = color
             let render = {(c: UIColor) in
                 self.tintColor = c
             }
-            behavior = snapBehavior(damping, from: from, to: to, render: render)
+            behavior = snapBehavior(damping, from: from!, to: to, render: render)
             
         default:
             fatalError("Should Not be excute forever!")
@@ -511,11 +511,11 @@ extension UIView: DriveAnimateBehaviors {
     }
     
     //MARK: Attachment
-    private func createAttachmentAnimationWithType(type: AnimationSubType, damping: CGFloat, frequency: CGFloat) -> UIDynamicBehavior {
+    fileprivate func createAttachmentAnimationWithType(_ type: AnimationSubType, damping: CGFloat, frequency: CGFloat) -> UIDynamicBehavior {
         var behavior: UIDynamicBehavior!
         
         switch type {
-        case .MoveX(let inc):
+        case .moveX(let inc):
             let from = self.center.x
             let to = from + inc
             let render = {(f: CGFloat) in
@@ -523,7 +523,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .MoveY(let inc):
+        case .moveY(let inc):
             let from = self.center.y
             let to = from + inc
             let render = {(f: CGFloat) in
@@ -531,7 +531,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .MoveTo(let point):
+        case .moveTo(let point):
             let from = self.center
             let to = point
             let render = {(p: CGPoint) in
@@ -539,15 +539,15 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .Color(let color):
-            let from = self.backgroundColor ?? UIColor.clearColor()
+        case .color(let color):
+            let from = self.backgroundColor ?? UIColor.clear
             let to = color
             let render = {(c: UIColor) in
                 self.backgroundColor = c
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .Alpha(let a):
+        case .alpha(let a):
             let from = self.alpha
             let to = a
             let render = {(f: CGFloat) in
@@ -555,7 +555,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .RotateX(let x):
+        case .rotateX(let x):
             let from: CGFloat = 0.0
             let to = x
             let transform = self.layer.transform
@@ -564,7 +564,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .RotateY(let y):
+        case .rotateY(let y):
             let from: CGFloat = 0.0
             let to = y
             let transform = self.layer.transform
@@ -573,7 +573,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .Rotate(let z):
+        case .rotate(let z):
             let from: CGFloat = 0.0
             let to = z
             let transform = self.layer.transform
@@ -582,7 +582,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .RotateXY(let xy):
+        case .rotateXY(let xy):
             let from: CGFloat = 0.0
             let to = xy
             let transform = self.layer.transform
@@ -591,15 +591,15 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .Width(let w):
-            let from = self.bounds.width
+        case .width(let w):
+            let from = self.frame.width
             let to = w
             let render = {(f: CGFloat) in
-                self.bounds.size.width = f
+                self.frame.size.width = f
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .Height(let h):
+        case .height(let h):
             let from = self.bounds.height
             let to = h
             let render = {(f: CGFloat) in
@@ -607,7 +607,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .Size(let size):
+        case .size(let size):
             let from = self.bounds.size
             let to = size
             let render = {(s: CGSize) in
@@ -615,7 +615,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .Frame(let frame):
+        case .frame(let frame):
             let from = self.frame
             let to = frame
             let render = {(f: CGRect) in
@@ -623,7 +623,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .Bounds(let frame):
+        case .bounds(let frame):
             let from = self.bounds
             let to = frame
             let render = {(f: CGRect) in
@@ -631,7 +631,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .ScaleX(let x):
+        case .scaleX(let x):
             let from: CGFloat = 1.0
             let to = x
             let transform = self.layer.transform
@@ -640,7 +640,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .ScaleY(let y):
+        case .scaleY(let y):
             let from: CGFloat = 1.0
             let to = y
             let transform = self.layer.transform
@@ -649,16 +649,16 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .ScaleXY(let x, let y):
-            let from = CGPointMake(1, 1)
-            let to = CGPointMake(x, y)
+        case .scaleXY(let x, let y):
+            let from = CGPoint(x: 1, y: 1)
+            let to = CGPoint(x: x, y: y)
             let transform = self.layer.transform
             let render = {(p: CGPoint) in
                 self.layer.transform = CATransform3DScale(transform, p.x, p.y, 1)
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .CornerRadius(let r):
+        case .cornerRadius(let r):
             let from = self.layer.cornerRadius
             let to = r
             let render = {(f: CGFloat) in
@@ -666,7 +666,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .BorderWidth(let b):
+        case .borderWidth(let b):
             let from = self.layer.borderWidth
             let to = b
             let render = {(f: CGFloat) in
@@ -674,7 +674,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .ShadowRadius(let s):
+        case .shadowRadius(let s):
             let from = self.layer.shadowRadius
             let to = s
             let render = {(f: CGFloat) in
@@ -682,7 +682,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .ZPosition(let p):
+        case .zPosition(let p):
             let from = self.layer.zPosition
             let to = p
             let render = {(f: CGFloat) in
@@ -690,7 +690,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .AnchorPoint(let point):
+        case .anchorPoint(let point):
             let from = self.layer.anchorPoint
             let to = point
             let render = {(p: CGPoint) in
@@ -698,7 +698,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .AnchorPointZ(let z):
+        case .anchorPointZ(let z):
             let from = self.layer.anchorPointZ
             let to = z
             let render = {(f: CGFloat) in
@@ -706,7 +706,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .ShadowOffset(let size):
+        case .shadowOffset(let size):
             let from = self.layer.shadowOffset
             let to = size
             let render = {(s: CGSize) in
@@ -714,16 +714,16 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .ShadowColor(let c):
+        case .shadowColor(let c):
             let color = self.layer.shadowColor
-            let from = (color != nil) ? UIColor(CGColor: color!) : UIColor.clearColor()
+            let from = (color != nil) ? UIColor(cgColor: color!) : UIColor.clear
             let to = c
             let render = {(c: UIColor) in
-                self.layer.shadowColor = c.CGColor
+                self.layer.shadowColor = c.cgColor
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .ShadowOpacity(let o):
+        case .shadowOpacity(let o):
             let from = self.layer.shadowOpacity
             let to = o
             let render = {(f: Float) in
@@ -731,13 +731,13 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
             
-        case .TintColor(let color):
+        case .tintColor(let color):
             let from = self.tintColor
             let to = color
             let render = {(c: UIColor) in
                 self.tintColor = c
             }
-            behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
+            behavior = attachmentBehavior(damping, frequency: frequency, from: from!, to: to, render: render)
         default:
             fatalError("Should Not be excute forever!")
 
@@ -747,11 +747,11 @@ extension UIView: DriveAnimateBehaviors {
     }
     
     //MARK: Gravity
-    private func createGravityAnimationWithType(type: AnimationSubType, magnitude: Double) -> UIDynamicBehavior {
+    fileprivate func createGravityAnimationWithType(_ type: AnimationSubType, magnitude: Double) -> UIDynamicBehavior {
         var behavior: UIDynamicBehavior!
         
         switch type {
-        case .MoveX(let inc):
+        case .moveX(let inc):
             let from = self.center.x
             let to = from + inc
             let render = {(f: CGFloat) in
@@ -759,7 +759,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .MoveY(let inc):
+        case .moveY(let inc):
             let from = self.center.y
             let to = from + inc
             let render = {(f: CGFloat) in
@@ -767,7 +767,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .MoveTo(let point):
+        case .moveTo(let point):
             let from = self.center
             let to = point
             let render = {(p: CGPoint) in
@@ -775,15 +775,15 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .Color(let color):
-            let from = self.backgroundColor ?? UIColor.clearColor()
+        case .color(let color):
+            let from = self.backgroundColor ?? UIColor.clear
             let to = color
             let render = {(c: UIColor) in
                 self.backgroundColor = c
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .Alpha(let a):
+        case .alpha(let a):
             let from = self.alpha
             let to = a
             let render = {(f: CGFloat) in
@@ -791,7 +791,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .RotateX(let x):
+        case .rotateX(let x):
             let from: CGFloat = 0.0
             let to = x
             let transform = self.layer.transform
@@ -800,7 +800,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .RotateY(let y):
+        case .rotateY(let y):
             let from: CGFloat = 0.0
             let to = y
             let transform = self.layer.transform
@@ -809,7 +809,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .Rotate(let z):
+        case .rotate(let z):
             let from: CGFloat = 0.0
             let to = z
             let transform = self.layer.transform
@@ -818,7 +818,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .RotateXY(let xy):
+        case .rotateXY(let xy):
             let from: CGFloat = 0.0
             let to = xy
             let transform = self.layer.transform
@@ -827,15 +827,15 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .Width(let w):
-            let from = self.bounds.width
+        case .width(let w):
+            let from = self.frame.width
             let to = w
             let render = {(f: CGFloat) in
-                self.bounds.size.width = f
+                self.frame.size.width = f
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .Height(let h):
+        case .height(let h):
             let from = self.bounds.height
             let to = h
             let render = {(f: CGFloat) in
@@ -843,7 +843,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .Size(let size):
+        case .size(let size):
             let from = self.bounds.size
             let to = size
             let render = {(s: CGSize) in
@@ -851,7 +851,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .Frame(let frame):
+        case .frame(let frame):
             let from = self.frame
             let to = frame
             let render = {(f: CGRect) in
@@ -859,7 +859,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .Bounds(let frame):
+        case .bounds(let frame):
             let from = self.bounds
             let to = frame
             let render = {(f: CGRect) in
@@ -867,7 +867,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .ScaleX(let x):
+        case .scaleX(let x):
             let from: CGFloat = 1.0
             let to = x
             let transform = self.layer.transform
@@ -876,7 +876,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .ScaleY(let y):
+        case .scaleY(let y):
             let from: CGFloat = 1.0
             let to = y
             let transform = self.layer.transform
@@ -885,16 +885,16 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .ScaleXY(let x, let y):
-            let from = CGPointMake(1, 1)
-            let to = CGPointMake(x, y)
+        case .scaleXY(let x, let y):
+            let from = CGPoint(x: 1, y: 1)
+            let to = CGPoint(x: x, y: y)
             let transform = self.layer.transform
             let render = {(p: CGPoint) in
                 self.layer.transform = CATransform3DScale(transform, p.x, p.y, 1)
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .CornerRadius(let r):
+        case .cornerRadius(let r):
             let from = self.layer.cornerRadius
             let to = r
             let render = {(f: CGFloat) in
@@ -902,7 +902,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .BorderWidth(let b):
+        case .borderWidth(let b):
             let from = self.layer.borderWidth
             let to = b
             let render = {(f: CGFloat) in
@@ -910,7 +910,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .ShadowRadius(let s):
+        case .shadowRadius(let s):
             let from = self.layer.shadowRadius
             let to = s
             let render = {(f: CGFloat) in
@@ -918,7 +918,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .ZPosition(let p):
+        case .zPosition(let p):
             let from = self.layer.zPosition
             let to = p
             let render = {(f: CGFloat) in
@@ -926,7 +926,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .AnchorPoint(let point):
+        case .anchorPoint(let point):
             let from = self.layer.anchorPoint
             let to = point
             let render = {(p: CGPoint) in
@@ -934,7 +934,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .AnchorPointZ(let z):
+        case .anchorPointZ(let z):
             let from = self.layer.anchorPointZ
             let to = z
             let render = {(f: CGFloat) in
@@ -942,7 +942,7 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .ShadowOffset(let size):
+        case .shadowOffset(let size):
             let from = self.layer.shadowOffset
             let to = size
             let render = {(s: CGSize) in
@@ -950,16 +950,16 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .ShadowColor(let c):
+        case .shadowColor(let c):
             let color = self.layer.shadowColor
-            let from = (color != nil) ? UIColor(CGColor: color!) : UIColor.clearColor()
+            let from = (color != nil) ? UIColor(cgColor: color!) : UIColor.clear
             let to = c
             let render = {(c: UIColor) in
-                self.layer.shadowColor = c.CGColor
+                self.layer.shadowColor = c.cgColor
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .ShadowOpacity(let o):
+        case .shadowOpacity(let o):
             let from = self.layer.shadowOpacity
             let to = o
             let render = {(f: Float) in
@@ -967,13 +967,13 @@ extension UIView: DriveAnimateBehaviors {
             }
             behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
             
-        case .TintColor(let color):
+        case .tintColor(let color):
             let from = self.tintColor
             let to = color
             let render = {(c: UIColor) in
                 self.tintColor = c
             }
-            behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
+            behavior = gravityBehavior(magnitude, from: from!, to: to, render: render)
             
             //        case .TextColor(let color):
             //            let fromColor = self.performSelector(Selector("textColor")).takeUnretainedValue() as? UIColor
@@ -992,9 +992,9 @@ extension UIView: DriveAnimateBehaviors {
     }
     
     //MARK: Private methods
-    private func basicBehavior<T: Interpolatable>(step: AnimationStep,from: T, to: T, render: ((T) -> Void)) -> UIDynamicBehavior {
+    fileprivate func basicBehavior<T: Interpolatable>(_ step: AnimationStep,from: T, to: T, render: @escaping ((T) -> Void)) -> UIDynamicBehavior {
         let item = DynamicItemBasic(from: from, to: to, render: render)
-        let push = item.pushBehavior(.Down)
+        let push = item.pushBehavior(.down)
         item.behavior = push
         item.duration = step.duration
         item.timingFunction = step.timing.easing()
@@ -1005,41 +1005,27 @@ extension UIView: DriveAnimateBehaviors {
         return push
     }
     
-    private func snapBehavior<T: Vectorial>(damping: CGFloat, from: T, to: T, render: (T) -> Void) -> UIDynamicBehavior {
-        let item = DynamicItem(from: from, to: to, render: render)
-        let snap = item.snapBehavior(item.toP, damping: damping)
-        item.behavior = snap
-        
-        return snap
-    }
-    
-    private func snapBehavior<T: Vectorial2>(damping: CGFloat, from: T, to: T, render: (T) -> Void) -> UIDynamicBehavior {
+    fileprivate func snapBehavior<T: Vectorial>(_ damping: CGFloat, from: T, to: T, render: @escaping (T) -> Void) -> UIDynamicBehavior {
         let item = DynamicItem2(from: from, to: to, render: render)
-        let point = CGPointMake(0.0, item.referenceChangeLength)
+        let point = CGPoint(x: 0.0, y: item.referenceChangeLength)
         let snap = item.snapBehavior(point, damping: damping)
         item.behavior = snap
         
         return snap
     }
     
-    private func attachmentBehavior<T: Vectorial>(damping: CGFloat, frequency: CGFloat, from: T, to: T, render: (T) -> Void) -> UIDynamicBehavior {
-        let item = DynamicItem(from: from, to: to, render: render)
-        let attachment = item.attachmentBehavior(item.toP, length: 0.0, damping: damping, frequency: frequency)
-        item.behavior = attachment
-        return attachment
-    }
     
-    private func attachmentBehavior<T: Vectorial2>(damping: CGFloat, frequency: CGFloat, from: T, to: T, render: (T) -> Void) -> UIDynamicBehavior {
+    fileprivate func attachmentBehavior<T: Vectorial>(_ damping: CGFloat, frequency: CGFloat, from: T, to: T, render: @escaping (T) -> Void) -> UIDynamicBehavior {
         let item = DynamicItem2(from: from, to: to, render: render)
-        let point = CGPointMake(0.0, item.referenceChangeLength)
+        let point = CGPoint(x: 0.0, y: item.referenceChangeLength)
         let attachment = item.attachmentBehavior(point, length: 0.0, damping: damping, frequency: frequency)
         item.behavior = attachment
         return attachment
     }
     
-    private func gravityBehavior<T: Interpolatable>(magnitude: Double, from: T, to: T, render: (T) -> Void) -> UIDynamicBehavior {
+    fileprivate func gravityBehavior<T: Interpolatable>(_ magnitude: Double, from: T, to: T, render: @escaping (T) -> Void) -> UIDynamicBehavior {
         let item = DynamicItemGravity(from: from, to: to, render: render)
-        let push = item.pushBehavior(.Down)
+        let push = item.pushBehavior(.down)
         item.behavior = push
         item.magnitude = magnitude
         return push

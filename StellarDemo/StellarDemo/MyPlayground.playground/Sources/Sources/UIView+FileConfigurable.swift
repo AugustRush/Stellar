@@ -8,33 +8,33 @@
 
 import UIKit
 
-enum ConfigurationError: ErrorType {
-    case InvalidString
-    case TransformedError(ErrorType)
-    case Undefined
+enum ConfigurationError: Error {
+    case invalidString
+    case transformedError(Error)
+    case undefined
 }
 
 extension UIView {
     //configure animation with JSON string
-    public func configureWithJSON(str: String) throws -> Void {
-        let data = str.dataUsingEncoding(NSUTF8StringEncoding)
+    public func configureWithJSON(_ str: String) throws -> Void {
+        let data = str.data(using: String.Encoding.utf8)
         guard let _ = data else {
-            throw ConfigurationError.InvalidString
+            throw ConfigurationError.invalidString
         }
         do {
-               let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+               let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
             switch json {
             case let dict as Dictionary<String,String>:
                 configureWithDictionary(dict)
             default:
-                throw ConfigurationError.Undefined
+                throw ConfigurationError.undefined
             }
         } catch {
-            throw ConfigurationError.TransformedError(error)
+            throw ConfigurationError.transformedError(error)
         }
     }
     
-    private func configureWithDictionary(dict: Dictionary<String, String>) -> Void {
+    fileprivate func configureWithDictionary(_ dict: Dictionary<String, String>) -> Void {
         
     }
 }
