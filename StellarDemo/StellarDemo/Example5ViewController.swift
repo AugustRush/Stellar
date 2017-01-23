@@ -23,13 +23,21 @@ class Example5ViewController: UIViewController {
         let rotation: CGFloat = CGFloat(M_PI) * 20.0
         cyanView.makeSize(CGSize(width: 100, height: 30)).snap()
             .then().moveY(-100).snap(1)
-            .then().rotate(rotation).duration(2).easing(.swiftOut).makeHeight(100).cornerRadius(50)
+            .then().rotate(rotation)
+                   .duration(2)
+                   .easing(.swiftOut)
+                   .makeHeight(100)
+                   .cornerRadius(50)
             .then().moveY(100).gravity()
             .then().moveY(-80)
             .then().moveY(80).gravity()
             .then().moveY(-40)
             .then().moveY(40).gravity()
-            .then().makeWidth(120).makeHeight(30).cornerRadius(15).easing(.swiftOut).makeColor(UIColor.brown)
+            .then().makeWidth(120)
+                   .makeHeight(30)
+                   .cornerRadius(15)
+                   .easing(.swiftOut)
+                   .makeColor(UIColor.brown)
             .animate()
         
     }

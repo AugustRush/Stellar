@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Animations-->
         <scene sceneID="wmR-Z5-niO">
             <objects>
                 <tableViewController id="f2g-0u-5Ac" sceneMemberID="viewController">
@@ -188,7 +188,7 @@
                             <outlet property="delegate" destination="f2g-0u-5Ac" id="wM7-Pm-KhR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="lcQ-dD-AWj"/>
+                    <navigationItem key="navigationItem" title="Animations" id="lcQ-dD-AWj"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BLo-Qi-gHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
