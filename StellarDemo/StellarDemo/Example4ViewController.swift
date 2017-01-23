@@ -18,13 +18,13 @@ class Example4ViewController: UIViewController {
         
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesEnded(touches, withEvent: event)
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
         
-        animateView.makeSize(CGSizeMake(50, 150)).snap(0.3).completion({
+        animateView.makeSize(CGSize(width: 50, height: 150)).snap(0.3).completion({
                 print("First step")
             })
-            .then().moveX(-100).moveY(-50).anchorPoint(CGPointMake(1, 1)).duration(1).completion({
+            .then().moveX(-100).moveY(-50).anchorPoint(CGPoint(x: 1, y: 1)).duration(1).completion({
                 print("Second step!")
             })
             .then().rotate(CGFloat(M_PI)).attachment(0.3, frequency: 0.8).completion({

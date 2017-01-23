@@ -8,8 +8,22 @@
 
 import UIKit
 
-protocol Vectorial {
-    associatedtype VectorType
-    func convert(p: VectorType) -> Self
-    func reverse() -> VectorType
+public class Vector4 {
+    var one: Double = 0
+    var two: Double = 0
+    var three: Double = 0
+    var four: Double = 0
+    
+    convenience init(_ fourLatitude: (Double,Double,Double,Double)) {
+        self.init()
+        self.one = fourLatitude.0
+        self.two = fourLatitude.1
+        self.three = fourLatitude.2
+        self.four = fourLatitude.3
+    }
+}
+
+public protocol Vectorial {
+    func convert(_ p: Vector4) -> Self
+    func reverse() -> Vector4
 }

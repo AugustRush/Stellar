@@ -21,28 +21,28 @@ class Example6ViewController: UIViewController {
         super.viewDidLoad()
         
         for view in views {
-            let basic = DynamicItemBasic(from: view.center,to: CGPointMake(160, 200), render: { (p) in
+            let basic = DynamicItemBasic(from: view.center,to: CGPoint(x: 160, y: 200), render: { (p) in
                 view.center = p
             })
             basic.duration = 1.0
             basic.speed = 0.0
-            basic.timingFunction = TimingFunctionType.SwiftOut.easing()
+            basic.timingFunction = TimingFunctionType.swiftOut.easing()
             centerItems.append(basic)
             
             let color = view.backgroundColor!
-            let basic1 = DynamicItemBasic(from: color, to: UIColor.redColor(), render: { (c) in
+            let basic1 = DynamicItemBasic(from: color, to: UIColor.red, render: { (c) in
                 view.backgroundColor = c
             })
             basic1.duration = 1.0
             basic1.speed = 0.0
-            basic1.timingFunction = TimingFunctionType.SwiftOut.easing()
+            basic1.timingFunction = TimingFunctionType.swiftOut.easing()
             colorItems.append(basic1)
 
         }
         
     }
     
-    @IBAction func sliderValueChanged(sender: UISlider) {
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
         let offset = Double(sender.value)
         for item in centerItems {
             item.timeOffset = offset

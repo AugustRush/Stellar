@@ -9,8 +9,8 @@
 import UIKit
 
 internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate, AnimationSequenceDelegate {
-    private weak var object: DriveAnimateBehaviors!
-    private var mutipleSequences = [AnimationSequence]()
+    fileprivate weak var object: DriveAnimateBehaviors!
+    fileprivate var mutipleSequences = [AnimationSequence]()
     
     //MARK: init method
     init(object: DriveAnimateBehaviors) {
@@ -18,42 +18,42 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate, AnimationS
     }
     
     //MARK: public methods
-    func addAnimationType(type: AnimationType) {
+    func addAnimationType(_ type: AnimationType) {
         let step = lastStep()
         step.types.append(type)
     }
     
-    func changeDuration(d: CFTimeInterval) {
+    func changeDuration(_ d: CFTimeInterval) {
         let step = lastStep()
         step.duration = d
     }
     
-    func changeDelay(d: CFTimeInterval) {
+    func changeDelay(_ d: CFTimeInterval) {
         let step = lastStep()
         step.delay = d
     }
     
-    func changeAutoreverses(a: Bool) {
+    func changeAutoreverses(_ a: Bool) {
         let step = lastStep()
         step.autoreverses = a
     }
     
-    func changeRepeatCount(count: Int) {
+    func changeRepeatCount(_ count: Int) {
         let step = lastStep()
         step.repeatCount = count
     }
     
-    func changeCompletion(c: () -> Void) {
+    func changeCompletion(_ c: @escaping () -> Void) {
         let step = lastStep()
         step.completion = c
     }
     
-    func changeEasing(e: TimingFunctionType) {
+    func changeEasing(_ e: TimingFunctionType) {
         let step = lastStep()
         step.timing = e
     }
     
-    func changeMainType(type: AnimationStyle) {
+    func changeMainType(_ type: AnimationStyle) {
         let step = lastStep()
         let lastAnimationType = step.types.last
         guard let _ = lastAnimationType else {
@@ -69,6 +69,7 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate, AnimationS
         lastSequence().addStep(step)
     }
     
+    @discardableResult
     func makeNextSequence() -> AnimationSequence {
         let sequence = AnimationSequence(object: self.object)
         sequence.delegate = self
@@ -96,7 +97,7 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate, AnimationS
     
     //MARK: private methods
     
-    private func lastSequence() -> AnimationSequence {
+    fileprivate func lastSequence() -> AnimationSequence {
         var sequence = mutipleSequences.last
         if sequence == nil {
             sequence = makeNextSequence()
@@ -105,7 +106,7 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate, AnimationS
         return sequence!
     }
     
-    private func lastStep() -> AnimationStep {
+    fileprivate func lastStep() -> AnimationStep {
         let sequence = lastSequence()
         var step = sequence.last()
         if step == nil {
@@ -117,10 +118,10 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate, AnimationS
     
     //MARK: AnimationSequenceDelegate methods
     
-    func animationSequenceDidComplete(sequence: AnimationSequence) {
-        let index = mutipleSequences.indexOf(sequence)
+    func animationSequenceDidComplete(_ sequence: AnimationSequence) {
+        let index = mutipleSequences.index(of: sequence)
         if index != nil {
-            mutipleSequences.removeAtIndex(index!)
+            mutipleSequences.remove(at: index!)
         }
     }
 }
