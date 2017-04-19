@@ -27,7 +27,7 @@ class Example4ViewController: UIViewController {
             .then().moveX(-100).moveY(-50).anchorPoint(CGPoint(x: 1, y: 1)).duration(1).completion({
                 print("Second step!")
             })
-            .then().rotate(CGFloat(M_PI)).attachment(0.3, frequency: 0.8).completion({
+            .then().rotate(.pi).attachment(0.3, frequency: 0.8).completion({
                 print("Third step!")
             })
             .then().moveY(500).gravity().completion({

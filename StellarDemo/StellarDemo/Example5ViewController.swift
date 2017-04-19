@@ -20,7 +20,7 @@ class Example5ViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
-        let rotation: CGFloat = CGFloat(M_PI) * 20.0
+        let rotation: CGFloat = .pi * 20.0
         cyanView.makeSize(CGSize(width: 100, height: 30)).snap()
             .then().moveY(-100).snap(1)
             .then().rotate(rotation)

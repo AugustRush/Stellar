@@ -68,22 +68,22 @@ public enum TimingFunctionType {
             return UnitBezier(p1x: 0.4, p1y: 0.0, p2x: 0.2, p2y: 1.0)
         case .backEaseIn:
             return EasingContainer(easing: { (t: Double) in
-                return t * t * t - t * sin(t * M_PI)
+                return t * t * t - t * sin(t * .pi)
             })
         case .backEaseOut:
             return EasingContainer(easing: { (t: Double) in
                 let f = (1 - t);
-                return 1 - (f * f * f - f * sin(f * M_PI));
+                return 1 - (f * f * f - f * sin(f * .pi));
             })
         case .backEaseInOut:
             return EasingContainer(easing: { (t: Double) in
                 if(t < 0.5) {
                     let f = 2 * t;
-                    return 0.5 * (f * f * f - f * sin(f * M_PI));
+                    return 0.5 * (f * f * f - f * sin(f * .pi));
                 } else {
                     let f = (1.0 - (2.0 * t - 1.0));
                     let cubic = f * f * f
-                    return 0.5 * (1.0 - (cubic - f * sin(f * M_PI))) + 0.5;
+                    return 0.5 * (1.0 - (cubic - f * sin(f * .pi))) + 0.5;
                 }
             })
         case .bounceOut:
@@ -100,7 +100,7 @@ public enum TimingFunctionType {
             })
         case .sine:
             return EasingContainer(easing: { (t: Double) in
-                return 1 - cos( t * M_PI / 2.0)
+                return 1 - cos( t * .pi / 2.0)
             })
         case .circ:
             return EasingContainer(easing: { (t: Double) in
@@ -116,11 +116,11 @@ public enum TimingFunctionType {
             })
         case .elasticIn:
             return EasingContainer(easing: { (t: Double) in
-                return sin(13.0 * M_PI_2 * t) * pow(2, 10 * (t - 1))
+                return sin(13.0 * (.pi / 2.0) * t) * pow(2, 10 * (t - 1))
             })
         case .elasticOut:
             return EasingContainer(easing: { (t: Double) in
-                return sin(-13.0 * M_PI_2 * (t + 1)) * pow(2, -10 * t) + 1.0;
+                return sin(-13.0 * (.pi / 2.0) * (t + 1)) * pow(2, -10 * t) + 1.0;
             })
         case .bounceReverse:
             return EasingContainer(easing: { (t: Double) in

@@ -460,7 +460,7 @@
 					};
 					97BE88BD1CDDDAD000240523 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = Y2BAKEHXE4;
+						DevelopmentTeam = C8U29Y8XS5;
 						LastSwiftMigration = 0820;
 					};
 				};
@@ -729,7 +729,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y2BAKEHXE4;
+				DEVELOPMENT_TEAM = C8U29Y8XS5;
 				INFOPLIST_FILE = StellarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -744,7 +744,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y2BAKEHXE4;
+				DEVELOPMENT_TEAM = C8U29Y8XS5;
 				INFOPLIST_FILE = StellarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
