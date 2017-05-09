@@ -10,13 +10,6 @@ import UIKit
 
 public protocol Chainable {
     //Chainable methods
-    func then() -> UIView
-    func animate() -> Void
-}
-
-//CALayer
-public protocol Chainable1 {
-    //Chainable methods
-    func then() -> CALayer
+    func then() -> Self
     func animate() -> Void
 }
