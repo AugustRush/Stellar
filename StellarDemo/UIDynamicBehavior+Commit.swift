@@ -8,10 +8,17 @@
 
 import UIKit
 
-public protocol SnapConfigurable: BasicChainable {
-    func snap(_ damping: CGFloat) -> SnapConfigurable
-}
-
-public protocol SnapConfigurable1: BasicChainable1 {
-    func snap(_ damping: CGFloat) -> SnapConfigurable1
+internal extension UIDynamicBehavior {
+    
+    func commit() {
+        AnimatorCoordinator.shared.addBehavior(self)
+    }
+        
+    func cancel() {
+        self.dynamicAnimator?.removeBehavior(self)
+    }
+    
+    func commitToBasic() {
+        AnimatorCoordinator.shared.addBasicBehavior(self)
+    }
 }

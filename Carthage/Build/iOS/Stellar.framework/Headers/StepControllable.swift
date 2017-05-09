@@ -6,12 +6,10 @@
 //
 //THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import UIKit
+import Foundation
 
-public protocol SnapConfigurable: BasicChainable {
-    func snap(_ damping: CGFloat) -> SnapConfigurable
-}
-
-public protocol SnapConfigurable1: BasicChainable1 {
-    func snap(_ damping: CGFloat) -> SnapConfigurable1
+public protocol StepControllable {
+    //remove all remaining from excute sequence
+    func cancelAllRemaining()
+    //will add more methods to control animation steps
 }

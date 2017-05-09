@@ -10,33 +10,6 @@
 		97019FD91D054ECD00FD6644 /* Stellar.h in Headers */ = {isa = PBXBuildFile; fileRef = 97019FD81D054ECD00FD6644 /* Stellar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		97019FEB1D054ECD00FD6644 /* Stellar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97019FD61D054ECD00FD6644 /* Stellar.framework */; };
 		97019FEC1D054ECD00FD6644 /* Stellar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97019FD61D054ECD00FD6644 /* Stellar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		97019FF41D054EE700FD6644 /* UIView+Stellar.swift in Headers */ = {isa = PBXBuildFile; fileRef = 973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FF51D054EEA00FD6644 /* UILabel+Stellar.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E8D3F01CFC13FB004E6A80 /* UILabel+Stellar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FF61D054EED00FD6644 /* UITextView+Stellar.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E8D3F21CFC1F27004E6A80 /* UITextView+Stellar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FF71D054EFB00FD6644 /* AnimationContext.swift in Headers */ = {isa = PBXBuildFile; fileRef = 973E59EA1CF6FD5B00F26487 /* AnimationContext.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FF81D054EFE00FD6644 /* AnimationSequence.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97544FF71CFD56D7008046A1 /* AnimationSequence.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FF91D054F0100FD6644 /* AnimationStep.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97544FF91CFD572A008046A1 /* AnimationStep.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FFA1D054F0400FD6644 /* AnimationType.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97544FFB1CFD5733008046A1 /* AnimationType.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FFB1D054F0700FD6644 /* AnimatorCoordinator.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E1A8DB1CEB4D6700F98D86 /* AnimatorCoordinator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FFD1D054F0D00FD6644 /* DynamicItem.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97A61A391CF09B8F009E60EB /* DynamicItem.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FFE1D054F1100FD6644 /* DynamicItemBasic.swift in Headers */ = {isa = PBXBuildFile; fileRef = 970A7FB41CF2AA8F00C7555C /* DynamicItemBasic.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		97019FFF1D054F1300FD6644 /* DynamicItemGravity.swift in Headers */ = {isa = PBXBuildFile; fileRef = 970F91E41D01730B00B510BE /* DynamicItemGravity.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0001D054F1700FD6644 /* UnitBezier.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97A61A371CF082F6009E60EB /* UnitBezier.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0011D054F1900FD6644 /* TimingFunction.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97A61A421CF1E159009E60EB /* TimingFunction.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0021D054F1E00FD6644 /* UIDynamicBehavior+Commit.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0031D054F2000FD6644 /* Value+Physical.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0041D054F2200FD6644 /* DynamicItem+Behavior.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E1A9101CEDEF5200F98D86 /* DynamicItem+Behavior.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0051D054F2500FD6644 /* CALayer+Stellar.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E8D3ED1CFC11BA004E6A80 /* CALayer+Stellar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0061D054F2800FD6644 /* Vectorial.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97A61A331CF05DAB009E60EB /* Vectorial.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0071D054F2A00FD6644 /* Physical.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97E1A8D71CEB4AF200F98D86 /* Physical.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0081D054F2B00FD6644 /* Interpolatable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 970A7FB61CF2AC0000C7555C /* Interpolatable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A0091D054F2D00FD6644 /* TimingType.swift in Headers */ = {isa = PBXBuildFile; fileRef = 973E5A031CF70FAE00F26487 /* TimingType.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A00A1D054F2F00FD6644 /* Chainable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97EC4BFF1CF9E3310059BBFA /* Chainable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A00B1D054F3000FD6644 /* BasicChainable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97EC4BFB1CF9DF8D0059BBFA /* BasicChainable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A00C1D054F3200FD6644 /* BasicConfigurable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97EC4BFD1CF9E2620059BBFA /* BasicConfigurable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A00D1D054F3400FD6644 /* SnapConfigurable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 97EC4C011CF9E47D0059BBFA /* SnapConfigurable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A00E1D054F3600FD6644 /* AttachmentConfigurable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 970F91B41CFEC71600B510BE /* AttachmentConfigurable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		9701A00F1D054F3800FD6644 /* GravityConfigurable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 970F91D61D000AA000B510BE /* GravityConfigurable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		9701A0AA1D06A31900FD6644 /* UIView+FileConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9701A0A91D06A31900FD6644 /* UIView+FileConfigurable.swift */; };
 		9701A0AC1D06A58D00FD6644 /* StepControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9701A0AB1D06A58D00FD6644 /* StepControllable.swift */; };
 		9701A0AE1D07CD8800FD6644 /* Example7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9701A0AD1D07CD8800FD6644 /* Example7ViewController.swift */; };
@@ -47,6 +20,40 @@
 		970F91D51CFEF7C900B510BE /* Example6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91D41CFEF7C900B510BE /* Example6ViewController.swift */; };
 		970F91D71D000AA000B510BE /* GravityConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91D61D000AA000B510BE /* GravityConfigurable.swift */; };
 		970F91E51D01730B00B510BE /* DynamicItemGravity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F91E41D01730B00B510BE /* DynamicItemGravity.swift */; };
+		9725EF931EC1DC8300A487C2 /* AnimationContext.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF711EC1DC8300A487C2 /* AnimationContext.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EF941EC1DC8300A487C2 /* AnimationSequence.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF721EC1DC8300A487C2 /* AnimationSequence.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EF951EC1DC8300A487C2 /* AnimationStep.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF731EC1DC8300A487C2 /* AnimationStep.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EF961EC1DC8300A487C2 /* AnimationType.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF741EC1DC8300A487C2 /* AnimationType.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EF971EC1DC8300A487C2 /* AnimatorCoordinator.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF751EC1DC8300A487C2 /* AnimatorCoordinator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EF981EC1DC8300A487C2 /* AttachmentConfigurable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF761EC1DC8300A487C2 /* AttachmentConfigurable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EF991EC1DC8300A487C2 /* BasicChainable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF771EC1DC8300A487C2 /* BasicChainable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EF9A1EC1DC8300A487C2 /* BasicConfigurable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF781EC1DC8300A487C2 /* BasicConfigurable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EF9B1EC1DC8300A487C2 /* CALayer+AnimateBehavior.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF791EC1DC8300A487C2 /* CALayer+AnimateBehavior.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EF9C1EC1DC8300A487C2 /* CALayer+DriveAnimationBehaviors.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF7A1EC1DC8300A487C2 /* CALayer+DriveAnimationBehaviors.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EF9D1EC1DC8300A487C2 /* CALayer+Stellar.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF7B1EC1DC8300A487C2 /* CALayer+Stellar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EF9E1EC1DC8300A487C2 /* Chainable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF7C1EC1DC8300A487C2 /* Chainable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EF9F1EC1DC8300A487C2 /* DriveAnimateBehaviors.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF7D1EC1DC8300A487C2 /* DriveAnimateBehaviors.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFA01EC1DC8300A487C2 /* DynamicItem.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF7E1EC1DC8300A487C2 /* DynamicItem.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFA11EC1DC8300A487C2 /* DynamicItem+Behavior.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF7F1EC1DC8300A487C2 /* DynamicItem+Behavior.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFA21EC1DC8300A487C2 /* DynamicItemBasic.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF801EC1DC8300A487C2 /* DynamicItemBasic.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFA31EC1DC8300A487C2 /* DynamicItemGravity.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF811EC1DC8300A487C2 /* DynamicItemGravity.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFA41EC1DC8300A487C2 /* GravityConfigurable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF821EC1DC8300A487C2 /* GravityConfigurable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFA51EC1DC8300A487C2 /* Interpolatable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF831EC1DC8300A487C2 /* Interpolatable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFA61EC1DC8300A487C2 /* Physical.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF841EC1DC8300A487C2 /* Physical.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFA71EC1DC8300A487C2 /* SnapConfigurable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF851EC1DC8300A487C2 /* SnapConfigurable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFA81EC1DC8300A487C2 /* StepControllable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF861EC1DC8300A487C2 /* StepControllable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFA91EC1DC8300A487C2 /* TimingFunction.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF871EC1DC8300A487C2 /* TimingFunction.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFAA1EC1DC8300A487C2 /* TimingSolvable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF881EC1DC8300A487C2 /* TimingSolvable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFAB1EC1DC8300A487C2 /* TimingType.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF891EC1DC8300A487C2 /* TimingType.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFAC1EC1DC8300A487C2 /* UIDynamicBehavior+Commit.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF8A1EC1DC8300A487C2 /* UIDynamicBehavior+Commit.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFAD1EC1DC8300A487C2 /* UILabel+Stellar.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF8B1EC1DC8300A487C2 /* UILabel+Stellar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFAE1EC1DC8300A487C2 /* UITextView+Stellar.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF8C1EC1DC8300A487C2 /* UITextView+Stellar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFAF1EC1DC8300A487C2 /* UIView+AnimateBehavior.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF8D1EC1DC8300A487C2 /* UIView+AnimateBehavior.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFB01EC1DC8300A487C2 /* UIView+FileConfigurable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF8E1EC1DC8300A487C2 /* UIView+FileConfigurable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFB11EC1DC8300A487C2 /* UIView+Stellar.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF8F1EC1DC8300A487C2 /* UIView+Stellar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFB21EC1DC8300A487C2 /* UnitBezier.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF901EC1DC8300A487C2 /* UnitBezier.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFB31EC1DC8300A487C2 /* Value+Physical.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF911EC1DC8300A487C2 /* Value+Physical.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		9725EFB41EC1DC8300A487C2 /* Vectorial.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9725EF921EC1DC8300A487C2 /* Vectorial.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		9734A5591D23C742000D02A8 /* Example8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734A5581D23C742000D02A8 /* Example8ViewController.swift */; };
 		973E59CB1CF5ACEC00F26487 /* Example1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */; };
 		973E59E71CF6F2E100F26487 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E59E61CF6F2E100F26487 /* Ball.swift */; };
@@ -125,6 +132,40 @@
 		970F91D41CFEF7C900B510BE /* Example6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example6ViewController.swift; sourceTree = "<group>"; };
 		970F91D61D000AA000B510BE /* GravityConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityConfigurable.swift; sourceTree = "<group>"; };
 		970F91E41D01730B00B510BE /* DynamicItemGravity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicItemGravity.swift; sourceTree = "<group>"; };
+		9725EF711EC1DC8300A487C2 /* AnimationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimationContext.swift; path = ../../Sources/AnimationContext.swift; sourceTree = "<group>"; };
+		9725EF721EC1DC8300A487C2 /* AnimationSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimationSequence.swift; path = ../../Sources/AnimationSequence.swift; sourceTree = "<group>"; };
+		9725EF731EC1DC8300A487C2 /* AnimationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimationStep.swift; path = ../../Sources/AnimationStep.swift; sourceTree = "<group>"; };
+		9725EF741EC1DC8300A487C2 /* AnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimationType.swift; path = ../../Sources/AnimationType.swift; sourceTree = "<group>"; };
+		9725EF751EC1DC8300A487C2 /* AnimatorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimatorCoordinator.swift; path = ../../Sources/AnimatorCoordinator.swift; sourceTree = "<group>"; };
+		9725EF761EC1DC8300A487C2 /* AttachmentConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AttachmentConfigurable.swift; path = ../../Sources/AttachmentConfigurable.swift; sourceTree = "<group>"; };
+		9725EF771EC1DC8300A487C2 /* BasicChainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicChainable.swift; path = ../../Sources/BasicChainable.swift; sourceTree = "<group>"; };
+		9725EF781EC1DC8300A487C2 /* BasicConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicConfigurable.swift; path = ../../Sources/BasicConfigurable.swift; sourceTree = "<group>"; };
+		9725EF791EC1DC8300A487C2 /* CALayer+AnimateBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CALayer+AnimateBehavior.swift"; path = "../../Sources/CALayer+AnimateBehavior.swift"; sourceTree = "<group>"; };
+		9725EF7A1EC1DC8300A487C2 /* CALayer+DriveAnimationBehaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CALayer+DriveAnimationBehaviors.swift"; path = "../../Sources/CALayer+DriveAnimationBehaviors.swift"; sourceTree = "<group>"; };
+		9725EF7B1EC1DC8300A487C2 /* CALayer+Stellar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CALayer+Stellar.swift"; path = "../../Sources/CALayer+Stellar.swift"; sourceTree = "<group>"; };
+		9725EF7C1EC1DC8300A487C2 /* Chainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Chainable.swift; path = ../../Sources/Chainable.swift; sourceTree = "<group>"; };
+		9725EF7D1EC1DC8300A487C2 /* DriveAnimateBehaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DriveAnimateBehaviors.swift; path = ../../Sources/DriveAnimateBehaviors.swift; sourceTree = "<group>"; };
+		9725EF7E1EC1DC8300A487C2 /* DynamicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DynamicItem.swift; path = ../../Sources/DynamicItem.swift; sourceTree = "<group>"; };
+		9725EF7F1EC1DC8300A487C2 /* DynamicItem+Behavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DynamicItem+Behavior.swift"; path = "../../Sources/DynamicItem+Behavior.swift"; sourceTree = "<group>"; };
+		9725EF801EC1DC8300A487C2 /* DynamicItemBasic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DynamicItemBasic.swift; path = ../../Sources/DynamicItemBasic.swift; sourceTree = "<group>"; };
+		9725EF811EC1DC8300A487C2 /* DynamicItemGravity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DynamicItemGravity.swift; path = ../../Sources/DynamicItemGravity.swift; sourceTree = "<group>"; };
+		9725EF821EC1DC8300A487C2 /* GravityConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GravityConfigurable.swift; path = ../../Sources/GravityConfigurable.swift; sourceTree = "<group>"; };
+		9725EF831EC1DC8300A487C2 /* Interpolatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Interpolatable.swift; path = ../../Sources/Interpolatable.swift; sourceTree = "<group>"; };
+		9725EF841EC1DC8300A487C2 /* Physical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Physical.swift; path = ../../Sources/Physical.swift; sourceTree = "<group>"; };
+		9725EF851EC1DC8300A487C2 /* SnapConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnapConfigurable.swift; path = ../../Sources/SnapConfigurable.swift; sourceTree = "<group>"; };
+		9725EF861EC1DC8300A487C2 /* StepControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StepControllable.swift; path = ../../Sources/StepControllable.swift; sourceTree = "<group>"; };
+		9725EF871EC1DC8300A487C2 /* TimingFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimingFunction.swift; path = ../../Sources/TimingFunction.swift; sourceTree = "<group>"; };
+		9725EF881EC1DC8300A487C2 /* TimingSolvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimingSolvable.swift; path = ../../Sources/TimingSolvable.swift; sourceTree = "<group>"; };
+		9725EF891EC1DC8300A487C2 /* TimingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimingType.swift; path = ../../Sources/TimingType.swift; sourceTree = "<group>"; };
+		9725EF8A1EC1DC8300A487C2 /* UIDynamicBehavior+Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIDynamicBehavior+Commit.swift"; path = "../../Sources/UIDynamicBehavior+Commit.swift"; sourceTree = "<group>"; };
+		9725EF8B1EC1DC8300A487C2 /* UILabel+Stellar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UILabel+Stellar.swift"; path = "../../Sources/UILabel+Stellar.swift"; sourceTree = "<group>"; };
+		9725EF8C1EC1DC8300A487C2 /* UITextView+Stellar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITextView+Stellar.swift"; path = "../../Sources/UITextView+Stellar.swift"; sourceTree = "<group>"; };
+		9725EF8D1EC1DC8300A487C2 /* UIView+AnimateBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+AnimateBehavior.swift"; path = "../../Sources/UIView+AnimateBehavior.swift"; sourceTree = "<group>"; };
+		9725EF8E1EC1DC8300A487C2 /* UIView+FileConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+FileConfigurable.swift"; path = "../../Sources/UIView+FileConfigurable.swift"; sourceTree = "<group>"; };
+		9725EF8F1EC1DC8300A487C2 /* UIView+Stellar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Stellar.swift"; path = "../../Sources/UIView+Stellar.swift"; sourceTree = "<group>"; };
+		9725EF901EC1DC8300A487C2 /* UnitBezier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UnitBezier.swift; path = ../../Sources/UnitBezier.swift; sourceTree = "<group>"; };
+		9725EF911EC1DC8300A487C2 /* Value+Physical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Value+Physical.swift"; path = "../../Sources/Value+Physical.swift"; sourceTree = "<group>"; };
+		9725EF921EC1DC8300A487C2 /* Vectorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Vectorial.swift; path = ../../Sources/Vectorial.swift; sourceTree = "<group>"; };
 		9734A5581D23C742000D02A8 /* Example8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example8ViewController.swift; sourceTree = "<group>"; };
 		973E59CA1CF5ACEC00F26487 /* Example1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example1ViewController.swift; sourceTree = "<group>"; };
 		973E59E61CF6F2E100F26487 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
@@ -192,6 +233,40 @@
 		97019FD71D054ECD00FD6644 /* Stellar */ = {
 			isa = PBXGroup;
 			children = (
+				9725EF711EC1DC8300A487C2 /* AnimationContext.swift */,
+				9725EF721EC1DC8300A487C2 /* AnimationSequence.swift */,
+				9725EF731EC1DC8300A487C2 /* AnimationStep.swift */,
+				9725EF741EC1DC8300A487C2 /* AnimationType.swift */,
+				9725EF751EC1DC8300A487C2 /* AnimatorCoordinator.swift */,
+				9725EF761EC1DC8300A487C2 /* AttachmentConfigurable.swift */,
+				9725EF771EC1DC8300A487C2 /* BasicChainable.swift */,
+				9725EF781EC1DC8300A487C2 /* BasicConfigurable.swift */,
+				9725EF791EC1DC8300A487C2 /* CALayer+AnimateBehavior.swift */,
+				9725EF7A1EC1DC8300A487C2 /* CALayer+DriveAnimationBehaviors.swift */,
+				9725EF7B1EC1DC8300A487C2 /* CALayer+Stellar.swift */,
+				9725EF7C1EC1DC8300A487C2 /* Chainable.swift */,
+				9725EF7D1EC1DC8300A487C2 /* DriveAnimateBehaviors.swift */,
+				9725EF7E1EC1DC8300A487C2 /* DynamicItem.swift */,
+				9725EF7F1EC1DC8300A487C2 /* DynamicItem+Behavior.swift */,
+				9725EF801EC1DC8300A487C2 /* DynamicItemBasic.swift */,
+				9725EF811EC1DC8300A487C2 /* DynamicItemGravity.swift */,
+				9725EF821EC1DC8300A487C2 /* GravityConfigurable.swift */,
+				9725EF831EC1DC8300A487C2 /* Interpolatable.swift */,
+				9725EF841EC1DC8300A487C2 /* Physical.swift */,
+				9725EF851EC1DC8300A487C2 /* SnapConfigurable.swift */,
+				9725EF861EC1DC8300A487C2 /* StepControllable.swift */,
+				9725EF871EC1DC8300A487C2 /* TimingFunction.swift */,
+				9725EF881EC1DC8300A487C2 /* TimingSolvable.swift */,
+				9725EF891EC1DC8300A487C2 /* TimingType.swift */,
+				9725EF8A1EC1DC8300A487C2 /* UIDynamicBehavior+Commit.swift */,
+				9725EF8B1EC1DC8300A487C2 /* UILabel+Stellar.swift */,
+				9725EF8C1EC1DC8300A487C2 /* UITextView+Stellar.swift */,
+				9725EF8D1EC1DC8300A487C2 /* UIView+AnimateBehavior.swift */,
+				9725EF8E1EC1DC8300A487C2 /* UIView+FileConfigurable.swift */,
+				9725EF8F1EC1DC8300A487C2 /* UIView+Stellar.swift */,
+				9725EF901EC1DC8300A487C2 /* UnitBezier.swift */,
+				9725EF911EC1DC8300A487C2 /* Value+Physical.swift */,
+				9725EF921EC1DC8300A487C2 /* Vectorial.swift */,
 				97019FD81D054ECD00FD6644 /* Stellar.h */,
 				97019FDA1D054ECD00FD6644 /* Info.plist */,
 			);
@@ -374,33 +449,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				97019FD91D054ECD00FD6644 /* Stellar.h in Headers */,
-				97019FF41D054EE700FD6644 /* UIView+Stellar.swift in Headers */,
-				97019FF51D054EEA00FD6644 /* UILabel+Stellar.swift in Headers */,
-				97019FF71D054EFB00FD6644 /* AnimationContext.swift in Headers */,
-				97019FF81D054EFE00FD6644 /* AnimationSequence.swift in Headers */,
-				97019FF91D054F0100FD6644 /* AnimationStep.swift in Headers */,
-				97019FFA1D054F0400FD6644 /* AnimationType.swift in Headers */,
-				97019FFB1D054F0700FD6644 /* AnimatorCoordinator.swift in Headers */,
-				97019FFD1D054F0D00FD6644 /* DynamicItem.swift in Headers */,
-				97019FFE1D054F1100FD6644 /* DynamicItemBasic.swift in Headers */,
-				97019FFF1D054F1300FD6644 /* DynamicItemGravity.swift in Headers */,
-				9701A0001D054F1700FD6644 /* UnitBezier.swift in Headers */,
-				9701A0011D054F1900FD6644 /* TimingFunction.swift in Headers */,
-				9701A0031D054F2000FD6644 /* Value+Physical.swift in Headers */,
-				9701A0041D054F2200FD6644 /* DynamicItem+Behavior.swift in Headers */,
-				9701A0061D054F2800FD6644 /* Vectorial.swift in Headers */,
-				9701A00A1D054F2F00FD6644 /* Chainable.swift in Headers */,
-				9701A00B1D054F3000FD6644 /* BasicChainable.swift in Headers */,
-				9701A0091D054F2D00FD6644 /* TimingType.swift in Headers */,
-				9701A00C1D054F3200FD6644 /* BasicConfigurable.swift in Headers */,
-				9701A0081D054F2B00FD6644 /* Interpolatable.swift in Headers */,
-				9701A00F1D054F3800FD6644 /* GravityConfigurable.swift in Headers */,
-				9701A00E1D054F3600FD6644 /* AttachmentConfigurable.swift in Headers */,
-				9701A00D1D054F3400FD6644 /* SnapConfigurable.swift in Headers */,
-				9701A0071D054F2A00FD6644 /* Physical.swift in Headers */,
-				9701A0021D054F1E00FD6644 /* UIDynamicBehavior+Commit.swift in Headers */,
-				9701A0051D054F2500FD6644 /* CALayer+Stellar.swift in Headers */,
-				97019FF61D054EED00FD6644 /* UITextView+Stellar.swift in Headers */,
+				9725EF931EC1DC8300A487C2 /* AnimationContext.swift in Headers */,
+				9725EF941EC1DC8300A487C2 /* AnimationSequence.swift in Headers */,
+				9725EF951EC1DC8300A487C2 /* AnimationStep.swift in Headers */,
+				9725EF961EC1DC8300A487C2 /* AnimationType.swift in Headers */,
+				9725EF971EC1DC8300A487C2 /* AnimatorCoordinator.swift in Headers */,
+				9725EF981EC1DC8300A487C2 /* AttachmentConfigurable.swift in Headers */,
+				9725EF991EC1DC8300A487C2 /* BasicChainable.swift in Headers */,
+				9725EF9A1EC1DC8300A487C2 /* BasicConfigurable.swift in Headers */,
+				9725EF9B1EC1DC8300A487C2 /* CALayer+AnimateBehavior.swift in Headers */,
+				9725EF9C1EC1DC8300A487C2 /* CALayer+DriveAnimationBehaviors.swift in Headers */,
+				9725EF9D1EC1DC8300A487C2 /* CALayer+Stellar.swift in Headers */,
+				9725EF9E1EC1DC8300A487C2 /* Chainable.swift in Headers */,
+				9725EF9F1EC1DC8300A487C2 /* DriveAnimateBehaviors.swift in Headers */,
+				9725EFA01EC1DC8300A487C2 /* DynamicItem.swift in Headers */,
+				9725EFA11EC1DC8300A487C2 /* DynamicItem+Behavior.swift in Headers */,
+				9725EFA21EC1DC8300A487C2 /* DynamicItemBasic.swift in Headers */,
+				9725EFA31EC1DC8300A487C2 /* DynamicItemGravity.swift in Headers */,
+				9725EFA41EC1DC8300A487C2 /* GravityConfigurable.swift in Headers */,
+				9725EFA51EC1DC8300A487C2 /* Interpolatable.swift in Headers */,
+				9725EFA61EC1DC8300A487C2 /* Physical.swift in Headers */,
+				9725EFA71EC1DC8300A487C2 /* SnapConfigurable.swift in Headers */,
+				9725EFA81EC1DC8300A487C2 /* StepControllable.swift in Headers */,
+				9725EFA91EC1DC8300A487C2 /* TimingFunction.swift in Headers */,
+				9725EFAA1EC1DC8300A487C2 /* TimingSolvable.swift in Headers */,
+				9725EFAB1EC1DC8300A487C2 /* TimingType.swift in Headers */,
+				9725EFAC1EC1DC8300A487C2 /* UIDynamicBehavior+Commit.swift in Headers */,
+				9725EFAD1EC1DC8300A487C2 /* UILabel+Stellar.swift in Headers */,
+				9725EFAE1EC1DC8300A487C2 /* UITextView+Stellar.swift in Headers */,
+				9725EFAF1EC1DC8300A487C2 /* UIView+AnimateBehavior.swift in Headers */,
+				9725EFB01EC1DC8300A487C2 /* UIView+FileConfigurable.swift in Headers */,
+				9725EFB11EC1DC8300A487C2 /* UIView+Stellar.swift in Headers */,
+				9725EFB21EC1DC8300A487C2 /* UnitBezier.swift in Headers */,
+				9725EFB31EC1DC8300A487C2 /* Value+Physical.swift in Headers */,
+				9725EFB41EC1DC8300A487C2 /* Vectorial.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

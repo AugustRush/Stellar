@@ -8,33 +8,42 @@
 
 import UIKit
 
+//for 4 latitude
 final class DynamicItem<T: Vectorial>: NSObject, UIDynamicItem {
+    
     var from: T
     var to: T
     var render: (T) -> Void
-    var boundaryLimit = false
     var complete = false
+    var boundaryLimit = false
     var completion: (() -> Void)?
+    internal var fromR: Vector4
+    internal var toR: Vector4
     weak var behavior: UIDynamicBehavior!
-    internal var fromP: CGPoint
-    internal var toP: CGPoint
-    private var change: CGFloat
+    fileprivate var change: (x: Double,y: Double,z: Double,w: Double)
+    var referenceChangeLength: Double
     
-    init(from: T, to: T, render: (T) -> Void) {
+    init(from: T, to: T, render: @escaping (T) -> Void) {
         self.from = from
         self.to = to
-        self.fromP = from.reverse()
-        self.toP = to.reverse()
         self.render = render
-        self.center = self.fromP
-        self.change = fabs(self.toP.y - self.fromP.y)
+        //
+        self.fromR = from.reverse()
+        self.toR = to.reverse()
+        //
+        let x = toR.one - fromR.one
+        let y = toR.two - fromR.two
+        let z = toR.three - fromR.three
+        let w = toR.four - fromR.four
+        self.change = (x,y,z,w)
+        //
+        let originChange = sqrt(x*x + y*y)
+        let sizeChange = sqrt(z*z + w*w)
+        self.referenceChangeLength = max(originChange, sizeChange)
     }
     
     deinit {
-        //correct target value
-        let value = to.convert(toP)
-        render(value)
-        //completion
+        self.render(to)
         complete = true
         completion?()
     }
@@ -42,31 +51,36 @@ final class DynamicItem<T: Vectorial>: NSObject, UIDynamicItem {
     //MARK: Update frame
     
     func updateFrame() {
-        var current = center
-        let hasChanged = fabs(current.y - fromP.y)
-        if hasChanged >= change {
+        let yChange = fabs(Double(center.y))
+        let progress = yChange / referenceChangeLength
+        let curX = fromR.one + change.x * progress;
+        let curY = fromR.two + change.y * progress;
+        let curZ = fromR.three + change.z * progress;
+        let curW = fromR.four + change.w * progress;
+        
+        let rect = Vector4.init((curX,curY,curZ,curW))
+        var curV = from.convert(rect)
+        if progress >= 1.0 {
             if boundaryLimit {
-                current = toP
-                //remove behavior
+                curV = to
                 behavior.cancel()
-                //completion
                 complete = true
             }
         }
-        let value = to.convert(current)
-        render(value)
+        self.render(curV)
     }
     
     //MARK: UIDynamicItem protocol
-    var center: CGPoint {
+    var center: CGPoint = CGPoint.zero {
         didSet {
             updateFrame()
         }
     }
-    var transform: CGAffineTransform = CGAffineTransformIdentity
+    
+    var transform: CGAffineTransform = CGAffineTransform.identity
     var bounds: CGRect {
         get {
-            return CGRectMake(center.x, center.y, 100, 100)
+            return CGRect(x: -50.0, y: -50.0, width: 100.0, height: 100.0)
         }
     }
 }
