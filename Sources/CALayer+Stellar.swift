@@ -42,7 +42,7 @@ extension CALayer: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, 
     }
     
     public func makeAlpha(_ alpha: CGFloat) -> Self {
-        let type = AnimationType(type: .basic, subType: .opacity(opacity))
+        let type = AnimationType(type: .basic, subType: .opacity(Float(alpha)))
         context.addAnimationType(type)
         return self
     }
