@@ -9,11 +9,11 @@
 import UIKit
 
 public protocol BasicChainable: Chainable {
-//    func moveX(_ increment: CGFloat) -> Self
-//    func moveY(_ increment: CGFloat) -> Self
+    func moveX(_ increment: CGFloat) -> Self
+    func moveY(_ increment: CGFloat) -> Self
     func moveTo(_ point: CGPoint) -> Self
     func makeColor(_ color: UIColor) -> Self
-//    func makeAlpha(_ alpha: CGFloat) -> Self
+    func makeAlpha(_ alpha: CGFloat) -> Self
     func rotate(_ z: CGFloat) -> Self
     func rotateX(_ x: CGFloat) -> Self
     func rotateY(_ y: CGFloat) -> Self

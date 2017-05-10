@@ -11,6 +11,18 @@ import UIKit
 extension CALayer: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, GravityConfigurable, StepControllable {
     
     //MARK: animation methods
+    public func moveX(_ increment: CGFloat) -> Self {
+        let type = AnimationType(type: .basic, subType: .moveX(increment))
+        context.addAnimationType(type)
+        return self
+    }
+    
+    public func moveY(_ increment: CGFloat) -> Self {
+        let type = AnimationType(type: .basic, subType: .moveY(increment))
+        context.addAnimationType(type)
+        return self
+    }
+    
     public func moveTo(_ point: CGPoint) -> Self {
         let type = AnimationType(type: .basic, subType: .moveTo(point))
         context.addAnimationType(type)
@@ -24,6 +36,12 @@ extension CALayer: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, 
     }
     
     public func makeOpacity(_ opacity: Float) -> Self {
+        let type = AnimationType(type: .basic, subType: .opacity(opacity))
+        context.addAnimationType(type)
+        return self
+    }
+    
+    public func makeAlpha(_ alpha: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .opacity(opacity))
         context.addAnimationType(type)
         return self
