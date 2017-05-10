@@ -58,7 +58,7 @@ final class DynamicItem<T: Vectorial>: NSObject, UIDynamicItem {
         let curZ = fromR.three + change.z * progress;
         let curW = fromR.four + change.w * progress;
         
-        let rect = Vector4.init((curX,curY,curZ,curW))
+        let rect = Vector4.init((curX.isNaN ? 0 : curX,curY.isNaN ? 0 : curY,curZ.isNaN ? 0 : curZ,curW.isNaN ? 0 : curZ))
         var curV = from.convert(rect)
         if progress >= 1.0 {
             if boundaryLimit {

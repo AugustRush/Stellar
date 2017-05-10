@@ -79,8 +79,8 @@ extension CGSize: Physical {
     
     public func reverse() -> Vector4 {
         let vector = Vector4()
-        vector.one = Double(self.width)
-        vector.two = Double(self.height)
+        vector.one = Double(width)
+        vector.two = Double(height)
         return vector
     }
     
