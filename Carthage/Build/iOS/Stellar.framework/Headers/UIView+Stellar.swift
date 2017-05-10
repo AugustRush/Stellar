@@ -18,169 +18,169 @@ public enum AnimationStyle {
 extension UIView: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, GravityConfigurable, StepControllable {
     
     //MARK: animation methods
-    public func moveX(_ increment: CGFloat) -> UIView {
+    public func moveX(_ increment: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .moveX(increment))
         context.addAnimationType(type)
         return self
     }
     
-    public func moveY(_ increment: CGFloat) -> UIView {
+    public func moveY(_ increment: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .moveY(increment))
         context.addAnimationType(type)
         return self
     }
     
-    public func moveTo(_ point: CGPoint) -> UIView {
+    public func moveTo(_ point: CGPoint) -> Self {
         let type = AnimationType(type: .basic, subType: .moveTo(point))
         context.addAnimationType(type)
         return self
     }
     
-    public func makeColor(_ color: UIColor) -> UIView {
+    public func makeColor(_ color: UIColor) -> Self {
         let type = AnimationType(type: .basic, subType: .color(color))
         context.addAnimationType(type)
         return self
     }
     
-    public func makeAlpha(_ alpha: CGFloat) -> UIView {
+    public func makeAlpha(_ alpha: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .alpha(alpha))
         context.addAnimationType(type)
         return self
     }
     
-    public func rotate(_ z: CGFloat) -> UIView {
+    public func rotate(_ z: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .rotate(z))
         context.addAnimationType(type)
         return self
     }
     
-    public func rotateX(_ x: CGFloat) -> UIView {
+    public func rotateX(_ x: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .rotateX(x))
         context.addAnimationType(type)
         return self
     }
     
-    public func rotateY(_ y: CGFloat) -> UIView {
+    public func rotateY(_ y: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .rotateY(y))
         context.addAnimationType(type)
         return self
     }
     
-    public func rotateXY(_ xy: CGFloat) -> UIView {
+    public func rotateXY(_ xy: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .rotateXY(xy))
         context.addAnimationType(type)
         return self
     }
     
-    public func makeWidth(_ width: CGFloat) -> UIView {
+    public func makeWidth(_ width: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .width(width))
         context.addAnimationType(type)
         return self
     }
     
-    public func makeHeight(_ height: CGFloat) -> UIView {
+    public func makeHeight(_ height: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .height(height))
         context.addAnimationType(type)
         return self
     }
     
-    public func makeSize(_ size: CGSize) -> UIView {
+    public func makeSize(_ size: CGSize) -> Self {
         let type = AnimationType(type: .basic, subType: .size(size))
         context.addAnimationType(type)
         return self
     }
     
-    public func makeFrame(_ frame: CGRect) -> UIView {
+    public func makeFrame(_ frame: CGRect) -> Self {
         let type = AnimationType(type: .basic, subType: .frame(frame))
         context.addAnimationType(type)
         return self
     }
     
-    public func makeBounds(_ bounds: CGRect) -> UIView {
+    public func makeBounds(_ bounds: CGRect) -> Self {
         let type = AnimationType(type: .basic, subType: .bounds(bounds))
         context.addAnimationType(type)
         return self
     }
     
-    public func scaleX(_ x: CGFloat) -> UIView {
+    public func scaleX(_ x: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .scaleX(x))
         context.addAnimationType(type)
         return self
     }
     
-    public func scaleY(_ y: CGFloat) -> UIView {
+    public func scaleY(_ y: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .scaleY(y))
         context.addAnimationType(type)
         return self
     }
     
-    public func scaleXY(_ x: CGFloat, _ y: CGFloat) -> UIView {
+    public func scaleXY(_ x: CGFloat, _ y: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .scaleXY(x,y))
         context.addAnimationType(type)
         return self
     }
         
-    public func cornerRadius(_ radius: CGFloat) -> UIView {
+    public func cornerRadius(_ radius: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .cornerRadius(radius))
         context.addAnimationType(type)
         return self
     }
     
-    public func borderWidth(_ width: CGFloat) -> UIView {
+    public func borderWidth(_ width: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .borderWidth(width))
         context.addAnimationType(type)
         return self
     }
     
-    public func shadowRadius(_ radius: CGFloat) -> UIView {
+    public func shadowRadius(_ radius: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .shadowRadius(radius))
         context.addAnimationType(type)
         return self
     }
     
-    public func zPosition(_ position: CGFloat) -> UIView {
+    public func zPosition(_ position: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .zPosition(position))
         context.addAnimationType(type)
         return self
     }
     
-    public func anchorPoint(_ point: CGPoint) -> UIView {
+    public func anchorPoint(_ point: CGPoint) -> Self {
         let type = AnimationType(type: .basic, subType: .anchorPoint(point))
         context.addAnimationType(type)
         return self
     }
     
-    public func anchorPointZ(_ z: CGFloat) -> UIView {
+    public func anchorPointZ(_ z: CGFloat) -> Self {
         let type = AnimationType(type: .basic, subType: .anchorPointZ(z))
         context.addAnimationType(type)
         return self
     }
     
-    public func shadowOffset(_ offset: CGSize) -> UIView {
+    public func shadowOffset(_ offset: CGSize) -> Self {
         let type = AnimationType(type: .basic, subType: .shadowOffset(offset))
         context.addAnimationType(type)
         return self
     }
     
-    public func shadowColor(_ color: UIColor) -> UIView {
+    public func shadowColor(_ color: UIColor) -> Self {
         let type = AnimationType(type: .basic, subType: .shadowColor(color))
         context.addAnimationType(type)
         return self
     }
     
-    public func shadowOpacity(_ opacity: Float) -> UIView {
+    public func shadowOpacity(_ opacity: Float) -> Self {
         let type = AnimationType(type: .basic, subType: .shadowOpacity(opacity))
         context.addAnimationType(type)
         return self
     }
     
-    public func makeTintColor(_ color: UIColor) -> UIView {
+    public func makeTintColor(_ color: UIColor) -> Self {
         let type = AnimationType(type: .basic, subType: .tintColor(color))
         context.addAnimationType(type)
         return self
     }
     
-    public func completion(_ c: @escaping () -> Void) -> UIView {
+    public func completion(_ c: @escaping () -> Void) -> Self {
         context.changeCompletion(c)
         return self
     }
@@ -188,52 +188,52 @@ extension UIView: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, G
     //MARK: Physical Animation
     
     //Snap
-    public func snap(_ damping: CGFloat = 0.5) -> SnapConfigurable {
+    public func snap(_ damping: CGFloat = 0.5) -> Self {
         context.changeMainType(.snap(damping))
         return self
     }
     
     //Attachment
-    public func attachment(_ damping: CGFloat = 0.5, frequency: CGFloat = 0.5) -> AttachmentConfigurable {
+    public func attachment(_ damping: CGFloat = 0.5, frequency: CGFloat = 0.5) -> Self {
         context.changeMainType(.attachment(damping, frequency))
         return self
     }
     
     //Gravity
-    public func gravity(_ magnitude: Double = 1.0) -> GravityConfigurable {
+    public func gravity(_ magnitude: Double = 1.0) -> Self {
         context.changeMainType(.gravity(magnitude))
         return self
     }
     
     //MARK: Basic Animation configurations
-    public func duration(_ d: CFTimeInterval) -> BasicConfigurable {
+    public func duration(_ d: CFTimeInterval) -> Self {
         context.changeDuration(d)
         return self
     }
     
-    public func easing(_ type: TimingFunctionType) -> BasicConfigurable {
+    public func easing(_ type: TimingFunctionType) -> Self {
         context.changeEasing(type)
         return self
     }
     
-    public func delay(_ d: CFTimeInterval) -> BasicConfigurable {
+    public func delay(_ d: CFTimeInterval) -> Self {
         context.changeDelay(d)
         return self
     }
     
-    public func autoreverses() -> BasicConfigurable {
+    public func autoreverses() -> Self {
         context.changeAutoreverses(true)
         return self
     }
     
-    public func repeatCount(_ count: Int) -> BasicConfigurable {
+    public func repeatCount(_ count: Int) -> Self {
         context.changeRepeatCount(count)
         return self
     }
     
     //MARK: Chainable methods
     
-    public func then() -> UIView {
+    public func then() -> Self {
         context.makeNextStep()
         return self
     }

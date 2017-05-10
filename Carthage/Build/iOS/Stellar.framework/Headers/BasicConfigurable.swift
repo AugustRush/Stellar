@@ -9,18 +9,9 @@
 import UIKit
 
 public protocol BasicConfigurable: BasicChainable {
-    func duration(_ d: CFTimeInterval) -> BasicConfigurable
-    func easing(_ type: TimingFunctionType) -> BasicConfigurable
-    func delay(_ d: CFTimeInterval) -> BasicConfigurable
-    func autoreverses() -> BasicConfigurable
-    func repeatCount(_ count: Int) -> BasicConfigurable
-}
-
-//CALayer
-public protocol BasicConfigurable1: BasicChainable1 {
-    func duration(_ d: CFTimeInterval) -> BasicConfigurable1
-    func easing(_ type: TimingFunctionType) -> BasicConfigurable1
-    func delay(_ d: CFTimeInterval) -> BasicConfigurable1
-    func autoreverses() -> BasicConfigurable1
-    func repeatCount(_ count: Int) -> BasicConfigurable1
+    func duration(_ d: CFTimeInterval) -> Self
+    func easing(_ type: TimingFunctionType) -> Self
+    func delay(_ d: CFTimeInterval) -> Self
+    func autoreverses() -> Self
+    func repeatCount(_ count: Int) -> Self
 }

@@ -4,3 +4,7 @@ framework module Stellar {
   export *
   module * { export * }
 }
+
+module Stellar.Swift {
+    header "Stellar-Swift.h"
+}
