@@ -39,7 +39,7 @@ enum AnimationSubType {
     case shadowOpacity(Float)
     case tintColor(UIColor)
 //    UILabel,UITextView...
-//    case TextColor(UIColor)
+    case textColor(UIColor)
 }
 
 //temp record for animation type

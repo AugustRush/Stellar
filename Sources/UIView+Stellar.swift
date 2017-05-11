@@ -180,6 +180,13 @@ extension UIView: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, G
         return self
     }
     
+    // For UILabel UITextView
+    public func makeTextColor(color: UIColor) -> Self {
+        let type = AnimationType(type: .basic, subType: .textColor(color))
+        context.addAnimationType(type)
+        return self
+    }
+    
     public func completion(_ c: @escaping () -> Void) -> Self {
         context.changeCompletion(c)
         return self
@@ -251,7 +258,7 @@ extension UIView: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, G
 
     
     //Private Context for view and layer
-    fileprivate var context: AnimationContext {
+    internal var context: AnimationContext {
         get {
             let identifier = String(describing: Unmanaged.passUnretained(self.layer).toOpaque())
             var context = self.layer.value(forKey: identifier) as? AnimationContext

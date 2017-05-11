@@ -496,9 +496,8 @@ extension CALayer: DriveAnimateBehaviors {
             case .snap(let damping):
                 behavior = snapBehavior(damping, from: from, to: to, render: render)
             }
-            
         default:
-            fatalError("Should not be excute forever!")
+            fatalError("Unsupport this animation type!")
         }
         
         return behavior

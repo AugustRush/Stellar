@@ -509,9 +509,49 @@ extension UIView: DriveAnimateBehaviors {
             case .snap(let damping):
                 behavior = snapBehavior(damping, from: from, to: to, render: render)
             }
+        case .textColor(let color):
+            switch self {
+            case let label as UILabel:
+                let from = label.textColor ?? UIColor.clear
+                let to = color
+                let render = {(c: UIColor) in
+                    label.textColor = c
+                }
+                switch style {
+                case .basic:
+                    behavior = basicBehavior(step, from: from, to: to, render: render)
+                case .attachment(let damping, let frequency):
+                    behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
+                case .gravity(let magnitude):
+                    behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
+                case .snap(let damping):
+                    behavior = snapBehavior(damping, from: from, to: to, render: render)
+                }
+                
+            case let textView as UITextView:
+                let from = textView.textColor ?? UIColor.clear
+                let to = color
+                let render = {(c: UIColor) in
+                    textView.textColor = c
+                }
+                switch style {
+                case .basic:
+                    behavior = basicBehavior(step, from: from, to: to, render: render)
+                case .attachment(let damping, let frequency):
+                    behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
+                case .gravity(let magnitude):
+                    behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
+                case .snap(let damping):
+                    behavior = snapBehavior(damping, from: from, to: to, render: render)
+                }
+
+                
+            default:
+                fatalError("This object has not textColor property!")
+            }
         
         default:
-            fatalError("Should Not be excute forever!")
+            fatalError("Unsupport this animation type!")
         }
         
         return behavior

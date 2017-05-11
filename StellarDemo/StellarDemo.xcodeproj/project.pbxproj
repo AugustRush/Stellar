@@ -69,8 +69,6 @@
 		97D1A3C91EC40C5F004302E4 /* TimingSolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF881EC1DC8300A487C2 /* TimingSolvable.swift */; };
 		97D1A3CA1EC40C5F004302E4 /* TimingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF891EC1DC8300A487C2 /* TimingType.swift */; };
 		97D1A3CB1EC40C5F004302E4 /* UIDynamicBehavior+Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF8A1EC1DC8300A487C2 /* UIDynamicBehavior+Commit.swift */; };
-		97D1A3CC1EC40C5F004302E4 /* UILabel+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF8B1EC1DC8300A487C2 /* UILabel+Stellar.swift */; };
-		97D1A3CD1EC40C5F004302E4 /* UITextView+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF8C1EC1DC8300A487C2 /* UITextView+Stellar.swift */; };
 		97D1A3CE1EC40C5F004302E4 /* UIView+AnimateBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF8D1EC1DC8300A487C2 /* UIView+AnimateBehavior.swift */; };
 		97D1A3CF1EC40C5F004302E4 /* UIView+FileConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF8E1EC1DC8300A487C2 /* UIView+FileConfigurable.swift */; };
 		97D1A3D01EC40C5F004302E4 /* UIView+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF8F1EC1DC8300A487C2 /* UIView+Stellar.swift */; };
@@ -84,8 +82,6 @@
 		97E1A90F1CED918400F98D86 /* UIDynamicBehavior+Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */; };
 		97E1A9111CEDEF5200F98D86 /* DynamicItem+Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A9101CEDEF5200F98D86 /* DynamicItem+Behavior.swift */; };
 		97E8D3EE1CFC11BA004E6A80 /* CALayer+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E8D3ED1CFC11BA004E6A80 /* CALayer+Stellar.swift */; };
-		97E8D3F11CFC13FB004E6A80 /* UILabel+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E8D3F01CFC13FB004E6A80 /* UILabel+Stellar.swift */; };
-		97E8D3F31CFC1F27004E6A80 /* UITextView+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E8D3F21CFC1F27004E6A80 /* UITextView+Stellar.swift */; };
 		97EC4BFC1CF9DF8D0059BBFA /* BasicChainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC4BFB1CF9DF8D0059BBFA /* BasicChainable.swift */; };
 		97EC4BFE1CF9E2620059BBFA /* BasicConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC4BFD1CF9E2620059BBFA /* BasicConfigurable.swift */; };
 		97EC4C001CF9E3310059BBFA /* Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC4BFF1CF9E3310059BBFA /* Chainable.swift */; };
@@ -158,8 +154,6 @@
 		9725EF881EC1DC8300A487C2 /* TimingSolvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimingSolvable.swift; path = ../../Sources/TimingSolvable.swift; sourceTree = "<group>"; };
 		9725EF891EC1DC8300A487C2 /* TimingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimingType.swift; path = ../../Sources/TimingType.swift; sourceTree = "<group>"; };
 		9725EF8A1EC1DC8300A487C2 /* UIDynamicBehavior+Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIDynamicBehavior+Commit.swift"; path = "../../Sources/UIDynamicBehavior+Commit.swift"; sourceTree = "<group>"; };
-		9725EF8B1EC1DC8300A487C2 /* UILabel+Stellar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UILabel+Stellar.swift"; path = "../../Sources/UILabel+Stellar.swift"; sourceTree = "<group>"; };
-		9725EF8C1EC1DC8300A487C2 /* UITextView+Stellar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITextView+Stellar.swift"; path = "../../Sources/UITextView+Stellar.swift"; sourceTree = "<group>"; };
 		9725EF8D1EC1DC8300A487C2 /* UIView+AnimateBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+AnimateBehavior.swift"; path = "../../Sources/UIView+AnimateBehavior.swift"; sourceTree = "<group>"; };
 		9725EF8E1EC1DC8300A487C2 /* UIView+FileConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+FileConfigurable.swift"; path = "../../Sources/UIView+FileConfigurable.swift"; sourceTree = "<group>"; };
 		9725EF8F1EC1DC8300A487C2 /* UIView+Stellar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Stellar.swift"; path = "../../Sources/UIView+Stellar.swift"; sourceTree = "<group>"; };
@@ -202,8 +196,6 @@
 		97E1A90E1CED918400F98D86 /* UIDynamicBehavior+Commit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDynamicBehavior+Commit.swift"; sourceTree = "<group>"; };
 		97E1A9101CEDEF5200F98D86 /* DynamicItem+Behavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicItem+Behavior.swift"; sourceTree = "<group>"; };
 		97E8D3ED1CFC11BA004E6A80 /* CALayer+Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Stellar.swift"; sourceTree = "<group>"; };
-		97E8D3F01CFC13FB004E6A80 /* UILabel+Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Stellar.swift"; sourceTree = "<group>"; };
-		97E8D3F21CFC1F27004E6A80 /* UITextView+Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Stellar.swift"; sourceTree = "<group>"; };
 		97EC4BFB1CF9DF8D0059BBFA /* BasicChainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicChainable.swift; sourceTree = "<group>"; };
 		97EC4BFD1CF9E2620059BBFA /* BasicConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicConfigurable.swift; sourceTree = "<group>"; };
 		97EC4BFF1CF9E3310059BBFA /* Chainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chainable.swift; sourceTree = "<group>"; };
@@ -259,8 +251,6 @@
 				9725EF881EC1DC8300A487C2 /* TimingSolvable.swift */,
 				9725EF891EC1DC8300A487C2 /* TimingType.swift */,
 				9725EF8A1EC1DC8300A487C2 /* UIDynamicBehavior+Commit.swift */,
-				9725EF8B1EC1DC8300A487C2 /* UILabel+Stellar.swift */,
-				9725EF8C1EC1DC8300A487C2 /* UITextView+Stellar.swift */,
 				9725EF8D1EC1DC8300A487C2 /* UIView+AnimateBehavior.swift */,
 				9725EF8E1EC1DC8300A487C2 /* UIView+FileConfigurable.swift */,
 				9725EF8F1EC1DC8300A487C2 /* UIView+Stellar.swift */,
@@ -433,8 +423,6 @@
 			isa = PBXGroup;
 			children = (
 				973E59E81CF6FD2200F26487 /* UIView+Stellar.swift */,
-				97E8D3F01CFC13FB004E6A80 /* UILabel+Stellar.swift */,
-				97E8D3F21CFC1F27004E6A80 /* UITextView+Stellar.swift */,
 				9701A0A91D06A31900FD6644 /* UIView+FileConfigurable.swift */,
 				97E8D3ED1CFC11BA004E6A80 /* CALayer+Stellar.swift */,
 			);
@@ -583,8 +571,6 @@
 				97D1A3C91EC40C5F004302E4 /* TimingSolvable.swift in Sources */,
 				97D1A3CA1EC40C5F004302E4 /* TimingType.swift in Sources */,
 				97D1A3CB1EC40C5F004302E4 /* UIDynamicBehavior+Commit.swift in Sources */,
-				97D1A3CC1EC40C5F004302E4 /* UILabel+Stellar.swift in Sources */,
-				97D1A3CD1EC40C5F004302E4 /* UITextView+Stellar.swift in Sources */,
 				97D1A3CF1EC40C5F004302E4 /* UIView+FileConfigurable.swift in Sources */,
 				97D1A3CE1EC40C5F004302E4 /* UIView+AnimateBehavior.swift in Sources */,
 				97D1A3D01EC40C5F004302E4 /* UIView+Stellar.swift in Sources */,
@@ -610,7 +596,6 @@
 				97A61A431CF1E159009E60EB /* TimingFunction.swift in Sources */,
 				97544FFA1CFD572A008046A1 /* AnimationStep.swift in Sources */,
 				977FDF1A1CFC7448009248FD /* Example3ViewController.swift in Sources */,
-				97E8D3F31CFC1F27004E6A80 /* UITextView+Stellar.swift in Sources */,
 				973E59E71CF6F2E100F26487 /* Ball.swift in Sources */,
 				97733D6C1CFEAC930012C879 /* Example4ViewController.swift in Sources */,
 				973E5A041CF70FAE00F26487 /* TimingType.swift in Sources */,
@@ -636,7 +621,6 @@
 				97A61A3A1CF09B8F009E60EB /* DynamicItem.swift in Sources */,
 				976CC7D01D190F4B00476D77 /* DriveAnimateBehaviors.swift in Sources */,
 				97EC4BFC1CF9DF8D0059BBFA /* BasicChainable.swift in Sources */,
-				97E8D3F11CFC13FB004E6A80 /* UILabel+Stellar.swift in Sources */,
 				97DD65D21D2252FD00255F40 /* TimingSolvable.swift in Sources */,
 				97EC4BFE1CF9E2620059BBFA /* BasicConfigurable.swift in Sources */,
 				9701A0AC1D06A58D00FD6644 /* StepControllable.swift in Sources */,
