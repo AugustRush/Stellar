@@ -43,6 +43,40 @@
 		97BE88C71CDDDAD000240523 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97BE88C51CDDDAD000240523 /* Main.storyboard */; };
 		97BE88C91CDDDAD000240523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97BE88C81CDDDAD000240523 /* Assets.xcassets */; };
 		97BE88CC1CDDDAD000240523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97BE88CA1CDDDAD000240523 /* LaunchScreen.storyboard */; };
+		97D1A3B21EC40C5F004302E4 /* AnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF711EC1DC8300A487C2 /* AnimationContext.swift */; };
+		97D1A3B31EC40C5F004302E4 /* AnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF721EC1DC8300A487C2 /* AnimationSequence.swift */; };
+		97D1A3B41EC40C5F004302E4 /* AnimationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF731EC1DC8300A487C2 /* AnimationStep.swift */; };
+		97D1A3B51EC40C5F004302E4 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF741EC1DC8300A487C2 /* AnimationType.swift */; };
+		97D1A3B61EC40C5F004302E4 /* AnimatorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF751EC1DC8300A487C2 /* AnimatorCoordinator.swift */; };
+		97D1A3B71EC40C5F004302E4 /* AttachmentConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF761EC1DC8300A487C2 /* AttachmentConfigurable.swift */; };
+		97D1A3B81EC40C5F004302E4 /* BasicChainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF771EC1DC8300A487C2 /* BasicChainable.swift */; };
+		97D1A3B91EC40C5F004302E4 /* BasicConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF781EC1DC8300A487C2 /* BasicConfigurable.swift */; };
+		97D1A3BA1EC40C5F004302E4 /* CALayer+AnimateBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF791EC1DC8300A487C2 /* CALayer+AnimateBehavior.swift */; };
+		97D1A3BB1EC40C5F004302E4 /* CALayer+DriveAnimationBehaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF7A1EC1DC8300A487C2 /* CALayer+DriveAnimationBehaviors.swift */; };
+		97D1A3BC1EC40C5F004302E4 /* CALayer+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF7B1EC1DC8300A487C2 /* CALayer+Stellar.swift */; };
+		97D1A3BD1EC40C5F004302E4 /* Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF7C1EC1DC8300A487C2 /* Chainable.swift */; };
+		97D1A3BE1EC40C5F004302E4 /* DriveAnimateBehaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF7D1EC1DC8300A487C2 /* DriveAnimateBehaviors.swift */; };
+		97D1A3BF1EC40C5F004302E4 /* DynamicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF7E1EC1DC8300A487C2 /* DynamicItem.swift */; };
+		97D1A3C01EC40C5F004302E4 /* DynamicItem+Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF7F1EC1DC8300A487C2 /* DynamicItem+Behavior.swift */; };
+		97D1A3C11EC40C5F004302E4 /* DynamicItemBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF801EC1DC8300A487C2 /* DynamicItemBasic.swift */; };
+		97D1A3C21EC40C5F004302E4 /* DynamicItemGravity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF811EC1DC8300A487C2 /* DynamicItemGravity.swift */; };
+		97D1A3C31EC40C5F004302E4 /* GravityConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF821EC1DC8300A487C2 /* GravityConfigurable.swift */; };
+		97D1A3C41EC40C5F004302E4 /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF831EC1DC8300A487C2 /* Interpolatable.swift */; };
+		97D1A3C51EC40C5F004302E4 /* Physical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF841EC1DC8300A487C2 /* Physical.swift */; };
+		97D1A3C61EC40C5F004302E4 /* SnapConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF851EC1DC8300A487C2 /* SnapConfigurable.swift */; };
+		97D1A3C71EC40C5F004302E4 /* StepControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF861EC1DC8300A487C2 /* StepControllable.swift */; };
+		97D1A3C81EC40C5F004302E4 /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF871EC1DC8300A487C2 /* TimingFunction.swift */; };
+		97D1A3C91EC40C5F004302E4 /* TimingSolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF881EC1DC8300A487C2 /* TimingSolvable.swift */; };
+		97D1A3CA1EC40C5F004302E4 /* TimingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF891EC1DC8300A487C2 /* TimingType.swift */; };
+		97D1A3CB1EC40C5F004302E4 /* UIDynamicBehavior+Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF8A1EC1DC8300A487C2 /* UIDynamicBehavior+Commit.swift */; };
+		97D1A3CC1EC40C5F004302E4 /* UILabel+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF8B1EC1DC8300A487C2 /* UILabel+Stellar.swift */; };
+		97D1A3CD1EC40C5F004302E4 /* UITextView+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF8C1EC1DC8300A487C2 /* UITextView+Stellar.swift */; };
+		97D1A3CE1EC40C5F004302E4 /* UIView+AnimateBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF8D1EC1DC8300A487C2 /* UIView+AnimateBehavior.swift */; };
+		97D1A3CF1EC40C5F004302E4 /* UIView+FileConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF8E1EC1DC8300A487C2 /* UIView+FileConfigurable.swift */; };
+		97D1A3D01EC40C5F004302E4 /* UIView+Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF8F1EC1DC8300A487C2 /* UIView+Stellar.swift */; };
+		97D1A3D11EC40C5F004302E4 /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF901EC1DC8300A487C2 /* UnitBezier.swift */; };
+		97D1A3D21EC40C5F004302E4 /* Value+Physical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF911EC1DC8300A487C2 /* Value+Physical.swift */; };
+		97D1A3D31EC40C5F004302E4 /* Vectorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725EF921EC1DC8300A487C2 /* Vectorial.swift */; };
 		97DD65D21D2252FD00255F40 /* TimingSolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DD65D11D2252FD00255F40 /* TimingSolvable.swift */; };
 		97E1A8D81CEB4AF200F98D86 /* Physical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8D71CEB4AF200F98D86 /* Physical.swift */; };
 		97E1A8DA1CEB4B5200F98D86 /* Value+Physical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1A8D91CEB4B5200F98D86 /* Value+Physical.swift */; };
@@ -523,6 +557,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97D1A3B21EC40C5F004302E4 /* AnimationContext.swift in Sources */,
+				97D1A3B31EC40C5F004302E4 /* AnimationSequence.swift in Sources */,
+				97D1A3B41EC40C5F004302E4 /* AnimationStep.swift in Sources */,
+				97D1A3B51EC40C5F004302E4 /* AnimationType.swift in Sources */,
+				97D1A3B61EC40C5F004302E4 /* AnimatorCoordinator.swift in Sources */,
+				97D1A3B71EC40C5F004302E4 /* AttachmentConfigurable.swift in Sources */,
+				97D1A3B81EC40C5F004302E4 /* BasicChainable.swift in Sources */,
+				97D1A3B91EC40C5F004302E4 /* BasicConfigurable.swift in Sources */,
+				97D1A3BA1EC40C5F004302E4 /* CALayer+AnimateBehavior.swift in Sources */,
+				97D1A3BB1EC40C5F004302E4 /* CALayer+DriveAnimationBehaviors.swift in Sources */,
+				97D1A3BC1EC40C5F004302E4 /* CALayer+Stellar.swift in Sources */,
+				97D1A3BD1EC40C5F004302E4 /* Chainable.swift in Sources */,
+				97D1A3BE1EC40C5F004302E4 /* DriveAnimateBehaviors.swift in Sources */,
+				97D1A3BF1EC40C5F004302E4 /* DynamicItem.swift in Sources */,
+				97D1A3C01EC40C5F004302E4 /* DynamicItem+Behavior.swift in Sources */,
+				97D1A3C11EC40C5F004302E4 /* DynamicItemBasic.swift in Sources */,
+				97D1A3C21EC40C5F004302E4 /* DynamicItemGravity.swift in Sources */,
+				97D1A3C31EC40C5F004302E4 /* GravityConfigurable.swift in Sources */,
+				97D1A3C41EC40C5F004302E4 /* Interpolatable.swift in Sources */,
+				97D1A3C51EC40C5F004302E4 /* Physical.swift in Sources */,
+				97D1A3C61EC40C5F004302E4 /* SnapConfigurable.swift in Sources */,
+				97D1A3C71EC40C5F004302E4 /* StepControllable.swift in Sources */,
+				97D1A3C81EC40C5F004302E4 /* TimingFunction.swift in Sources */,
+				97D1A3C91EC40C5F004302E4 /* TimingSolvable.swift in Sources */,
+				97D1A3CA1EC40C5F004302E4 /* TimingType.swift in Sources */,
+				97D1A3CB1EC40C5F004302E4 /* UIDynamicBehavior+Commit.swift in Sources */,
+				97D1A3CC1EC40C5F004302E4 /* UILabel+Stellar.swift in Sources */,
+				97D1A3CD1EC40C5F004302E4 /* UITextView+Stellar.swift in Sources */,
+				97D1A3CF1EC40C5F004302E4 /* UIView+FileConfigurable.swift in Sources */,
+				97D1A3CE1EC40C5F004302E4 /* UIView+AnimateBehavior.swift in Sources */,
+				97D1A3D01EC40C5F004302E4 /* UIView+Stellar.swift in Sources */,
+				97D1A3D11EC40C5F004302E4 /* UnitBezier.swift in Sources */,
+				97D1A3D21EC40C5F004302E4 /* Value+Physical.swift in Sources */,
+				97D1A3D31EC40C5F004302E4 /* Vectorial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +686,7 @@
 				INFOPLIST_FILE = Stellar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../Sources\"";
 				PRODUCT_BUNDLE_IDENTIFIER = AR.Stellar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -639,6 +708,7 @@
 				INFOPLIST_FILE = Stellar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../Sources\"";
 				PRODUCT_BUNDLE_IDENTIFIER = AR.Stellar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -741,6 +811,7 @@
 		97BE88E71CDDDAD000240523 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C8U29Y8XS5;
 				INFOPLIST_FILE = StellarDemo/Info.plist;
@@ -755,6 +826,7 @@
 		97BE88E81CDDDAD000240523 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C8U29Y8XS5;
 				INFOPLIST_FILE = StellarDemo/Info.plist;
