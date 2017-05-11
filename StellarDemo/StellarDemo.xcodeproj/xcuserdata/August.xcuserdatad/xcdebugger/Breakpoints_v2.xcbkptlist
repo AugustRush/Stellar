@@ -22,11 +22,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sources/UIView+AnimateBehavior.swift"
-            timestampString = "516080855.671354"
+            timestampString = "516163535.849267"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "createDynamicBehavior(withStyle:subType:step:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -38,11 +38,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sources/UIView+AnimateBehavior.swift"
-            timestampString = "516081029.441423"
+            timestampString = "516163535.849267"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "createDynamicBehavior(withStyle:subType:step:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -54,11 +54,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sources/UIView+AnimateBehavior.swift"
-            timestampString = "516081185.726804"
+            timestampString = "516163535.849267"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
             landmarkName = "createDynamicBehavior(withStyle:subType:step:)"
             landmarkType = "7">
          </BreakpointContent>

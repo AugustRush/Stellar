@@ -92,7 +92,23 @@ extension UIView: DriveAnimateBehaviors {
             case .snap(let damping):
                 behavior = snapBehavior(damping, from: from, to: to, render: render)
             }
-            
+        case .opacity(let o):
+            let from = self.layer.opacity
+            let to = o
+            let render = {(o: Float) in
+                self.layer.opacity = o
+            }
+            switch style {
+            case .basic:
+                behavior = basicBehavior(step, from: from, to: to, render: render)
+            case .attachment(let damping, let frequency):
+                behavior = attachmentBehavior(damping, frequency: frequency, from: from, to: to, render: render)
+            case .gravity(let magnitude):
+                behavior = gravityBehavior(magnitude, from: from, to: to, render: render)
+            case .snap(let damping):
+                behavior = snapBehavior(damping, from: from, to: to, render: render)
+            }
+
         case .alpha(let a):
             let from = self.alpha
             let to = a
