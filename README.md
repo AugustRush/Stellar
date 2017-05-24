@@ -1,15 +1,15 @@
 <img src="https://github.com/AugustRush/Stellar/blob/master/title.png">
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
-![](https://img.shields.io/cocoapods/v/Stellar.svg?label=Current%20Release) [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg?maxAge=2592000?style=flat-square)](https://github.com/AugustRush/Stellar/blob/master/LICENSE.md) [![codebeat badge](https://codebeat.co/badges/e91a2d21-b20c-4b2b-a782-e0e2ecd65063)](https://codebeat.co/projects/github-com-augustrush-stellar) [![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg?maxAge=2592000?style=flat-square)]() [![Cocoapods badge](https://img.shields.io/cocoapods/p/Stellar.svg?maxAge=2592000?style=flat-square)]()
+![](https://img.shields.io/cocoapods/v/Stellar.svg?label=Current%20Release) [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg?maxAge=2592000?style=flat-square)](https://github.com/AugustRush/Stellar/blob/master/LICENSE.md) [![codebeat badge](https://codebeat.co/badges/e91a2d21-b20c-4b2b-a782-e0e2ecd65063)](https://codebeat.co/projects/github-com-augustrush-stellar) [![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg?maxAge=2592000?style=flat-square)]() [![CocoaPods badge](https://img.shields.io/cocoapods/p/Stellar.svg?maxAge=2592000?style=flat-square)]()
 
 A fantastic Physical animation library for swift(Not Just Spring !!!), it is base on UIDynamic and extension to it, friendly APIs make you use it or custom your own animation very easily!
 
 ## Support
 
 ### Integration
-#### Cocoapods(iOS 8+)
-* You can use [Cocoapods](https://cocoapods.org/) to install Stellar by adding it to your Podfile:
+#### CocoaPods(iOS 8+)
+* You can use [CocoaPods](https://cocoapods.org/) to install Stellar by adding it to your Podfile:
 
 ```
 platform :ios, '8.0'
