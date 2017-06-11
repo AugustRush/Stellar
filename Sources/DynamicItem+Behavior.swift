@@ -97,7 +97,7 @@ extension UIDynamicItem {
         return push
     }
     
-    func pushBehavior(_ direction: PhysicalDirection, mode:UIPushBehaviorMode = .instantaneous, magnitude: CGFloat = 1.0) -> UIPushBehavior {
+    func pushBehavior(_ direction: PhysicalDirection, mode:UIPushBehaviorMode = .continuous, magnitude: CGFloat = 1.0) -> UIPushBehavior {
         let push = UIPushBehavior(items: [self], mode: mode)
         switch direction {
         case .Angle(let a):
