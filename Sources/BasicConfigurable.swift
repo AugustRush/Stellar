@@ -12,6 +12,6 @@ public protocol BasicConfigurable: BasicChainable {
     func duration(_ d: CFTimeInterval) -> Self
     func easing(_ type: TimingFunctionType) -> Self
     func delay(_ d: CFTimeInterval) -> Self
-    func autoreverses() -> Self
+    func reverses() -> Self
     func repeatCount(_ count: Int) -> Self
 }

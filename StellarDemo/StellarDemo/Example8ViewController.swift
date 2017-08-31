@@ -17,13 +17,13 @@ class Example8ViewController: UIViewController {
         
         switch index {
         case 0:
-            animateView.moveX(200).duration(1.0).easing(.default).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.default).reverses().animate()
         case 1:
-            animateView.moveX(200).duration(1.0).easing(.easeIn).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.easeIn).reverses().animate()
         case 2:
-            animateView.moveX(200).duration(1.0).easing(.easeOut).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.easeOut).reverses().animate()
         case 3:
-            animateView.moveX(200).duration(1.0).easing(.easeInEaseOut).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.easeInEaseOut).reverses().animate()
         default:
             print("")
         }
@@ -35,13 +35,13 @@ class Example8ViewController: UIViewController {
         
         switch index {
         case 0:
-            animateView.moveX(200).duration(1.0).easing(.linear).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.linear).reverses().animate()
         case 1:
-            animateView.moveX(200).duration(1.0).easing(.swiftOut).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.swiftOut).reverses().animate()
         case 2:
-            animateView.moveX(200).duration(1.0).easing(.backEaseIn).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.backEaseIn).reverses().animate()
         case 3:
-            animateView.moveX(200).duration(1.0).easing(.backEaseOut).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.backEaseOut).reverses().animate()
         default:
             print("")
         }
@@ -53,13 +53,13 @@ class Example8ViewController: UIViewController {
         
         switch index {
         case 0:
-            animateView.moveX(200).duration(1.0).easing(.backEaseInOut).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.backEaseInOut).reverses().animate()
         case 1:
-            animateView.moveX(200).duration(1.0).easing(.bounceOut).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.bounceOut).reverses().animate()
         case 2:
-            animateView.moveX(200).duration(1.0).easing(.sine).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.sine).reverses().animate()
         case 3:
-            animateView.moveX(200).duration(1.0).easing(.circ).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.circ).reverses().animate()
         default:
             print("")
         }
@@ -72,13 +72,13 @@ class Example8ViewController: UIViewController {
         
         switch index {
         case 0:
-            animateView.moveX(200).duration(1.0).easing(.exponentialIn).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.exponentialIn).reverses().animate()
         case 1:
-            animateView.moveX(200).duration(1.0).easing(.exponentialOut).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.exponentialOut).reverses().animate()
         case 2:
-            animateView.moveX(200).duration(1.0).easing(.elasticIn).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.elasticIn).reverses().animate()
         case 3:
-            animateView.moveX(200).duration(1.0).easing(.elasticOut).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.elasticOut).reverses().animate()
         default:
             print("")
         }
@@ -91,7 +91,7 @@ class Example8ViewController: UIViewController {
         
         switch index {
         case 0:
-            animateView.moveX(200).duration(1.0).easing(.bounceReverse).autoreverses().animate()
+            animateView.moveX(200).duration(1.0).easing(.bounceReverse).reverses().animate()
         case 1:
             100.0.animate(to: 200, duration: 1.0, delay: 0.0, type: .swiftOut, autoreverses: false, repeatCount: 0, render: { (d) in
                 print("current value is \(d)")
