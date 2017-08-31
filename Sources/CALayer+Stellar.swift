@@ -220,7 +220,7 @@ extension CALayer: BasicConfigurable, SnapConfigurable, AttachmentConfigurable, 
         return self
     }
     
-    public func autoreverses() -> Self {
+    public func reverses() -> Self {
         context.changeAutoreverses(true)
         return self
     }
