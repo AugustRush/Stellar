@@ -90,14 +90,14 @@ extension UIDynamicItem {
     }
     
     //push
-    func pushBehavior(_ direction: CGVector, mode:UIPushBehaviorMode = .instantaneous, magnitude: CGFloat = 1.0) -> UIPushBehavior {
+    func pushBehavior(_ direction: CGVector, mode:UIPushBehavior.Mode = .instantaneous, magnitude: CGFloat = 1.0) -> UIPushBehavior {
         let push = UIPushBehavior(items: [self], mode: mode)
         push.pushDirection = direction
         push.magnitude = magnitude
         return push
     }
     
-    func pushBehavior(_ direction: PhysicalDirection, mode:UIPushBehaviorMode = .continuous, magnitude: CGFloat = 1.0) -> UIPushBehavior {
+    func pushBehavior(_ direction: PhysicalDirection, mode:UIPushBehavior.Mode = .continuous, magnitude: CGFloat = 1.0) -> UIPushBehavior {
         let push = UIPushBehavior(items: [self], mode: mode)
         switch direction {
         case .Angle(let a):
@@ -119,7 +119,7 @@ extension UIDynamicItem {
     }
 
     
-    func pushBehavior(_ angle: CGFloat, mode:UIPushBehaviorMode = .instantaneous, magnitude: CGFloat = 1.0) -> UIPushBehavior {
+    func pushBehavior(_ angle: CGFloat, mode:UIPushBehavior.Mode = .instantaneous, magnitude: CGFloat = 1.0) -> UIPushBehavior {
         let push = UIPushBehavior(items: [self], mode: mode)
         push.angle = angle
         push.magnitude = magnitude
@@ -127,14 +127,14 @@ extension UIDynamicItem {
     }
     
     //collision
-    func collisionBehavior(_ mode: UICollisionBehaviorMode = .boundaries) -> UICollisionBehavior {
+    func collisionBehavior(_ mode: UICollisionBehavior.Mode = .boundaries) -> UICollisionBehavior {
         let collision = UICollisionBehavior()
         collision.collisionMode = mode
         collision.addItem(self)
         return collision
     }
     
-    func collisionBehavior(_ mode: UICollisionBehaviorMode = .boundaries, path: UIBezierPath) -> UICollisionBehavior {
+    func collisionBehavior(_ mode: UICollisionBehavior.Mode = .boundaries, path: UIBezierPath) -> UICollisionBehavior {
         let collision = UICollisionBehavior()
         collision.collisionMode = mode
         let identifier = String(describing: Unmanaged.passUnretained(self).toOpaque())
@@ -143,7 +143,7 @@ extension UIDynamicItem {
         return collision
     }
     
-    func collisionBehavior(_ mode: UICollisionBehaviorMode = .boundaries, fromPoint: CGPoint, toPoint: CGPoint) -> UICollisionBehavior {
+    func collisionBehavior(_ mode: UICollisionBehavior.Mode = .boundaries, fromPoint: CGPoint, toPoint: CGPoint) -> UICollisionBehavior {
         let collision = UICollisionBehavior()
         collision.collisionMode = mode
         let identifier = String(describing: Unmanaged.passUnretained(self).toOpaque())
