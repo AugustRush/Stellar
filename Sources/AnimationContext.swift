@@ -119,7 +119,7 @@ internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate, AnimationS
     //MARK: AnimationSequenceDelegate methods
     
     func animationSequenceDidComplete(_ sequence: AnimationSequence) {
-        let index = mutipleSequences.index(of: sequence)
+        let index = mutipleSequences.firstIndex(of: sequence)
         if index != nil {
             mutipleSequences.remove(at: index!)
         }
