@@ -43,34 +43,34 @@ class DynamicItemGravity<T: Interpolatable>: NSObject, UIDynamicItem {
         switch from {
         case let f as CGFloat:
             let t = to as! CGFloat
-            referenceChangedLength = Double(fabs(t - f))
+            referenceChangedLength = Double(abs(t - f))
             
         case let f as Float:
             let t = to as! Float
-            referenceChangedLength = Double(fabs(t - f))
+            referenceChangedLength = Double(abs(t - f))
             
         case let f as Double:
             let t = to as! Double
-            referenceChangedLength = fabs(t - f)
+            referenceChangedLength = abs(t - f)
             
         case let f as CGSize:
             let t = to as! CGSize
-            let w = fabs(t.width - f.width)
-            let h = fabs(t.height - f.height)
+            let w = abs(t.width - f.width)
+            let h = abs(t.height - f.height)
             referenceChangedLength = max(Double(w), Double(h))
 
         case let f as CGPoint:
             let t = to as! CGPoint
-            let x = fabs(t.x - f.x)
-            let y = fabs(t.y - f.y)
+            let x = abs(t.x - f.x)
+            let y = abs(t.y - f.y)
             referenceChangedLength = max(Double(x), Double(y))
             
         case let f as CGRect:
             let t = to as! CGRect
-            let xChange = fabs(t.minX - f.minX)
-            let yChange = fabs(t.minY - f.minY)
-            let wChange = fabs(t.width - f.width)
-            let hChange = fabs(t.height - f.height)
+            let xChange = abs(t.minX - f.minX)
+            let yChange = abs(t.minY - f.minY)
+            let wChange = abs(t.width - f.width)
+            let hChange = abs(t.height - f.height)
             let originC = hypot(xChange, yChange)
             let sizeC = hypot(wChange, hChange)
             referenceChangedLength = max(Double(originC), Double(sizeC))
@@ -79,10 +79,10 @@ class DynamicItemGravity<T: Interpolatable>: NSObject, UIDynamicItem {
             let t = to as! UIColor
             let fromInfo = f.colorInfo()
             let toInfo = t.colorInfo()
-            let hueChange = fabs(toInfo.hue - fromInfo.hue)
-            let brightnessChange = fabs(toInfo.brightness - fromInfo.brightness)
-            let saturationChange = fabs(toInfo.saturation - fromInfo.saturation)
-            let alphaChange = fabs(toInfo.alpha - fromInfo.alpha)
+            let hueChange = abs(toInfo.hue - fromInfo.hue)
+            let brightnessChange = abs(toInfo.brightness - fromInfo.brightness)
+            let saturationChange = abs(toInfo.saturation - fromInfo.saturation)
+            let alphaChange = abs(toInfo.alpha - fromInfo.alpha)
             let oneC = hypot(hueChange, saturationChange) * 1000.0
             let twoC = hypot(brightnessChange, alphaChange) * 1000.0
             referenceChangedLength = max(Double(oneC), Double(twoC))
